@@ -1,2 +1,15 @@
-$wild-color: #ff6c71;
-$light-color: #fffbfb;
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Saira+Semi+Condensed&display=swap');
+
+$primary: #057DCD;
+$secondary: #43B0F1;
+$dark: #1E3D58;
+$light: #E8EEF1;
+$font-title: 'Archivo Black', sans-serif;
+$font-text: 'Saira Semi Condensed', sans-serif;
+$spacing: 8px;
+$spacing-2: calc(var(--spacing) * 2);
+$spacing-3: calc(var(--spacing) * 3);
+$spacing-4: calc(var(--spacing) * 4);
+$box-shadow: 3px 3px 15px 0(0,0,0,0.75);
+$border-radius: 8px;
