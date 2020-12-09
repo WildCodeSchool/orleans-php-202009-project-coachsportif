@@ -1,0 +1,25 @@
+@import "app.scss";
+
+h1 {
+    display: flex;
+    justify-content: center;
+    margin: $spacing-3;
+}
+
+h2 {
+    display: flex;
+    justify-content: center;
+    margin: $spacing-3;
+}
+
+.homeTextPresentation {
+    display: flex;
+    align-content: center;
+    margin: $spacing-3;
+}
+
+.homeText {
+    color: $text-color;
+    text-align: center;
+    width: 60vw;
+}
