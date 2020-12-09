@@ -20,5 +20,4 @@ class HomeController extends AbstractController
         $home = $homeRepository->findAll();
         return $this->render('home/index.html.twig', ['home' => $home]);
     }
-
 }
