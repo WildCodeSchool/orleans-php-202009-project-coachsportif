@@ -13,5 +13,30 @@
                 {% endfor %}
         </div>
     </div>
-    <a class="btn btn-dark" href="#">Home</a>
+    <section class="homeContact">
+        <div class="container col-lg-3">
+                <div class="card">
+                    <h2 class="card-header text-light bg-info white-text text-center py-4">
+                        <strong>Contactez nous</strong></h2>
+                    <div class="card-body px-lg-2 pt-0">
+
+                        <form class="text-center" style="color: #757575;" action="#!">
+                            <div class="md-form mt-3">
+                                <label for="materialContactFormName">Name</label>
+                                <input type="text" id="materialContactFormName" class="form-control">
+                            </div>
+                            <div class="md-form">
+                                <label for="materialContactFormEmail">E-mail</label>
+                                <input type="email" id="materialContactFormEmail" class="form-control">
+                            </div>
+                            <div class="md-form">
+                                <label for="materialContactFormMessage">Message</label>
+                                <textarea id="materialContactFormMessage" class="form-control md-textarea" rows="3"></textarea>
+                            </div>
+                            <button class="btn btn-outline-info btn-rounded btn-block z-depth-0 my-4 waves-effect" type="submit">Send</button>
+                        </form>
+                    </div>
+                </div>
+        </div>
+    </section>
 {% endblock %}
