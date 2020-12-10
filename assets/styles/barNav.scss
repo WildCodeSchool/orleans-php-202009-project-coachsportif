@@ -6,7 +6,7 @@
 }
 
 .containerOverlay {
-    background: url("../images/overlay.jpg") no-repeat;
+    background: url("../images/overlay.jpg") no-repeat fixed center;
     filter: brightness(70%);
     height: 100vh;
 }
