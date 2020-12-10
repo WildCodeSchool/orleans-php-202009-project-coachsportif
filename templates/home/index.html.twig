@@ -1,8 +1,17 @@
-{% extends 'base.html.twig' %}
-
+{% extends 'layout.html.twig' %}
+{% block stylesheets %}
+    {{ encore_entry_link_tags('home') }}
+{% endblock %}
 {% block title %}Home{% endblock %}
 
 {% block body %}
-    <h1>Projet-Coach-Sportif</h1>
+    <h1>Damien Gouveia</h1>
+    <div class="d-flex justify-content-center">
+        <div class="homeTextPresentation">
+                {% for text in home %}
+                   <p class="homeText">{{ text.text }}</p>
+                {% endfor %}
+        </div>
+    </div>
     <a class="btn btn-dark" href="#">Home</a>
 {% endblock %}
