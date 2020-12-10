@@ -1,4 +1,5 @@
 {% extends 'layout.html.twig' %}
+
     {% block stylesheets %}
         {{ encore_entry_link_tags('home') }}
     {% endblock %}
@@ -6,7 +7,7 @@
 {% block title %}Home{% endblock %}
 
 {% block body %}
-    <section>
+    <section class="textIntro">
         <h1>Damien Gouveia</h1>
             <div class="d-flex justify-content-center">
                 <div class="homeTextPresentation">
@@ -16,11 +17,11 @@
                 </div>
             </div>
     </section>
-    <section>
-        <div class="container-fluid bg-primary text-light col-12 py-3">
+    <section class="serviceSport">
+        <div class="container-fluid bg-info text-light col-12 py-3">
            <h2>Nos services</h2>
         </div>
-        <div class="card-deck col-lg-12 m-0">
+        <div class="sportCard card-deck col-lg-12 m-0 text-center">
             <div class="card m-4">
                 <div class="view overlay">
                     <img class="sportAdapt card-img-top" src="{{ asset('build/images/sportAdapte.jpg') }}"
@@ -33,7 +34,7 @@
                         personnes en situation de handicap à adopter un mode de vie physiquement actif sur une base
                         régulière afin de réduire les facteurs de risque reliés au mode de vie sédentaire et mettre en place
                         les conditions nécessaires pour améliorer la condition physique, et le bien être psychologique</p>
-                    <button type="button" class="btn btn-dark">Voir plus</button>
+                    <a href="#" class="btn btn-dark">Plus d'informations</a>
                 </div>
             </div>
             <div class="card m-4">
@@ -49,7 +50,7 @@
                         progressivité. Il faut du temps et un fin dosage dans l'intensité des séances de reprise mais aussi
                         des nutriments consommés pour espérer poursuivre longtemps le sport avec plaisir et sans
                         blessure.</p>
-                    <button type="button" class="btn btn-dark">Voir plus</button>
+                    <a href="#" class="btn btn-dark">Plus d'informations</a>
                 </div>
             </div>
         </div>

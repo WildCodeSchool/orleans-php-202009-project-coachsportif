@@ -12,6 +12,10 @@ h2 {
     margin: $spacing-3;
 }
 
+.textIntro {
+    padding-top: $spacing-3;
+}
+
 .homeTextPresentation {
     display: flex;
     align-content: center;
@@ -30,4 +34,12 @@ h2 {
 
 .remiseForme {
     filter: brightness(60%);
+}
+
+.sportCard {
+    padding-top: $spacing-3;
+}
+
+.serviceSport {
+    padding-top: $spacing-3;
 }
