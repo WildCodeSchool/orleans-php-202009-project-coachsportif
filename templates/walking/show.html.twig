@@ -11,7 +11,7 @@
             {% for walk in walks %}
                 <div class="row justify-content-between">
                     <div class="col-12 col-lg-5">
-                        <img src="{{ asset( walk.picture ) }}">
+                        <img class="vignets" src="{{ asset( walk.picture ) }}">
                     </div>
                     <p class="col-12 col-lg-5">{{ walk.description }}</p>
                 </div>
@@ -22,4 +22,9 @@
             <a href="#" class="btn btn-primary">S'inscrire</a>
         </div>
     </section>
+        <script>
+            $(function() {
+                $(".vignets").addClass("load");
+            });
+        </script>
 {% endblock %}
