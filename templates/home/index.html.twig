@@ -6,21 +6,24 @@
 {% block title %}Home{% endblock %}
 
 {% block body %}
-
-    <h1>Damien Gouveia</h1>
-        <div class="d-flex justify-content-center">
-            <div class="homeTextPresentation">
-                {% for text in home %}
-                    <p class="homeText">{{ text.text }}</p>
-                {% endfor %}
+    <section>
+        <h1>Damien Gouveia</h1>
+            <div class="d-flex justify-content-center">
+                <div class="homeTextPresentation">
+                    {% for text in home %}
+                        <p class="homeText">{{ text.text }}</p>
+                    {% endfor %}
+                </div>
             </div>
+    </section>
+    <section>
+        <div class="container-fluid bg-primary text-light col-12 py-3">
+           <h2>Nos services</h2>
         </div>
-
-    <h2 class="Home">Nos services</h2>
-        <div class="card-deck m-0">
+        <div class="card-deck col-lg-12 m-0">
             <div class="card m-4">
                 <div class="view overlay">
-                    <img class="card-img-top" src="{{ asset('build/images/fitness.jpg') }}"
+                    <img class="sportAdapt card-img-top" src="{{ asset('build/images/sportAdapte.jpg') }}"
                          alt="Card image cap">
                 </div>
                 <div class="card-body">
@@ -35,7 +38,7 @@
             </div>
             <div class="card m-4">
                 <div class="view overlay">
-                    <img class="card-img-top" src="{{ asset('build/images/fitness.jpg') }}"
+                    <img class="remiseForme card-img-top" src="{{ asset('build/images/remiseEnForme.jpg') }}"
                          alt="Card image cap">
                 </div>
                 <div class="card-body">
@@ -50,4 +53,5 @@
                 </div>
             </div>
         </div>
+    </section>
 {% endblock %}
