@@ -1,0 +1,39 @@
+@import "variables.scss";
+
+.nordic-walking {
+  background-image: url("../images/nordic_walking.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+}
+
+.nordic-walking {
+  text-align: center;
+  & h1 {
+    padding: $spacing-5 $spacing $spacing-4;
+    color: $light;
+} .row {
+      margin-top: $spacing-4;
+      align-items: center;
+    } & .row:nth-child(2n) {
+      flex-direction: row-reverse;
+    } & img {
+                  display: block;
+                  width: 100%;
+                  border-radius: $border-radius;
+                  box-shadow: $box-shadow;
+                } & p {
+                                    font-size: $text-font-size;
+                                    padding: $spacing-2 $spacing-3;
+                                    color: $light;
+                                    border-radius: $border-radius;
+                                    text-align: left;
+                                  }
+}
+
+.walk-submit {
+  padding: $spacing-5 0;
+  & p {
+    text-align: center;
+  }
+}
