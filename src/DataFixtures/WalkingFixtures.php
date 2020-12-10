@@ -14,7 +14,7 @@ class WalkingFixtures extends Fixture
         $faker = Faker\Factory::create('fr_FR');
         for ($i = 0; $i <= 4; $i++) {
             $walking = new Walking();
-            $walking->setPicture($faker->imageUrl(630, 420, 'sports'));
+            $walking->setPicture($faker->imageUrl(400, 250, 'sports'));
             $walking->setDescription($faker->text);
             $manager->persist($walking);
         }
