@@ -10,23 +10,25 @@ body {
     color: $dark;
     font-family: $font-text;
 }
+
 h1 {
-    padding: $spacing-2 0;
+    padding: $spacing-4 0;
     font-family: $font-title;
     font-size: $h1-font-size;
 }
+
 h2 {
     padding: $spacing-2 0;
     font-family: $font-title;
     font-size: $h2-font-size;
 }
+
 h3 {
-    padding: $spacing-2 0;
     font-family: $font-title;
     font-size: $h2-font-size;
 }
+
 h4 {
-    padding: $spacing-2 0;
     font-family: $font-title;
     font-size: $h2-font-size;
 }

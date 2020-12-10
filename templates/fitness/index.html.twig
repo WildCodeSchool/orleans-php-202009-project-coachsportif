@@ -1,4 +1,4 @@
-{% extends 'base.html.twig' %}
+{% extends 'layout.html.twig' %}
 
     {% block stylesheets %}
         {{ encore_entry_link_tags('fitness') }}
@@ -8,33 +8,45 @@
 
 {% block body %}
     <section class="fitnessBackground">
-        <h1 class="text-center">Remise en forme</h1>
+        <div class="fitnessOverlay">
+            <div class="fitnessContent">
 
-        <div class="container">
-            <div class="fitnessParagraphDiv row justify-content-center align-items-center">
-                <img class="fitnessParagraphImage col-lg-5" src="{{ asset('build/images/LosingWeight.jpg') }}"
-                     alt="Fitness Paragraph Image">
-                <p class="fitnessParagraph text-center col-lg-5 col-8 py-2">Lorem ipsum dolor sit amet, consectetur adipisi
-                    cing elit. Ad amet blanditiis corporis distinctio dolorem eligendi expedita fuga illum iust
-                </p>
-            </div>
+                <h1 class="text-center">Remise en forme</h1>
 
-            <div class="fitnessParagraphDiv row flex-row-reverse justify-content-center align-items-center">
-                <img class="fitnessParagraphImage col-lg-5" src="{{ asset('build/images/SalleSport.jpg') }}"
-                     alt="Fitness Paragraph Image">
-                <p class="fitnessParagraph text-center col-lg-5 col-8 py-2">Lorem ipsum dolor sit amet, consectetur adipisi
-                    cing elit. Ad amet blanditiis corporis distinctio dolorem eligendi expedita fuga illum iusto
-                    laborum modi mollitia neque perferendis, provident qui tempora tenetur velit voluptatum?</p>
+                <div class="container">
+                    <div class="fitnessParagraphDiv1 row justify-content-center align-items-center">
+                        <img class="fitnessParagraphImage col-lg-5" src="{{ asset('build/images/LosingWeight.jpg') }}"
+                             alt="Fitness Paragraph Image">
+                        <p class="fitnessParagraph text-center col-lg-5 py-2">Vous avez arrêté le sport depuis
+                            longtemps,
+                            et voulez redevenir actif avec l'aide d'un professionnel ? Je vous propose donc un programme
+                            de
+                            remise en forme ! Axé sur le renforcement musculaire et des activités intense pour réveiller
+                            votre système cardio-vasculaire, Vous retrouverez une forme physique rapidement et
+                            efficacement,
+                            dans une ambiance agréable et conviviale.
+                        </p>
+                    </div>
+
+                    <div class="fitnessParagraphDiv2 row flex-row-reverse justify-content-center align-items-center">
+                        <img class="fitnessParagraphImage col-lg-5" src="{{ asset('build/images/SalleSport.jpg') }}"
+                             alt="Fitness Paragraph Image">
+                        <p class="fitnessParagraph text-center col-lg-5 py-2">J'ai à disposition pour vous, une salle
+                            équipé de tout les accessoires nécessaire pour des séances agréable, intense, et sérieuses.
+                            Vous pourrez donc me retrouver dans cette salle de sport individuellement ou en petit groupe
+                            pour parvenir à votre objectif.</p>
+                    </div>
+                </div>
+                <div class="container d-flex justify-content-center">
+                    <div class="fitnessSubmitParagraph row text-center">
+                        <p>Si vous-êtes intéressé, il vous suffit de remplir un formulaire en ligne, simple et rapide
+                            !</p>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-center">
+                    <a class="fitnessButton btn btn-primary" href="#">S'incrire</a>
+                </div>
             </div>
-        </div>
-        <div class="d-flex justify-content-center">
-            <div class="fitnessSubmitParagraph text-center">
-                <p>Si vous-êtes intéressé, il vous suffit de remplir un formulaire en ligne, simple et rapide !</p>
-            </div>
-        </div>
-        <div class="d-flex justify-content-center">
-        <a class="btn btn-primary" href="#">S'incrire</a>
         </div>
     </section>
-
 {% endblock %}

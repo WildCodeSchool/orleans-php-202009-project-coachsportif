@@ -1,32 +1,44 @@
 @import "app.scss";
 
 .fitnessBackground {
-  background-image: url("../images/backgroundFitness.jpg");
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-  background-position: center;
-  height: 100vh;
+    background-image: url("../images/backgroundFitness.jpg");
+    min-height: 100vh;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
 }
 
-.fitnessParagraphDiv {
-
-
+.fitnessOverlay {
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
-.fitnessParagraph p {
-  color: $light;
-  font-size: $text-font-size;
-  padding: 0;
+.fitnessParagraphDiv1 {
+    margin-top: $spacing-5;
+}
+
+.fitnessParagraphDiv1, .fitnessParagraphDiv2 {
+    color: $light;
+    font-size: $text-font-size;
+    margin-bottom: $spacing-5;
+}
+
+.fitnessParagraph {
+    margin-left: $spacing-3;
+    margin-right: $spacing-3;
 }
 
 .fitnessParagraphImage {
-  width: 100%;
-  display: block;
+    width: 100%;
+    display: block;
 }
 
 .fitnessSubmitParagraph {
-  padding: 0;
-  color: $light;
-  font-size: $text-font-size;
+    padding: 0;
+    color: $light;
+    font-size: $text-font-size;
+}
+
+.fitnessButton {
+    margin-bottom: $spacing-4;
 }
