@@ -1,18 +1,14 @@
 @import "app.scss";
 
 .nordic-walking {
-  background-image: url("../images/nordic_walking.jpg");
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-
-}
-
-.nordic-walking {
     text-align: center;
+    background-image: url("../images/nordic_walking.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
   & h1 {
       padding: $spacing-5 $spacing $spacing-4;
       color: $light;
-} .row {
+} & .row {
         margin-top: $spacing-4;
         align-items: center;
     } & .row:nth-child(2n) {
