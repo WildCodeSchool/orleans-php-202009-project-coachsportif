@@ -1,0 +1,32 @@
+@import "app.scss";
+
+.fitnessBackground {
+  background-image: url("../images/backgroundFitness.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+}
+
+.fitnessParagraphDiv {
+
+
+}
+
+.fitnessParagraph p {
+  color: $light;
+  font-size: $text-font-size;
+  padding: 0;
+}
+
+.fitnessParagraphImage {
+  width: 100%;
+  display: block;
+}
+
+.fitnessSubmitParagraph {
+  padding: 0;
+  color: $light;
+  font-size: $text-font-size;
+}
