@@ -1,18 +1,61 @@
 {% extends 'layout.html.twig' %}
-{% block stylesheets %}
-    {{ encore_entry_link_tags('home') }}
-{% endblock %}
+
+    {% block stylesheets %}
+        {{ encore_entry_link_tags('home') }}
+    {% endblock %}
+
 {% block title %}Home{% endblock %}
 
 {% block body %}
-    <h1>Damien Gouveia</h1>
-    <div class="d-flex justify-content-center">
-        <div class="homeTextPresentation">
-                {% for text in home %}
-                   <p class="homeText">{{ text.text }}</p>
-                {% endfor %}
+    <div class="containerOverlay"></div>
+    <section class="textIntro">
+        <h1>Damien Gouveia</h1>
+            <div class="d-flex justify-content-center py-4">
+                <div class="homeTextPresentation">
+                    {% for text in home %}
+                        <p class="homeText">{{ text.text }}</p>
+                    {% endfor %}
+                </div>
+            </div>
+    </section>
+    <section class="serviceSport">
+        <div class="container-fluid bg-info text-light col-12 py-4">
+           <h2>Nos services</h2>
         </div>
-    </div>
+        <div class="sportCard card-deck col-lg-12 m-0 text-center">
+            <div class="card m-3">
+                <div class="view overlay">
+                    <img class="sportAdapt card-img-top" src="{{ asset('build/images/sportAdapte.jpg') }}"
+                         alt="Carte sport adapté">
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">Activité adaptée</h3>
+                    <p class="card-text py-3">Les Activités physiques adaptées permettent de faire le lien entre les activités
+                        physiques, sportives et artistiques et le handicap. Le but recherché est l’autodétermination des
+                        personnes en situation de handicap à adopter un mode de vie physiquement actif sur une base
+                        régulière afin de réduire les facteurs de risque reliés au mode de vie sédentaire et mettre en place
+                        les conditions nécessaires pour améliorer la condition physique, et le bien être psychologique</p>
+                    <a href="#" class="btn btn-dark">Plus d'informations</a>
+                </div>
+            </div>
+            <div class="card m-3">
+                <div class="view overlay">
+                    <img class="fitness card-img-top" src="{{ asset('build/images/remiseEnForme.jpg') }}"
+                         alt="Carte fitness">
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">Remise en forme</h3>
+                    <p class="card-text py-3">Une remise en forme efficace et durable pour atteindre et conserver une bonne
+                        condition physique et un poids de forme dépend davantage de l'intensité des exercices du programme
+                        sportif suivi que du volume d'entraînement. Reprendre le sport ne peut s'effectuer correctement sans
+                        progressivité. Il faut du temps et un fin dosage dans l'intensité des séances de reprise mais aussi
+                        des nutriments consommés pour espérer poursuivre longtemps le sport avec plaisir et sans
+                        blessure.</p>
+                    <a href="#" class="btn btn-dark">Plus d'informations</a>
+                </div>
+            </div>
+        </div>
+    </section>
     <section class="homeContact">
         <div class="container-fluid bg-info text-light text-center col-12 py-4">
             <h2>Contact</h2>

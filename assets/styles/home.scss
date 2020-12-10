@@ -3,13 +3,16 @@
 h1 {
     display: flex;
     justify-content: center;
-    margin: $spacing-3;
+}
+
+h2 {
+    display: flex;
+    justify-content: center;
 }
 
 .homeTextPresentation {
     display: flex;
     align-content: center;
-    margin: $spacing-3;
 }
 
 .homeText {
@@ -18,10 +21,23 @@ h1 {
     width: 60vw;
 }
 
-.homeContact {
-    padding: $spacing-4 0;
-}
-
 .cardContact {
     padding-top: $spacing-4;
+}
+
+.sportAdapt {
+    filter: brightness(60%);
+}
+
+.fitness {
+    filter: brightness(60%);
+}
+
+.sportCard {
+    padding: $spacing-4 0;
+    background: url("../images/fondSectionSport.jpg") no-repeat fixed center;
+}
+
+.serviceSport {
+    padding-top: $spacing-3;
 }
