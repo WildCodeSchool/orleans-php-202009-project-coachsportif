@@ -3,23 +3,16 @@
 h1 {
     display: flex;
     justify-content: center;
-    margin: $spacing-3;
 }
 
 h2 {
     display: flex;
     justify-content: center;
-    margin: $spacing-3;
-}
-
-.textIntro {
-    padding-top: $spacing-3;
 }
 
 .homeTextPresentation {
     display: flex;
     align-content: center;
-    margin: $spacing-3;
 }
 
 .homeText {
@@ -32,12 +25,12 @@ h2 {
     filter: brightness(60%);
 }
 
-.remiseForme {
+.fitness {
     filter: brightness(60%);
 }
 
 .sportCard {
-    padding-top: $spacing-3;
+    padding-top: $spacing-4;
     background: url("../images/fondSectionSport.jpg") no-repeat fixed center;
 }
 
