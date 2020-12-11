@@ -1,0 +1,39 @@
+@import "app.scss";
+
+h1 {
+    display: flex;
+    justify-content: center;
+}
+
+h2 {
+    display: flex;
+    justify-content: center;
+}
+
+.homeTextPresentation {
+    display: flex;
+    align-content: center;
+}
+
+.homeText {
+    color: $text-color;
+    text-align: center;
+    width: 60vw;
+}
+
+.sportAdapt {
+    filter: brightness(60%);
+}
+
+.fitness {
+    filter: brightness(60%);
+}
+
+.sportCard {
+    padding-top: $spacing-4;
+    background: url("../images/fondSectionSport.jpg") no-repeat fixed center;
+}
+
+.serviceSport {
+    padding-top: $spacing-3;
+}
