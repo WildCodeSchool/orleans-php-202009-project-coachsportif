@@ -27,13 +27,28 @@ h2 {
 
 .fitness {
     filter: brightness(60%);
-}
-
-.sportCard {
-    padding-top: $spacing-4;
-    background: url("../images/fondSectionSport.jpg") no-repeat fixed center;
+    border-radius: $border-radius;
 }
 
 .serviceSport {
     padding-top: $spacing-3;
+    background: url("../images/fondSectionSport.jpg") no-repeat fixed center;
 }
+
+.linkCategory {
+    transition: 0.3s;
+}
+
+.linkCategory:hover {
+    transition: 0.3s;
+    box-shadow: $box-shadow-card;
+}
+
+.sportCard {
+    border: none;
+}
+
+.serviceSport h2 {
+    color: $light;
+}
+
