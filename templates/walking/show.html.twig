@@ -1,21 +1,27 @@
 {% extends 'layout.html.twig' %}
 
+{% block stylesheets %}
+    {{ encore_entry_link_tags('walking') }}
+{% endblock %}
+
 {% block body %}
     <section class="nordic-walking">
-        <h1>Qu'est ce que la marche nordique ?</h1>
-        <div class="container">
-            {% for walk in walks %}
-                <div class="row justify-content-between">
-                    <div class="col-12 col-lg-5">
-                        <img src="{{ asset( walk.picture ) }}">
+        <div class="walkingOverlay">
+            <h1>Qu'est ce que la marche nordique ?</h1>
+            <div class="container">
+                {% for walk in walks %}
+                    <div class="row justify-content-between">
+                        <div class="col-12 col-lg-5">
+                            <img src="{{ asset( walk.picture ) }}">
+                        </div>
+                        <p class="col-12 col-lg-5">{{ walk.description }}</p>
                     </div>
-                    <p class="col-12 col-lg-5">{{ walk.description }}</p>
-                </div>
-            {% endfor %}
-        </div>
-        <div class="walk-submit">
-            <p>Si vous êtes intéressé, il suffit de remmplir un formulaire en ligne, simple et rapide !</p>
-            <a href="#" class="btn btn-primary">S'inscrire</a>
+                {% endfor %}
+            </div>
+            <div class="walk-submit">
+                <p>Si vous êtes intéressé, il suffit de remmplir un formulaire en ligne, simple et rapide !</p>
+                <a href="#" class="btn btn-primary">S'inscrire</a>
+            </div>
         </div>
     </section>
 {% endblock %}

@@ -5,6 +5,7 @@
     background-image: url("../images/nordic_walking.jpg");
     background-repeat: no-repeat;
     background-attachment: fixed;
+    background-size: cover;
 
     & h1 {
         padding: $spacing-5 $spacing $spacing-4;
@@ -35,6 +36,10 @@
         border-radius: $border-radius;
         text-align: left;
     }
+}
+
+.walkingOverlay {
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 .walk-submit {
