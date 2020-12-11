@@ -7,18 +7,27 @@
 {% block title %}Home{% endblock %}
 
 {% block body %}
-    <div class="containerOverlay"></div>
-    
+    <div class="containerOverlay">
+        <div class="title">
+            <h1>Damien Gouveia - Caoch Sportif</h1>
+        </div>
+    </div>
+
     <section class="textIntro">
-        <h1>Damien Gouveia</h1>
-            <div class="d-flex justify-content-center py-4">
-                <div class="homeTextPresentation">
-                    {% for text in home %}
-                        <p class="homeText">{{ text.text }}</p>
-                    {% endfor %}
+            <div class="container-fluid col-12">
+                <div class="row d-flex justify-content-center ">
+                    <div class="col-2 ">
+                        <img class="portrait" src="{{ asset('build/images/DamienG.jpg') }}" alt="Auto portrait" title="Damien Gouveia">
+                    </div>
+                    <div class="homeTextPresentation col-6 align-items-center">
+                        {% for text in home %}
+                            <p class="homeText">{{ text.text }}</p>
+                        {% endfor %}
+                    </div>
                 </div>
             </div>
     </section>
+
     <section class="serviceSport">
         <div class="container-fluid bg-info text-light col-12 py-4">
            <h2>Nos services</h2>

@@ -1,8 +1,10 @@
 @import "app.scss";
 
-h1 {
+.title {
     display: flex;
     justify-content: center;
+    color: $light;
+    padding-top: $spacing-4;
 }
 
 h2 {
@@ -15,9 +17,19 @@ h2 {
     align-content: center;
 }
 
+.portrait {
+    border-radius: $border-radius;
+    filter: brightness(60%);
+    max-height: 300px;
+    margin: $spacing;
+}
+
+.textIntro {
+    padding: $spacing-4;
+}
+
 .homeText {
     color: $text-color;
-    text-align: center;
     width: 60vw;
 }
 
@@ -32,8 +44,4 @@ h2 {
 .sportCard {
     padding-top: $spacing-4;
     background: url("../images/fondSectionSport.jpg") no-repeat fixed center;
-}
-
-.serviceSport {
-    padding-top: $spacing-3;
 }
