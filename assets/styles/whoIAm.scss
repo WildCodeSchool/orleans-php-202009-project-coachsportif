@@ -2,57 +2,58 @@
 @import "variables.scss";
 
 .who-back {
-  height: 100vh;
-  background-image: url("../images/who.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
-  width: 100%;
+    height: 100vh;
+    background-image: url("../images/who.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    width: 100%;
 }
 
 section {
-  padding: 100px 0;
+    padding: 100px 0;
 }
 
 section p {
-  color: $light;
-  margin-bottom: 0;
+    color: $light;
+    margin-bottom: 0;
 
 }
 
 section ul {
-  color: $light;
+    color: $light;
 }
 
 section h2 {
-  margin-bottom: $spacing-4;
-  color: $light;
+    margin-bottom: $spacing-4;
+    color: $light;
 }
 
 h1 {
-  color: $light;
-  margin-top: $spacing-4 ;
+    color: $light;
+    margin-top: $spacing-4 ;
 }
 
 .container-fluid {
-  background: $dark;
+    background: $dark;
 }
+
 .who-fitnessOverlay {
-  background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 .DamienG {
-  padding-top: $spacing-4;
+    padding-top: $spacing-4;
 }
 
 .card-text {
-  color: $dark;
+    color: $dark;
 }
 
 .card {
-  margin-top: $spacing-3;
+    margin-top: $spacing-3;
 }
 
 .card-up {
-  background: $dark;
+    background: $dark;
 }
