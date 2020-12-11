@@ -32,10 +32,10 @@
 }
 
 .fitnessParagraphImage {
-    width: 100%;
+    padding: 0;
     display: block;
     filter: brightness(80%);
-    border-radius: $border-radius;
+    border-radius: $border-radius*3;
 }
 
 .fitnessSubmitParagraph {
