@@ -1,5 +1,7 @@
 {% extends 'layout.html.twig' %}
-
+    {% block stylesheets %}
+        {{ encore_entry_link_tags('walking') }}
+    {% endblock %}
 {% block body %}
     <section class="nordic-walking">
         <h1>Qu'est ce que la marche nordique ?</h1>
