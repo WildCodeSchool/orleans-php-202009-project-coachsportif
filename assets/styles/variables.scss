@@ -7,6 +7,7 @@ $secondary: #43B0F1;
 $dark: #1E3D58;
 $light: #E8EEF1;
 $info: rgba(30, 61, 88, 0.90);
+$warning: rgba(30, 61, 88, 0);
 $font-title: 'Archivo Black', sans-serif;
 $font-text: 'Saira Semi Condensed', sans-serif;
 $text-font-size: 1rem;
@@ -22,6 +23,9 @@ $spacing-2: $spacing * 2;
 $spacing-3: $spacing * 4;
 $spacing-4: $spacing * 8;
 $spacing-5: $spacing * 16;
-$box-shadow: 3px 3px 15px 0(0,0,0,0.75);
 $border-radius: 8px;
 $box-shadow: 3px 3px 15px 0px rgba(0, 0, 0, 0.75);
+$box-shadow-card: 3px 3px 15px 0px rgba(255, 255, 255, 0.75);
+$backgroundOverlay: rgba(0, 0, 0, 0.5);
+
+
