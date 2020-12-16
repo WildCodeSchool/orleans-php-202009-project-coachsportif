@@ -1,5 +1,4 @@
 @import "app.scss";
-@import "variables.scss";
 
 .who-back {
     height: 100vh;
@@ -39,7 +38,7 @@ h1 {
 }
 
 .who-fitnessOverlay {
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: $backgroundOverlay;
 }
 
 .DamienG {
