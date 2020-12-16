@@ -1,28 +1,28 @@
 @import 'app.scss';
 
 .main h1 {
-  margin-top: $spacing-3;
+    margin-top: $spacing-3;
 }
 .information {
-  border: solid $dark;
-  border-radius: $border-radius;
+    border: solid $dark;
+    border-radius: $border-radius;
 }
 #map {
-  width: $width-map;
-  height: $weight-map;
-  margin: $spacing-2;
+    width: $width-map;
+    height: $weight-map;
+    margin: $spacing-2;
 }
 .timetable {
-  justify-content: center;
-  padding: $spacing-4;
+    justify-content: center;
+    padding: $spacing-4;
 }
 .day {
-  font-weight: bold;
-  font-size: 1.4em;
+    font-weight: bold;
+    font-size: 1.4em;
 }
 .link {
-  border-radius: 50%;
+    border-radius: 50%;
 }
 .link:hover {
-  box-shadow: $box-shadow;
+    box-shadow: $box-shadow;
 }
