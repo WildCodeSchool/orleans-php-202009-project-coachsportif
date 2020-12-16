@@ -40,6 +40,7 @@ Encore
     .addEntry('walking', './assets/styles/walking.scss')
     .addEntry('barNav', './assets/styles/barNav.scss')
     .addEntry('footer', './assets/styles/footer.scss')
+    .addEntry('contact', './assets/styles/contact.scss')
 
 
     // When enabled, Webpack "splits" your files into smaller pieces for greater optimization.
