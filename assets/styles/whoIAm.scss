@@ -1,47 +1,31 @@
 @import "app.scss";
-@import "variables.scss";
 
-.who-back {
-    height: 100vh;
-    background-image: url("../images/who.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    width: 100%;
-}
-
-section {
+.who {
     padding: 100px 0;
+    background: $light;
 }
 
-section p {
-    color: $light;
+.who p {
+    color: $dark;
     margin-bottom: 0;
 
 }
 
-section ul {
-    color: $light;
+.who ul {
+    color: $dark;
 }
 
-section h2 {
+.who h2 {
     margin-bottom: $spacing-4;
-    color: $light;
+    color: $dark;
 }
 
-h1 {
-    color: $light;
-    margin-top: $spacing-4 ;
-}
-
-.container-fluid {
-    background: $dark;
-}
-
-.who-fitnessOverlay {
-    background-color: rgba(0, 0, 0, 0.5);
+.who-title {
+    color: $dark;
+    text-align: center;
 }
 
 .DamienG {
-    padding-top: $spacing-4;
+
+    border-radius: 8px;
 }
