@@ -9,12 +9,16 @@
     background-position: center;
 }
 
+.fitnessBackground h1 {
+    padding-top: $spacing-5;
+}
+
 .fitnessOverlay {
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: $backgroundOverlay;
 }
 
 .fitnessParagraphDiv1 {
-    margin-top: $spacing-5;
+    margin-top: $spacing-4;
 }
 
 .fitnessParagraphDiv1, .fitnessParagraphDiv2 {
@@ -29,8 +33,10 @@
 }
 
 .fitnessParagraphImage {
-    width: 100%;
+    padding: 0;
     display: block;
+    filter: brightness(80%);
+    border-radius: $border-radius*3;
 }
 
 .fitnessSubmitParagraph {
