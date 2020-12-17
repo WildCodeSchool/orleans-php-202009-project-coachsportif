@@ -1,23 +1,23 @@
 @import 'app.scss';
 
 .admin-walking {
-  text-align: center;
+    text-align: center;
 
-  & img {
-      display: block;
-      width: 100%;
-      border-radius: $border-radius;
-      box-shadow: $box-shadow;
-      margin-bottom: $spacing-3;
-  }
+    & img {
+        display: block;
+        width: 100%;
+        border-radius: $border-radius;
+        box-shadow: $box-shadow;
+        margin-bottom: $spacing-3;
+    }
 
-  & p {
-      text-align: left;
-      margin-bottom: $spacing-3;
-  }
+    & p {
+        text-align: left;
+        margin-bottom: $spacing-3;
+    }
 
-  & .row {
-      margin-top: $spacing-4;
-      margin-bottom: $spacing-3;
-  }
+    & .row {
+        margin-top: $spacing-4;
+        margin-bottom: $spacing-3;
+    }
 }
