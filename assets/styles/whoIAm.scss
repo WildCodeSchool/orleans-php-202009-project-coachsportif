@@ -45,3 +45,26 @@ h1 {
 .DamienG {
     padding-top: $spacing-4;
 }
+
+.opinionTitle{
+    margin-bottom: $spacing-4;
+    color: $dark;
+}
+
+.opinionCard{
+    border-width:1px;
+    border-style:solid;
+    border-color:$warning;
+    margin: $spacing-2;
+    align-content: center;
+}
+
+.opinionText{
+    color: $dark;
+    margin-bottom: 0;
+}
+
+.opinionAuthor{
+    color: $dark;
+    margin-bottom: 0;
+}
