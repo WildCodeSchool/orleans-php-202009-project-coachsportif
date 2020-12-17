@@ -43,6 +43,7 @@ Encore
     .addEntry('contact', './assets/styles/contact.scss')
     .addEntry('who', './assets/styles/whoIAm.scss')
 
+
     // When enabled, Webpack "splits" your files into smaller pieces for greater optimization.
     .splitEntryChunks()
 
