@@ -1,34 +1,32 @@
 
+<section id="carousel-images" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+        <li data-target="#carousel-images" data-slide-to="0" class="active"></li>
+        <li data-target="#carousel-images" data-slide-to="1"></li>
+        <li data-target="#carousel-images" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+                    {% set image = "" %}
+                    {% for picture in pictures %}
+                    {% set image = picture %}
+            <div class="carousel-item  {% if loop.index0 == 0 %} active {% endif %}">
+                <div class="carousel-caption">
+                    <h1 class="title-light">Damien Gouveia Coach Sportif</h1>
+                </div>
+                <img class="imageCarousel vh-100 w-100" src="/build/images/{{ image.picture }}"
+                     alt="{{ image.picture }}">
 
-
-        <section id="carousel-news" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators">
-                <li data-target="#carousel-news" data-slide-to="0" class="active"></li>
-                <li data-target="#carousel-news" data-slide-to="1"></li>
-                <li data-target="#carousel-news" data-slide-to="2"></li>
-            </ol>
-            <div class="carousel-inner">
-                            {% set image = "" %}
-                            {% for picture in pictures %}
-                            {% set image = picture %}
-                    <div class="carousel-item  {% if loop.index0 == 0 %} active {% endif %}">
-                        <div class="carousel-caption">
-                            <h1 class="title-light">Damien Gouveia Coach Sportif</h1>
-                        </div>
-                        <img class="imageCarousel vh-100 w-100" src="/build/images/{{ image.picture }}"
-                             alt="{{ image.picture }}">
-
-                    </div>
-                {% endfor %}
             </div>
-            <a class="carousel-control-prev" href="#carousel-news" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Précèdent</span>
-            </a>
-            <a class="carousel-control-next" href="#carousel-news" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Suivant</span>
-            </a>
-        </section>
+        {% endfor %}
+    </div>
+    <a class="carousel-control-prev" href="#carousel-images" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Précèdent</span>
+    </a>
+    <a class="carousel-control-next" href="#carousel-images" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Suivant</span>
+    </a>
+</section>
 
 
