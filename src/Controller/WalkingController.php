@@ -22,7 +22,9 @@ class WalkingController extends AbstractController
     public function show(WalkingRepository $walkingRepository): Response
     {
         $walks = $walkingRepository->findAll();
+        $pictures = $walkingRepository->findAll();
         return $this->render('walking/show.html.twig', [
+            'pictures' => $pictures,
             'walks' => $walks,
         ]);
     }
