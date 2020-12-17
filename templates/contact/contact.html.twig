@@ -1,0 +1,97 @@
+{% extends 'layout.html.twig' %}
+
+{% block stylesheets %}
+    {{ encore_entry_link_tags('contact') }}
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+          integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+          crossorigin=""/>
+{% endblock %}
+
+{% block title %} Contacts {% endblock %}
+{% block body %}
+    {% set week = {
+        0: {'day':'Mon', 'jour':'Lundi', 'horaire':'8h00-21h00'},
+        1: {'day':'Tue', 'jour':'Mardi', 'horaire':'8h00-21h00'},
+        2: {'day':'Wed', 'jour':'Mercredi', 'horaire':'8h00-21h00'},
+        3: {'day':'Thu', 'jour':'Jeudi', 'horaire':'8h00-21h00'},
+        4: {'day':'Fri', 'jour':'Vendredi', 'horaire':'8h00-21h00'},
+        5: {'day':'Sat', 'jour':'Samedi', 'horaire':'9h00-12h00'},
+        6: {'day':'Sun', 'jour':'Dimanche', 'horaire':'Fermé'},
+    } %}
+    <div class="container main justify-content-center text-center">
+        <h1>Me contacter</h1>
+        <div class="information row p-4 justify-content-around">
+            <div class="col-lg-4 col-md-6 col-sm-6 pb-1">
+                <img src="{{ asset('build/images/phone.png') }}" alt="phone">
+                <h4>Téléphone</h4>
+                <p>06 15 26 37 67 </p>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-4 pb-1">
+                <img src="{{ asset('build/images/home.png') }}" alt="home">
+                <h4>Adresse</h4>
+                <p>4 allee des Lilas</p>
+                <p>45650 Saint-Jean-le-Blanc</p>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-6 p-1">
+                <img src="{{ asset('build/images/email.png') }}" alt="mail">
+                <h4>Mail</h4>
+                <p>damien_gouveia@hotmail.fr</p>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-6 pb-1">
+                <a href="https://www.facebook.com/pages/category/Sports---Fitness-Instruction/Damien-Gouveia-Coaching-108097141024441/"
+                   target="_blank"><img class="link" src="{{ asset('build/images/facebook.png') }}" alt="facebook"></a>
+                <h4>Facebook</h4>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-4 pb-1">
+                <a href="https://www.youtube.com/channel/UCjRmgQuYUU4Ktl0SihlFs3w" target="_blank">
+                    <img class="link" src="{{ asset('build/images/youtube.png') }}" alt="youtube"></a>
+                <h4>Youtube</h4>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="timetable col-lg-6 col-md-6 col-sm-4">
+                <h2 class="title m-4">Horaires d'ouverture</h2>
+                <table class="table text-dark">
+                    <thead class="thead-light">
+                    <tr>
+                        <th scope="col">Jours</th>
+                        <th scope="col">Horaires</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for day in week %}
+                        <tr>
+                            <td class="{% if "now"|date('D') == day.day %}day{% endif %}">{{ day.jour }}</td>
+                            <td class="{% if "now"|date('D') == day.day %}day{% endif %}">{{ day.horaire }}</td>
+                        </tr>
+                    {% endfor %}
+                    <tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div id="map"></div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ encore_entry_script_tags('contact') }}
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+            integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+            crossorigin=""></script>
+    <script> let map = L.map('map').setView([47.878264, 1.9258559], 13);
+
+        function initMap() {
+            L.tileLayer('https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png', {
+                attribution: 'données © <a href="//osm.org/copyright">OpenStreetMap</a>/ODbL - rendu <a href="//openstreetmap.fr">OSM France</a>',
+                minZoom: 5,
+                maxZoom: 18
+            }).addTo(map);
+        }
+
+        window.onload = function () {
+            initMap();
+        };
+        let marker = L.marker([47.878264, 1.9258559])
+            .addTo(map);
+        marker.bindPopup("<p>4 allée des Lilas, 45650 SAINT JEAN LE BLANC </p>")</script>
+{% endblock %}
