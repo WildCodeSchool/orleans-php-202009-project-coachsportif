@@ -44,11 +44,12 @@ h2 {
 
 .serviceSport {
     padding-top: $spacing-3;
-    background: url("../images/fondSectionSport.jpg") no-repeat fixed center;
+    background-color: $info;
 }
 
 .linkCategory {
     transition: 0.3s;
+    border: 2px solid $warning;
 }
 
 .linkCategory:hover {
