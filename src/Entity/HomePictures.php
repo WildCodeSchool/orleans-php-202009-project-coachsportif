@@ -15,12 +15,12 @@ class HomePictures
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
      */
-    private $id;
+    private ?int $id;
 
     /**
      * @ORM\Column(type="text")
      */
-    private $picture;
+    private ?string $picture;
 
     public function getId(): ?int
     {

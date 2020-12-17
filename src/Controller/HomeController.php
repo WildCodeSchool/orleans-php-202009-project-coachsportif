@@ -14,13 +14,13 @@ class HomeController extends AbstractController
     /**
      * @Route("/", name="home")
      * @param HomeRepository $homeRepository
-     * @param HomePicturesRepository $homePicturesRepository
+     * @param HomePicturesRepository $homePicRepository
      * @return Response
      */
-    public function index(HomeRepository $homeRepository, HomePicturesRepository $homePicturesRepository): Response
+    public function index(HomeRepository $homeRepository, HomePicturesRepository $homePicRepository): Response
     {
         $home = $homeRepository->findAll();
-        $pictures = $homePicturesRepository->findAll();
+        $pictures = $homePicRepository->findAll();
         return $this->render('home/index.html.twig', [
             'pictures' => $pictures,
             'home' => $home

@@ -7,7 +7,7 @@ use App\Entity\HomePictures;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 
-class HomePicFixtures extends Fixture
+class HomePicturesFixtures extends Fixture
 {
     private const PICTURE = [
         "overlay.3e600b29.jpg",
@@ -17,7 +17,7 @@ class HomePicFixtures extends Fixture
 
     public function load(ObjectManager $manager)
     {
-        foreach (self::PICTURE as $key => $pictureName) {
+        foreach (self::PICTURE as $pictureName) {
             $home = new HomePictures();
             $home->setPicture($pictureName);
             $manager->persist($home);
