@@ -2,10 +2,12 @@
 
 namespace App\Controller;
 
+use App\Entity\Walking;
 use App\Repository\WalkingPicturesRepository;
 use App\Repository\WalkingRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Routing\Annotation\Route;
 
 /**
  * Class nordicWalkingController
@@ -23,7 +25,7 @@ class WalkingController extends AbstractController
     public function show(
         WalkingRepository $walkingRepository,
         WalkingPicturesRepository $walkingPicRepository
-    ): Response {
+    ): Response{
         $walks = $walkingRepository->findAll();
         $pictures = $walkingPicRepository->findAll();
         return $this->render('walking/show.html.twig', [
