@@ -6,13 +6,17 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-class FitnessController extends AbstractController
+/**
+ * @Route("/contact", name="contact_")
+ */
+class ContactController extends AbstractController
 {
     /**
-     * @Route("/remise_en_forme", name="fitness")
+     * @Route("/", name="show")
+     * @return Response
      */
     public function index(): Response
     {
-        return $this->render('fitness/index.html.twig');
+        return $this->render('contact/contact.html.twig');
     }
 }
