@@ -49,6 +49,7 @@ h2 {
 
 .linkCategory {
     transition: 0.3s;
+    border: 2px solid $warning;
 }
 
 .linkCategory:hover {
