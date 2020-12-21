@@ -14,6 +14,7 @@ import '../styles/home.scss';
 import '../styles/barNav.scss';
 import '../styles/footer.scss';
 import '../styles/contact.scss';
+import '../styles/homeCo.scss';
 
 // Need jQuery? Install it with "yarn add jquery", then uncomment to import it.
 // import $ from 'jquery';

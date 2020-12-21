@@ -42,6 +42,8 @@ Encore
     .addEntry('footer', './assets/styles/footer.scss')
     .addEntry('contact', './assets/styles/contact.scss')
     .addEntry('who', './assets/styles/whoIAm.scss')
+    .addEntry('homeCo', './assets/styles/homeCo.scss')
+
 
 
     // When enabled, Webpack "splits" your files into smaller pieces for greater optimization.
