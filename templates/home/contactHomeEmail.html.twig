@@ -1,0 +1,8 @@
+{% block body %}
+
+    <h1>Message de {{ contact.firstname }} {{ contact.lastname }}</h1>
+    <p>Répondre à {{ contact.email }}</p>
+    Voici le message envoyé:
+    <p>{{ contact.message }}</p>
+
+{% endblock %}

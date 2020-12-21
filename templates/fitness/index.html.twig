@@ -1,0 +1,52 @@
+{% extends 'layout.html.twig' %}
+
+    {% block stylesheets %}
+        {{ encore_entry_link_tags('fitness') }}
+    {% endblock %}
+
+{% block title %}Fitness{% endblock %}
+
+{% block body %}
+    <section class="fitnessBackground">
+        <div class="fitnessOverlay">
+            <div class="fitnessContent">
+
+                <h1 class="text-center">Remise en forme</h1>
+
+                <div class="container">
+                    <div class="fitnessParagraphDiv1 row justify-content-center align-items-center">
+                        <img class="fitnessParagraphImage col-lg-5" src="{{ asset('build/images/LosingWeight.jpg') }}"
+                             alt="Fitness Paragraph Image">
+                        <p class="fitnessParagraph text-left col-lg-5 py-2">Vous avez arrêté le sport depuis
+                            longtemps,
+                            et voulez redevenir actif avec l'aide d'un professionnel ? Je vous propose donc un programme
+                            de
+                            remise en forme ! Axé sur le renforcement musculaire et des activités intense pour réveiller
+                            votre système cardio-vasculaire, Vous retrouverez une forme physique rapidement et
+                            efficacement,
+                            dans une ambiance agréable et conviviale.
+                        </p>
+                    </div>
+
+                    <div class="fitnessParagraphDiv2 row flex-row-reverse justify-content-center align-items-center">
+                        <img class="fitnessParagraphImage col-lg-5" src="{{ asset('build/images/SalleSport.jpg') }}"
+                             alt="Fitness Paragraph Image">
+                        <p class="fitnessParagraph text-left col-lg-5 py-2">J'ai à disposition pour vous, une salle
+                            équipé de tout les accessoires nécessaire pour des séances agréable, intense, et sérieuses.
+                            Vous pourrez donc me retrouver dans cette salle de sport individuellement ou en petit groupe
+                            pour parvenir à votre objectif.</p>
+                    </div>
+                </div>
+                <div class="container d-flex justify-content-center">
+                    <div class="fitnessSubmitParagraph row text-center">
+                        <p>Si vous-êtes intéressé, il vous suffit de remplir un formulaire en ligne, simple et rapide
+                            !</p>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-center">
+                    <a class="fitnessButton btn-lg btn-primary" href="#">S'inscrire</a>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
