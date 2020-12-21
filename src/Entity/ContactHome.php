@@ -2,29 +2,30 @@
 
 namespace App\Entity;
 
-use Symfony\Component\Validator\Constraints as Assert;
-
 class ContactHome
 {
     /**
      * @Assert\Email(message = "The email '{{ value }}' is not a valid email.")
      */
-    private ?string $email = null;
+    private ?string $email;
 
     private ?string $message;
     /**
      * @Assert\NotBlank(message="ne me laisse pas tout vide")
-     * @Assert\Length(max="255", maxMessage="La catégorie saisie {{ value }} est trop longue, elle ne devrait pas dépasser {{ limit }} caractères")
+     * @Assert\Length(max="255", maxMessage="La catégorie saisie {{ value }} est trop longue,
+     * elle ne devrait pas dépasser {{ limit }} caractères")
      * */
     private ?string $firstname;
     /**
      * @Assert\NotBlank(message="ne me laisse pas tout vide")
-     * @Assert\Length(max="255", maxMessage="La catégorie saisie {{ value }} est trop longue, elle ne devrait pas dépasser {{ limit }} caractères")
+     * @Assert\Length(max="255", maxMessage="La catégorie saisie {{ value }} est trop longue,
+     * elle ne devrait pas dépasser {{ limit }} caractères")
      * */
     private ?string $lastname;
     /**
      * @Assert\NotBlank(message="ne me laisse pas tout vide")
-     * @Assert\Length(max="255", maxMessage="La catégorie saisie {{ value }} est trop longue, elle ne devrait pas dépasser {{ limit }} caractères")
+     * @Assert\Length(max="255", maxMessage="La catégorie saisie {{ value }} est trop longue,
+     * elle ne devrait pas dépasser {{ limit }} caractères")
      * */
     private ?string $subject;
 
@@ -39,6 +40,7 @@ class ContactHome
 
         return $this;
     }
+
     public function getSubject(): ?string
     {
         return $this->subject;

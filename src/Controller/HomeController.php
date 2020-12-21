@@ -3,7 +3,6 @@
 namespace App\Controller;
 
 use App\Entity\ContactHome;
-use App\Entity\Home;
 use App\Form\ContactHomeType;
 use App\Repository\HomeRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -12,7 +11,6 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Mailer\Exception\TransportExceptionInterface;
 use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\Mime\Email;
-use Symfony\Component\Routing\Annotation\Route;
 
 class HomeController extends AbstractController
 {
@@ -29,7 +27,7 @@ class HomeController extends AbstractController
         $contact = new ContactHome();
         $form = $this->createForm(ContactHomeType::class, $contact);
         $form->handleRequest($request);
-        if (($form->isSubmitted() && $form->isValid())){
+        if (($form->isSubmitted() && $form->isValid())) {
             $email = (new Email())
                 ->from($this->getParameter('mailer_from'))
                 ->to('loicchenuet@hotmail.fr')
