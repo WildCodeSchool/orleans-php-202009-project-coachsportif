@@ -31,7 +31,7 @@ class HomeController extends AbstractController
             $email = (new Email())
                 ->from($this->getParameter('mailer_from'))
                 ->to('loicchenuet@hotmail.fr')
-                ->subject($contact->getSubject())
+                ->subject('Sujet:' . $contact->getSubject())
                 ->html($this->renderView('home/contactHomeEmail.html.twig', ['contact' => $contact]));
             $mailer->send($email);
             return $this->redirectToRoute('confirmation');
