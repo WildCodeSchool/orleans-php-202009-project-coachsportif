@@ -15,13 +15,14 @@
     </div>
 
     <section class="textIntro">
+        <h2>Présentation</h2>
         <div class="container-fluid">
             <div class="row justify-content-center">
                 <div class="col-lg-2 ">
                     <img class="portrait" src="{{ asset('build/images/DamienG.jpg') }}" alt="Auto portrait"
                          title="Damien Gouveia">
                 </div>
-                <div class="homeTextPresentation col-lg-6 align-items-center">
+                <div class="homeTextPresentation col-lg-6 d-flex align-items-center">
                     {% for text in home %}
                         <p class="homeText">{{ text.text }}</p>
                     {% endfor %}
@@ -60,45 +61,30 @@
         </div>
     </section>
 
-{#    <section class="homeContact">#}
-{#        <div class="container-fluid bg-info text-light text-center col-12 py-4">#}
-{#            <h2>Contact</h2>#}
-{#        </div>#}
-{#        <div class="cardContact ">#}
-{#            <div class="container-fluid d-flex justify-content-around text-center m-0">#}
-{#                <div class="col-5 align-self-lg-center">#}
-{#                    <img class="salleSportImage" src="{{ asset('build/images/salleSport.jpg') }}" alt="">#}
-{#                    <p>Gouveia Damien <br>#}
-{#                        06-15-26-37-67 <br>#}
-{#                        Saint Jean le Blanc</p>#}
-{#                </div>#}
-{#                <div class="col-4 al">#}
-{#                    <form class="text-center" action="/">#}
-{#                        <div class="md-form mt-3">#}
-{#                            <label for="materialContactFormName">Name</label>#}
-{#                            <input type="text" id="materialContactFormName" class="form-control">#}
-{#                        </div>#}
-{#                        <div class="md-form mt-3">#}
-{#                            <label for="materialContactFormEmail">E-mail</label>#}
-{#                            <input type="email" id="materialContactFormEmail" class="form-control">#}
-{#                        </div>#}
-{#                        <div class="md-form mt-3">#}
-{#                            <label for="materialContactFormMessage">Message</label>#}
-{#                            <textarea id="materialContactFormMessage" class="form-control md-textarea"#}
-{#                                      rows="3"></textarea>#}
-{#                        </div>#}
-{#                        <button class="btn btn-outline-info btn-rounded btn-block z-depth-0 my-4 waves-effect"#}
-{#                                type="submit">Send#}
-{#                        </button>#}
-{#                    </form>#}
-{#                </div>#}
-{#            </div>#}
-{#        </div>#}
-{#    </section>#}
-
-    {{ form_start(form) }}
-    {{ form_widget(form) }}
-    <input type='submit' value='Envoyer'>
-    {{ form_end(form) }}
-
+    <section class="homeContact">
+        <h2>Contact</h2>
+        <div class="container-fluid">
+            <div class="row d-flex justify-content-center">
+                <div class="col-sm-6 col-md-6 col-lg-5 text-center">
+                    <div class="imgSportContact card card-inverse">
+                        <div class="card-img-overlay d-flex">
+                            <p class="informationContact text-primary align-self-end mx-auto">
+                                    Gouveia Damien <br>
+                                    06-15-26-37-67 <br>
+                                    Saint Jean le Blanc</p>
+                        </div>
+                        <img class="salleSportImage card-img" src="{{ asset('build/images/salleSport.jpg') }}"
+                             alt="Salle de sport">
+                    </div>
+                </div>
+                {% form_theme form 'bootstrap_4_layout.html.twig' %}
+                <div class="col-sm-6 col-md-6 col-lg-5 text-center">
+                    {{ form_start(form) }}
+                    {{ form_widget(form) }}
+                    <input class="btn btn-secondary btn-lg" type='submit' value='Envoyer'>
+                    {{ form_end(form) }}
+                </div>
+            </div>
+        </div>
+    </section>
 {% endblock %}
