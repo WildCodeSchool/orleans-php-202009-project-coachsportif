@@ -13,21 +13,18 @@ class ContactHome
 
     private ?string $message;
     /**
-     * @Assert\NotBlank(message="ne me laisse pas tout vide")
-     * @Assert\Length(max="255", maxMessage="La catégorie saisie {{ value }} est trop longue,
-     * elle ne devrait pas dépasser {{ limit }} caractères")
+     * @Assert\NotBlank
+     * @Assert\Length(max="255")
      * */
     private ?string $firstname;
     /**
-     * @Assert\NotBlank(message="ne me laisse pas tout vide")
-     * @Assert\Length(max="255", maxMessage="La catégorie saisie {{ value }} est trop longue,
-     * elle ne devrait pas dépasser {{ limit }} caractères")
+     * @Assert\NotBlank
+     * @Assert\Length(max="255")
      * */
     private ?string $lastname;
     /**
-     * @Assert\NotBlank(message="ne me laisse pas tout vide")
-     * @Assert\Length(max="255", maxMessage="La catégorie saisie {{ value }} est trop longue,
-     * elle ne devrait pas dépasser {{ limit }} caractères")
+     * @Assert\NotBlank
+     * @Assert\Length(max="255")
      * */
     private ?string $subject;
 
