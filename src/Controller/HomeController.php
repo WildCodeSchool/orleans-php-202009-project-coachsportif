@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Home;
+use App\Repository\CarouselRepository;
 use App\Repository\HomePicturesRepository;
 use App\Repository\HomeRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -14,13 +15,13 @@ class HomeController extends AbstractController
     /**
      * @Route("/", name="home")
      * @param HomeRepository $homeRepository
-     * @param HomePicturesRepository $homePicRepository
+     * @param CarouselRepository $carouselRepository
      * @return Response
      */
-    public function index(HomeRepository $homeRepository, HomePicturesRepository $homePicRepository): Response
+    public function index(HomeRepository $homeRepository, CarouselRepository $carouselRepository): Response
     {
         $home = $homeRepository->findAll();
-        $pictures = $homePicRepository->findAll();
+        $pictures = $carouselRepository->findAll();
         return $this->render('home/index.html.twig', [
             'pictures' => $pictures,
             'home' => $home
