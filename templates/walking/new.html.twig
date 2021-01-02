@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Walking{% endblock %}
+
+{% block body %}
+    <h1>New walking</h1>
+
+    {{ include('walking/_form.html.twig') }}
+
+    <a href="{{ path('walking_index') }}">Return</a>
+{% endblock %}
