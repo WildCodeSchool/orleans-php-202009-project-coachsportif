@@ -1,0 +1,25 @@
+{% extends 'layout_admin.html.twig' %}
+
+{% block stylesheets %}
+    {{ encore_entry_link_tags('adminWalking') }}
+{% endblock %}
+
+{% block body %}
+    <section class="admin-walking">
+        <h1>Marche nordique</h1>
+        <div class="container">
+            {% for walking in walkings %}
+                <div class="row justify-content-between">
+                    <div class="picture col-12 mb-2 col-lg-4">
+                        <img src="{{ asset( walking.picture ) }}">
+                    </div>
+                    <p class="col-12 col-lg-5">{{ walking.description }}</p>
+                    <div class="delete col-lg-2">
+                        {{ include('walking/_delete_form.html.twig') }}
+                    </div>
+                </div>
+                <hr>
+            {% endfor %}
+        </div>
+    </section>
+{% endblock %}
