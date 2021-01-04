@@ -77,7 +77,7 @@ class HomeController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('home_index');
+            return $this->redirectToRoute('home');
         }
 
         return $this->render('home/edit.html.twig', [

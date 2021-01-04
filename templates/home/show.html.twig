@@ -3,24 +3,27 @@
 {% block title %}Home{% endblock %}
 
 {% block body %}
-    <h1>Home</h1>
+    <div class="container text-center">
+        <h1>Administration page d'acceuil</h1>
 
-    <table class="table">
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ home.id }}</td>
-            </tr>
-            <tr>
-                <th>Text</th>
-                <td>{{ home.text }}</td>
-            </tr>
-        </tbody>
-    </table>
+        <table class="table">
+            <tbody>
+                <tr>
+                    <th>Texte</th>
+                    <td>{{ home.text }}</td>
+                </tr>
+                <tr>
+                    <th>Image</th>
+                    <td>{{ home.picture }}</td>
+                </tr>
+            </tbody>
+        </table>
 
-    <a href="{{ path('home') }}">back to list</a>
+        <a class="btn btn-secondary btn-lg m-3" href="{{ path('home_edit', {'id': home.id}) }}">Modifier</a>
 
-    <a href="{{ path('home_edit', {'id': home.id}) }}">edit</a>
-
-    {{ include('home/_delete_form.html.twig') }}
+        <div class="row justify-content-center">
+            <a class="btn btn-secondary btn-lg m-3" href="{{ path('home') }}">Retour</a>
+            {{ include('home/_delete_form.html.twig') }}
+        </div>
+    </div>
 {% endblock %}
