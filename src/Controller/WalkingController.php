@@ -16,11 +16,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class WalkingController extends AbstractController
 {
     /**
-<<<<<<< HEAD
-     * @Route("/", name="show")
-=======
      * @Route("/", name="walking_index", methods={"GET"})
->>>>>>> c97db21a55bf56964657ff7fb61928b8b5a08b59
      * @param WalkingRepository $walkingRepository
      * @return Response
      */
