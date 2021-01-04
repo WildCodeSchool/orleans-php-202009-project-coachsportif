@@ -10,6 +10,8 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
+use Sensio\Bundle\FrameworkExtraBundle\Request\ParamConverter\ParamConverterInterface;
 
 /**
  * @Route("/")
@@ -100,7 +102,7 @@ class HomeController extends AbstractController
      */
     public function delete(Request $request, Home $home): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$home->getId(), $request->request->get('_token'))) {
+        if ($this->isCsrfTokenValid('delete' . $home->getId(), $request->request->get('_token'))) {
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($home);
             $entityManager->flush();
