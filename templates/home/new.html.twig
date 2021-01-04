@@ -1,11 +1,14 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}New Home{% endblock %}
+{% block title %}Ajoute d'un nouveau text{% endblock %}
 
 {% block body %}
-    <h1>Create new Home</h1>
-
-    {{ include('home/_form.html.twig') }}
-
-    <a href="{{ path('home_index') }}">back to list</a>
+    <div class="container">
+        <h1>Ajout d'un nouveau texte</h1>
+        {% form_theme form 'bootstrap_4_layout.html.twig' %}
+        <div class="text-center">
+            {{ include('home/_form.html.twig') }}
+        </div>
+        <a class="btn btn-secondary btn-lg m-3" href="{{ path('home') }}">Retour</a>
+    </div>
 {% endblock %}
