@@ -94,7 +94,7 @@ class HomeController extends AbstractController
      */
     public function delete(Request $request, Home $home): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$home->getId(), $request->request->get('_token'))) {
+        if ($this->isCsrfTokenValid('delete' . $home->getId(), $request->request->get('_token'))) {
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($home);
             $entityManager->flush();
