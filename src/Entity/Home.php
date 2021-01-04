@@ -22,6 +22,11 @@ class Home
      */
     private ?string $text;
 
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private ?string $picture;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -35,6 +40,18 @@ class Home
     public function setText(?string $text): self
     {
         $this->text = $text;
+
+        return $this;
+    }
+
+    public function getPicture(): ?string
+    {
+        return $this->picture;
+    }
+
+    public function setPicture(?string $picture): self
+    {
+        $this->picture = $picture;
 
         return $this;
     }
