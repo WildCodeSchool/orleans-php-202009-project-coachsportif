@@ -3,7 +3,6 @@
 {% endblock %}
 
 {% block navBar %}
-
         <nav class="navbar navbar-expand-lg navbar-dark bg-info fixed-top">
             <div class="container-fluid ">
                 <a class="navbar-brand img d-none d-lg-block " href="{{ path('home') }}"><img class="logo mr-2"
@@ -24,7 +23,7 @@
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                 <li><a class="dropdown-item" href="#">Activité adaptée</a></li>
                                 <li><a class="dropdown-item" href="{{ path('fitness') }}">Remise en forme</a></li>
-                                <li><a class="dropdown-item" href="{{ path('walking_show') }}">Marche nordique</a></li>
+                                <li><a class="dropdown-item" href="{{ path('walking_index') }}">Marche nordique</a></li>
                                 <li><a class="dropdown-item" href="#">Santé en entreprise</a></li>
                             </ul>
                         </li>
@@ -46,8 +45,8 @@
                         <li class="nav-item mx-3">
                             <a class="nav-link" href="#">Compte</a>
                         </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
+            </ul>
+        </div>
+    </div>
+</nav>
 {% endblock %}
