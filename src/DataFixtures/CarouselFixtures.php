@@ -9,17 +9,24 @@ use Doctrine\Persistence\ObjectManager;
 class CarouselFixtures extends Fixture
 {
     private const PICTURE = [
-        "overlay.3e600b29.jpg",
-        "backgroundFitness.bcc3e096.jpg",
-        "fondSectionSport.e0b81bd1.jpg"
+        "fondSectionSport.jpg" => "home",
+        "sportAdapte.jpg" => "home",
+        "overlay.jpg" => "home",
+        "remise_en_forme_carousel.jpg" => "fitness",
+        "remise_en_forme_carousel_2.jpg" => "fitness",
+        "remise_en_forme_carousel.de8ad0d4.jpg" => "fitness",
+        "nordic_walking_place_holder_4.jpg" => "walking",
+        "nordic_walking_place_holder_2.jpg" => "walking",
+        "nordic_walking_place_holder_3.jpg" => "walking",
     ];
+
 
     public function load(ObjectManager $manager)
     {
-        foreach (self::PICTURE as $pictureName) {
+        foreach (self::PICTURE as $pictureName => $pageName) {
             $carousel = new Carousel();
             $carousel->setPath($pictureName);
-            $carousel->setPage('home');
+            $carousel->setPage($pageName);
             $manager->persist($carousel);
         }
         $manager->flush();
