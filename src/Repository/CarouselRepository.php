@@ -19,17 +19,6 @@ class CarouselRepository extends ServiceEntityRepository
         parent::__construct($registry, Carousel::class);
     }
 
-//    public function findLikeName(string $path)
-//    {
-//        $queryBuilder = $this->createQueryBuilder('p')
-//            ->where('p.path LIKE :path')
-//            ->setParameter('path', '%' . $path . '%')
-//            ->orderBy('p.title', 'ASC')
-//            ->getQuery();
-//
-//        return $queryBuilder->getResult();
-//    }
-
     // /**
     //  * @return Carousel[] Returns an array of Carousel objects
     //  */

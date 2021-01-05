@@ -4,7 +4,6 @@ namespace App\Controller;
 
 use App\Entity\Home;
 use App\Repository\CarouselRepository;
-use App\Repository\HomePicturesRepository;
 use App\Repository\HomeRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
