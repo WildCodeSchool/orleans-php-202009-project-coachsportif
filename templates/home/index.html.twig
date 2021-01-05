@@ -15,13 +15,14 @@
     </div>
 
     <section class="textIntro">
+        <h2>Présentation</h2>
         <div class="container-fluid">
             <div class="row justify-content-center">
                 <div class="col-lg-2 ">
                     <img class="portrait" src="{{ asset('build/images/DamienG.jpg') }}" alt="Auto portrait"
                          title="Damien Gouveia">
                 </div>
-                <div class="homeTextPresentation col-lg-6 align-items-center">
+                <div class="homeTextPresentation col-lg-6 d-flex align-items-center">
                     {% for text in home %}
                         <p class="homeText">{{ text.text }}</p>
                     {% endfor %}
@@ -31,33 +32,58 @@
     </section>
 
     <section class="serviceSport">
-            <h2>Nos services</h2>
-                <div class="container-fluid ">
-                    <div class="bikes row pb-5 d-flex justify-content-center">
-
-                        <div class="col-sm-6 col-md-6 col-lg-5 d-sm-block">
-                            <a href="{{ path('walking_index') }}">
-                                <div class="linkCategory card text-white bg-warning card-inverse">
-                                    <img src="{{ asset('build/images/sportAdapte.jpg') }}" class="fitness card-img" alt="">
-                                    <div class="card-img-overlay d-flex">
-                                        <h2 class="card-title text-truncate align-self-center mx-auto">Activité adaptée</h2>
-                                    </div>
-                                </div>
-                            </a>
+        <h2>Nos services</h2>
+        <div class="container-fluid ">
+            <div class="bikes row pb-5 d-flex justify-content-center">
+                <div class="col-sm-6 col-md-6 col-lg-5 d-sm-block">
+                    <a href="{{ path('walking_index') }}">
+                        <div class="linkCategory card text-white bg-warning card-inverse">
+                            <img src="{{ asset('build/images/sportAdapte.jpg') }}" class="fitness card-img" alt="">
+                            <div class="card-img-overlay d-flex">
+                                <h2 class="card-title text-truncate align-self-center mx-auto">Activité adaptée</h2>
+                            </div>
                         </div>
-
-                        <div class="col-sm-6 col-md-6 col-lg-5 d-sm-block">
-                            <a href="{{ path('fitness') }}">
-                                <div class="linkCategory card text-white bg-warning card-inverse">
-                                    <img src="{{ asset('build/images/remiseEnForme.jpg') }}" class="fitness card-img" alt="">
-                                    <div class="card-img-overlay d-flex">
-                                        <h2 class="card-title text-truncate align-self-center mx-auto">Remise en forme</h2>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
+                    </a>
                 </div>
+                <div class="col-sm-6 col-md-6 col-lg-5 d-sm-block">
+                    <a href="{{ path('fitness') }}">
+                        <div class="linkCategory card text-white bg-warning card-inverse">
+                            <img src="{{ asset('build/images/remiseEnForme.jpg') }}" class="fitness card-img" alt="">
+                            <div class="card-img-overlay d-flex">
+                                <h2 class="card-title text-truncate align-self-center mx-auto">Remise en forme</h2>
+                            </div>
+
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
     </section>
 
+    <section class="homeContact">
+        <h2>Contact</h2>
+        <div class="container-fluid">
+            <div class="row d-flex justify-content-center">
+                <div class="col-sm-6 col-md-6 col-lg-5 text-center">
+                    <div class="imgSportContact card card-inverse">
+                        <div class="card-img-overlay d-flex">
+                            <p class="informationContact text-primary align-self-end mx-auto">
+                                    Gouveia Damien <br>
+                                    06-15-26-37-67 <br>
+                                    Saint Jean le Blanc</p>
+                        </div>
+                        <img class="salleSportImage card-img" src="{{ asset('build/images/salleSport.jpg') }}"
+                             alt="Salle de sport">
+                    </div>
+                </div>
+                {% form_theme form 'bootstrap_4_layout.html.twig' %}
+                <div class="col-sm-6 col-md-6 col-lg-5 text-center">
+                    {{ form_start(form) }}
+                    {{ form_widget(form) }}
+                    <input class="btn btn-secondary btn-lg" type='submit' value='Envoyer'>
+                    {{ form_end(form) }}
+                </div>
+            </div>
+        </div>
+    </section>
 {% endblock %}
