@@ -1,5 +1,9 @@
 @import "app.scss";
 
+section {
+    padding-bottom: $spacing-4;
+}
+
 .title {
     display: flex;
     justify-content: center;
@@ -12,11 +16,6 @@ h2 {
     justify-content: center;
 }
 
-.homeTextPresentation {
-    display: flex;
-    align-content: center;
-}
-
 .portrait {
     border-radius: $border-radius;
     filter: brightness(60%);
@@ -24,13 +23,18 @@ h2 {
     margin: $spacing;
 }
 
-.textIntro {
-    padding: $spacing-4;
+.textIntro h2 {
+    padding: $spacing-4 0;
 }
 
 .homeText {
     color: $text-color;
     width: 60vw;
+}
+
+.serviceSport h2 {
+    padding: $spacing-4 0;
+    color: $light;
 }
 
 .sportAdapt {
@@ -43,7 +47,6 @@ h2 {
 }
 
 .serviceSport {
-    padding-top: $spacing-3;
     background-color: $info;
 }
 
@@ -57,10 +60,25 @@ h2 {
     box-shadow: $box-shadow-card;
 }
 
-.sportCard {
+.homeContact h2 {
+    padding: $spacing-4 0;
+}
+
+.imgSportContact.card {
     border: none;
 }
 
-.serviceSport h2 {
-    color: $light;
+.salleSportImage {
+    border-radius: $border-radius;
+    margin-bottom: $spacing-2;
+    background-color: $transparent;
+}
+
+input:valid {
+    box-shadow: 0 0 2px 1px green;
+    border: none;
+}
+
+.homeContact {
+    padding-bottom: $spacing-4;
 }
