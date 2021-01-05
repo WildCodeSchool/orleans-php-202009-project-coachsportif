@@ -20,7 +20,7 @@ class HomeController extends AbstractController
     public function index(HomeRepository $homeRepository, CarouselRepository $carouselRepository): Response
     {
         $home = $homeRepository->findAll();
-        $pictures = $carouselRepository->findAll();
+        $pictures = $carouselRepository->findBy(['page' => 'home']);
         return $this->render('home/index.html.twig', [
             'pictures' => $pictures,
             'home' => $home

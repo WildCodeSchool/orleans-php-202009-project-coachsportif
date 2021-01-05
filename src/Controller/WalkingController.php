@@ -3,7 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Walking;
-use App\Repository\WalkingPicturesRepository;
+use App\Repository\CarouselRepository;
 use App\Repository\WalkingRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -19,15 +19,13 @@ class WalkingController extends AbstractController
     /**
      * @Route("/", name="show")
      * @param WalkingRepository $walkingRepository
-     * @param WalkingPicturesRepository $walkingPicRepository
+     * @param CarouselRepository $carouselRepository
      * @return Response
      */
-    public function show(
-        WalkingRepository $walkingRepository,
-        WalkingPicturesRepository $walkingPicRepository
-    ): Response {
+    public function show(WalkingRepository $walkingRepository, CarouselRepository $carouselRepository): Response
+    {
         $walks = $walkingRepository->findAll();
-        $pictures = $walkingPicRepository->findAll();
+        $pictures = $carouselRepository->findBy(['page' => 'walking']);
         return $this->render('walking/show.html.twig', [
             'pictures' => $pictures,
             'walks' => $walks,
