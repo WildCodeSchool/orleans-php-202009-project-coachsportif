@@ -59,7 +59,7 @@ class OpinionController extends AbstractController
      */
     public function edit(Request $request, Opinion $opinion): Response
     {
-        $form = $this->createForm(Opinion::class, $opinion);
+        $form = $this->createForm(OpinionType::class, $opinion);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
