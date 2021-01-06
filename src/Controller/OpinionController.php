@@ -65,7 +65,7 @@ class OpinionController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('opinion_index');
+            return $this->redirectToRoute('who');
         }
 
         return $this->render('opinion/edit.html.twig', [
