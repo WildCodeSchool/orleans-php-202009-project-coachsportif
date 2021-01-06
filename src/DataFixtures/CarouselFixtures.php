@@ -9,15 +9,9 @@ use Doctrine\Persistence\ObjectManager;
 class CarouselFixtures extends Fixture
 {
     private const PICTURE = [
-        "fondSectionSport.jpg" => "home",
-        "sportAdapte.jpg" => "home",
-        "overlay.jpg" => "home",
-        "remise_en_forme_carousel.jpg" => "fitness",
-        "remise_en_forme_carousel_2.jpg" => "fitness",
-        "remise_en_forme_carousel.de8ad0d4.jpg" => "fitness",
-        "nordic_walking_place_holder_4.jpg" => "walking",
-        "nordic_walking_place_holder_2.jpg" => "walking",
-        "nordic_walking_place_holder_3.jpg" => "walking",
+        "placeholder.png" => "home",
+        "placeholder2.jpg" => "fitness",
+        "placeholder3.jpg" => "walking",
     ];
 
 

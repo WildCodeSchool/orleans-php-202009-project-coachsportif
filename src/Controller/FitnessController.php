@@ -16,7 +16,7 @@ class FitnessController extends AbstractController
      */
     public function index(CarouselRepository $carouselRepository): Response
     {
-        $pictures = $carouselRepository->findBy(['page' => 'walking']);
+        $pictures = $carouselRepository->findBy(['page' => 'fitness']);
         return $this->render('fitness/index.html.twig', ['pictures' => $pictures,]);
     }
 }

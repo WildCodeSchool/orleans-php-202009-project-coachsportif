@@ -9,7 +9,7 @@ use Doctrine\Persistence\ObjectManager;
 class HomeFixtures extends Fixture
 {
     private const PICTURE = [
-        "DamienG.0f310ae1.jpg",
+        "placeholder150.png",
     ];
 
     public function load(ObjectManager $manager)

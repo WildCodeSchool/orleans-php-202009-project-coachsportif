@@ -23,7 +23,7 @@ class Home
     private ?string $text;
 
     /**
-     * @ORM\Column(type="text")
+     * @ORM\Column(type="string", length=255)
      */
     private ?string $picture;
 
