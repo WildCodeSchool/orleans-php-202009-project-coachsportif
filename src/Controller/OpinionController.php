@@ -73,6 +73,9 @@ class OpinionController extends AbstractController
 
     /**
      * @Route("/{id}", name="opinion_delete", methods={"DELETE"})
+     * @param Request $request
+     * @param Opinion $opinion
+     * @return Response
      */
     public function delete(Request $request, Opinion $opinion): Response
     {
@@ -82,6 +85,6 @@ class OpinionController extends AbstractController
             $entityManager->flush();
         }
 
-        return $this->redirectToRoute('opinion_index');
+        return $this->redirectToRoute('who');
     }
 }
