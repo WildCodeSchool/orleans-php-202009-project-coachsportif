@@ -27,6 +27,7 @@ class Tariff
     /**
      * @ORM\Column(type="float")
      * @Assert\NotBlank
+     * @Assert\Positive
      */
     private float $price;
 
