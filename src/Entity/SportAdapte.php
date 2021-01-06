@@ -2,13 +2,13 @@
 
 namespace App\Entity;
 
-use App\Repository\HomeRepository;
+use App\Repository\SportAdapteRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass=HomeRepository::class)
+ * @ORM\Entity(repositoryClass=SportAdapteRepository::class)
  */
-class Home
+class SportAdapte
 {
     /**
      * @ORM\Id
@@ -18,9 +18,9 @@ class Home
     private ?int $id;
 
     /**
-     * @ORM\Column(type="text", nullable=true)
+     * @ORM\Column(type="text")
      */
-    private ?string $text;
+    private ?string $description;
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -32,14 +32,14 @@ class Home
         return $this->id;
     }
 
-    public function getText(): ?string
+    public function getDescription(): ?string
     {
-        return $this->text;
+        return $this->description;
     }
 
-    public function setText(?string $text): self
+    public function setDescription(string $description): self
     {
-        $this->text = $text;
+        $this->description = $description;
 
         return $this;
     }

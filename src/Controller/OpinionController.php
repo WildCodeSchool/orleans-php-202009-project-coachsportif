@@ -32,7 +32,7 @@ class OpinionController extends AbstractController
             $entityManager->persist($opinion);
             $entityManager->flush();
 
-            return $this->redirectToRoute('opinion_index');
+            return $this->redirectToRoute('who');
         }
 
         return $this->render('opinion/new.html.twig', [
@@ -53,6 +53,9 @@ class OpinionController extends AbstractController
 
     /**
      * @Route("/{id}/edit", name="opinion_edit", methods={"GET","POST"})
+     * @param Request $request
+     * @param Opinion $opinion
+     * @return Response
      */
     public function edit(Request $request, Opinion $opinion): Response
     {
@@ -62,7 +65,7 @@ class OpinionController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('opinion_index');
+            return $this->redirectToRoute('who');
         }
 
         return $this->render('opinion/edit.html.twig', [
@@ -73,6 +76,9 @@ class OpinionController extends AbstractController
 
     /**
      * @Route("/{id}", name="opinion_delete", methods={"DELETE"})
+     * @param Request $request
+     * @param Opinion $opinion
+     * @return Response
      */
     public function delete(Request $request, Opinion $opinion): Response
     {
@@ -82,6 +88,6 @@ class OpinionController extends AbstractController
             $entityManager->flush();
         }
 
-        return $this->redirectToRoute('opinion_index');
+        return $this->redirectToRoute('who');
     }
 }

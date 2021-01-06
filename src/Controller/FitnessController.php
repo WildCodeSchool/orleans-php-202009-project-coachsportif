@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Repository\CarouselRepository;
 use App\Entity\Fitness;
 use App\Form\FitnessType;
 use App\Repository\FitnessRepository;
@@ -10,18 +11,24 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
+/**
+ * @Route("/fitness")
+ */
 class FitnessController extends AbstractController
 {
     /**
      * @Route("/remise_en_forme", name="fitness", methods={"GET"})
      * @param FitnessRepository $fitnessRepository
+     * @param CarouselRepository $carouselRepository
      * @return Response
      */
-    public function index(FitnessRepository $fitnessRepository): Response
+    public function index(FitnessRepository $fitnessRepository, CarouselRepository $carouselRepository): Response
     {
+        $pictures = $carouselRepository->findBy(['page' => 'fitness']);
         $descriptions = $fitnessRepository->findAll();
         return $this->render('fitness/index.html.twig', [
             'descriptions' => $descriptions,
+            'pictures' => $pictures,
         ]);
     }
 

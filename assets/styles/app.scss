@@ -32,3 +32,12 @@ h4 {
     font-family: $font-title;
     font-size: $h2-font-size;
 }
+
+.imageCarousel{
+    object-fit: cover;
+}
+
+.textTitle {
+
+    margin-top: $spacing-5;
+}
