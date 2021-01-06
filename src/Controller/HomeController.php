@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\ContactHome;
 use App\Entity\Home;
+use App\Repository\CarouselRepository;
 use App\Form\HomeType;
 use App\Form\ContactHomeType;
 use App\Repository\HomeRepository;
@@ -23,13 +24,19 @@ class HomeController extends AbstractController
     /**
      * @Route("/", name="home")
      * @param HomeRepository $homeRepository
+     * @param CarouselRepository $carouselRepository
      * @param Request $request
      * @param MailerInterface $mailer
      * @return Response
      * @throws TransportExceptionInterface
      */
-    public function index(HomeRepository $homeRepository, Request $request, MailerInterface $mailer): Response
-    {
+
+    public function index(
+        HomeRepository $homeRepository,
+        Request $request,
+        MailerInterface $mailer,
+        CarouselRepository $carouselRepository
+    ): Response {
         $contact = new ContactHome();
         $form = $this->createForm(ContactHomeType::class, $contact);
         $form->handleRequest($request);
@@ -43,8 +50,10 @@ class HomeController extends AbstractController
             return $this->redirectToRoute('confirmation');
         }
         $home = $homeRepository->findAll();
+        $pictures = $carouselRepository->findBy(['page' => 'home']);
         return $this->render('home/index.html.twig', [
             "form" => $form->createView(),
+            'pictures' => $pictures,
             'home' => $home
         ]);
     }
