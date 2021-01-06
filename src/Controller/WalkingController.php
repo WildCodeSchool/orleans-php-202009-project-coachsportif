@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Walking;
+use App\Repository\CarouselRepository;
 use App\Form\WalkingType;
 use App\Repository\WalkingRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -18,12 +19,15 @@ class WalkingController extends AbstractController
     /**
      * @Route("/", name="walking_index", methods={"GET"})
      * @param WalkingRepository $walkingRepository
+     * @param CarouselRepository $carouselRepository
      * @return Response
      */
-    public function index(WalkingRepository $walkingRepository): Response
+    public function index(WalkingRepository $walkingRepository, CarouselRepository $carouselRepository): Response
     {
+        $pictures = $carouselRepository->findBy(['page' => 'walking']);
         return $this->render('walking/index.html.twig', [
             'walkings' => $walkingRepository->findAll(),
+            'pictures' => $pictures,
         ]);
     }
 
@@ -54,6 +58,8 @@ class WalkingController extends AbstractController
 
     /**
      * @Route("/{id}", name="walking_show", methods={"GET"})
+     * @param Walking $walking
+     * @return Response
      */
     public function show(Walking $walking): Response
     {
@@ -64,6 +70,9 @@ class WalkingController extends AbstractController
 
     /**
      * @Route("/{id}/edit", name="walking_edit", methods={"GET","POST"})
+     * @param Request $request
+     * @param Walking $walking
+     * @return Response
      */
     public function edit(Request $request, Walking $walking): Response
     {
@@ -84,6 +93,9 @@ class WalkingController extends AbstractController
 
     /**
      * @Route("/{id}", name="walking_delete", methods={"DELETE"})
+     * @param Request $request
+     * @param Walking $walking
+     * @return Response
      */
     public function delete(Request $request, Walking $walking): Response
     {
