@@ -17,26 +17,30 @@
     background-color: $backgroundOverlay;
 }
 
-.fitnessParagraphDiv1 {
+.fitnessParagraph {
     margin-top: $spacing-4;
 }
 
-.fitnessParagraphDiv1, .fitnessParagraphDiv2 {
+.fitnessParagraph {
     color: $light;
     font-size: $text-font-size;
     margin-bottom: $spacing-5;
-}
-
-.fitnessParagraph {
     margin-left: $spacing-3;
     margin-right: $spacing-3;
 }
 
+.fitnessContent {
+    .row:nth-child(2n) {
+        flex-direction: row-reverse;
+    }
+}
+
 .fitnessParagraphImage {
     padding: 0;
-    display: block;
     filter: brightness(80%);
-    border-radius: $border-radius*3;
+    border-radius: $border-radius;
+    box-shadow: $box-shadow;
+    margin-bottom: $spacing-4;
 }
 
 .fitnessSubmitParagraph {
