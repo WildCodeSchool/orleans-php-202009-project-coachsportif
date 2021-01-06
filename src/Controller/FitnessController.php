@@ -2,7 +2,6 @@
 
 namespace App\Controller;
 
-
 use App\Repository\CarouselRepository;
 use App\Entity\Fitness;
 use App\Form\FitnessType;
