@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Walking{% endblock %}
+
+{% block body %}
+    <h1>Edit Walking</h1>
+
+    {{ include('walking/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('walking_index') }}">Return</a>
+
+    {{ include('walking/_delete_form.html.twig') }}
+{% endblock %}
