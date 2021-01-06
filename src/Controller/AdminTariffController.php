@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Tariff;
+use App\Form\TariffType;
 use App\Repository\TariffRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -30,4 +31,21 @@ class AdminTariffController extends AbstractController
      * @param Request $request
      * @return Response
      */
+    public function new(Request $request): Response
+    {
+        $tariff = new Tariff();
+        $form = $this->createForm(TariffType::class, $tariff);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $entityManager = $this->getDoctrine()->getManager();
+
+            $entityManager->persist($tariff);
+            $entityManager->flush();
+            $this->addFlash('success', 'Le nouveau tarif à bien été crée');
+
+            return $this->redirectToRoute('tarif_index');
+        }
+        return $this->render('admin/tarif/new.html.twig', ["form" => $form->createView()]);
+    }
 }
