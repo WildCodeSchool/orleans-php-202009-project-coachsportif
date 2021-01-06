@@ -48,7 +48,7 @@ class Carousel
      */
     private ?File $pathFile;
 
-    public function setPathFile(?File $image = null):Carousel
+    public function setPathFile(?File $image = null): Carousel
     {
         $this->pathFile = $image;
         if ($image) {
