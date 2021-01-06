@@ -3,6 +3,7 @@
 {% endblock %}
 
 {% block navBar %}
+
         <nav class="navbar navbar-expand-lg navbar-dark bg-info fixed-top">
             <div class="container-fluid ">
                 <a class="navbar-brand img d-none d-lg-block " href="{{ path('home') }}"><img class="logo mr-2"
@@ -40,13 +41,13 @@
                             <a class="nav-link" href="#">Média</a>
                         </li>
                         <li class="nav-item mx-3">
-                            <a class="nav-link" href="#">Page contact</a>
+                            <a class="nav-link" href="{{ path('contact_show') }}">Page contact</a>
                         </li>
                         <li class="nav-item mx-3">
                             <a class="nav-link" href="#">Compte</a>
                         </li>
-            </ul>
-        </div>
+                     </ul>
+              </div>
     </div>
 </nav>
 {% endblock %}
