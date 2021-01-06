@@ -6,6 +6,7 @@ use App\Entity\Carousel;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Vich\UploaderBundle\Form\Type\VichFileType;
 
 class CarouselType extends AbstractType
 {
@@ -14,6 +15,12 @@ class CarouselType extends AbstractType
         $builder
             ->add('path')
             ->add('page')
+            ->add('pathFile', VichFileType::class, [
+                'required' => false,
+                'allow_delete' => true, // not mandatory, default is true
+                'download_uri' => true, // not mandatory, default is true
+                'label' => 'Image à télécharger :'
+            ])
         ;
     }
 
