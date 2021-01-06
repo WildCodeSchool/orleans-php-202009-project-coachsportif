@@ -16,7 +16,6 @@
 
 .timetable {
     justify-content: center;
-    padding: $spacing-4;
 }
 
 .day {
@@ -30,4 +29,11 @@
 
 .link:hover {
     box-shadow: $box-shadow;
+}
+
+.title {
+    margin-top: $spacing-2;
+}
+.form {
+    padding: $spacing-4;
 }
