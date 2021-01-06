@@ -1,13 +1,14 @@
-{% extends 'base.html.twig' %}
+{% extends 'layout_admin.html.twig' %}
 
-{% block title %}Edit Opinion{% endblock %}
+{% block title %}Modifier un avis{% endblock %}
 
 {% block body %}
-    <h1>Edit Opinion</h1>
-
-    {{ include('opinion/_form.html.twig', {'button_label': 'Update'}) }}
-
-    <a href="{{ path('opinion_index') }}">back to list</a>
+    <h1>Modifier un avis </h1>
+    {% form_theme form 'bootstrap_4_layout.html.twig' %}
+<div class="text-center">
+    {{ include('opinion/_form.html.twig', {'button_label': 'Modifier'}) }}
+</div>
+    <a class="btn btn-secondary btn-lg" href="{{ path('opinion_index') }}">Retour</a>
 
     {{ include('opinion/_delete_form.html.twig') }}
 {% endblock %}

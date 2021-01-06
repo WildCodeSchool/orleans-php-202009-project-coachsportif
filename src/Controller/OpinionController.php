@@ -53,6 +53,9 @@ class OpinionController extends AbstractController
 
     /**
      * @Route("/{id}/edit", name="opinion_edit", methods={"GET","POST"})
+     * @param Request $request
+     * @param Opinion $opinion
+     * @return Response
      */
     public function edit(Request $request, Opinion $opinion): Response
     {
