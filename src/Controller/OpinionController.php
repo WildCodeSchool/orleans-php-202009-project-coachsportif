@@ -53,6 +53,9 @@ class OpinionController extends AbstractController
 
     /**
      * @Route("/{id}/edit", name="opinion_edit", methods={"GET","POST"})
+     * @param Request $request
+     * @param Opinion $opinion
+     * @return Response
      */
     public function edit(Request $request, Opinion $opinion): Response
     {
@@ -62,7 +65,7 @@ class OpinionController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('opinion_index');
+            return $this->redirectToRoute('who');
         }
 
         return $this->render('opinion/edit.html.twig', [
