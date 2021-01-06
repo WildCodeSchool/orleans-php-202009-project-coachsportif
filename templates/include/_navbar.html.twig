@@ -5,48 +5,48 @@
 {% block navBar %}
 <nav class="navbar navbar-expand-lg navbar-dark bg-info fixed-top">
     <div class="container-fluid ">
-        <a class="navbar-brand img d-none d-lg-block " href="#"><img class="logo mr-2"
+        <a class="navbar-brand img d-none d-lg-block " href="{{ path('home') }}"><img class="logo mr-2"
                                                                      src="{{ asset('build/images/LOGO-Blanc.png') }}"
                                                                      alt="Logo"/>Damien Gouveia</a>
 
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
-                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse justify-content-end " id="navbarNavDropdown">
-            <ul class="navbar-nav">
-                <li class="nav-item dropdown mx-3">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
-                       data-toggle="dropdown" aria-expanded="false">
-                        Les services
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <li><a class="dropdown-item" href="#">Activité adaptée</a></li>
-                        <li><a class="dropdown-item" href="#">Remise en forme</a></li>
-                        <li><a class="dropdown-item" href="#">Marche nordique</a></li>
-                        <li><a class="dropdown-item" href="#">Santé en entreprise</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item mx-3">
-                    <a class="nav-link" href="#">La salle d’entrainement</a>
-                </li>
-                <li class="nav-item mx-3">
-                    <a class="nav-link" href="#">Qui suis-je ?</a>
-                </li>
-                <li class="nav-item mx-3">
-                    <a class="nav-link" href="#">Tarifs</a>
-                </li>
-                <li class="nav-item mx-3">
-                    <a class="nav-link" href="#">Média</a>
-                </li>
-                <li class="nav-item mx-3">
-                    <a class="nav-link" href="#">Page contact</a>
-                </li>
-                <li class="nav-item mx-3">
-                    <a class="nav-link" href="#">Compte</a>
-                </li>
-            </ul>
-        </div>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+                        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end " id="navbarNavDropdown">
+                    <ul class="navbar-nav">
+                        <li class="nav-item dropdown mx-3">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                               data-toggle="dropdown" aria-expanded="false">
+                                Les services
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <li><a class="dropdown-item" href="#">Activité adaptée</a></li>
+                                <li><a class="dropdown-item" href="{{ path('fitness') }}">Remise en forme</a></li>
+                                <li><a class="dropdown-item" href="{{ path('walking_index') }}">Marche nordique</a></li>
+                                <li><a class="dropdown-item" href="#">Santé en entreprise</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item mx-3">
+                            <a class="nav-link" href="#">La salle d’entrainement</a>
+                        </li>
+                        <li class="nav-item mx-3">
+                            <a class="nav-link" href="{{ path('who') }}">Qui suis-je ?</a>
+                        </li>
+                        <li class="nav-item mx-3">
+                            <a class="nav-link" href="#">Tarifs</a>
+                        </li>
+                        <li class="nav-item mx-3">
+                            <a class="nav-link" href="#">Média</a>
+                        </li>
+                        <li class="nav-item mx-3">
+                            <a class="nav-link" href="{{ path('contact_show') }}">Page contact</a>
+                        </li>
+                        <li class="nav-item mx-3">
+                            <a class="nav-link" href="#">Compte</a>
+                        </li>
+                     </ul>
+              </div>
     </div>
 </nav>
 {% endblock %}
