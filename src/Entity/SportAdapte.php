@@ -15,17 +15,17 @@ class SportAdapte
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
      */
-    private $id;
+    private ?int $id;
 
     /**
      * @ORM\Column(type="text")
      */
-    private $description;
+    private ?string $description;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $picture;
+    private ?string $picture;
 
     public function getId(): ?int
     {
