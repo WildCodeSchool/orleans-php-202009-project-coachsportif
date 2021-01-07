@@ -20,8 +20,8 @@ class UserFixtures extends Fixture
     {
 // Création d’un utilisateur de type “contributeur” (= auteur)
         $contributor = new User();
-        $contributor->setEmail('contributor@monsite.com');
-        $contributor->setRoles(['ROLE_CONTRIBUTOR']);
+        $contributor->setEmail('membre@monsite.com');
+        $contributor->setRoles(['ROLE_MEMBRE']);
         $contributor->setPassword($this->passwordEncoder->encodePassword(
             $contributor,
             'contributorpassword'
@@ -31,8 +31,8 @@ class UserFixtures extends Fixture
 
         // Création d’un utilisateur de type “administrateur”
         $admin = new User();
-        $admin->setEmail('admin@monsite.com');
-        $admin->setRoles(['ROLE_ADMIN']);
+        $admin->setEmail('Coach@monsite.com');
+        $admin->setRoles(['ROLE_COACH']);
         $admin->setPassword($this->passwordEncoder->encodePassword(
             $admin,
             'adminpassword'
