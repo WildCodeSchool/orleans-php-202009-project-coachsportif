@@ -23,7 +23,7 @@ class Home
     private ?string $text;
 
     /**
-     * @ORM\Column(type="text", nullable=true)
+     * @ORM\Column(type="string", length=255)
      */
     private ?string $picture;
 
@@ -49,7 +49,7 @@ class Home
         return $this->picture;
     }
 
-    public function setPicture(?string $picture): self
+    public function setPicture(string $picture): self
     {
         $this->picture = $picture;
 
