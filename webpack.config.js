@@ -1,4 +1,4 @@
-var Encore = require('@symfony/webpack-encore');
+const Encore = require('@symfony/webpack-encore');
 
 // Manually configure the runtime environment if not already configured yet by the "encore" command.
 // It's useful when you use tools that rely on webpack.config.js file.
@@ -12,18 +12,18 @@ Encore
     // public path used by the web server to access the output path
     .setPublicPath('/build')
     // only needed for CDN's or sub-directory deploy
-    //.setManifestKeyPrefix('build/')
+    // .setManifestKeyPrefix('build/')
     .copyFiles({
         from: './assets/images',
 
         // optional target path, relative to the output dir
-        //to: 'images/[path][name].[ext]',
+        // to: 'images/[path][name].[ext]',
 
         // if versioning is enabled, add the file hash too
         to: 'images/[path][name].[hash:8].[ext]',
 
         // only copy files matching this pattern
-        //pattern: /\.(png|jpg|jpeg)$/
+        // pattern: /\.(png|jpg|jpeg)$/
     })
     /*
      * ENTRY CONFIG
@@ -44,8 +44,6 @@ Encore
     .addEntry('contact', './assets/styles/contact.scss')
     .addEntry('who', './assets/styles/whoIAm.scss')
     .addEntry('homeCo', './assets/styles/homeCo.scss')
-
-
 
     // When enabled, Webpack "splits" your files into smaller pieces for greater optimization.
     .splitEntryChunks()
@@ -69,7 +67,9 @@ Encore
 
     // enables @babel/preset-env polyfills
     .configureBabelPresetEnv((config) => {
+        // eslint-disable-next-line no-param-reassign
         config.useBuiltIns = 'usage';
+        // eslint-disable-next-line no-param-reassign
         config.corejs = 3;
     })
 
@@ -77,18 +77,19 @@ Encore
     .enableSassLoader()
 
 // uncomment if you use TypeScript
-//.enableTypeScriptLoader()
+// .enableTypeScriptLoader()
 
 // uncomment to get integrity="..." attributes on your script & link tags
 // requires WebpackEncoreBundle 1.4 or higher
-//.enableIntegrityHashes(Encore.isProduction())
+// .enableIntegrityHashes(Encore.isProduction())
 
 // uncomment if you're having problems with a jQuery plugin
-//.autoProvidejQuery()
+// .autoProvidejQuery()
 
 // uncomment if you use API Platform Admin (composer req api-admin)
-//.enableReactPreset()
-//.addEntry('admin', './assets/admin.js')
+// .enableReactPreset()
+// .addEntry('admin', './assets/admin.js')
+// eslint-disable-next-line semi-style
 ;
 
 module.exports = Encore.getWebpackConfig();
