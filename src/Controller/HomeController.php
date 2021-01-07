@@ -69,31 +69,6 @@ class HomeController extends AbstractController
     }
 
     /**
-     * @Route("/new", name="home_new", methods={"GET","POST"})
-     * @param Request $request
-     * @return Response
-     */
-    public function new(Request $request): Response
-    {
-        $home = new Home();
-        $form = $this->createForm(HomeType::class, $home);
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
-            $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->persist($home);
-            $entityManager->flush();
-
-            return $this->redirectToRoute('home_index');
-        }
-
-        return $this->render('home/new.html.twig', [
-            'home' => $home,
-            'form' => $form->createView(),
-        ]);
-    }
-
-    /**
      * @Route("/{id}", name="home_show", methods={"GET"})
      * @param Home $home
      * @return Response
@@ -119,7 +94,7 @@ class HomeController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('home_index');
+            return $this->redirectToRoute('home');
         }
 
         return $this->render('home/edit.html.twig', [
