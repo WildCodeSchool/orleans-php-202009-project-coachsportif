@@ -14,7 +14,7 @@ use Symfony\Component\Routing\Annotation\Route;
 /**
  * Class FitnessController
  * @package App\Controller
- * @Route("/fitness")
+ * @Route("/")
  */
 class FitnessController extends AbstractController
 {
@@ -35,7 +35,7 @@ class FitnessController extends AbstractController
     }
 
     /**
-     * @Route("/new", name="fitness_new", methods={"GET","POST"})
+     * @Route("/remise_en_forme/new", name="fitness_new", methods={"GET","POST"})
      */
     public function new(Request $request): Response
     {
@@ -48,7 +48,7 @@ class FitnessController extends AbstractController
             $entityManager->persist($fitness);
             $entityManager->flush();
 
-            return $this->redirectToRoute('fitness_index');
+            return $this->redirectToRoute('fitnessAdmin');
         }
 
         return $this->render('fitness/new.html.twig', [
@@ -58,7 +58,7 @@ class FitnessController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="fitness_show", methods={"GET"})
+     * @Route("/remise_en_forme/{id}", name="fitness_show", methods={"GET"})
      */
     public function show(Fitness $fitness): Response
     {
@@ -68,7 +68,7 @@ class FitnessController extends AbstractController
     }
 
     /**
-     * @Route("/{id}/edit", name="fitness_edit", methods={"GET","POST"})
+     * @Route("/remise_en_forme/{id}/edit", name="fitness_edit", methods={"GET","POST"})
      */
     public function edit(Request $request, Fitness $fitness): Response
     {
@@ -88,7 +88,7 @@ class FitnessController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="fitness_delete", methods={"DELETE"})
+     * @Route("/remise_en_forme/{id}", name="fitness_delete", methods={"DELETE"})
      */
     public function delete(Request $request, Fitness $fitness): Response
     {
@@ -98,7 +98,7 @@ class FitnessController extends AbstractController
             $entityManager->flush();
         }
 
-        return $this->redirectToRoute('fitness_index');
+        return $this->redirectToRoute('fitnessAdmin');
     }
 
     /**
