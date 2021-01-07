@@ -17,7 +17,7 @@ use Symfony\Component\Mime\Email;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("/home")
+ * @Route("/")
  */
 class HomeController extends AbstractController
 {
@@ -69,7 +69,7 @@ class HomeController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="home_show", methods={"GET"})
+     * @Route("/homeAdmin/{id}", name="home_show", methods={"GET"})
      * @param Home $home
      * @return Response
      */
@@ -81,7 +81,7 @@ class HomeController extends AbstractController
     }
 
     /**
-     * @Route("/{id}/edit", name="home_edit", methods={"GET","POST"})
+     * @Route("/homeAdmin/{id}/edit", name="home_edit", methods={"GET","POST"})
      * @param Request $request
      * @param Home $home
      * @return Response
@@ -104,7 +104,7 @@ class HomeController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="home_delete", methods={"DELETE"})
+     * @Route("/homeAdmin/{id}", name="home_delete", methods={"DELETE"})
      * @param Request $request
      * @param Home $home
      * @return Response
