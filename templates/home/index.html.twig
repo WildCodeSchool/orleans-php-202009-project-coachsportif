@@ -7,6 +7,13 @@
 {% block title %}Home{% endblock %}
 
 {% block body %}
+
+    <div class="containerOverlay">
+        <div class="title">
+            <h1>Damien Gouveia - Coach Sportif</h1>
+        </div>
+    </div>
+
     <section class="textIntro">
         <h2>Présentation</h2>
         <div class="container-fluid">
@@ -25,16 +32,21 @@
     </section>
 
     <section class="serviceSport">
-        <h2>Nos services</h2>
-        <div class="container-fluid ">
-            <div class="bikes row pb-5 d-flex justify-content-center">
-                <div class="col-sm-6 col-md-6 col-lg-5 d-sm-block">
-                    <a href="{{ path('walking_index') }}">
-                        <div class="linkCategory card text-white bg-warning card-inverse">
-                            <img src="{{ asset('build/images/sportAdapte.jpg') }}" class="fitness card-img" alt="">
-                            <div class="card-img-overlay d-flex">
-                                <h2 class="card-title text-truncate align-self-center mx-auto">Activité adaptée</h2>
-                            </div>
+            <h2>Nos services</h2>
+                <div class="container-fluid ">
+                    <div class="bikes row pb-5 d-flex justify-content-center">
+
+                        <div class="col-sm-6 col-md-6 col-lg-5 d-sm-block">
+                            <a href="{{ path('walking_index') }}">
+                                <div class="linkCategory card text-white card-inverse">
+                            <a href="{{ path('walking_index') }}">
+                                <div class="linkCategory card text-white bg-warning card-inverse">
+                                    <img src="{{ asset('build/images/sportAdapte.jpg') }}" class="fitness card-img" alt="">
+                                    <div class="card-img-overlay d-flex">
+                                        <h2 class="card-title text-truncate align-self-center mx-auto">Activité adaptée</h2>
+                                    </div>
+                                </div>
+                            </a>
                         </div>
                     </a>
                 </div>
