@@ -68,7 +68,7 @@ class AdminTariffController extends AbstractController
             return $this->redirectToRoute('tarif_index');
         }
         return $this->render('admin/tarif/edit.html.twig', [
-            'program' => $program,
+            'tarif' => $tarif,
             'form' => $form->createView(),
         ]);
     }
