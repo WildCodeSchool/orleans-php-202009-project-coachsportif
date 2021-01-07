@@ -48,4 +48,20 @@ class AdminTariffController extends AbstractController
         }
         return $this->render('admin/tarif/new.html.twig', ["form" => $form->createView()]);
     }
+    /**
+     * @Route("/{id}", name="delete", methods={"DELETE"})
+     * @param Request $request
+     * @param Tariff $tariff
+     * @return Response
+     */
+    public function delete(Request $request, Tariff $tariff): Response
+    {
+        if ($this->isCsrfTokenValid('delete' . $tariff->getId(), $request->request->get('_token'))) {
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->remove($tariff);
+            $entityManager->flush();
+            $this->addFlash('danger', 'Le tarif à bien été supprimé');
+        }
+        return $this->redirectToRoute('tarif_index');
+    }
 }
