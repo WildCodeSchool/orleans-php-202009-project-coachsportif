@@ -5,4 +5,7 @@ vich_uploader:
         walking_file:
             uri_prefix: /images/walking
             upload_destination: '%upload_directory%'
+        home_file:
+            uri_prefix: /images/home
+            upload_destination: '%upload_directory%'
 
