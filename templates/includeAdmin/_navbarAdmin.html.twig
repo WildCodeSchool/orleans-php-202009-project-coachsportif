@@ -3,11 +3,11 @@
 {% endblock %}
 
 {% block navBar %}
-<nav class="navbar navbar-expand-lg navbar-dark bg-info fixed-top">
+<nav class="navbar navbar-expand-lg navbar-secondary bg-info fixed-top">
     <div class="container-fluid ">
         <a class="navbar-brand img d-none d-lg-block " href="{{ path('home') }}"><img class="logo mr-2"
                                                                      src="{{ asset('build/images/LOGO-Blanc.png') }}"
-                                                                     alt="Logo"/>Damien Gouveia</a>
+                                                                     alt="Logo"/>Administration</a>
 
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
                         aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -18,26 +18,26 @@
                         <li class="nav-item dropdown mx-3">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
                                data-toggle="dropdown" aria-expanded="false">
-                                Les services Admin
+                                Les services
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <li><a class="dropdown-item" href="#">Activité adaptée Admin</a></li>
-                                <li><a class="dropdown-item" href="#">Remise en forme Admin</a></li>
-                                <li><a class="dropdown-item" href="#">Marche nordique Admin</a></li>
-                                <li><a class="dropdown-item" href="#">Santé en entreprise Admin</a></li>
+                                <li><a class="dropdown-item" href="#">Activité adaptée</a></li>
+                                <li><a class="dropdown-item" href="#">Remise en forme</a></li>
+                                <li><a class="dropdown-item" href="#">Marche nordique</a></li>
+                                <li><a class="dropdown-item" href="#">Santé en entreprise</a></li>
                             </ul>
                         </li>
                         <li class="nav-item mx-3">
-                            <a class="nav-link" href="#">La salle d’entrainement Admin</a>
+                            <a class="nav-link" href="#">La salle d’entrainement</a>
                         </li>
                         <li class="nav-item mx-3">
-                            <a class="nav-link" href="#">Qui suis-je ? Admin</a>
+                            <a class="nav-link" href="#">Qui suis-je ?</a>
                         </li>
                         <li class="nav-item mx-3">
-                            <a class="nav-link" href="{{ path('tarif_index') }}">Tarifs Admin</a>
+                            <a class="nav-link" href="{{ path('tarif_index') }}">Tarifs</a>
                         </li>
                         <li class="nav-item mx-3">
-                            <a class="nav-link" href="#">Média Admin</a>
+                            <a class="nav-link" href="#">Média</a>
                         </li>
                         <li class="nav-item mx-3">
                             <a class="nav-link" href="#">Information client</a>
