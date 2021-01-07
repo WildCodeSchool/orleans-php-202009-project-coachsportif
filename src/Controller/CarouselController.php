@@ -42,7 +42,7 @@ class CarouselController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($carousel);
             $entityManager->flush();
-
+            $this->addFlash('success', 'Image ajouter');
             return $this->redirectToRoute('carousel_index');
         }
 
@@ -77,7 +77,7 @@ class CarouselController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
-
+            $this->addFlash('success', 'Image modifier');
             return $this->redirectToRoute('carousel_index');
         }
 
@@ -99,6 +99,7 @@ class CarouselController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($carousel);
             $entityManager->flush();
+            $this->addFlash('danger', 'Image supprimer');
         }
 
         return $this->redirectToRoute('carousel_index');
