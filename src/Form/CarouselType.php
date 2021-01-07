@@ -15,7 +15,7 @@ class CarouselType extends AbstractType
     {
         $builder
             ->add('path')
-            ->add('page',ChoiceType::class, [
+            ->add('page', ChoiceType::class, [
                 'choices' => [
                     'Remise en forme' => 'fitness',
                     'Acceuil' => 'home',
