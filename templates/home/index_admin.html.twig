@@ -1,9 +1,9 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Home admin{% endblock %}
+{% block title %}Administration|Présentation{% endblock %}
 
 {% block body %}
-    <h1>Administration de texte de présentation</h1>
+    <h1>Administration du texte de présentation</h1>
         <div class="container">
             <table class="table text-dark text-center">
                 <thead class="thead-light">
@@ -19,7 +19,8 @@
                             <td>{{ presentation.text }}</td>
                             <td>{{ presentation.picture }}</td>
                             <td>
-                                <a class="btn btn-primary btn-lg" href="{{ path('home_edit', {'id': presentation.id}) }}">Modifier</a>
+                                <a class="btn btn-primary btn-lg"
+                                   href="{{ path('home_edit', {'id': presentation.id}) }}">Modifier</a>
                             </td>
                         </tr>
                     {% else %}
