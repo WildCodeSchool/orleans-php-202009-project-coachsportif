@@ -84,10 +84,11 @@ input:valid {
 }
 
 .vich-file {
-        .form-group{
-            display: none;
-        }
-            a {
-                display: none;
-            }
+    & .form-group{
+        display: none;
+    }
+
+    & a {
+        display: none;
+    }
 }
