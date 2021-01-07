@@ -5,9 +5,10 @@
         "This file is @generated automatically"
     ],
   
+    "content-hash": "7a2f17fe35a527d482aed2eb5fce4f80",
+  
     "content-hash": "ef1d721f028daa4b1a52e09fd489fa05",
     "content-hash": "290a22c6c5d22c4e6c49d35921a3d5b8",
-  
     "packages": [
         {
             "name": "composer/package-versions-deprecated",
