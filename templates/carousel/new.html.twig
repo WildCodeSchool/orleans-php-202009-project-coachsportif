@@ -3,9 +3,12 @@
 {% block title %}New Carousel{% endblock %}
 
 {% block body %}
-    <h1>Create new Carousel</h1>
-
+    <div class="container">
+    <h1 class="text-center">Create new Carousel</h1>
+    {% form_theme form 'bootstrap_4_layout.html.twig' %}
     {{ include('carousel/_form.html.twig') }}
-
-    <a href="{{ path('carousel_index') }}">back to list</a>
+        <div class="text-center">
+            <a class="btn btn-secondary btn-lg" href="{{ path('carousel_index') }}">back to list</a>
+        </div>
+    </div>
 {% endblock %}

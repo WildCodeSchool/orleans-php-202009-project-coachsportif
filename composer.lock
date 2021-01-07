@@ -4,7 +4,11 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
+
     "content-hash": "7a2f17fe35a527d482aed2eb5fce4f80",
+    "content-hash": "ef1d721f028daa4b1a52e09fd489fa05",
+    "content-hash": "290a22c6c5d22c4e6c49d35921a3d5b8",
+
     "packages": [
         {
             "name": "composer/package-versions-deprecated",
@@ -1457,10 +1461,6 @@
                 "xml",
                 "yaml"
             ],
-            "support": {
-                "issues": "https://github.com/schmittjoh/metadata/issues",
-                "source": "https://github.com/schmittjoh/metadata/tree/2.4.0"
-            },
             "time": "2020-11-30T11:08:28+00:00"
         },
         {
@@ -7190,10 +7190,6 @@
                 "file uploads",
                 "upload"
             ],
-            "support": {
-                "issues": "https://github.com/dustin10/VichUploaderBundle/issues",
-                "source": "https://github.com/dustin10/VichUploaderBundle/tree/1.16.0"
-            },
             "time": "2020-12-04T10:49:15+00:00"
         },
         {
@@ -8049,10 +8045,6 @@
                 "faker",
                 "fixtures"
             ],
-            "support": {
-                "issues": "https://github.com/fzaninotto/Faker/issues",
-                "source": "https://github.com/fzaninotto/Faker/tree/v1.9.2"
-            },
             "abandoned": true,
             "time": "2020-12-11T09:56:16+00:00"
         },
