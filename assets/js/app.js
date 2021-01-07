@@ -31,9 +31,9 @@ require('bootstrap');
 $(document).ready(() => {
     $('[data-toggle="popover"]').popover();
 });
-$("input[type=file]").change(function () {
-    var fieldVal = $(this).val();
-    if (fieldVal != undefined || fieldVal != "") {
-        $(this).next(".custom-file-label").text(fieldVal);
+$('input[type=file]').change(function () {
+    const fieldVal = $(this).val();
+    if (fieldVal !== undefined || fieldVal !== '') {
+        $(this).next('.custom-file-label').text(fieldVal);
     }
 });
