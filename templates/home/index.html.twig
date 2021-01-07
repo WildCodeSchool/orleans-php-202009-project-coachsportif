@@ -27,11 +27,8 @@
     <section class="serviceSport">
             <h2>Nos services</h2>
                 <div class="container-fluid ">
-                    <div class="bikes row pb-5 d-flex justify-content-center">
-
+                    <div class="row pb-5 d-flex justify-content-center">
                         <div class="col-sm-6 col-md-6 col-lg-5 d-sm-block">
-                            <a href="{{ path('walking_index') }}">
-                                <div class="linkCategory card text-white card-inverse">
                             <a href="{{ path('walking_index') }}">
                                 <div class="linkCategory card text-white bg-warning card-inverse">
                                     <img src="{{ asset('build/images/sportAdapte.jpg') }}" class="fitness card-img" alt="">
@@ -41,21 +38,18 @@
                                 </div>
                             </a>
                         </div>
-                    </a>
-                </div>
-
-                <div class="col-sm-6 col-md-6 col-lg-5 d-sm-block">
-                    <a href="{{ path('fitness') }}">
-                        <div class="linkCategory card text-white bg-warning card-inverse">
-                            <img src="{{ asset('build/images/remiseEnForme.jpg') }}" class="fitness card-img" alt="">
-                            <div class="card-img-overlay d-flex">
-                                <h2 class="card-title text-truncate align-self-center mx-auto">Remise en forme</h2>
-                            </div>
+                        <div class="col-sm-6 col-md-6 col-lg-5 d-sm-block">
+                            <a href="{{ path('fitness') }}">
+                                <div class="linkCategory card text-white bg-warning card-inverse">
+                                    <img src="{{ asset('build/images/remiseEnForme.jpg') }}" class="fitness card-img" alt="">
+                                    <div class="card-img-overlay d-flex">
+                                        <h2 class="card-title text-truncate align-self-center mx-auto">Remise en forme</h2>
+                                    </div>
+                                </div>
+                            </a>
                         </div>
-                    </a>
-                </div>
-            </div>
-        </div>
+                    </div>
+                 </div>
     </section>
 
     <section class="homeContact">
@@ -75,10 +69,12 @@
                     </div>
                 </div>
                 {% form_theme form 'bootstrap_4_layout.html.twig' %}
-                <div class="col-sm-6 col-md-6 col-lg-5 text-center">
+                <div class="col-sm-6 col-md-6 col-lg-5 ">
                     {{ form_start(form) }}
                     {{ form_widget(form) }}
-                    <button class="btn btn-secondary btn-lg">Envoyer</button>
+                    <div class="text-center">
+                        <button class="btn btn-secondary btn-lg">Envoyer</button>
+                    </div>
                     {{ form_end(form) }}
                 </div>
             </div>
