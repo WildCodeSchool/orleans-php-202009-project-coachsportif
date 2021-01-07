@@ -12,6 +12,8 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
+ * Class FitnessController
+ * @package App\Controller
  * @Route("/fitness")
  */
 class FitnessController extends AbstractController
