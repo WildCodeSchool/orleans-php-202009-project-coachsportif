@@ -93,7 +93,7 @@ class HomeController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
-
+            $this->addFlash('success', 'Présentation modifier');
             return $this->redirectToRoute('home');
         }
 
@@ -115,6 +115,7 @@ class HomeController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($home);
             $entityManager->flush();
+            $this->addFlash('success', 'Présentation supprimer');
         }
 
         return $this->redirectToRoute('home_index');
