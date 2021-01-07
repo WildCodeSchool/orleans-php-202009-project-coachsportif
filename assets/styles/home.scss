@@ -82,3 +82,12 @@ input:valid {
 .homeContact {
     padding-bottom: $spacing-4;
 }
+
+.vich-file {
+        .form-group{
+            display: none;
+        }
+            a {
+                display: none;
+            }
+}

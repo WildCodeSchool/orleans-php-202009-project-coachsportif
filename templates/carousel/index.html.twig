@@ -1,37 +1,39 @@
-{% extends 'base.html.twig' %}
-
+{% extends 'layout_admin.html.twig' %}
 {% block title %}Administration|Carousel{% endblock %}
 
 {% block body %}
-    <h1>Administration du Carrousel</h1>
-
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Path</th>
-                <th>Page</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for carousel in carousels %}
-            <tr>
-                <td>{{ carousel.id }}</td>
-                <td>{{ carousel.path }}</td>
-                <td>{{ carousel.page }}</td>
-                <td>
-                    <a href="{{ path('carousel_show', {'id': carousel.id}) }}">show</a>
-                    <a href="{{ path('carousel_edit', {'id': carousel.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="4">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
-
-    <a href="{{ path('carousel_new') }}">Create new</a>
+    <div class="container">
+        <h1 class="mt-4">Administration du Carrousel</h1>
+            <table class="table text-dark text-center">
+                <thead class="thead-light">
+                    <tr>
+                        <th>Nom de l'image</th>
+                        <th>Localisation de la page</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for carousel in carousels %}
+                        <tr>
+                            <td>{{ carousel.path }}</td>
+                            <td>{{ carousel.page }}</td>
+                            <td>
+                                <a class="btn btn-primary btn-lg"
+                                   href="{{ path('carousel_show', {'id': carousel.id}) }}">Voir</a>
+                                <a class="btn btn-primary btn-lg"
+                                   href="{{ path('carousel_edit', {'id': carousel.id}) }}">Modifier</a>
+                                {{ include('carousel/_delete_form.html.twig') }}
+                            </td>
+                        </tr>
+                    {% else %}
+                        <tr>
+                            <td colspan="4">Il n'y a pas de données</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+    </div>
+    <div class="text-center">
+        <a class="btn btn-secondary btn-lg mb-5" href="{{ path('carousel_new') }}">Ajouté une nouvelle image</a>
+    </div>
 {% endblock %}
