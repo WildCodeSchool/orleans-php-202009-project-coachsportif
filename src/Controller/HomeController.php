@@ -36,8 +36,7 @@ class HomeController extends AbstractController
         Request $request,
         MailerInterface $mailer,
         CarouselRepository $carouselRepository
-    ): Response
-    {
+    ): Response {
         $contact = new ContactHome();
         $form = $this->createForm(ContactHomeType::class, $contact);
         $form->handleRequest($request);
