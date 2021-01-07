@@ -4,7 +4,7 @@
 
 {% block body %}
     <div class="container justify-content-center text-center">
-        <h1>Liste des tarifs</h1>
+        <h1 class="my-4">Liste des tarifs</h1>
         <table class="table text-dark text-center">
             <thead class="thead-light">
             <tr>
@@ -18,10 +18,11 @@
                     <tr>
                         <td> {{ tarif.description }}</td>
                         <td>{{ tarif.price }}</td>
+                        <td><a class="btn btn-secondary" href="{{ path('tarif_edit', { id: tarif.id}) }}">Modifier</a></td>
                     </tr>
             {% endfor %}
             <tbody>
         </table>
-        <a class="btn btn-secondary" href="{{ path('tarif_new') }}">Ajouter un nouveau tarif</a>
+        <a class="btn btn-primary" href="{{ path('tarif_new') }}">Ajouter un nouveau tarif</a>
     </div>
 {% endblock %}
