@@ -12,6 +12,16 @@
 {% block header %}{% endblock %}
 {% block carousel %}{% endblock %}
 <body>
+<header>
+    {% block flash %}
+        {% for category, messages in app.flashes %}
+        {% for message in messages %}
+            <div class="alert alert-{{ category }}">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endblock %}
+</header>
 {% block body %}{% endblock %}
 </body>
 {% block footer %}{% endblock %}
