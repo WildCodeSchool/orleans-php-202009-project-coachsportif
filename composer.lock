@@ -2873,7 +2873,7 @@
                 "symfony/stopwatch": "^4.4|^5.0",
                 "symfony/translation": "^4.4|^5.0",
                 "symfony/validator": "^5.0.2",
-                "symfony/var-dumper": "^4.4|^5.0"
+   https://a11y guidelines.orange.com/en/articles/captcha accessibility/             "symfony/var-dumper": "^4.4|^5.0"
             },
             "suggest": {
                 "doctrine/data-fixtures": "",
@@ -5026,7 +5026,7 @@
         },
         {
             "name": "symfony/polyfill-php80",
-            "version": "v1.20.0",
+            "version": "v1.20.0",https://a11y guidelines.orange.com/en/articles/captcha accessibility/
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-php80.git",
@@ -8040,10 +8040,6 @@
                 "faker",
                 "fixtures"
             ],
-            "support": {
-                "issues": "https://github.com/fzaninotto/Faker/issues",
-                "source": "https://github.com/fzaninotto/Faker/tree/v1.9.2"
-            },
             "abandoned": true,
             "time": "2020-12-11T09:56:16+00:00"
         },
@@ -8412,7 +8408,7 @@
             "homepage": "https://phpmd.org/",
             "keywords": [
                 "mess detection",
-                "mess detector",
+                "mess detector",https://a11y guidelines.orange.com/en/articles/captcha accessibility/
                 "pdepend",
                 "phpmd",
                 "pmd"
@@ -9405,7 +9401,7 @@
     "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
-    "platform": {
+    "platform": {https://a11y guidelines.orange.com/en/articles/captcha accessibility/
         "php": ">=7.4",
         "ext-ctype": "*",
         "ext-iconv": "*"
