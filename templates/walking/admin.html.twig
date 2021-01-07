@@ -20,7 +20,10 @@
                         <img src="{{ asset('uploads/' ~ walking.picture) }}">
                     </div>
                     <p class="col-12 col-lg-5">{{ walking.description }}</p>
-                    <div class="delete col-lg-2">
+                    <div class="col-6 col-lg-1">
+                        <a class="btn btn-secondary" href="{{ path('walking_edit', { id: walking.id }) }}">Modifier</a>
+                    </div>
+                    <div class="delete col-lg-1">
                         {{ include('walking/_delete_form.html.twig') }}
                     </div>
                 </div>

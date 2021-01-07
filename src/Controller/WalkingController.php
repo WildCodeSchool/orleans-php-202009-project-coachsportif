@@ -82,7 +82,7 @@ class WalkingController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('walking_index');
+            return $this->redirectToRoute('walking_admin');
         }
 
         return $this->render('walking/edit.html.twig', [
@@ -105,7 +105,7 @@ class WalkingController extends AbstractController
             $entityManager->flush();
         }
 
-        return $this->redirectToRoute('walking_index');
+        return $this->redirectToRoute('walking_admin');
     }
 
     /**
