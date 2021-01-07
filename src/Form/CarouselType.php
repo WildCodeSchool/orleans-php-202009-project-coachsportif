@@ -14,7 +14,6 @@ class CarouselType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('path')
             ->add('page', ChoiceType::class, [
                 'choices' => [
                     'Remise en forme' => 'fitness',
