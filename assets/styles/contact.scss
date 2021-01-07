@@ -12,12 +12,12 @@
 #map {
     width: $width-map;
     height: $weight-map;
-    margin: $spacing-2;
 }
 
 .timetable {
     justify-content: center;
-    padding: $spacing-4;
+    border: solid $dark;
+    border-radius: $border-radius;
 }
 
 .day {
@@ -31,4 +31,14 @@
 
 .link:hover {
     box-shadow: $box-shadow;
+}
+
+.title {
+    margin-top: $spacing-2;
+}
+
+.form {
+    padding: $spacing-4;
+    border: solid $dark;
+    border-radius: $border-radius;
 }
