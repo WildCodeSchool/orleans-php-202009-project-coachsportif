@@ -69,7 +69,7 @@ class HomeController extends AbstractController
     }
 
     /**
-     * @Route("/homeAdmin/{id}", name="home_show", methods={"GET"})
+     * @Route("/home/admin/{id}", name="home_show", methods={"GET"})
      * @param Home $home
      * @return Response
      */
@@ -81,7 +81,7 @@ class HomeController extends AbstractController
     }
 
     /**
-     * @Route("/homeAdmin/{id}/edit", name="home_edit", methods={"GET","POST"})
+     * @Route("/home/admin/{id}/edit", name="home_edit", methods={"GET","POST"})
      * @param Request $request
      * @param Home $home
      * @return Response
@@ -104,7 +104,7 @@ class HomeController extends AbstractController
     }
 
     /**
-     * @Route("/homeAdmin/{id}", name="home_delete", methods={"DELETE"})
+     * @Route("/home/admin/{id}", name="home_delete", methods={"DELETE"})
      * @param Request $request
      * @param Home $home
      * @return Response
