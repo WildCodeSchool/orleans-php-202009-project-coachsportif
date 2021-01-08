@@ -17,7 +17,7 @@ use Symfony\Component\Mime\Email;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("/home")
+ * @Route("/")
  */
 class HomeController extends AbstractController
 {
@@ -69,32 +69,7 @@ class HomeController extends AbstractController
     }
 
     /**
-     * @Route("/new", name="home_new", methods={"GET","POST"})
-     * @param Request $request
-     * @return Response
-     */
-    public function new(Request $request): Response
-    {
-        $home = new Home();
-        $form = $this->createForm(HomeType::class, $home);
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
-            $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->persist($home);
-            $entityManager->flush();
-
-            return $this->redirectToRoute('home_index');
-        }
-
-        return $this->render('home/new.html.twig', [
-            'home' => $home,
-            'form' => $form->createView(),
-        ]);
-    }
-
-    /**
-     * @Route("/{id}", name="home_show", methods={"GET"})
+     * @Route("/home/admin/{id}", name="home_show", methods={"GET"})
      * @param Home $home
      * @return Response
      */
@@ -106,7 +81,7 @@ class HomeController extends AbstractController
     }
 
     /**
-     * @Route("/{id}/edit", name="home_edit", methods={"GET","POST"})
+     * @Route("/home/admin/{id}/edit", name="home_edit", methods={"GET","POST"})
      * @param Request $request
      * @param Home $home
      * @return Response
@@ -118,10 +93,8 @@ class HomeController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
-
-            return $this->redirectToRoute('home_index');
+            return $this->redirectToRoute('index_Admin');
         }
-
         return $this->render('home/edit.html.twig', [
             'home' => $home,
             'form' => $form->createView(),
@@ -129,7 +102,7 @@ class HomeController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="home_delete", methods={"DELETE"})
+     * @Route("/home/admin/{id}", name="home_delete", methods={"DELETE"})
      * @param Request $request
      * @param Home $home
      * @return Response
@@ -142,6 +115,19 @@ class HomeController extends AbstractController
             $entityManager->flush();
         }
 
-        return $this->redirectToRoute('home_index');
+        return $this->redirectToRoute('index_Admin');
+    }
+
+    /**
+     * @Route("/home/admin", name="index_Admin", methods={"GET"})
+     * @param HomeRepository $homeRepository
+     * @return Response
+     */
+    public function indexAdmin(HomeRepository $homeRepository): Response
+    {
+        $presentations = $homeRepository->findAll();
+        return $this->render('home/index_admin.html.twig', [
+            'presentations' => $presentations,
+        ]);
     }
 }
