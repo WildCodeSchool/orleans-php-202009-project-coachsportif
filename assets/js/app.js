@@ -31,3 +31,10 @@ require('bootstrap');
 $(document).ready(() => {
     $('[data-toggle="popover"]').popover();
 });
+// eslint-disable-next-line func-names
+$('input[type=file]').change(function () {
+    const fieldVal = $(this).val();
+    if (fieldVal !== undefined || fieldVal !== '') {
+        $(this).next('.custom-file-label').text(fieldVal);
+    }
+});
