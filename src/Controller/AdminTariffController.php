@@ -61,7 +61,7 @@ class AdminTariffController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
-            $this->addFlash('success', 'Le tarif à bien été modifier');
+            $this->addFlash('success', 'Le tarif à bien été modifié');
 
 
             return $this->redirectToRoute('tarif_index');
