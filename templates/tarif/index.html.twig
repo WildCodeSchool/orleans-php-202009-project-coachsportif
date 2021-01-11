@@ -1,0 +1,32 @@
+{% extends 'layout.html.twig' %}
+{% block carousel %}{% endblock %}
+
+    {% block stylesheets %}
+        {{ encore_entry_link_tags('tarif') }}
+    {% endblock %}
+
+{% block title %}Tarifs{% endblock %}
+
+{% block body %}
+    <section>
+        <h1 class="title text-center">Tarifs</h1>
+        <div  class="d-flex justify-content-center pb-4">
+            <table class="table col-10 text-center ">
+                <thead class="text-warning bg-info">
+                    <tr>
+                        <th scope="col">Salle</th>
+                        <th scope="col">Marche nordique</th>
+                    </tr>
+                </thead>
+                {% for tarif in tarifs %}
+                <tbody>
+                    <tr>
+                        <td>{{ tarif.description }}</td>
+                        <td>{{ tarif.price }} €</td>
+                    </tr>
+                </tbody>
+                {% endfor %}
+            </table>
+        </div>
+    </section>
+{% endblock %}
