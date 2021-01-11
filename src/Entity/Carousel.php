@@ -46,7 +46,7 @@ class Carousel
      *     maxSize="1000000",
      *     mimeTypes = {"image/png", "image/jpeg", "image/jpg", "image/gif",})
      */
-    private ?File $pathFile = null;
+    private ?File $pathFile;
 
     public function setPathFile(?File $image = null): Carousel
     {
