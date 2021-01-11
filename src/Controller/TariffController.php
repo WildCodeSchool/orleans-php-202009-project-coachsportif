@@ -11,7 +11,7 @@ use Symfony\Component\Routing\Annotation\Route;
 /**
  * @Route("/tarifs")
  */
-class TarifController extends AbstractController
+class TariffController extends AbstractController
 {
     /**
      * @Route("/", name="tarifs_index")
@@ -21,7 +21,7 @@ class TarifController extends AbstractController
     public function index(TariffRepository $tariffRepository): Response
     {
         return $this->render('tarif/index.html.twig', [
-            'tarifs' => $tariffRepository->findAll()
+            'tariffs' => $tariffRepository->findAll()
         ]);
     }
 }

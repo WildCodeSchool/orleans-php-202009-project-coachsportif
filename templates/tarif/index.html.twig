@@ -2,7 +2,7 @@
 {% block carousel %}{% endblock %}
 
     {% block stylesheets %}
-        {{ encore_entry_link_tags('tarif') }}
+        {{ encore_entry_link_tags('tariff') }}
     {% endblock %}
 
 {% block title %}Tarifs{% endblock %}
@@ -18,11 +18,11 @@
                         <th scope="col">Marche nordique</th>
                     </tr>
                 </thead>
-                {% for tarif in tarifs %}
+                {% for tariff in tariffs %}
                 <tbody>
                     <tr>
-                        <td>{{ tarif.description }}</td>
-                        <td>{{ tarif.price }} €</td>
+                        <td>{{ tariff.description }}</td>
+                        <td>{{ tariff.price }} €</td>
                     </tr>
                 </tbody>
                 {% endfor %}
