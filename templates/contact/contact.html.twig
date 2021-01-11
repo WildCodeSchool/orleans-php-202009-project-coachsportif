@@ -1,12 +1,14 @@
-{% extends 'layout.html.twig' %}
-{% form_theme form 'bootstrap_4_layout.html.twig' %}
-
 {% block stylesheets %}
     {{ encore_entry_link_tags('contact') }}
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
           integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
           crossorigin=""/>
 {% endblock %}
+
+{% extends 'layout.html.twig' %}
+{% form_theme form 'bootstrap_4_layout.html.twig' %}
+{% block carousel %}{% endblock %}
+
 
 {% block title %} Contacts {% endblock %}
 {% block body %}

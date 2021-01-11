@@ -36,7 +36,7 @@ class Walking
      *     maxSize="1000000",
      *     mimeTypes = {"image/png", "image/jpeg", "image/jpg", "image/gif",})
      */
-    private ?File $pictureFile;
+    private ?File $pictureFile = null;
 
     /**
      * @ORM\Column(type="datetime")

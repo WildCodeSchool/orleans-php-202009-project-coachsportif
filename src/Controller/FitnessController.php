@@ -14,12 +14,12 @@ use Symfony\Component\Routing\Annotation\Route;
 /**
  * Class FitnessController
  * @package App\Controller
- * @Route("/")
+ * @Route("/fitness")
  */
 class FitnessController extends AbstractController
 {
     /**
-     * @Route("/remise_en_forme", name="fitness", methods={"GET"})
+     * @Route("/fitness/remise_en_forme", name="fitness", methods={"GET"})
      * @param FitnessRepository $fitnessRepository
      * @param CarouselRepository $carouselRepository
      * @return Response

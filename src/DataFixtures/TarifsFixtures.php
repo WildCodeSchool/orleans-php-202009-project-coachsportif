@@ -15,11 +15,11 @@ class TarifsFixtures extends Fixture
     ];
     public function load(ObjectManager $manager)
     {
-        foreach (self::TARIFS as $seance => $price){
-        $tarif = new Tariff();
-        $tarif->setDescription($seance);
-        $tarif->setPrice($price);
-        $manager->persist($tarif);
+        foreach (self::TARIFS as $seance => $price) {
+            $tarif = new Tariff();
+            $tarif->setDescription($seance);
+            $tarif->setPrice($price);
+            $manager->persist($tarif);
         }
         $manager->flush();
     }

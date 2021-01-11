@@ -31,6 +31,7 @@ class Tariff
      */
     private float $price;
 
+
     public function getId(): ?int
     {
         return $this->id;
