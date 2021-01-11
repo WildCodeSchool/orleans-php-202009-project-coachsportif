@@ -18,9 +18,9 @@
                             <td>{{ carousel.path }}</td>
                             <td>{{ carousel.page }}</td>
                             <td>
-                                <a class="btn btn-primary btn-xs"
+                                <a class="btn btn-primary btn-lg"
                                    href="{{ path('carousel_show', {'id': carousel.id}) }}">Voir</a>
-                                <a class="btn btn-primary btn-xs"
+                                <a class="btn btn-primary btn-lg"
                                    href="{{ path('carousel_edit', {'id': carousel.id}) }}">Modifier</a>
                                 {{ include('carousel/_delete_form.html.twig') }}
                             </td>
