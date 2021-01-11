@@ -17,7 +17,7 @@
             {% for walking in walkings %}
                 <div class="row justify-content-between">
                     <div class="picture col-12 mb-2 col-lg-4">
-                        <img src="{{ asset('uploads/' ~ walking.picture) }}">
+                        <img src="{{ walking.picture }}{# {{ asset('uploads/' ~ walking.picture) }} #}">
                     </div>
                     <p class="col-12 col-lg-5">{{ walking.description }}</p>
                     <div class="col-6 col-lg-1">
