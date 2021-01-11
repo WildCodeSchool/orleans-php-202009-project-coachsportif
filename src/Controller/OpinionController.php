@@ -15,6 +15,16 @@ use Symfony\Component\Routing\Annotation\Route;
  */
 class OpinionController extends AbstractController
 {
+    /**
+     * @Route("/admin", name="index")
+     * @param OpinionRepository $opinionRepository
+     * @return Response
+     */
+    public function index(OpinionRepository $opinionRepository): Response
+    {
+        return $this->render('opinion/index.html.twig', [
+            'opinions' => $opinionRepository->findAll()]);
+    }
 
     /**
      * @Route("/new", name="opinion_new", methods={"GET","POST"})
