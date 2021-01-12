@@ -93,6 +93,7 @@ class HomeController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
+            $this->addFlash('success', 'La présentation à bien été modifiée');
             return $this->redirectToRoute('index_Admin');
         }
         return $this->render('home/edit.html.twig', [
@@ -113,6 +114,7 @@ class HomeController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($home);
             $entityManager->flush();
+            $this->addFlash('success', 'La présentation à bien été supprimée');
         }
 
         return $this->redirectToRoute('index_Admin');

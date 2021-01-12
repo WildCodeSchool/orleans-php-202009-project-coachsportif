@@ -107,3 +107,7 @@ input:valid {
 label {
     color: $light;
 }
+
+.custom-file-input ~ .custom-file-label:lang(fr)::after {
+    content: "Parcourir...";
+}
