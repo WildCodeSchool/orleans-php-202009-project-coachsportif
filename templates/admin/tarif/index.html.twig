@@ -14,10 +14,11 @@
             </tr>
             </thead>
             <tbody>
-                {% for tarif in tarifs %}
+                {% for tariff in tariffs %}
                     <tr>
-                        <td> {{ tarif.description }}</td>
-                        <td>{{ tarif.price }}</td>
+                        <td> {{ tariff.description }}</td>
+                        <td>{{ tariff.price }}</td>
+                        <td><a class="btn btn-secondary" href="{{ path('tarif_edit', { id: tariff.id}) }}">Modifier</a></td>
                     </tr>
             {% endfor %}
             <tbody>

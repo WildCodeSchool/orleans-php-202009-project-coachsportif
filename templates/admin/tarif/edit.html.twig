@@ -1,0 +1,11 @@
+{% extends 'layout_admin.html.twig' %}
+{% form_theme form 'bootstrap_4_layout.html.twig' %}
+
+{% block title %}Modification du tarif{% endblock %}
+
+{% block body %}
+    <h1 class="text-center my-4">Modification du tarif</h1>
+    <div class="container form ">
+        {{ include('admin/tarif/_form.html.twig', {'button_label': 'Modifier'}) }}
+    </div>
+{% endblock %}
