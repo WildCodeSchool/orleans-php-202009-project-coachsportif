@@ -1,0 +1,18 @@
+@import "app.scss";
+
+.title {
+    padding-top: $spacing-5;
+}
+
+.titreH2 {
+    font-size: $h3-font-size;
+}
+
+.card {
+    width: 18rem;
+}
+
+img {
+    justify-content: center;
+    max-width: 150px;
+}
