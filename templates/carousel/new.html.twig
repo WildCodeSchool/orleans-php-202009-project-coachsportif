@@ -1,14 +1,13 @@
-{% extends 'base.html.twig' %}
-
-{% block title %}New Carousel{% endblock %}
+{% extends 'layout_admin.html.twig' %}
+{% block title %}Ajout|image{% endblock %}
 
 {% block body %}
     <div class="container">
-    <h1 class="text-center">Create new Carousel</h1>
-    {% form_theme form 'bootstrap_4_layout.html.twig' %}
-    {{ include('carousel/_form.html.twig') }}
-        <div class="text-center">
-            <a class="btn btn-secondary btn-lg" href="{{ path('carousel_index') }}">back to list</a>
-        </div>
+        <h1 class="text-center mt-4">Ajout d'une nouvelle image</h1>
+        {% form_theme form 'bootstrap_4_layout.html.twig' %}
+        {{ include('carousel/_form.html.twig') }}
+            <div class="text-center">
+                <a class="btn btn-secondary btn" href="{{ path('carousel_index') }}">Retour</a>
+            </div>
     </div>
 {% endblock %}
