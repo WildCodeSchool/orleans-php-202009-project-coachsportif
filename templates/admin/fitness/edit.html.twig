@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modification du texte{% endblock %}
+
+{% block body %}
+    <div class="container text-center">
+        <h1>Modification du texte</h1>
+        <div class="row justify-content-center">
+            {{ include('admin/fitness/_form.html.twig', {'button_label': 'Enregistrer'}) }}
+
+            <a class="btn btn-secondary btn-lg m-3" href="{{ path('fitnessAdmin') }}">Retour</a>
+        </div>
+    </div>
+{% endblock %}

@@ -17,6 +17,16 @@ class OpinionController extends AbstractController
 {
 
     /**
+     * @Route("/admin", name="opinion_index")
+     * @param OpinionRepository $opinionRepository
+     * @return Response
+     */
+    public function index(OpinionRepository $opinionRepository): Response
+    {
+        return $this->render('opinion/index.html.twig', [
+            'opinions' => $opinionRepository->findAll()]);
+    }
+    /**
      * @Route("/new", name="opinion_new", methods={"GET","POST"})
      * @param Request $request
      * @return Response
@@ -43,6 +53,8 @@ class OpinionController extends AbstractController
 
     /**
      * @Route("/{id}", name="opinion_show", methods={"GET"})
+     * @param Opinion $opinion
+     * @return Response
      */
     public function show(Opinion $opinion): Response
     {

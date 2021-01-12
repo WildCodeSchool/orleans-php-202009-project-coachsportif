@@ -1,37 +1,38 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Opinion index{% endblock %}
+{% block title %}Commentaire{% endblock %}
 
 {% block body %}
-    <h1>Opinion index</h1>
-
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Author</th>
-                <th>Comment</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for opinion in opinions %}
-            <tr>
-                <td>{{ opinion.id }}</td>
-                <td>{{ opinion.author }}</td>
-                <td>{{ opinion.comment }}</td>
-                <td>
-                    <a href="{{ path('opinion_show', {'id': opinion.id}) }}">show</a>
-                    <a href="{{ path('opinion_edit', {'id': opinion.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="4">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
-
-    <a href="{{ path('opinion_new') }}">Create new</a>
+    <h1>Commentaire</h1>
+        <div class="container">
+            <table class="table text-dark text-center">
+                <thead class="thead-light">
+                    <tr>
+                        <th>Auteur</th>
+                        <th>Commentaire</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for opinion in opinions %}
+                    <tr>
+                        <td>{{ opinion.author }}</td>
+                        <td>{{ opinion.comment }}</td>
+                        <td>
+                            <a href="{{ path('opinion_show', {'id': opinion.id}) }}">Voir</a>
+                            <a href="{{ path('opinion_edit', {'id': opinion.id}) }}">Modifier</a>
+                            {{ include('opinion/_delete_form.html.twig') }}
+                        </td>
+                    </tr>
+                {% else %}
+                    <tr>
+                        <td colspan="4">Il n'y a aucun résultat</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    <div class="text-center">
+        <a href="{{ path('opinion_new') }}">Ajouter</a>
+    </div>
 {% endblock %}

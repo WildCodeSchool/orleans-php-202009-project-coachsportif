@@ -16,6 +16,9 @@ import '../styles/footer.scss';
 import '../styles/adminWalking.scss';
 import '../styles/contact.scss';
 import '../styles/homeCo.scss';
+import '../styles/adminOpinion.scss';
+import '../styles/admin.scss';
+import '../styles/tariff.scss';
 
 // Need jQuery? Install it with "yarn add jquery", then uncomment to import it.
 // import $ from 'jquery';
