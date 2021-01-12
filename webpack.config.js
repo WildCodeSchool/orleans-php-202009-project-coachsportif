@@ -44,6 +44,7 @@ Encore
     .addEntry('contact', './assets/styles/contact.scss')
     .addEntry('who', './assets/styles/whoIAm.scss')
     .addEntry('homeCo', './assets/styles/homeCo.scss')
+    .addEntry('indexAdmin', './assets/styles/admin.scss')
     .addEntry('tariff', './assets/styles/tariff.scss')
 
     // When enabled, Webpack "splits" your files into smaller pieces for greater optimization.
