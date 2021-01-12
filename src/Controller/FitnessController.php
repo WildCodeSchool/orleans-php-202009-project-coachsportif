@@ -77,7 +77,7 @@ class FitnessController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
-
+            $this->addFlash('success', 'Le texte de Remise en forme à bien été modifié');
             return $this->redirectToRoute('fitnessAdmin');
         }
 
