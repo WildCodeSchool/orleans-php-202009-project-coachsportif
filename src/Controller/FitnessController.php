@@ -51,7 +51,7 @@ class FitnessController extends AbstractController
             return $this->redirectToRoute('fitnessAdmin');
         }
 
-        return $this->render('fitness/new.html.twig', [
+        return $this->render('admin/fitness/new.html.twig', [
             'fitness' => $fitness,
             'form' => $form->createView(),
         ]);
@@ -62,7 +62,7 @@ class FitnessController extends AbstractController
      */
     public function show(Fitness $fitness): Response
     {
-        return $this->render('fitness/show.html.twig', [
+        return $this->render('admin/fitness/show.html.twig', [
             'fitness' => $fitness,
         ]);
     }
@@ -81,7 +81,7 @@ class FitnessController extends AbstractController
             return $this->redirectToRoute('fitnessAdmin');
         }
 
-        return $this->render('fitness/edit.html.twig', [
+        return $this->render('admin/fitness/edit.html.twig', [
             'fitness' => $fitness,
             'form' => $form->createView(),
         ]);
@@ -96,6 +96,7 @@ class FitnessController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($fitness);
             $entityManager->flush();
+            $this->addFlash('success', 'Le Texte partie Remise en forme à bien été supprimé');
         }
 
         return $this->redirectToRoute('fitnessAdmin');
@@ -109,7 +110,7 @@ class FitnessController extends AbstractController
     public function indexAdmin(FitnessRepository $fitnessRepository): Response
     {
         $descriptions = $fitnessRepository->findAll();
-        return $this->render('fitness/indexAdmin.html.twig', [
+        return $this->render('admin/fitness/indexAdmin.html.twig', [
             'descriptions' => $descriptions,
         ]);
     }
