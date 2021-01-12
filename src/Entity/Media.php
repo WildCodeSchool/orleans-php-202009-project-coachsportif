@@ -18,7 +18,7 @@ class Media
     private ?int $id;
 
     /**
-     * @ORM\Column(type="text")
+     * @ORM\Column(type="string", length=255)
      */
     private ?string $idYoutube;
 
