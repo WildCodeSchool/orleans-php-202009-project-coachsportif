@@ -1,8 +1,10 @@
 security:
+    role_hierarchy:
+        ROLE_CONTRIBUTOR: ROLE_MEMBER
+        ROLE_ADMIN: ROLE_COACH
     encoders:
         App\Entity\User:
             algorithm: auto
-
     # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
     providers:
         # used to reload user from session & other features (e.g. switch_user)
@@ -25,9 +27,6 @@ security:
                 secret: '%kernel.secret%'
                 lifetime: 604800 # 1 week in seconds
                 path: /
-            role_hierarchy:
-                ROLE_CONTRIBUTOR: ROLE_MEMBER
-                ROLE_ADMIN: ROLE_COACH
             logout:
                 path: app_logout
                 # where to redirect after logout
