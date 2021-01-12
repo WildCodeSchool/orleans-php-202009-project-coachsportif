@@ -1,11 +1,13 @@
-{% extends 'base.html.twig' %}
+{% extends 'layout_admin.html.twig' %}
 
-{% block title %}New Opinion{% endblock %}
+{% block title %}Ajout d'un nouvel avis{% endblock %}
 
 {% block body %}
-    <h1>Create new Opinion</h1>
-
-    {{ include('opinion/_form.html.twig') }}
-
-    <a href="{{ path('opinion_index') }}">back to list</a>
+    <h1>Ajout d'un nouvel avis</h1>
+    {% form_theme form 'bootstrap_4_layout.html.twig' %}
+        <div class="text-center">
+            {{ include('opinion/_form.html.twig') }}
+        </div>
+    <a class="btn btn-primary btn m-3" href="{{ path('home') }}">Retour</a>
 {% endblock %}
+

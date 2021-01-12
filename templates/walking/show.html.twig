@@ -3,11 +3,9 @@
 {% block stylesheets %}
     {{ encore_entry_link_tags('walking') }}
 {% endblock %}
-
 {% block body %}
     <section class="nordic-walking">
         <div class="walkingOverlay">
-            <h1>Qu'est-ce que la marche nordique ?</h1>
             <div class="container">
                 {% for walk in walks %}
                     <div class="row justify-content-between">
@@ -20,7 +18,7 @@
             </div>
             <div class="walk-submit">
                 <p>Si vous êtes intéressé, il suffit de remmplir un formulaire en ligne, simple et rapide !</p>
-                <a href="#" class="btn btn-primary">S'inscrire</a>
+                <a href="#" class="btn btn-secondary btn m-3">S'inscrire</a>
             </div>
         </div>
     </section>

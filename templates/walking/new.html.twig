@@ -1,11 +1,20 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}New Walking{% endblock %}
+{% block stylesheets %}
+    {{ encore_entry_link_tags('adminWalking') }}
+{% endblock %}
+
+{% block title %}Nouvelle rubrique{% endblock %}
 
 {% block body %}
-    <h1>New walking</h1>
+    <h1>Nouvelle rubrique</h1>
 
     {{ include('walking/_form.html.twig') }}
-
-    <a href="{{ path('walking_index') }}">Return</a>
+    <div class="container">
+        <div class="row justify-content-end">
+            <div class="col-3 mt-4">
+                <a class="btn btn-secondary btn m-3" href="{{ path('walking_admin') }}">Retour</a>
+            </div>
+        </div>
+    </div>
 {% endblock %}
