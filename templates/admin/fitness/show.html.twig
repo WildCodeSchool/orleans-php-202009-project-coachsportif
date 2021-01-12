@@ -8,19 +8,15 @@
     <table class="table">
         <tbody>
         <tr>
-            <th>Id</th>
-            <td>{{ fitness.id }}</td>
-        </tr>
-        <tr>
-            <th>Fitness_Text</th>
+            <th>Texte partie Remise en forme</th>
             <td>{{ fitness.fitnessText }}</td>
         </tr>
         </tbody>
     </table>
 
-    <a href="{{ path('fitnessAdmin') }}">back to list</a>
+    <a href="{{ path('fitnessAdmin') }}">Retour</a>
 
-    <a href="{{ path('fitness_edit', {'id': fitness.id}) }}">edit</a>
+    <a href="{{ path('fitness_edit', {'id': fitness.id}) }}">Modifier</a>
 
     {{ include('admin/fitness/_delete_form.html.twig') }}
 {% endblock %}
