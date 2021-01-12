@@ -19,11 +19,11 @@ h2 {
 .portrait {
     border-radius: $border-radius;
     filter: brightness(60%);
-    max-height: 300px;
+    max-height: 500px;
     margin: $spacing;
 }
 
-.textIntro h2 {
+.textIntro {
     padding: $spacing-4 0;
 }
 
@@ -34,7 +34,7 @@ h2 {
 
 .serviceSport h2 {
     padding: $spacing-4 0;
-    color: $light;
+    color: $warning;
 }
 
 .sportAdapt {
@@ -47,12 +47,12 @@ h2 {
 }
 
 .serviceSport {
-    background-color: $info;
+    background-color: $dark;
 }
 
 .linkCategory {
     transition: 0.3s;
-    border: 2px solid $warning;
+    border: 2px solid $light;
 }
 
 .linkCategory:hover {
@@ -72,6 +72,12 @@ h2 {
     border-radius: $border-radius;
     margin-bottom: $spacing-2;
     background-color: $transparent;
+    filter: brightness(60%);
+    z-index: 1;
+}
+
+.informationContact {
+    z-index: 5;
 }
 
 input:valid {
@@ -81,6 +87,11 @@ input:valid {
 
 .homeContact {
     padding-bottom: $spacing-4;
+    background-color: $dark;
+}
+
+.homeContact h2 {
+    color: $warning;
 }
 
 .vich-file {
@@ -91,6 +102,10 @@ input:valid {
     & a {
         display: none;
     }
+}
+
+label {
+    color: $light;
 }
 
 .custom-file-input ~ .custom-file-label:lang(fr)::after {
