@@ -10,7 +10,7 @@
                 {% for walk in walks %}
                     <div class="row justify-content-between">
                         <div class="col-lg-5">
-                            <img src="{{ asset( walk.picture ) }}">
+                            <img src="{{ asset('uploads/' ~ walk.picture) }}">
                         </div>
                         <p class="col-lg-5">{{ walk.description }}</p>
                     </div>
@@ -18,7 +18,7 @@
             </div>
             <div class="walk-submit">
                 <p>Si vous êtes intéressé, il suffit de remmplir un formulaire en ligne, simple et rapide !</p>
-                <a href="#" class="btn btn-primary">S'inscrire</a>
+                <a href="#" class="btn btn-secondary btn m-3">S'inscrire</a>
             </div>
         </div>
     </section>
