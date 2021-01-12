@@ -5,9 +5,9 @@
 {% block body %}
     <h1>Ajout d'un nouvel avis</h1>
     {% form_theme form 'bootstrap_4_layout.html.twig' %}
-<div class="text-center">
-    {{ include('opinion/_form.html.twig') }}
-</div>
-    <a class="btn btn-secondary btn-lg m-3" href="{{ path('home') }}">Retour</a>
+        <div class="text-center">
+            {{ include('opinion/_form.html.twig') }}
+        </div>
+    <a class="btn btn-primary btn m-3" href="{{ path('home') }}">Retour</a>
 {% endblock %}
 

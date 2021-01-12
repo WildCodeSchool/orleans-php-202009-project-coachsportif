@@ -1,0 +1,28 @@
+{% extends 'layout_admin.html.twig' %}
+
+{% block title %} Liste des tarifs {% endblock %}
+
+{% block body %}
+    <div class="container justify-content-center text-center">
+        <h1>Liste des tarifs</h1>
+        <table class="table text-dark text-center">
+            <thead class="thead-light">
+            <tr>
+                <th scope="col">Service</th>
+                <th scope="col">Prix</th>
+                <th scope="col">Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+                {% for tariff in tariffs %}
+                    <tr>
+                        <td> {{ tariff.description }}</td>
+                        <td>{{ tariff.price }}</td>
+                        <td><a class="btn btn-secondary" href="{{ path('tarif_edit', { id: tariff.id}) }}">Modifier</a></td>
+                    </tr>
+            {% endfor %}
+            <tbody>
+        </table>
+        <a class="btn btn-secondary" href="{{ path('tarif_new') }}">Ajouter un nouveau tarif</a>
+    </div>
+{% endblock %}

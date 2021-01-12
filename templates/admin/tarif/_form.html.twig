@@ -1,0 +1,7 @@
+{{ form_start(form) }}
+{{ form_widget(form) }}
+<div class="col mt-3 submit">
+    <button class="btn btn-secondary">{{ button_label|default('Sauvegarder') }}</button>
+    <a class="btn btn-primary"  href="{{ path('tarif_index') }}">Retour</a>
+</div>
+{{ form_end(form) }}
