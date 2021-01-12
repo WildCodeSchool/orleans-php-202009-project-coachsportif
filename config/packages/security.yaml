@@ -25,6 +25,9 @@ security:
                 secret: '%kernel.secret%'
                 lifetime: 604800 # 1 week in seconds
                 path: /
+            role_hierarchy:
+                ROLE_CONTRIBUTOR: ROLE_MEMBER
+                ROLE_ADMIN: ROLE_COACH
             logout:
                 path: app_logout
                 # where to redirect after logout
