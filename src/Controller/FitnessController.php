@@ -96,6 +96,7 @@ class FitnessController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($fitness);
             $entityManager->flush();
+            $this->addFlash('success', 'Le Texte partie Remise en forme à bien été supprimé');
         }
 
         return $this->redirectToRoute('fitnessAdmin');
