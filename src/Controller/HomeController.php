@@ -51,7 +51,7 @@ class HomeController extends AbstractController
         }
         $home = $homeRepository->findAll();
         $pictures = $carouselRepository->findBy(['page' => 'home']);
-        return $this->render('home/index.html.twig', [
+        return $this->render('home/index_admin.html.twig', [
             "form" => $form->createView(),
             'pictures' => $pictures,
             'home' => $home

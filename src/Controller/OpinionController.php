@@ -22,7 +22,7 @@ class OpinionController extends AbstractController
      */
     public function index(OpinionRepository $opinionRepository): Response
     {
-        return $this->render('opinion/index.html.twig', [
+        return $this->render('opinion/index_admin.html.twig', [
             'opinions' => $opinionRepository->findAll()]);
     }
 

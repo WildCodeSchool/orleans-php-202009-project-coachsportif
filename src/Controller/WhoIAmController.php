@@ -20,7 +20,7 @@ class WhoIAmController extends AbstractController
     public function index(OpinionRepository $opinionRepository): Response
     {
         $opinions = $opinionRepository->findAll();
-        return $this->render('whoIAm/index.html.twig', [
+        return $this->render('whoIAm/index_admin.html.twig', [
             'opinions' => $opinions
         ]);
     }

@@ -22,7 +22,7 @@ class CarouselController extends AbstractController
      */
     public function index(CarouselRepository $carouselRepository): Response
     {
-        return $this->render('carousel/index.html.twig', [
+        return $this->render('carousel/index_admin.html.twig', [
             'carousels' => $carouselRepository->findAll(),
         ]);
     }

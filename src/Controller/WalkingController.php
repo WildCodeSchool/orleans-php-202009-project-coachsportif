@@ -25,7 +25,7 @@ class WalkingController extends AbstractController
     public function index(WalkingRepository $walkingRepository, CarouselRepository $carouselRepository): Response
     {
         $pictures = $carouselRepository->findBy(['page' => 'walking']);
-        return $this->render('walking/index.html.twig', [
+        return $this->render('walking/index_admin.html.twig', [
             'walkings' => $walkingRepository->findAll(),
             'pictures' => $pictures,
         ]);

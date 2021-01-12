@@ -20,7 +20,7 @@ class TariffController extends AbstractController
      */
     public function index(TariffRepository $tariffRepository): Response
     {
-        return $this->render('tarif/index.html.twig', [
+        return $this->render('tarif/index_admin.html.twig', [
             'tariffs' => $tariffRepository->findAll()
         ]);
     }
