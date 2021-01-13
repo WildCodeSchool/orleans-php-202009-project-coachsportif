@@ -5,7 +5,7 @@ namespace App\Controller;
 use App\Repository\MediaRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\Routing\Annotation;
+use Symfony\Component\Routing\Annotation\Route;
 
 /**
  * @Route("/media")
