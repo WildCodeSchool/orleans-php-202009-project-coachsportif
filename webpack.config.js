@@ -47,6 +47,7 @@ Encore
     .addEntry('adminOpinion', './assets/styles/adminOpinion.scss')
     .addEntry('indexAdmin', './assets/styles/admin.scss')
     .addEntry('tariff', './assets/styles/tariff.scss')
+    .addEntry('tariff', './assets/styles/gym.scss')
 
 
     // When enabled, Webpack "splits" your files into smaller pieces for greater optimization.
