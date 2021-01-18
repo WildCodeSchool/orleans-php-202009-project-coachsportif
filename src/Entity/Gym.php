@@ -15,12 +15,12 @@ class Gym
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
      */
-    private $id;
+    private ?int $id;
 
     /**
      * @ORM\Column(type="text", nullable=true)
      */
-    private $gymText;
+    private ?string $gymText;
 
     public function getId(): ?int
     {
@@ -34,7 +34,7 @@ class Gym
 
     public function setGymText(?string $gymText): self
     {
-        $this->gym�_text = $gymText;
+        $this->gymText = $gymText;
 
         return $this;
     }
