@@ -27,7 +27,7 @@
 }
 
 .DamienG {
-    padding-top: $spacing-4; 
+    padding-top: $spacing-4;
     border-radius: $border-radius;
 }
 
@@ -52,4 +52,9 @@
 .opinionAuthor{
     color: $dark;
     margin-bottom: 0;
+}
+
+.carousel {
+    background-color: #E8EEF1;
+    min-height: 150px;
 }
