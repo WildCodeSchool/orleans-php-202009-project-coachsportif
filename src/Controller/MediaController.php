@@ -16,12 +16,15 @@ use Symfony\Component\Routing\Annotation\Route;
 class MediaController extends AbstractController
 {
     /**
-     * @Route("/", name="media_index")
+     * @Route("/", name="media_index", methods={"GET"})
+     * @param MediaRepository $mediaRepository
      * @return Response
      */
-    public function index(): Response
+    public function index(MediaRepository $mediaRepository): Response
     {
-        return $this->render('media/index.html.twig');
+        return $this->render('media/index.html.twig', [
+            'medias' => $mediaRepository->findAll(),
+        ]);
     }
 
     /**

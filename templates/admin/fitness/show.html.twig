@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Remise en forme Affichage Texte{% endblock %}
+
+{% block body %}
+    <h1>Affichage du Texte Remise en forme</h1>
+    <div class="container text-center">
+        <table class="table">
+            <tbody>
+            <tr>
+                <th>Texte partie Remise en forme</th>
+                <td>{{ fitness.fitnessText }}</td>
+            </tr>
+            </tbody>
+        </table>
+        <a class="btn btn-secondary btn m-3 href="{{ path('fitness_edit', {'id': fitness.id}) }}">Modifier</a>
+        <div class="row justify-content-center">
+            <a class="btn btn-secondary btn m-3 href="{{ path('fitnessAdmin') }}">Retour</a>
+            {{ include('admin/fitness/_delete_form.html.twig') }}
+        </div>
+    </div>
+

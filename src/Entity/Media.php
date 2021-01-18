@@ -20,7 +20,8 @@ class Media
     /**
      * @ORM\Column(type="text")
      */
-    private ?string $linkVideo;
+    private ?string $idYoutube;
+
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -32,14 +33,15 @@ class Media
         return $this->id;
     }
 
-    public function getLinkVideo(): ?string
+
+    public function getIdYoutube(): ?string
     {
-        return $this->linkVideo;
+        return $this->idYoutube;
     }
 
-    public function setLinkVideo(string $linkVideo): self
+    public function setIdYoutube(string $idYoutube): self
     {
-        $this->linkVideo = $linkVideo;
+        $this->idYoutube = $idYoutube;
 
         return $this;
     }

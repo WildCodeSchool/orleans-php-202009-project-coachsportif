@@ -19,7 +19,7 @@
                             <td>{{ presentation.text }}</td>
                             <td>{{ presentation.picture }}</td>
                             <td>
-                                <a class="btn btn-primary btn-lg"
+                                <a class="btn btn-primary btn"
                                    href="{{ path('home_edit', {'id': presentation.id}) }}">Modifier</a>
                             </td>
                         </tr>
@@ -32,6 +32,6 @@
             </table>
         </div>
         <div class="text-center">
-            <a class="btn btn-secondary btn-lg" href="#">Retour</a>
+            <a class="btn btn-secondary btn" href="{{ path('admin_index') }}">Retour</a>
         </div>
 {% endblock %}

@@ -15,8 +15,9 @@ use Symfony\Component\Routing\Annotation\Route;
  */
 class OpinionController extends AbstractController
 {
+
     /**
-     * @Route("/admin", name="index")
+     * @Route("/admin", name="opinion_index")
      * @param OpinionRepository $opinionRepository
      * @return Response
      */
@@ -25,7 +26,6 @@ class OpinionController extends AbstractController
         return $this->render('opinion/index_admin.html.twig', [
             'opinions' => $opinionRepository->findAll()]);
     }
-
     /**
      * @Route("/new", name="opinion_new", methods={"GET","POST"})
      * @param Request $request
@@ -53,6 +53,8 @@ class OpinionController extends AbstractController
 
     /**
      * @Route("/{id}", name="opinion_show", methods={"GET"})
+     * @param Opinion $opinion
+     * @return Response
      */
     public function show(Opinion $opinion): Response
     {

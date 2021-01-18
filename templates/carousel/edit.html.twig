@@ -8,9 +8,9 @@
     {% form_theme form 'bootstrap_4_layout.html.twig' %}
     <div class="container">
         <h1 class="text-center mt-4">Modifier une image</h1>
-            {{ include('carousel/_form.html.twig', {'button_label': 'Modifier'}) }}
+            {{ include('carousel/_form.html.twig', {'button_label': 'Enregistrer'}) }}
     </div>
     <div class="text-center">
-        <a class="btn btn-secondary btn-lg" href="{{ path('carousel_index') }}">Retour</a>
+        <a class="btn btn-secondary btn" href="{{ path('carousel_index') }}">Retour</a>
     </div>
 {% endblock %}

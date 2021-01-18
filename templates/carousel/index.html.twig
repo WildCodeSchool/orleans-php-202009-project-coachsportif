@@ -18,9 +18,9 @@
                             <td>{{ carousel.path }}</td>
                             <td>{{ carousel.page }}</td>
                             <td>
-                                <a class="btn btn-primary btn-lg"
+                                <a class="btn btn-primary btn"
                                    href="{{ path('carousel_show', {'id': carousel.id}) }}">Voir</a>
-                                <a class="btn btn-primary btn-lg"
+                                <a class="btn btn-primary btn"
                                    href="{{ path('carousel_edit', {'id': carousel.id}) }}">Modifier</a>
                                 {{ include('carousel/_delete_form.html.twig') }}
                             </td>
@@ -34,6 +34,9 @@
             </table>
     </div>
     <div class="text-center">
-        <a class="btn btn-secondary btn-lg mb-5" href="{{ path('carousel_new') }}">Ajouter une nouvelle image</a>
+        <a class="btn btn-secondary btn mb-5" href="{{ path('carousel_new') }}">Ajouter une nouvelle image</a>
+    </div>
+    <div class="text-center">
+        <a class="btn btn-secondary btn" href="{{ path('admin_index') }}">Retour</a>
     </div>
 {% endblock %}
