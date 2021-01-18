@@ -6,6 +6,7 @@ use App\Repository\CarouselRepository;
 use App\Entity\Fitness;
 use App\Form\FitnessType;
 use App\Repository\FitnessRepository;
+use App\Repository\OpinionRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -22,15 +23,20 @@ class FitnessController extends AbstractController
      * @Route("/remise_en_forme", name="fitness", methods={"GET"})
      * @param FitnessRepository $fitnessRepository
      * @param CarouselRepository $carouselRepository
+     * @param OpinionRepository $opinionRepository
      * @return Response
      */
-    public function index(FitnessRepository $fitnessRepository, CarouselRepository $carouselRepository): Response
-    {
+    public function index(FitnessRepository $fitnessRepository,
+                          CarouselRepository $carouselRepository,
+                          OpinionRepository $opinionRepository
+    ): Response {
         $pictures = $carouselRepository->findBy(['page' => 'fitness']);
         $descriptions = $fitnessRepository->findAll();
+        $opinions = $opinionRepository->findBy(['page' => 'walking']);
         return $this->render('fitness/index.html.twig', [
             'descriptions' => $descriptions,
             'pictures' => $pictures,
+            'opinions' => $opinions,
         ]);
     }
 
