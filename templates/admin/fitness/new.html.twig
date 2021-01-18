@@ -5,14 +5,9 @@
 {% block title %}Ajouter un texte partie Remise en forme{% endblock %}
 
 {% block body %}
-    <h1>Ajouter un texte</h1>
-
+    <h1 class="text-center">Ajouter un texte</h1>
     {{ include('admin/fitness/_form.html.twig') }}
-    <div class="container">
-        <div class="row justify-content-end">
-            <div class="m-4">
+            <div class="text-center m-4">
                 <a class="btn btn-primary" href="{{ path('fitnessAdmin') }}">Retour</a>
             </div>
-        </div>
-    </div>
 {% endblock %}
