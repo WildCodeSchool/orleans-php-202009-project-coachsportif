@@ -1,24 +1,18 @@
 {% extends 'layout.html.twig' %}
 
 {% block body %}
-    <section class="fitnessBackground">
-        <div class="fitnessOverlay">
             <div class="fitnessContent">
 
                 <h1 class="text-center">Remise en forme</h1>
-                <div class="container">
+                <div class="container-fluid">
                     {% for description in descriptions %}
-                        <div class="row justify-content-between">
-                            <div class="col-lg-5 col-s-2 col-m-6">
-                                <img class="fitnessParagraphImage col-lg-12  p-0" src="{{ asset('build/images/LosingWeight.jpg') }}"
-                                     alt="Fitness Paragraph Image">
-                            </div>
-                            <p class="fitnessParagraph text-left col-lg-5 py-2">{{ description.FitnessText }}</p>
+                        <div class="row justify-content-center">
+                            <p class="fitnessParagraph text-center col-8 py-2">{{ description.FitnessText }}</p>
                         </div>
                     {% endfor %}
                 </div>
                 <div class="container d-flex justify-content-center">
-                    <div class="fitnessSubmitParagraph row text-center">
+                    <div class="fitnessSubmitParagraph row">
                         <p>Si vous-êtes intéressé, il vous suffit de remplir un formulaire en ligne, simple et rapide
                             !</p>
                     </div>
@@ -27,6 +21,4 @@
                     <a class="fitnessButton btn btn-secondary btn-lg" href="#">S'inscrire</a>
                 </div>
             </div>
-        </div>
-    </section>
 {% endblock %}
