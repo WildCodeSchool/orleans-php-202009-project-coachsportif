@@ -24,9 +24,10 @@ class WalkingController extends AbstractController
      * @param OpinionRepository $opinionRepository
      * @return Response
      */
-    public function index(WalkingRepository $walkingRepository,
-                          CarouselRepository $carouselRepository,
-                          OpinionRepository $opinionRepository
+    public function index(
+        WalkingRepository $walkingRepository,
+        CarouselRepository $carouselRepository,
+        OpinionRepository $opinionRepository
     ): Response {
         $pictures = $carouselRepository->findBy(['page' => 'walking']);
         $opinions = $opinionRepository->findBy(['page' => 'walking']);

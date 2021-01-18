@@ -26,9 +26,10 @@ class FitnessController extends AbstractController
      * @param OpinionRepository $opinionRepository
      * @return Response
      */
-    public function index(FitnessRepository $fitnessRepository,
-                          CarouselRepository $carouselRepository,
-                          OpinionRepository $opinionRepository
+    public function index(
+        FitnessRepository $fitnessRepository,
+        CarouselRepository $carouselRepository,
+        OpinionRepository $opinionRepository
     ): Response {
         $pictures = $carouselRepository->findBy(['page' => 'fitness']);
         $descriptions = $fitnessRepository->findAll();
