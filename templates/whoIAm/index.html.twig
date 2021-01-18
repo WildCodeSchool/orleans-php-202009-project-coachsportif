@@ -1,5 +1,4 @@
 {% extends 'layout.html.twig' %}
-
     {% block stylesheets %}
         {{ encore_entry_link_tags('who') }}
     {% endblock %}
@@ -7,44 +6,41 @@
 {% block title %}Qui suis-je ?{% endblock %}
 
 {% block body %}
-    <section class="who container-fluid">
-        <h1 class="who-title">Damien Gouveia : Coach sportif Orléans</h1>
-        <div class="row">
-            <div class="col-md-4">
-                <img class="DamienG img-fluid" src="{{ asset('build/images/DamienG.jpg') }}"
-                     alt="photo Damien Gouveia">
-            </div>
-            <div class="col-8">
-                <div class="philosophie text-block">
-                    <h2>Ma philosophie de travail : </h2>
-                    <p> Après avoir travaillé pendant plusieurs années dans la préparation physique, mais aussi dans le monde
-                de l’entrainement auprès de sportifs professionnels. <br>
-                J'ai eu envie de donner un véritable sens, un accomplissement à ma vie professionnelle :
-                    </p>
-                    <p>
-                        <strong>Accompagner les personnes</strong> dans leur prise en charge de la santé
-                        Participer à <strong>améliorer leur qualité de vie</strong>
-                    </p>
-
-                    <p>
-                Je mets alors à contribution, mon expérience, mes savoirs et compétences acquis <br>
-                dans le domaine de l’entrainement au profit de personnes sédentaires, peu sportives ou atteintes de pathologies.<br>
-                Ma <strong>complémentarité avec les professionnels de santé</strong>
-                (médecins, endocrinologues, kinésithérapeutes, ostéopathes, … )<br>
-                avec qui je collabore quotidiennement permet d’établir un véritable travail d’équipe qui n’en rendra
-                notre travail que plus efficace.
-                    </p>
+    <section>
+        <h1 class="who-title text-center text-dark mt-5">Damien Gouveia : Coach sportif Orléans</h1>
+            <div class="container-fluid">
+                <div class="row justify-content-around">
+                    <div class="col-lg-4 col-sm-2 d-flex align-self-center justify-content-center">
+                        <img class="portrait mt-4" src="{{ asset('build/images/DamienG.jpg') }}" alt="Auto portrait"
+                             title="Damien Gouveia">
+                    </div>
+                    <div class=" justify-content-center justify-content-center
+                            col-lg-8 col-sm-6 d-flex align-items-center lead flex-column">
+                        <div>
+                            <h2>Ma philosophie de travail : </h2>
+                                <p> Après avoir travaillé pendant plusieurs années dans la préparation physique, mais aussi dans le monde
+                                    de l’entrainement auprès de sportifs professionnels. <br>
+                                    J'ai eu envie de donner un véritable sens, un accomplissement à ma vie professionnelle :
+                                    <strong>Accompagner les personnes</strong> dans leur prise en charge de la santé
+                                    Participer à <strong>améliorer leur qualité de vie</strong>
+                                    Je mets alors à contribution, mon expérience, mes savoirs et compétences acquis <br>
+                                    dans le domaine de l’entrainement au profit de personnes sédentaires, peu sportives ou atteintes de pathologies.<br>
+                                    Ma <strong>complémentarité avec les professionnels de santé</strong>
+                                    (médecins, endocrinologues, kinésithérapeutes, ostéopathes, … )<br>
+                                    avec qui je collabore quotidiennement permet d’établir un véritable travail d’équipe qui n’en rendra
+                                    notre travail que plus efficace.
+                                </p>
+                        </div>
+                    </div>
                 </div>
             </div>
-
-        </div>
-
     </section>
+
     <section id="carousel-opinion" class="carousel slide pb-0" data-ride="carousel">
         <h2 class="text-center p-5">Témoignages</h2>
         <div class="carousel-inner">
             {% for opinion in opinions %}
-                <div class="carousel-item  {% if loop.index0 == 0 %} active {% endif %}">
+                <div class="carousel-item  {% if loop.first %} active {% endif %}">
                     <div class="container">
                         <p class="mb-4">{{ opinion.comment }}</p>
                         <p class="opinionAuthor lead">{{ opinion.author }}</p>
