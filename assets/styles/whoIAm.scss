@@ -1,47 +1,12 @@
 @import "app.scss";
 
-.who {
-    padding: 100px 0;
-    background: $light;
-}
-
-.who p {
-    color: $dark;
-    margin-bottom: 0;
-
-}
-
-.who ul {
-    color: $dark;
-}
-
-.who h2 {
-    margin-bottom: $spacing-4;
-    color: $dark;
-}
-
 .who-title {
-    color: $dark;
-    text-align: center;
-
-}
-
-.DamienG {
-    padding-top: $spacing-4; 
-    border-radius: $border-radius;
+    padding-top: $spacing-4;
 }
 
 .opinionTitle{
     margin-bottom: $spacing-4;
     color: $dark;
-}
-
-.opinionCard{
-    border-width:1px;
-    border-style:solid;
-    border-color:$warning;
-    margin: $spacing-2;
-    align-content: center;
 }
 
 .opinionText{
@@ -52,4 +17,11 @@
 .opinionAuthor{
     color: $dark;
     margin-bottom: 0;
+}
+
+.portrait {
+    border-radius: $border-radius;
+    filter: brightness(60%);
+    max-height: 600px;
+    margin: $spacing;
 }
