@@ -1,34 +1,22 @@
 @import "app.scss";
 
-.fitnessBackground {
-    background-image: url("../images/backgroundFitness.jpg");
-    min-height: 100vh;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-    background-position: center;
-}
-
 .fitnessParagraph {
     color: $text-color;
     font-size: $text-font-size*1.25;
     margin: $spacing-4 $spacing-3 $spacing-5;
 }
 
-.fitnessParagraphImage {
-    padding: 0;
-    filter: brightness(80%);
-    border-radius: $border-radius;
-    box-shadow: $box-shadow;
-    margin-bottom: $spacing-4;
-}
-
 .fitnessSubmitParagraph {
     padding: 0;
     color: $text-color;
-    font-size: $text-font-size;
+    font-size: $text-font-size*1.25;
 }
 
 .fitnessButton {
     margin-bottom: $spacing-4;
+}
+
+.carouselFitness {
+    background-color: $background-opinion;
+    min-height: 350px;
 }

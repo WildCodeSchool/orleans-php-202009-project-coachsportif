@@ -11,8 +11,6 @@ class FitnessFixtures extends Fixture
 {
     public function load(ObjectManager $manager)
     {
-        $faker = Faker\Factory::create('fr_FR',);
-
             $fitness = new Fitness();
             $fitness->setFitnessText('Vous avez arrêté le sport depuis longtemps, et voulez redevenir actif 
             avec l\'aide d\'un professionnel ? Je vous propose donc un programme de remise en forme ! Axé sur le 
