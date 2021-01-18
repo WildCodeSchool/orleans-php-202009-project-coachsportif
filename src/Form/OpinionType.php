@@ -18,7 +18,7 @@ class OpinionType extends AbstractType
             ->add('page', ChoiceType::class, [
                 'choices' => [
                     'Remise en forme' => 'fitness',
-                    'Sport adapter' => 'adapted-activity',
+                    'Sport adapté' => 'adapted-activity',
                     'Marche nordique' => 'walking',
                     'Santé en entreprise' => 'company',
                     'La salle d\'entrainement' => 'training',

@@ -2,11 +2,11 @@
 
 namespace App\Controller;
 
+use App\Repository\OpinionRepository;
 use App\Repository\CarouselRepository;
 use App\Entity\Fitness;
 use App\Form\FitnessType;
 use App\Repository\FitnessRepository;
-use App\Repository\OpinionRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -31,9 +31,9 @@ class FitnessController extends AbstractController
         CarouselRepository $carouselRepository,
         OpinionRepository $opinionRepository
     ): Response {
+        $opinions = $opinionRepository->findBy(['page' => 'fitness']);
         $pictures = $carouselRepository->findBy(['page' => 'fitness']);
         $descriptions = $fitnessRepository->findAll();
-        $opinions = $opinionRepository->findBy(['page' => 'walking']);
         return $this->render('fitness/index.html.twig', [
             'descriptions' => $descriptions,
             'pictures' => $pictures,

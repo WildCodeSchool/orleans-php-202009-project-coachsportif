@@ -54,7 +54,7 @@ class WalkingController extends AbstractController
             $entityManager->persist($walking);
             $entityManager->flush();
 
-            return $this->redirectToRoute('walking_index');
+            return $this->redirectToRoute('walking_admin');
         }
 
         return $this->render('walking/new.html.twig', [
