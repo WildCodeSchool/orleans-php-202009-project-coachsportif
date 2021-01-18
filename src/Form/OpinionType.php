@@ -20,8 +20,8 @@ class OpinionType extends AbstractType
                     'Remise en forme' => 'fitness',
                     'Sport adapter' => 'adapted-activity',
                     'Marche nordique' => 'walking',
-                    'Santé en entreprise' => 'entreprise',
-                    'La salle d\'entrainement' => 'entreprise',
+                    'Santé en entreprise' => 'company',
+                    'La salle d\'entrainement' => 'training',
                     'Qui suis-je ?' => 'who',
                 ]]);
     }
