@@ -1,17 +1,14 @@
-{% extends 'base.html.twig' %}
-
-
+{% extends 'layout_admin.html.twig' %}
+    {% block stylesheets %}
+        {{ encore_entry_link_tags('indexAdmin') }}
+    {% endblock %}
 {% block title %}Ajouter un texte partie Remise en forme{% endblock %}
 
 {% block body %}
-    <h1>Ajouter un texte</h1>
-
+    <h1 class="title text-center mt-4">Ajouter un texte</h1>
     {{ include('admin/fitness/_form.html.twig') }}
-    <div class="container">
-        <div class="row justify-content-end">
-            <div class="col-3 mt-4">
-                <a class="btn btn-primary" href="{{ path('fitnessAdmin') }}">Retour</a>
-            </div>
+        <div class="text-center mt-4">
+            <a class="btn btn-primary" href="{{ path('fitnessAdmin') }}">Retour</a>
         </div>
-    </div>
+
 {% endblock %}
