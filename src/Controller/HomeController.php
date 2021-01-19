@@ -21,6 +21,8 @@ use Symfony\Component\Routing\Annotation\Route;
  */
 class HomeController extends AbstractController
 {
+    private const HOME_PAGE = "home";
+
     /**
      * @Route("/", name="home")
      * @param HomeRepository $homeRepository
@@ -50,7 +52,7 @@ class HomeController extends AbstractController
             return $this->redirectToRoute('confirmation');
         }
         $home = $homeRepository->findAll();
-        $pictures = $carouselRepository->findBy(['page' => 'home']);
+        $pictures = $carouselRepository->findBy(['page' => self::HOME_PAGE]);
         return $this->render('home/index.html.twig', [
             "form" => $form->createView(),
             'pictures' => $pictures,

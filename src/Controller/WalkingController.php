@@ -17,6 +17,8 @@ use Symfony\Component\Routing\Annotation\Route;
  */
 class WalkingController extends AbstractController
 {
+    private const WALKING_PAGE = "walking";
+
     /**
      * @Route("/", name="walking_index", methods={"GET"})
      * @param WalkingRepository $walkingRepository
@@ -29,8 +31,8 @@ class WalkingController extends AbstractController
         CarouselRepository $carouselRepository,
         OpinionRepository $opinionRepository
     ): Response {
-        $pictures = $carouselRepository->findBy(['page' => 'walking']);
-        $opinions = $opinionRepository->findBy(['page' => 'walking']);
+        $pictures = $carouselRepository->findBy(['page' => self::WALKING_PAGE]);
+        $opinions = $opinionRepository->findBy(['page' => self::WALKING_PAGE]);
         return $this->render('walking/index.html.twig', [
             'walkings' => $walkingRepository->findAll(),
             'pictures' => $pictures,

@@ -19,6 +19,8 @@ use Symfony\Component\Routing\Annotation\Route;
  */
 class FitnessController extends AbstractController
 {
+    private const FITNESS_PAGE = "fitness";
+
     /**
      * @Route("/remise_en_forme", name="fitness", methods={"GET"})
      * @param FitnessRepository $fitnessRepository
@@ -31,8 +33,8 @@ class FitnessController extends AbstractController
         CarouselRepository $carouselRepository,
         OpinionRepository $opinionRepository
     ): Response {
-        $opinions = $opinionRepository->findBy(['page' => 'fitness']);
-        $pictures = $carouselRepository->findBy(['page' => 'fitness']);
+        $opinions = $opinionRepository->findBy(['page' => self::FITNESS_PAGE]);
+        $pictures = $carouselRepository->findBy(['page' => self::FITNESS_PAGE]);
         $descriptions = $fitnessRepository->findAll();
         return $this->render('fitness/index.html.twig', [
             'descriptions' => $descriptions,

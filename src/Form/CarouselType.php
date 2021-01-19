@@ -11,14 +11,24 @@ use Vich\UploaderBundle\Form\Type\VichFileType;
 
 class CarouselType extends AbstractType
 {
+    private const FITNESS_PAGE = ' fitness';
+    private const ADAPTED_PAGE = 'adapted-activity';
+    private const WALKING_PAGE = 'walking';
+    private const COMPAGNY_PAGE = 'company';
+    private const TRAINING_PAGE = 'training';
+    private const HOME_PAGE = 'home';
+
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
             ->add('page', ChoiceType::class, [
                 'choices' => [
-                    'Remise en forme' => 'fitness',
-                    'Acceuil' => 'home',
-                    'Marche nordique' => 'walking',
+                    'Accueil' => self::HOME_PAGE,
+                    'Marche nordique' => self::WALKING_PAGE,
+                    'Remise en forme' => self::FITNESS_PAGE,
+                    'La salle d\'entrainement' => self::TRAINING_PAGE,
+                    'Santé en entreprise' => self::COMPAGNY_PAGE,
+                    'Sport adapté' => self::ADAPTED_PAGE,
                 ]])
             ->add('pathFile', VichFileType::class, [
                 'required' => false,
