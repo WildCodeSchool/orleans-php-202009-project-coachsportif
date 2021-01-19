@@ -80,6 +80,9 @@ class AdminMediaController extends AbstractController
 
     /**
      * @Route("/{id}", name="media_delete", methods={"DELETE"})
+     * @param Request $request
+     * @param Media $medium
+     * @return Response
      */
     public function delete(Request $request, Media $medium): Response
     {
@@ -87,7 +90,7 @@ class AdminMediaController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($medium);
             $entityManager->flush();
-            $this->addFlash('danger', 'Le Texte partie Remise en forme à bien été supprimé');
+            $this->addFlash('danger', 'La vidéo à bien été supprimé');
         }
 
         return $this->redirectToRoute('media_admin');
