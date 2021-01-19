@@ -1,34 +1,36 @@
 {% extends 'layout_admin.html.twig' %}
-
 {% block stylesheets %}
     {{ encore_entry_link_tags('adminWalking') }}
 {% endblock %}
-
 {% block body %}
     <section class="admin-walking">
-        <h1>Marche nordique</h1>
-        <div class="container">
-            <div class="row justify-content-end">
-                <div class="col-5 offset-7">
-                    <a class="btn btn-secondary" href="{{ path('walking_new') }}">Nouvelle rubrique</a>
-                </div>
+        <h1 class="adminTitle text-center">Marche nordique</h1>
+            <div class="container">
+                <a class="btn btn-success btn mb-2" href="{{ path('walking_new') }}">Nouvelle rubrique</a>
+                <table class="table text-dark text-center">
+                    <thead class="thead-light text-center">
+                        <tr class="text-center">
+                            <th>Images</th>
+                            <th>Texte marche nordique</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                {% for walking in walkings %}
+                    <tr>
+                        <td><img src="{{ asset('uploads/' ~ walking.picture) }}" alt="{{ walking.picture }}"></td>
+                        <td>{{ walking.description }}</td>
+                        <td>
+                            <a class="btn btn-primary mb-2" href="{{ path('walking_edit', { id: walking.id }) }}">Modifier</a>
+                            {{ include('walking/_delete_form.html.twig') }}
+                        </td>
+                    </tr>
+                    </tbody>
+                {% endfor %}
+                </table>
             </div>
-
-            {% for walking in walkings %}
-                <div class="row justify-content-between">
-                    <div class="picture col-12 mb-2 col-lg-4">
-                        <img src="{{ asset('uploads/' ~ walking.picture) }}">
-                    </div>
-                    <p class="col-12 col-lg-5">{{ walking.description }}</p>
-                    <div class="col-6 col-lg-1">
-                        <a class="btn btn-secondary" href="{{ path('walking_edit', { id: walking.id }) }}">Modifier</a>
-                    </div>
-                    <div class="delete col-lg-1">
-                        {{ include('walking/_delete_form.html.twig') }}
-                    </div>
-                </div>
-                <hr>
-            {% endfor %}
-        </div>
+            <div class="text-center">
+                <a class="btn btn-secondary btn mb-4" href="{{ path('admin_index') }}">Retour</a>
+            </div>
     </section>
 {% endblock %}

@@ -38,7 +38,7 @@
                             <a class="nav-link text-light" href="{{ path('tarifs_index') }}">Tarifs</a>
                         </li>
                         <li class="nav-item mx-3">
-                            <a class="nav-link text-light" href="#">Média</a>
+                            <a class="nav-link text-light" href="{{ path('media_index') }}">Média</a>
                         </li>
                         <li class="nav-item mx-3">
                             <a class="nav-link text-light" href="{{ path('contact_show') }}">Page contact</a>
@@ -50,9 +50,9 @@
                         </li>
                         <li class="nav-item mx-3">
                             {% if app.user %}
-                                <a class="nav-link" href="{{ path('app_logout') }}"> Se déconnecter</a>
+                                <a class="nav-link text-light" href="{{ path('app_logout') }}"> Se déconnecter</a>
                             {% else %}
-                                <a class="nav-link" href="{{ path('app_login') }}"> Se connecter</a>
+                                <a class="nav-link text-light" href="{{ path('app_login') }}"> Se connecter</a>
                             {% endif %}
                         </li>
                      </ul>
