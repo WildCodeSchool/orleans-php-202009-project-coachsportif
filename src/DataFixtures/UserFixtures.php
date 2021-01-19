@@ -22,6 +22,22 @@ class UserFixtures extends Fixture
         $member = new User();
         $member->setEmail('membre@monsite.com');
         $member->setRoles(['ROLE_MEMBER']);
+        $member->setAge(23);
+        $member->setArmCircumference(33);
+        $member->setBodyWater(50);
+        $member->setFatMass(14);
+        $member->setImc(18);
+        $member->setFirstname('Michel');
+        $member->setLastname('Mipoivre');
+        $member->setMuscleMass(170);
+        $member->setPathology('Palu');
+        $member->setPrescription('Marijuanas');
+        $member->setRuffierDickstonTest(5);
+        $member->setSize(180);
+        $member->setThree(35);
+        $member->setThighCircumference(35);
+        $member->setTreatment('travailler');
+        $member->setWaistSize(60);
         $member->setPassword($this->passwordEncoder->encodePassword(
             $member,
             '$memberpassword'
