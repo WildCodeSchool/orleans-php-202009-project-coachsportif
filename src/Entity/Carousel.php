@@ -13,7 +13,7 @@ use DateTime;
 
 /**
  * @ORM\Entity(repositoryClass=CarouselRepository::class)
- * * @Vich\Uploadable
+ * @Vich\Uploadable
  */
 class Carousel
 {
