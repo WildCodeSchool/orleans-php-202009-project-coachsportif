@@ -1,9 +1,11 @@
-{% extends 'base.html.twig' %}
-
+{% extends 'layout_admin.html.twig' %}
+   {% block stylesheets %}
+       {{ encore_entry_link_tags('indexAdmin') }}
+   {% endblock %}
 {% block title %}Administration|Présentation{% endblock %}
 
 {% block body %}
-    <h1>Administration du texte de présentation</h1>
+    <h1 class="title text-center text-dark mt-4">Administration du texte de présentation</h1>
         <div class="container">
             <table class="table text-dark text-center">
                 <thead class="thead-light">
