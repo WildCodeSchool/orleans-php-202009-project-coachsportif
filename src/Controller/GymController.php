@@ -2,6 +2,8 @@
 
 namespace App\Controller;
 
+use App\Form\CarouselType;
+use App\Form\OpinionType;
 use App\Repository\CarouselRepository;
 use App\Entity\Gym;
 use App\Repository\GymRepository;
@@ -18,8 +20,6 @@ use Symfony\Component\Routing\Annotation\Route;
  */
 class GymController extends AbstractController
 {
-    private const TRAINING_PAGE = "training";
-
     /**
      * @Route("/salle_entrainement", name="gym", methods={"GET"})
      * @param GymRepository $gymRepository
@@ -32,8 +32,8 @@ class GymController extends AbstractController
         OpinionRepository $opinionRepository,
         CarouselRepository $carouselRepository
     ): Response {
-        $opinions = $opinionRepository->findBy(['page' => self::TRAINING_PAGE]);
-        $pictures = $carouselRepository->findBy(['page' => self::TRAINING_PAGE]);
+        $opinions = $opinionRepository->findBy(['page' => OpinionType::TRAINING_PAGE]);
+        $pictures = $carouselRepository->findBy(['page' => CarouselType::TRAINING_PAGE]);
         $gymtexts = $gymRepository->findAll();
         return $this->render('gym/index.html.twig', [
             'gymtexts' => $gymtexts,

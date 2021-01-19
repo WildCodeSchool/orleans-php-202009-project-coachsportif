@@ -3,6 +3,8 @@
 namespace App\Controller;
 
 use App\Entity\Walking;
+use App\Form\CarouselType;
+use App\Form\OpinionType;
 use App\Repository\CarouselRepository;
 use App\Form\WalkingType;
 use App\Repository\OpinionRepository;
@@ -17,8 +19,6 @@ use Symfony\Component\Routing\Annotation\Route;
  */
 class WalkingController extends AbstractController
 {
-    private const WALKING_PAGE = "walking";
-
     /**
      * @Route("/", name="walking_index", methods={"GET"})
      * @param WalkingRepository $walkingRepository
@@ -31,8 +31,8 @@ class WalkingController extends AbstractController
         CarouselRepository $carouselRepository,
         OpinionRepository $opinionRepository
     ): Response {
-        $pictures = $carouselRepository->findBy(['page' => self::WALKING_PAGE]);
-        $opinions = $opinionRepository->findBy(['page' => self::WALKING_PAGE]);
+        $pictures = $carouselRepository->findBy(['page' => CarouselType::WALKING_PAGE]);
+        $opinions = $opinionRepository->findBy(['page' => OpinionType::WALKING_PAGE]);
         return $this->render('walking/index.html.twig', [
             'walkings' => $walkingRepository->findAll(),
             'pictures' => $pictures,

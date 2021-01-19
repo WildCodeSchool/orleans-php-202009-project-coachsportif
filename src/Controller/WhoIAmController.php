@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Form\OpinionType;
 use App\Repository\OpinionRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -12,8 +13,6 @@ use Symfony\Component\Routing\Annotation\Route;
  */
 class WhoIAmController extends AbstractController
 {
-    private const WHO_PAGE = "who";
-
     /**
      * @Route("/", name="who")
      * @param OpinionRepository $opinionRepository
@@ -21,7 +20,7 @@ class WhoIAmController extends AbstractController
      */
     public function index(OpinionRepository $opinionRepository): Response
     {
-        $opinions = $opinionRepository->findBy(['page' => self::WHO_PAGE,]);
+        $opinions = $opinionRepository->findBy(['page' => OpinionType::WHO_PAGE,]);
         return $this->render('whoIAm/index.html.twig', [
             'opinions' => $opinions
         ]);
