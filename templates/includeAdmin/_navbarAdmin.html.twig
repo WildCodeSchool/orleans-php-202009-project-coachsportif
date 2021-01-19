@@ -5,7 +5,7 @@
 {% block navBar %}
 <nav class="navbar navbar-expand-lg navbar-dark bg-danger fixed-top">
     <div class="container-fluid ">
-        <a class="navbar-brand img d-none d-lg-block " href="{{ path('home') }}"><img class="logo mr-2"
+        <a class="navbar-brand img d-none d-lg-block " href="{{ path('admin_index') }}"><img class="logo mr-2"
                                                                      src="{{ asset('build/images/LOGO-Blanc.png') }}"
                                                                      alt="Logo"/>Administration</a>
 
@@ -22,8 +22,8 @@
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                 <li><a class="dropdown-item" href="#">Activité adaptée</a></li>
-                                <li><a class="dropdown-item" href="#">Remise en forme</a></li>
-                                <li><a class="dropdown-item" href="#">Marche nordique</a></li>
+                                <li><a class="dropdown-item" href="{{ path('fitnessAdmin') }}">Remise en forme</a></li>
+                                <li><a class="dropdown-item" href="{{ path('walking_admin') }}">Marche nordique</a></li>
                                 <li><a class="dropdown-item" href="#">Santé en entreprise</a></li>
                             </ul>
                         </li>
@@ -34,17 +34,21 @@
                             <a class="nav-link" href="#">Qui suis-je ?</a>
                         </li>
                         <li class="nav-item mx-3">
-                            <a class="nav-link" href="#">Tarifs</a>
+                            <a class="nav-link" href="{{ path('tarif_index') }}">Tarifs</a>
                         </li>
                         <li class="nav-item mx-3">
                             <a class="nav-link" href="#">Média</a>
                         </li>
                         <li class="nav-item mx-3">
-                            <a class="nav-link" href="#">Carrousel</a>
+                            <a class="nav-link" href="{{ path ('carousel_index') }}">Carrousel</a>
+                        </li>
+                        <li class="nav-item mx-3">
+                            <a class="nav-link" href="{{ path ('opinion_index') }}">Commentaires clients</a>
                         </li>
                         <li class="nav-item mx-3">
                             <a class="nav-link" href="#">Compte</a>
                         </li>
+
                      </ul>
               </div>
     </div>

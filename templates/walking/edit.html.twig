@@ -1,13 +1,13 @@
 {% extends 'base.html.twig' %}
-
-{% block title %}Edit Walking{% endblock %}
+{% block stylesheets %}
+    {{ encore_entry_link_tags('adminWalking') }}
+{% endblock %}
+{% block title %}Modification{% endblock %}
 
 {% block body %}
-    <h1>Edit Walking</h1>
-
-    {{ include('walking/_form.html.twig', {'button_label': 'Update'}) }}
-
-    <a class="btn btn-secondary btn m-3" href="{{ path('walking_index') }}">Return</a>
-
-    {{ include('walking/_delete_form.html.twig') }}
+    <h1>Modification</h1>
+    {{ include('walking/_form.html.twig', {'button_label': 'Sauvegarder'}) }}
+        <div class="text-center mt-2">
+            <a class="btn btn-secondary btn" href="{{ path('walking_admin') }}">Retour</a>
+        </div>
 {% endblock %}
