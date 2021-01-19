@@ -11,12 +11,12 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("/admin")
+ * @Route("/admin/media")
  */
 class AdminMediaController extends AbstractController
 {
     /**
-     * @Route("/media", name="media_admin", methods={"GET"})
+     * @Route("/", name="media_admin", methods={"GET"})
      */
     public function index(MediaRepository $mediaRepository): Response
     {
@@ -87,6 +87,7 @@ class AdminMediaController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($medium);
             $entityManager->flush();
+            $this->addFlash('danger', 'Le Texte partie Remise en forme à bien été supprimé');
         }
 
         return $this->redirectToRoute('media_admin');
