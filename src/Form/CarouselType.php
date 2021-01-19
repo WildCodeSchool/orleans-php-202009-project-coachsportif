@@ -11,7 +11,7 @@ use Vich\UploaderBundle\Form\Type\VichFileType;
 
 class CarouselType extends AbstractType
 {
-    public const FITNESS_PAGE = ' fitness';
+    public const FITNESS_PAGE = 'fitness';
     private const ADAPTED_PAGE = 'adapted-activity';
     public const WALKING_PAGE = 'walking';
     private const COMPAGNY_PAGE = 'company';
