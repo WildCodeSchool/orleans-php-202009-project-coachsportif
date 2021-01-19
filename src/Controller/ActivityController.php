@@ -27,6 +27,8 @@ class ActivityController extends AbstractController
 
     /**
      * @Route("/new", name="activity_new", methods={"GET","POST"})
+     * @param Request $request
+     * @return Response
      */
     public function new(Request $request): Response
     {
