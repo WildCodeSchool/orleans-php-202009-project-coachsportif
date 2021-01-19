@@ -1,9 +1,11 @@
 {% extends 'base.html.twig' %}
-
+    {% block stylesheets %}
+        {{ encore_entry_link_tags('indexAdmin') }}
+    {% endblock %}
 {% block title %}Remise en forme Affichage Texte{% endblock %}
 
 {% block body %}
-    <h1>Affichage du Texte Remise en forme</h1>
+    <h1 class="title text-center mt-4">Affichage du Texte Remise en forme</h1>
     <div class="container text-center">
         <table class="table">
             <tbody>

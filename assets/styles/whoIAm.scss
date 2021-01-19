@@ -1,22 +1,23 @@
 @import "app.scss";
 
-.who-title {
-    padding-top: $spacing-4;
-}
-
-.opinionTitle{
+.opinionTitle {
     margin-bottom: $spacing-4;
     color: $dark;
 }
 
-.opinionText{
+.opinionText {
     color: $dark;
     margin-bottom: 0;
 }
 
-.opinionAuthor{
+.opinionAuthor {
     color: $dark;
     margin-bottom: 0;
+}
+
+.carousel {
+    background-color: $light;
+    min-height: 350px;
 }
 
 .portrait {
