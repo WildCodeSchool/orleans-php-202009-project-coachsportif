@@ -1,14 +1,15 @@
-{% extends 'base.html.twig' %}
-
+{% extends 'layout_admin.html.twig' %}
+    {% block stylesheets %}
+        {{ encore_entry_link_tags('indexAdmin') }}
+    {% endblock %}
 {% block title %}Modification du texte{% endblock %}
 
 {% block body %}
-    <div class="container text-center">
-        <h1>Modification du texte</h1>
-        <div class="row justify-content-center">
+    <div class="container">
+        <h1 class="title text-center mt-4">Modification du texte</h1>
             {{ include('admin/fitness/_form.html.twig', {'button_label': 'Enregistrer'}) }}
-
-            <a class="btn btn-secondary btn-lg m-3" href="{{ path('fitnessAdmin') }}">Retour</a>
+        <div class="text-center">
+            <a class="btn btn-secondary btn m-3" href="{{ path('fitnessAdmin') }}">Retour</a>
         </div>
     </div>
 {% endblock %}

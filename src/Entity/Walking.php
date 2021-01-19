@@ -27,7 +27,7 @@ class Walking
     /**
      * @ORM\Column(type="text")
      */
-    private string $picture = '';
+    private ?string $picture = '';
 
     /**
      * @Vich\UploadableField(mapping="walking_file", fileNameProperty="picture")
@@ -58,7 +58,7 @@ class Walking
         return $this->picture;
     }
 
-    public function setPicture(string $picture): self
+    public function setPicture(?string $picture): self
     {
         $this->picture = $picture;
 

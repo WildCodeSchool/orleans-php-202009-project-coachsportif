@@ -1,0 +1,42 @@
+{% extends 'layout_admin.html.twig' %}
+    {% block stylesheets %}
+        {{ encore_entry_link_tags('indexAdmin') }}
+    {% endblock %}
+{% block title %}Index Remise en forme{% endblock %}
+
+{% block body %}
+    <h1 class="title text-center mt-4">Index Remise en forme</h1>
+    <div class="container">
+        <a class="btn btn-success btn mb-2" href="{{ path('fitness_new') }}">Ajouter un texte</a>
+        <table class="table text-dark">
+            <thead class="thead-light text-center">
+            <tr>
+                <th>Texte partie Remise en forme</th>
+                <th>actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for description in descriptions %}
+                <tr>
+                    <td>{{ description.fitnessText }}</td>
+                    <td>
+                        <a class="btn btn-primary mb-sm-2 mb-2 btn"
+                           href="{{ path('fitness_edit', {'id': description.id}) }}">
+                            Modifier</a>
+                        {{ include('admin/fitness/_delete_form.html.twig') }}
+                    </td>
+                </tr>
+
+
+            {% else %}
+                <tr>
+                    <td colspan="3">Il n'y a aucun résultat</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        <div class="text-center">
+            <a class="btn btn-secondary btn mb-4" href="{{ path('admin_index') }}">Retour</a>
+        </div>
+    </div>
+{% endblock %}
