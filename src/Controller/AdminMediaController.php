@@ -90,7 +90,7 @@ class AdminMediaController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($medium);
             $entityManager->flush();
-            $this->addFlash('danger', 'La vidéo à bien été supprimé');
+            $this->addFlash('danger', 'La vidéo à bien été supprimée');
         }
 
         return $this->redirectToRoute('media_admin');

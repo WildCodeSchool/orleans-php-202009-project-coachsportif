@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\ContactHome;
 use App\Entity\Home;
+use App\Form\CarouselType;
 use App\Repository\CarouselRepository;
 use App\Form\HomeType;
 use App\Form\ContactHomeType;
@@ -50,7 +51,7 @@ class HomeController extends AbstractController
             return $this->redirectToRoute('confirmation');
         }
         $home = $homeRepository->findAll();
-        $pictures = $carouselRepository->findBy(['page' => 'home']);
+        $pictures = $carouselRepository->findBy(['page' => CarouselType::HOME_PAGE]);
         return $this->render('home/index.html.twig', [
             "form" => $form->createView(),
             'pictures' => $pictures,
