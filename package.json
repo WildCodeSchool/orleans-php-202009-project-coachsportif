@@ -25,6 +25,7 @@
         "build": "encore production --progress"
     },
     "dependencies": {
-        "@fullcalendar/daygrid": "^5.5.0"
+        "@fullcalendar/daygrid": "^5.5.0",
+        "fullcalendar": "^5.5.1"
     }
 }

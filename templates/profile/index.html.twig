@@ -1,5 +1,37 @@
 {% extends 'base.html.twig' %}
 
+
+{% block steelsheets %}
+    {{ encore_entry_link_tags('profile') }}
+{% endblock %}
+
+{% block title %}Mon profil{% endblock %}
+
+{% block carousel %}{% endblock %}
 {% block body %}
+    <h1>Calendrier</h1>
+    <div id="calendrier"></div>
     {% include 'profile/show.html.twig' %}
+{% endblock %}
+
+{% block javascripts %}
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.5.1/main.min.js" integrity="sha256-rPPF6R+AH/Gilj2aC00ZAuB2EKmnEjXlEWx5MkAp7bw=" crossorigin="anonymous"></script>
+    <script>
+        window.onload = () => {
+            let calendarElt = document.querySelector("#calendrier");
+
+            let calendar = new FullCalendar.Calendar(calendarElt, {
+                initialView: 'dayGridMonth',
+                locale:'fr',
+                timeZone: 'Europe/Paris',
+                headerToolbar: {
+                    start: 'prev, next today',
+                    center: 'title',
+                    end: 'timeGridWeek, dayGridMonth',
+                },
+                events: {{ data|raw }}
+            })
+            calendar.render()
+        }
+    </script>
 {% endblock %}
