@@ -19,7 +19,7 @@ use Symfony\Component\HttpFoundation\Request;
 class CompanyController extends AbstractController
 {
     /**
-     * @Route("/", name="compagny_index")
+     * @Route("/", name="company_index")
      * @param CompanyRepository $companyRepository
      * @param OpinionRepository $opinionRepository
      * @param CarouselRepository $carouselRepository
