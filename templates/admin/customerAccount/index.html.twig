@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Comptes clients{% endblock %}
+
+{% block body %}
+    <h1>Comptes clients</h1>
+    <section class="container">
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nom</th>
+                <th scope="col">Prénom</th>
+                <th scope="col">Age</th>
+                <th scope="col">Email</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for customer in customers %}
+                <tr>
+                    <th scope="row">{{ customer.id }}</th>
+                    <td>{{ customer.lastname }}</td>
+                    <td>{{ customer.firstname }}</td>
+                    <td>{{ customer.age }}</td>
+                    <td>{{ customer.email }}</td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td>Aucun compte à afficher</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </section>
+{% endblock %}
