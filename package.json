@@ -26,7 +26,6 @@
     },
     "dependencies": {
         "@fullcalendar/core": "^5.5.1",
-        "@fullcalendar/daygrid": "^5.5.0",
-        "fullcalendar": "^5.5.1"
+        "@fullcalendar/daygrid": "^5.5.0"
     }
 }
