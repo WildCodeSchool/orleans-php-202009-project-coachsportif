@@ -11,3 +11,7 @@ parameters:
     reportUnmatchedIgnoredErrors: false
     checkGenericClassInNonGenericObjectType: false
     checkMissingIterableValueType: false
+Securtiy:
+    excludes_analyse:
+        - src/DataFixtures
+        - src/Security
