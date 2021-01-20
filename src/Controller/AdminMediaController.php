@@ -68,7 +68,7 @@ class AdminMediaController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
-
+            $this->addFlash('success', 'La vidéo à bien été modifiée');
             return $this->redirectToRoute('media_admin');
         }
 
