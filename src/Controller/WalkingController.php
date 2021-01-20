@@ -59,7 +59,7 @@ class WalkingController extends AbstractController
             return $this->redirectToRoute('walking_admin');
         }
 
-        return $this->render('walking/new.html.twig', [
+        return $this->render('admin/walking/new.html.twig', [
             'walking' => $walking,
             'form' => $form->createView(),
         ]);
@@ -94,7 +94,7 @@ class WalkingController extends AbstractController
             return $this->redirectToRoute('walking_admin');
         }
 
-        return $this->render('walking/edit.html.twig', [
+        return $this->render('admin/walking/edit.html.twig', [
             'walking' => $walking,
             'form' => $form->createView(),
         ]);
@@ -124,7 +124,7 @@ class WalkingController extends AbstractController
      */
     public function admin(WalkingRepository $walkingRepository): Response
     {
-        return $this->render('walking/admin.html.twig', [
+        return $this->render('admin/walking/index.html.twig', [
             'walkings' => $walkingRepository->findAll(),
         ]);
     }

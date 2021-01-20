@@ -22,11 +22,6 @@ class SportAdapte
      */
     private ?string $description;
 
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private ?string $picture;
-
     public function getId(): ?int
     {
         return $this->id;
@@ -40,18 +35,6 @@ class SportAdapte
     public function setDescription(string $description): self
     {
         $this->description = $description;
-
-        return $this;
-    }
-
-    public function getPicture(): ?string
-    {
-        return $this->picture;
-    }
-
-    public function setPicture(string $picture): self
-    {
-        $this->picture = $picture;
 
         return $this;
     }

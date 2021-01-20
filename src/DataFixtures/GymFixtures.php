@@ -11,10 +11,12 @@ class GymFixtures extends Fixture
     public function load(ObjectManager $manager)
     {
         $gym = new Gym();
-        $gym->setGymText('Je vous accueillerais dans mon humble salle d\'entrainement. Il y aura à votre disposition
-        tout les accessoires liés à votre programme, que ce soit pour une perte de poids, ou activité adaptée.
-        Il y a un tapis de course, des medecine balls, un rameur, et bien d\'autres');
-
+        $gym->setGymText("Et si on avait une salle rien que pour nous ? Avec votre coach Damien profitez 
+        pour vos entrainements d'une salle de sport privée à Saint Jean le Blanc ouverte de 7h à 21h. Une salle 
+        intimiste pour 2 ou 3 personnes afin de faciliter l'individualisation de vos efforts !. OK, mais il ya du 
+        bon matériel ? Vélo, tapis de course, rameur, sangle de renforcement, espalier, élastiques... 
+        et plein de petits matériel pour rendre les exercices encore plus ludiques !! 
+        Pour plus d'infos contactez-moi !");
         $manager->persist($gym);
         $manager->flush();
     }

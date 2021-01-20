@@ -38,7 +38,7 @@ class AdminMediaController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($medium);
             $entityManager->flush();
-            $this->addFlash('success', 'la vidéo à bien été ajoutée');
+            $this->addFlash('success', 'la vidéo a bien été ajoutée');
             return $this->redirectToRoute('media_admin');
         }
 
@@ -68,7 +68,7 @@ class AdminMediaController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
-
+            $this->addFlash('success', 'La vidéo à bien été modifiée');
             return $this->redirectToRoute('media_admin');
         }
 
@@ -80,6 +80,9 @@ class AdminMediaController extends AbstractController
 
     /**
      * @Route("/{id}", name="media_delete", methods={"DELETE"})
+     * @param Request $request
+     * @param Media $medium
+     * @return Response
      */
     public function delete(Request $request, Media $medium): Response
     {
@@ -87,6 +90,7 @@ class AdminMediaController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($medium);
             $entityManager->flush();
+            $this->addFlash('danger', 'La vidéo a bien été supprimée');
         }
 
         return $this->redirectToRoute('media_admin');

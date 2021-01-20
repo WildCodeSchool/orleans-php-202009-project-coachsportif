@@ -7,6 +7,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 
 class OpinionType extends AbstractType
 {
@@ -20,8 +21,8 @@ class OpinionType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('author')
-            ->add('comment')
+            ->add('author', TextType::class, ['label' => 'Auteur'])
+            ->add('comment', TextType::class, ['label' => 'Commentaire'])
             ->add('page', ChoiceType::class, [
                 'choices' => [
                     'Marche nordique' => self::WALKING_PAGE,
