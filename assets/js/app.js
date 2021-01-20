@@ -29,14 +29,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const calendar = new Calendar(calendarEl, {
         plugins: [dayGridPlugin],
         initialView: 'dayGridWeek',
-        locale:'fr',
+        locale: 'fr',
         timeZone: 'Europe/Paris',
         headerToolbar: {
             start: 'prev next today',
             center: 'title',
             end: 'dayGridWeek dayGridMonth',
         },
-        })
+    })
     calendar.render();
 });
 
