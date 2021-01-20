@@ -11,7 +11,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=UserRepository::class)
- * @SuppressWarnings(PHPMD.TooManyMethods)
+ * @SuppressWarnings(PHPMD.ExcessivePublicCount)
  * @SuppressWarnings(PHPMD.TooManyFields)
  * @UniqueEntity(fields={"email"}, message="There is already an account with this email")
  */
@@ -145,7 +145,7 @@ class User implements UserInterface
     /**
      * @ORM\Column(type="boolean")
      */
-    private $isVerified = false;
+    private bool $isVerified = false;
 
     public function getId(): ?int
     {

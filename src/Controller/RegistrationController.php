@@ -38,13 +38,14 @@ class RegistrationController extends AbstractController
         UserPasswordEncoderInterface $passwordEncoder,
         GuardAuthenticatorHandler $guardHandler,
         LoginFormAuthenticator $authenticator
-    ): Response {
+    ): ?Response {
         $user = new User();
         $form = $this->createForm(RegistrationFormType::class, $user);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
             // encode the plain password
+            $user->setRoles(["ROLE_MEMBER"]);
             $user->setPassword(
                 $passwordEncoder->encodePassword(
                     $user,
@@ -61,8 +62,8 @@ class RegistrationController extends AbstractController
                 'app_verify_email',
                 $user,
                 (new TemplatedEmail())
-                    ->from(new Address('damien_gouveia@hotmail.fr', 'Damien Gouveia'))
-                    ->to($user->getEmail())
+                    ->from(new Address($this->getParameter('mailer_from')))
+                    ->to((string)$user->getEmail())
                     ->subject('Please Confirm your Email')
                     ->htmlTemplate('registration/confirmation_email.html.twig')
             );
@@ -92,7 +93,9 @@ class RegistrationController extends AbstractController
 
         // validate email confirmation link, sets User::isVerified=true and persists
         try {
-            $this->emailVerifier->handleEmailConfirmation($request, $this->getUser());
+            /** @var User $user */
+            $user = $this->getUser();
+            $this->emailVerifier->handleEmailConfirmation($request, $user);
         } catch (VerifyEmailExceptionInterface $exception) {
             $this->addFlash('verify_email_error', $exception->getReason());
 
