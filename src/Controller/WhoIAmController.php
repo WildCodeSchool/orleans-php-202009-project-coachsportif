@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Form\OpinionType;
 use App\Repository\OpinionRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -19,7 +20,7 @@ class WhoIAmController extends AbstractController
      */
     public function index(OpinionRepository $opinionRepository): Response
     {
-        $opinions = $opinionRepository->findAll();
+        $opinions = $opinionRepository->findBy(['page' => OpinionType::WHO_PAGE,]);
         return $this->render('whoIAm/index.html.twig', [
             'opinions' => $opinions
         ]);
