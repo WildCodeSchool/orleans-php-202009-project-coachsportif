@@ -12,14 +12,14 @@ class FitnessFixtures extends Fixture
     public function load(ObjectManager $manager)
     {
             $fitness = new Fitness();
-            $fitness->setFitnessText('Vous avez arrêté le sport depuis longtemps, et voulez redevenir actif 
-            avec l\'aide d\'un professionnel ? Je vous propose donc un programme de remise en forme ! Axé sur le 
-            renforcement musculaire et des activités intense pour réveiller votre système cardio-vasculaire, Vous 
-            retrouverez une forme physique rapidement et efficacement, dans une ambiance agréable et conviviale. 
-            J\'ai à disposition pour vous, une salle équipé de tout les accessoires nécessaire pour des séances 
-            agréable, intense, et sérieuses. Vous pourrez donc me retrouver dans cette salle de sport individuellement 
-            ou en petit groupe, pour parvenir à votre objectif.');
-
+            $fitness->setFitnessText('Et si le secret pour rester ou retrouver la forme était la régularité 
+            et le sourire en fin de séance ... Coach Damien vous accompagne pour ne rien lâcher de vos objectifs ! 
+            Nous mettrons en place un programme adapté avec des exercices variés : renforcement musculaire général / 
+            exercice sans charge ou petits matériels (sangle, élastique, petits poids) / 
+            méthodes inspirées du Pilates /cardio (vélo, rameur, tapis de marche / course) avec comme fil conducteur 
+            le respect de votre corps. Pour le décor, nous pouvons travailler dans ma salle, chez vous, sur les bords 
+            de loire, sur un stade, en visio... et la fréquence s\'adapte à vos besoins et à votre emploi du temps ! 
+            On commence ?');
             $manager->persist($fitness);
             $manager->flush();
     }
