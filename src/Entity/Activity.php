@@ -20,21 +20,21 @@ class Activity
     /**
      * @ORM\Column(type="text")
      */
-    private ?string $descritpion;
+    private ?string $description;
 
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getDescritpion(): ?string
+    public function getDescription(): ?string
     {
-        return $this->descritpion;
+        return $this->description;
     }
 
-    public function setDescritpion(string $descritpion): self
+    public function setDescription(string $description): self
     {
-        $this->descritpion = $descritpion;
+        $this->description = $description;
 
         return $this;
     }

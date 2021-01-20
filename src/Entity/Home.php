@@ -46,7 +46,7 @@ class Home
      *     maxSize="1000000",
      *     mimeTypes = {"image/png", "image/jpeg", "image/jpg", "image/gif",})
      */
-    private ?File $pictureFile;
+    private ?File $pictureFile = null;
 
     public function setPictureFile(?File $image = null): Home
     {

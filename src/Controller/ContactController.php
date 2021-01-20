@@ -7,6 +7,7 @@ use App\Form\ContactHomeType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Mailer\Exception\TransportExceptionInterface;
 use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\Mime\Email;
 use Symfony\Component\Routing\Annotation\Route;
@@ -21,6 +22,7 @@ class ContactController extends AbstractController
      * @param Request $request
      * @param MailerInterface $mailer
      * @return Response
+     * @throws TransportExceptionInterface
      */
     public function index(Request $request, MailerInterface $mailer): Response
     {

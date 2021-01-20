@@ -27,6 +27,23 @@ class Opinion
      */
     private string $comment;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private string $page;
+
+    public function getPage(): ?string
+    {
+        return $this->page;
+    }
+
+    public function setPage(string $page): self
+    {
+        $this->page = $page;
+
+        return $this;
+    }
+
     public function getId(): ?int
     {
         return $this->id;
