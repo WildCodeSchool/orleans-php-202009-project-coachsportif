@@ -1,0 +1,14 @@
+{% extends 'layout_admin.html.twig' %}
+{% form_theme form 'bootstrap_4_layout.html.twig' %}
+{% block title %}Modification|Présentation{% endblock %}
+
+{% block body %}
+    <div class="container">
+            <h1 class="text-center my-4">Modification du texte et de l'image</h1>
+
+                {{ include('admin/home/_form.html.twig', {'button_label': 'Enregistrer'}) }}
+                <div class="text-center">
+                <a class="btn btn-secondary btn m-3" href="{{ path('index_Admin') }}">Retour</a>
+                </div>
+            </div>
+{% endblock %}

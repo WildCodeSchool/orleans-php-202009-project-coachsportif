@@ -41,8 +41,8 @@ class OpinionController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($opinion);
             $entityManager->flush();
-
-            return $this->redirectToRoute('who');
+            $this->addFlash('success', 'Le nouveau commentaire a bien été créé');
+            return $this->redirectToRoute('opinion_index');
         }
 
         return $this->render('opinion/new.html.twig', [
@@ -76,8 +76,8 @@ class OpinionController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
-
-            return $this->redirectToRoute('who');
+            $this->addFlash('success', 'Le commentaire a bien été modifié');
+            return $this->redirectToRoute('opinion_index');
         }
 
         return $this->render('opinion/edit.html.twig', [
@@ -98,8 +98,9 @@ class OpinionController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($opinion);
             $entityManager->flush();
+            $this->addFlash('danger', 'Le commentaire a bien été supprimé');
         }
 
-        return $this->redirectToRoute('who');
+        return $this->redirectToRoute('opinion_index');
     }
 }

@@ -16,3 +16,13 @@ img {
     justify-content: center;
     max-width: 150px;
 }
+
+.vich-file {
+    & .form-group{
+        display: none;
+    }
+
+    & a {
+        display: none;
+    }
+}
