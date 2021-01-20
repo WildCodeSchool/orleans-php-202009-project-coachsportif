@@ -40,7 +40,7 @@ class ActivityController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($activity);
             $entityManager->flush();
-            $this->addFlash('success', 'le texte à bien été ajoutée');
+            $this->addFlash('success', 'le texte à bien été ajouté');
             return $this->redirectToRoute('activityAdmin');
         }
 
