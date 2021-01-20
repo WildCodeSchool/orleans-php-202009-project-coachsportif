@@ -1,9 +1,4 @@
-{% extends 'base.html.twig' %}
-
-{% block title %}UserCard{% endblock %}
-
-{% block body %}
-    <h1>Mon profil</h1>
+ <h1>Mon profil</h1>
 
     <table class="table">
         <tbody>
@@ -85,4 +80,3 @@
     <a class="btn btn-secondary" href="{{ path('home') }}">Retour à la page d'accueil</a>
 
     <a class="btn btn-secondary" href="{{ path('profile_user_edit', { id: app.user.id }) }}">Modifier</a>
-{% endblock %}

@@ -1,10 +1,10 @@
 @import 'app.scss';
-
 #calendrier {
     width: $width-calendar;
     margin: auto;
     height: $height-calendar;
 }
+
 
 .fc-icon, .fc-unselectable {
     -moz-user-select: none;
