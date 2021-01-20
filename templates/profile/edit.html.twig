@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit UserCard{% endblock %}
+
+{% block body %}
+    <h1>Edit UserCard</h1>
+
+    {{ include('profile/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('profile_user') }}">back to list</a>
+{% endblock %}
