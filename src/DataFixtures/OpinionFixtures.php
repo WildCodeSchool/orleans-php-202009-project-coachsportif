@@ -9,14 +9,25 @@ use Faker;
 
 class OpinionFixtures extends Fixture
 {
+    private const OPINION = [
+        "who",
+        "fitness",
+        "walking",
+        "adapted-activity",
+        "company",
+        "training",
+    ];
     public function load(ObjectManager $manager)
     {
-        $faker = Faker\Factory::create('fr_Fr');
-        for ($i = 0; $i <= 2; $i++) {
+        foreach (self::OPINION as $opinionPage) {
+            $faker = Faker\Factory::create('fr_Fr');
             $opinion = new Opinion();
-            $opinion->setComment($faker->text);
-            $opinion->setAuthor($faker->name);
-            $manager->persist($opinion);
+            $opinion->setPage($opinionPage);
+            for ($count = 0; $count <= 6; $count++) {
+                $opinion->setComment($faker->text);
+                $opinion->setAuthor($faker->name);
+                $manager->persist($opinion);
+            }
         }
         $manager->flush();
     }
