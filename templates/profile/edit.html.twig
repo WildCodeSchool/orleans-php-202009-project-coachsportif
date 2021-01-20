@@ -1,11 +1,18 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Edit UserCard{% endblock %}
+{% block stylesheets %}
+        {{ encore_entry_link_tags('profile') }}
+{% endblock %}
+
+{% block title %}Modification{% endblock %}
 
 {% block body %}
-    <h1>Edit UserCard</h1>
+    <h1>Modification de votre fiche</h1>
+    <section class="container">
+        {{ include('profile/_form.html.twig', {'button_label': 'Sauvegarder'}) }}
 
-    {{ include('profile/_form.html.twig', {'button_label': 'Update'}) }}
-
-    <a href="{{ path('profile_user') }}">back to list</a>
+        <div class="row justify-content-center">
+            <a class="btn btn-secondary mt-3 mb-3" href="{{ path('profile_user') }}">Retour à votre compte</a>
+        </div>
+    </section>
 {% endblock %}

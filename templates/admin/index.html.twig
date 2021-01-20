@@ -1,11 +1,12 @@
 {% extends 'layout_admin.html.twig' %}
+
 {% block title %}Administration{% endblock %}
 {% block stylesheets %}
     {{ encore_entry_link_tags('indexAdmin') }}
 {% endblock %}
 {% block body %}
 <section>
-    <h1 class="title text-center">Administration</h1>
+    <h1 class="title text-center mt-4">Administration</h1>
         <div class="container-fluid text-center">
             <div class="row justify-content-around">
 
@@ -96,7 +97,7 @@
                     <img class="card-img-top pt-3" src="{{ asset('build/images/compteClient.png') }}" alt="Card image cap">
                     <div class="card-body">
                         <h2 class="titreH2">Comptes clients</h2>
-                        <a href="#" class="btn btn-primary">Administrer</a>
+                        <a href="{{ path('customer_index') }}" class="btn btn-primary">Administrer</a>
                     </div>
                 </div>
 

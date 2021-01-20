@@ -18,7 +18,6 @@ class CompanyRepository extends ServiceEntityRepository
     {
         parent::__construct($registry, Company::class);
     }
-
     // /**
     //  * @return Company[] Returns an array of Company objects
     //  */
@@ -35,7 +34,6 @@ class CompanyRepository extends ServiceEntityRepository
         ;
     }
     */
-
     /*
     public function findOneBySomeField($value): ?Company
     {

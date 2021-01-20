@@ -1,7 +1,9 @@
 <div class="container">
-            {% form_theme form 'bootstrap_4_layout.html.twig' %}
-            {{ form_start(form) }}
-                {{ form_widget(form) }}
-                <button class="btn btn-secondary btn m-3">{{ button_label|default('Save') }}</button>
-            {{ form_end(form) }}
+    {% form_theme form 'bootstrap_4_layout.html.twig' %}
+    {{ form_start(form) }}
+    {{ form_widget(form) }}
+        <div class="text-center">
+            <button class="btn btn-primary btn m-3">{{ button_label|default('Sauvegarder') }}</button>
+        </div>
+    {{ form_end(form) }}
 </div>
