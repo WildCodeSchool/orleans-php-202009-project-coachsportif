@@ -43,18 +43,6 @@ class AdminHomeController extends AbstractController
     }
 
     /**
-     * @Route("/home/admin/{id}", name="home_show", methods={"GET"})
-     * @param Home $home
-     * @return Response
-     */
-    public function show(Home $home): Response
-    {
-        return $this->render('admin/home/show.html.twig', [
-            'home' => $home,
-        ]);
-    }
-
-    /**
      * @Route("/home/admin/{id}/edit", name="home_edit", methods={"GET","POST"})
      * @param Request $request
      * @param Home $home
