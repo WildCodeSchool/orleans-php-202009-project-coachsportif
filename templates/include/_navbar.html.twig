@@ -45,8 +45,13 @@
                         </li>
                         {% if app.user %}
                         <li class="nav-item mx-3">
-                            <a class="nav-link" href="{{ path('profile_user', {email: app.user}) }}">Compte</a>
+                            <a class="nav-link text-light" href="{{ path('profile_user', {email: app.user}) }}">Compte</a>
                         {% endif %}
+                        </li>
+                        {% if  is_granted("ROLE_COACH") %}
+                        <li class="nav-item mx-3">
+                            <a class="nav-link text-light" href="{{ path('admin_index', {email: app.user}) }}">Administration</a>
+                            {% endif %}
                         </li>
                         <li class="nav-item mx-3">
                             {% if app.user %}
