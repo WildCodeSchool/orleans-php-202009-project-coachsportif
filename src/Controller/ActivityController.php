@@ -41,6 +41,7 @@ class ActivityController extends AbstractController
             $entityManager->persist($activity);
             $entityManager->flush();
             $this->addFlash('success', 'le texte a bien été ajouté');
+
             return $this->redirectToRoute('activityAdmin');
         }
 
