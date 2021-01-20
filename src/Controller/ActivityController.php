@@ -26,7 +26,7 @@ class ActivityController extends AbstractController
     }
 
     /**
-     * @Route("/activitee_adaptee/new", name="activity_new", methods={"GET","POST"})
+     * @Route("/activite-adaptee/new", name="activity_new", methods={"GET","POST"})
      * @param Request $request
      * @return Response
      */
@@ -40,7 +40,7 @@ class ActivityController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($activity);
             $entityManager->flush();
-            $this->addFlash('success', 'le texte a bien été ajouté');
+            $this->addFlash('success', 'Le texte a bien été ajouté');
 
             return $this->redirectToRoute('activityAdmin');
         }
