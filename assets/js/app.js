@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
             center: 'title',
             end: 'dayGridWeek dayGridMonth',
         },
-    })
+    });
     calendar.render();
 });
 
