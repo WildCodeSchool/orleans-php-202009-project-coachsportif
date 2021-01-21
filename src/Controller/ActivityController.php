@@ -63,6 +63,9 @@ class ActivityController extends AbstractController
 
     /**
      * @Route("/{id}/edit", name="activity_edit", methods={"GET","POST"})
+     * @param Request $request
+     * @param Activity $activity
+     * @return Response
      */
     public function edit(Request $request, Activity $activity): Response
     {
@@ -75,7 +78,7 @@ class ActivityController extends AbstractController
             return $this->redirectToRoute('activity_index');
         }
 
-        return $this->render('activity/edit.html.twig', [
+        return $this->render('admin/activity/edit.html.twig', [
             'activity' => $activity,
             'form' => $form->createView(),
         ]);
