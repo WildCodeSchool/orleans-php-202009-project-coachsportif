@@ -42,7 +42,7 @@ class AdminCompanyController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($company);
             $entityManager->flush();
-
+            $this->addFlash('success', 'Le nouveau texte a bien été crée');
             return $this->redirectToRoute('company_admin');
         }
 

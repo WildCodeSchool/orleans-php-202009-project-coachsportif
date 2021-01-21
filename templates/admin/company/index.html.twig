@@ -1,35 +1,39 @@
-{% extends 'base.html.twig' %}
-
+{% extends 'layout_admin.html.twig' %}
+    {% block stylesheets %}
+        {{ encore_entry_link_tags('indexAdmin') }}
+    {% endblock %}
 {% block title %}Company index{% endblock %}
 
 {% block body %}
-    <h1>Company index</h1>
-
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Description</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for company in companies %}
-            <tr>
-                <td>{{ company.id }}</td>
-                <td>{{ company.description }}</td>
-                <td>
-                    <a href="{{ path('company_show', {'id': company.id}) }}">show</a>
-                    <a href="{{ path('company_edit', {'id': company.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="3">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
-
-    <a href="{{ path('company_new') }}">Create new</a>
+    <h1 class="title text-center mt-4">Company index</h1>
+        <div class="container">
+            <a class="btn btn-success btn mb-2" href="{{ path('company_new') }}">Ajouter un texte</a>
+            <table class="table text-dark">
+                <thead class="thead-light text-center">
+                    <tr>
+                        <th>Description</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for company in companies %}
+                    <tr>
+                        <td>{{ company.description }}</td>
+                        <td>
+                            <a class="col btn btn-primary mb-sm-2 mb-2 btn"
+                               href="{{ path('company_edit', {'id': company.id}) }}">Modifier</a>
+                            {{ include('admin/company/_delete_form.html.twig') }}
+                        </td>
+                    </tr>
+                {% else %}
+                    <tr>
+                        <td class="text-danger" colspan="8">Aucun résultat trouvé</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    <div class="text-center">
+        <a class="btn btn-secondary btn mt-2" href="{{ path('admin_index') }}">Retour</a>
+    </div>
 {% endblock %}
