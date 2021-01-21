@@ -107,7 +107,7 @@ class AdminGymController extends AbstractController
     public function indexAdmin(GymRepository $gymRepository): Response
     {
         $gymtexts = $gymRepository->findAll();
-        return $this->render('/gym/indexAdmin.html.twig', [
+        return $this->render('admin/gym/indexAdmin.html.twig', [
             'gymtexts' => $gymtexts,
         ]);
     }
