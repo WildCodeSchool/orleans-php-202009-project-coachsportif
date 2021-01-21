@@ -76,7 +76,7 @@ class AdminGymController extends AbstractController
             return $this->redirectToRoute('gym_index');
         }
 
-        return $this->render('gym/edit.html.twig', [
+        return $this->render('admin/gym/edit.html.twig', [
             'gym' => $gym,
             'form' => $form->createView(),
         ]);
@@ -100,7 +100,7 @@ class AdminGymController extends AbstractController
     }
 
     /**
-     * @Route("/", name="gymAdmin", methods={"GET"})
+     * @Route("/", name="gym_admin", methods={"GET"})
      * @param GymRepository $gymRepository
      * @return Response
      */
