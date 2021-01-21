@@ -94,6 +94,7 @@ class AdminGymController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($gym);
             $entityManager->flush();
+            $this->addFlash('success', 'Le Texte partie Salle d\'entrainement à bien été supprimé');
         }
 
         return $this->redirectToRoute('gym');
@@ -107,7 +108,7 @@ class AdminGymController extends AbstractController
     public function indexAdmin(GymRepository $gymRepository): Response
     {
         $gymtexts = $gymRepository->findAll();
-        return $this->render('/gym/indexAdmin.html.twig', [
+        return $this->render('admin/gym/indexAdmin.html.twig', [
             'gymtexts' => $gymtexts,
         ]);
     }
