@@ -43,5 +43,4 @@ class GymController extends AbstractController
             'opinions' => $opinions,
         ]);
     }
-
 }
