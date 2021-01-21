@@ -28,7 +28,7 @@ class AdminCalendarController extends AbstractController
     }
 
     /**
-     * @Route("/new", name="calendar_new", methods={"GET","POST"})
+     * @Route("/new", name="new", methods={"GET","POST"})
      * @param Request $request
      * @return Response
      */

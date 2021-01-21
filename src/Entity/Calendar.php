@@ -4,7 +4,7 @@ namespace App\Entity;
 
 use App\Repository\CalendarRepository;
 use Doctrine\ORM\Mapping as ORM;
-use DateTime;
+use Symfony\Component\Validator\Constraints as Assert;
 use DateTimeInterface;
 
 /**
@@ -21,40 +21,49 @@ class Calendar
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank
      */
-    private ?string $title;
+    private string $title;
 
     /**
      * @ORM\Column(type="datetime")
+     * @Assert\DateTime()
+     * @Assert\NotBlank
      */
-    private ?DateTimeInterface $start;
+    private DateTimeInterface $start;
 
     /**
      * @ORM\Column(type="datetime")
+     * @Assert\DateTime()
+     * @Assert\NotBlank
      */
-    private ?DateTimeInterface $end;
+    private DateTimeInterface $end;
 
     /**
      * @ORM\Column(type="text")
+     * @Assert\NotBlank
      */
-    private ?string $description;
+    private string $description;
 
     /**
      * @ORM\Column(type="string", length=7)
+     * @Assert\NotBlank
+
      */
-    private ?string $backgroundColor;
+    private string $backgroundColor;
 
     /**
      * @ORM\Column(type="string", length=7)
+     * @Assert\NotBlank
      */
-    private ?string $textColor;
+    private string $textColor;
 
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getTitle(): ?string
+    public function getTitle(): string
     {
         return $this->title;
     }
@@ -66,31 +75,31 @@ class Calendar
         return $this;
     }
 
-    public function getStart(): ?\DateTimeInterface
+    public function getStart(): DateTimeInterface
     {
         return $this->start;
     }
 
-    public function setStart(\DateTimeInterface $start): self
+    public function setStart(DateTimeInterface $start): self
     {
         $this->start = $start;
 
         return $this;
     }
 
-    public function getEnd(): ?\DateTimeInterface
+    public function getEnd(): DateTimeInterface
     {
         return $this->end;
     }
 
-    public function setEnd(\DateTimeInterface $end): self
+    public function setEnd(DateTimeInterface $end): self
     {
         $this->end = $end;
 
         return $this;
     }
 
-    public function getDescription(): ?string
+    public function getDescription(): string
     {
         return $this->description;
     }
@@ -102,7 +111,7 @@ class Calendar
         return $this;
     }
 
-    public function getBackgroundColor(): ?string
+    public function getBackgroundColor(): string
     {
         return $this->backgroundColor;
     }
@@ -114,7 +123,7 @@ class Calendar
         return $this;
     }
 
-    public function getTextColor(): ?string
+    public function getTextColor(): string
     {
         return $this->textColor;
     }
