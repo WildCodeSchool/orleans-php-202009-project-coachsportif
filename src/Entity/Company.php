@@ -2,11 +2,11 @@
 
 namespace App\Entity;
 
-use App\Repository\CompagnyRepository;
+use App\Repository\CompanyRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass=CompagnyRepository::class)
+ * @ORM\Entity(repositoryClass=CompanyRepository::class)
  */
 class Company
 {
