@@ -6,7 +6,6 @@ use App\Entity\Activity;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 
-
 class ActivityFixtures extends Fixture
 {
     public function load(ObjectManager $manager)
