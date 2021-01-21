@@ -17,7 +17,7 @@ use Symfony\Component\Routing\Annotation\Route;
 /**
  * Class AdminFitnessController
  * @package App\Controller
- * @Route("/fitness/admin")
+ * @Route("/admin/fitness")
  */
 class AdminFitnessController extends AbstractController
 {
