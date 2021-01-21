@@ -33,17 +33,19 @@ class AdminHomeController extends AbstractController
     }
 
     /**
-     * @Route ("/confirmation", name="confirmation")
+     * @Route("/{id}", name="home_show", methods={"GET"})
+     * @param Home $home
      * @return Response
      */
-    public function confirmation(): Response
+    public function show(Home $home): Response
     {
-        return $this->render('contact/contactConfirmation.html.twig', [
+        return $this->render('admin/home/show.html.twig', [
+            'home' => $home,
         ]);
     }
 
     /**
-     * @Route("/home/admin/{id}/edit", name="home_edit", methods={"GET","POST"})
+     * @Route("/{id}/edit", name="home_edit", methods={"GET","POST"})
      * @param Request $request
      * @param Home $home
      * @return Response
@@ -65,7 +67,7 @@ class AdminHomeController extends AbstractController
     }
 
     /**
-     * @Route("/home/admin/{id}", name="home_delete", methods={"DELETE"})
+     * @Route("/{id}", name="home_delete", methods={"DELETE"})
      * @param Request $request
      * @param Home $home
      * @return Response

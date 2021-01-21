@@ -1,7 +1,8 @@
 {% extends 'layout.html.twig' %}
+{% block carousel %}{% endblock %}
 
 {% form_theme form 'bootstrap_4_layout.html.twig' %}
-{% block carousel %}{% endblock %}
+
 {% block stylesheets %}
     {{ encore_entry_link_tags('contact') }}
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"

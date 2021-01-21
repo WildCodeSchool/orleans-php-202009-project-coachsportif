@@ -3,9 +3,11 @@
 namespace App\Controller;
 
 use App\Form\CarouselType;
+use App\Form\GymType;
 use App\Form\OpinionType;
 use App\Repository\CarouselRepository;
 use App\Entity\Gym;
+use App\Repository\FitnessRepository;
 use App\Repository\GymRepository;
 use App\Repository\OpinionRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -16,12 +18,12 @@ use Symfony\Component\Routing\Annotation\Route;
 /**
  * Class GymController
  * @package App\Controller
- * @Route("/")
+ * @Route("/salle-entrainement")
  */
 class GymController extends AbstractController
 {
     /**
-     * @Route("/salle_entrainement", name="gym", methods={"GET"})
+     * @Route("/", name="gym", methods={"GET"})
      * @param GymRepository $gymRepository
      * @param OpinionRepository $opinionRepository
      * @param CarouselRepository $carouselRepository
