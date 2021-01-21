@@ -98,7 +98,7 @@ class ActivityController extends AbstractController
     }
 
     /**
-     * @Route("/", name="fitness_admin", methods={"GET"})
+     * @Route("/", name="activity_admin", methods={"GET"})
      * @param ActivityRepository $activityRepository
      * @return Response
      */
