@@ -68,10 +68,12 @@ class ActivityController extends AbstractController
 
     /**
      * @Route("/{id}", name="activity_show", methods={"GET"})
+     * @param Activity $activity
+     * @return Response
      */
     public function show(Activity $activity): Response
     {
-        return $this->render('activity/show.html.twig', [
+        return $this->render('admin/activity/show.html.twig', [
             'activity' => $activity,
         ]);
     }
@@ -115,5 +117,18 @@ class ActivityController extends AbstractController
         }
 
         return $this->redirectToRoute('activity_admin');
+    }
+
+    /**
+     * @Route("/", name="activity_admin", methods={"GET"})
+     * @param ActivityRepository $activityRepository
+     * @return Response
+     */
+    public function indexAdmin(ActivityRepository $activityRepository): Response
+    {
+        $descriptions = $activityRepository->findAll();
+        return $this->render('admin/activity/indexAdmin.html.twig', [
+            'descriptions' => $descriptions,
+        ]);
     }
 }
