@@ -24,11 +24,11 @@
                                 <li><a class="dropdown-item" href="#">Activité adaptée</a></li>
                                 <li><a class="dropdown-item" href="{{ path('fitness_admin') }}">Remise en forme</a></li>
                                 <li><a class="dropdown-item" href="{{ path('walking_admin') }}">Marche nordique</a></li>
-                                <li><a class="dropdown-item" href="#">Santé en entreprise</a></li>
+                                <li><a class="dropdown-item" href="{{ path('company_admin') }}">Santé en entreprise</a></li>
                             </ul>
                         </li>
                         <li class="nav-item mx-3">
-                            <a class="nav-link text-light" href="#">La salle d’entrainement</a>
+                            <a class="nav-link text-light" href="{{ path('gym_admin') }}">La salle d’entrainement</a>
                         </li>
                         <li class="nav-item mx-3">
                             <a class="nav-link text-light" href="#">Qui suis-je ?</a>
@@ -46,7 +46,7 @@
                             <a class="nav-link text-light" href="{{ path ('opinion_index') }}">Commentaires clients</a>
                         </li>
                         <li class="nav-item mx-3">
-                            <a class="nav-link text-light" href="#">Compte</a>
+                            <a class="nav-link text-light" href="{{ ('customer_index') }}">Comptes clients</a>
                         </li>
                         <li class="nav-item mx-3">
                             <a class="nav-link text-light" href="{{ path('home') }}">Page d'accueil</a>
