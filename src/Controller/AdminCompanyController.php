@@ -11,18 +11,18 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("/company")
+ * @Route("/admin/company")
  */
 class AdminCompanyController extends AbstractController
 {
     /**
-     * @Route("/", name="company_index", methods={"GET"})
+     * @Route("/", name="company_admin", methods={"GET"})
      * @param CompanyRepository $companyRepository
      * @return Response
      */
     public function index(CompanyRepository $companyRepository): Response
     {
-        return $this->render('company/index.html.twig', [
+        return $this->render('admin/company/index.html.twig', [
             'companies' => $companyRepository->findAll(),
         ]);
     }
@@ -43,10 +43,10 @@ class AdminCompanyController extends AbstractController
             $entityManager->persist($company);
             $entityManager->flush();
 
-            return $this->redirectToRoute('company_index');
+            return $this->redirectToRoute('company_admin');
         }
 
-        return $this->render('company/new.html.twig', [
+        return $this->render('admin/company/new.html.twig', [
             'company' => $company,
             'form' => $form->createView(),
         ]);
@@ -59,7 +59,7 @@ class AdminCompanyController extends AbstractController
      */
     public function show(Company $company): Response
     {
-        return $this->render('company/show.html.twig', [
+        return $this->render('admin/company/show.html.twig', [
             'company' => $company,
         ]);
     }
@@ -78,10 +78,10 @@ class AdminCompanyController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('company_index');
+            return $this->redirectToRoute('company_admin');
         }
 
-        return $this->render('company/edit.html.twig', [
+        return $this->render('admin/company/edit.html.twig', [
             'company' => $company,
             'form' => $form->createView(),
         ]);
@@ -102,6 +102,6 @@ class AdminCompanyController extends AbstractController
             $this->addFlash('danger', 'La partie a bien été supprimée');
         }
 
-        return $this->redirectToRoute('company_index');
+        return $this->redirectToRoute('company_admin');
     }
 }
