@@ -21,7 +21,7 @@
                         <td><img src="{{ asset('uploads/' ~ walking.picture) }}" alt="{{ walking.picture }}"></td>
                         <td>{{ walking.description }}</td>
                         <td>
-                            <a class="btn btn-primary mb-2" href="{{ path('walking_edit', { id: walking.id }) }}">Modifier</a>
+                            <a class="col btn btn-primary mb-2" href="{{ path('walking_edit', { id: walking.id }) }}">Modifier</a>
                             {{ include('admin/walking/_delete_form.html.twig') }}
                         </td>
                     </tr>
