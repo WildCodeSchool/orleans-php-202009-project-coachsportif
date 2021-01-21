@@ -18,18 +18,9 @@
                             col-lg-8 col-sm-6 d-flex align-items-center lead flex-column">
                         <div>
                             <h2>Ma philosophie de travail : </h2>
-                                <p> Après avoir travaillé pendant plusieurs années dans la préparation physique, mais aussi dans le monde
-                                    de l’entrainement auprès de sportifs professionnels. <br>
-                                    J'ai eu envie de donner un véritable sens, un accomplissement à ma vie professionnelle :
-                                    <strong>Accompagner les personnes</strong> dans leur prise en charge de la santé
-                                    Participer à <strong>améliorer leur qualité de vie</strong>
-                                    Je mets alors à contribution, mon expérience, mes savoirs et compétences acquis <br>
-                                    dans le domaine de l’entrainement au profit de personnes sédentaires, peu sportives ou atteintes de pathologies.<br>
-                                    Ma <strong>complémentarité avec les professionnels de santé</strong>
-                                    (médecins, endocrinologues, kinésithérapeutes, ostéopathes, … )<br>
-                                    avec qui je collabore quotidiennement permet d’établir un véritable travail d’équipe qui n’en rendra
-                                    notre travail que plus efficace.
-                                </p>
+                            {% for presentation in presentations %}
+                                <p>{{ presentation.description }}</p>
+                            {% endfor %}
                         </div>
                     </div>
                 </div>
