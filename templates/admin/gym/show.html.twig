@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+    {% block stylesheets %}
+        {{ encore_entry_link_tags('indexAdmin') }}
+    {% endblock %}
+{% block title %}Salle d'entrainement Affichage Texte{% endblock %}
+
+{% block body %}
+<h1 class="title text-center mt-4">Affichage du Texte Salle d'entrainement</h1>
+<div class="container text-center">
+    <table class="table">
+        <tbody>
+        <tr>
+            <th>Texte partie Salle d'entrainement</th>
+            <td>{{ gym.gymText }}</td>
+        </tr>
+        </tbody>
+    </table>
+    <a class="btn btn-secondary btn m-3 href="{{ path('gym_edit', {'id': gym.id}) }}">Modifier</a>
+    <div class="row justify-content-center">
+        <a class="btn btn-secondary btn m-3 href="{{ path('gym_admin') }}">Retour</a>
+        {{ include('gym/_delete_form.html.twig') }}
+    </div>
+</div>
