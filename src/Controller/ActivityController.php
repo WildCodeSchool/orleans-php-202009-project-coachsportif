@@ -93,7 +93,7 @@ class ActivityController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($activity);
             $entityManager->flush();
-            $this->addFlash('success', 'Le Texte de la partie activitée adaptée a bien été supprimé');
+            $this->addFlash('success', 'Le Texte de la partie activité adaptée a bien été supprimé');
         }
 
         return $this->redirectToRoute('activity_admin');
