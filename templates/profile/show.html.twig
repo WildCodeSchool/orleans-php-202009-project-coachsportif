@@ -1,12 +1,8 @@
-{% extends 'base.html.twig' %}
-
-{% block title %}UserCard{% endblock %}
-
 {% block body %}
-    <h1>Mon profil</h1>
-
-    <table class="table">
-        <tbody>
+    <h1>Profil</h1>
+    <div class="container">
+        <table class="table">
+            <tbody>
             <tr>
                 <th>Id</th>
                 <td>{{ app.user.id }}</td>
@@ -79,10 +75,20 @@
                 <th>Recommandation médicale</th>
                 <td>{{ app.user.prescription }}</td>
             </tr>
-        </tbody>
-    </table>
-
-    <a class="btn btn-secondary" href="{{ path('home') }}">Retour à la page d'accueil</a>
-
-    <a class="btn btn-secondary" href="{{ path('profile_user_edit', { id: app.user.id }) }}">Modifier</a>
+            </tbody>
+        </table>
+        <div class="row justify-content-center mb-3">
+            <a class="btn btn-secondary" href="{{ path('profile_user_edit', { id: app.user.id }) }}">Modifier</a>
+        </div>
+        {% if is_granted("ROLE_ADMIN") %}
+            <div class="row justify-content-center mb-3">
+                <a class="btn btn-secondary" href="{{ path('customer_index') }}">Retour</a>
+            </div>
+        {% endif %}
+        {% if is_granted("ROLE_CONTRIBUTOR") %}
+            <div class="row justify-content-center mb-3">
+                <a class="btn btn-secondary" href="{{ path('home') }}">Retour à la page d'accueil</a>
+            </div>
+        {% endif %}
+    </div>
 {% endblock %}
