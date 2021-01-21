@@ -12,6 +12,9 @@ class CarouselFixtures extends Fixture
         "placeholder.png" => "home",
         "placefitness.png" => "fitness",
         "placeWalking.png" => "walking",
+        "placeWalking.png" => "adapted-activity",
+        "placeWalking.png" => "company",
+        "placeWalking.png" => "training",
     ];
 
 
