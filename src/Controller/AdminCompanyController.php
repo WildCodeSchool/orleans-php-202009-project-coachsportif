@@ -99,6 +99,7 @@ class AdminCompanyController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($company);
             $entityManager->flush();
+            $this->addFlash('danger', 'La partie a bien été supprimée');
         }
 
         return $this->redirectToRoute('company_index');
