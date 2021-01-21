@@ -48,6 +48,7 @@ class Calendar
     /**
      * @ORM\Column(type="string", length=7)
      * @Assert\NotBlank
+     * @Assert\Length (max="7")
 
      */
     private string $backgroundColor;
@@ -55,6 +56,7 @@ class Calendar
     /**
      * @ORM\Column(type="string", length=7)
      * @Assert\NotBlank
+     * @Assert\Length (max="7")
      */
     private string $textColor;
 
