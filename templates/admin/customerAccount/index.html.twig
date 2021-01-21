@@ -24,11 +24,11 @@
                     <td>{{ customer.firstname }}</td>
                     <td>{{ customer.age }}</td>
                     <td>{{ customer.email }}</td>
-                    <td><a class="btn btn-secondary" href="{{ path('profile_user', {id: customer.id}) }}">Afficher</a></td>
+                    <td><a class="btn btn-primary" href="{{ path('profile_user', {id: customer.id}) }}">Afficher</a></td>
                 </tr>
             {% else %}
                 <tr>
-                    <td>Aucun compte à afficher</td>
+                    <td class="text-danger" colspan="8">Aucun résultat trouvé</td>
                 </tr>
             {% endfor %}
             </tbody>
