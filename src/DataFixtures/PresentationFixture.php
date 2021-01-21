@@ -21,6 +21,7 @@ class PresentationFixture extends Fixture
         (médecins, endocrinologues, kinésithérapeutes, ostéopathes, … )
         avec qui je collabore quotidiennement permet d’établir un véritable travail d’équipe qui n’en rendra
         notre travail que plus efficace.");
+        $presentation->setPath('DamienG.jpg');
         $manager->persist($presentation);
         $manager->flush();
     }
