@@ -13,17 +13,17 @@
                 </div>
                 <div class="col-md-2 mb-3">
                     <h5 class="text-uppercase font-weight-bold">
-                        <a href="#!">Tarif</a>
+                        <a href="{{ path('tarifs_index') }}">Tarif</a>
                     </h5>
                 </div>
                 <div class="col-md-2 mb-3">
                     <h5 class="text-uppercase font-weight-bold">
-                        <a href="#!">Média</a>
+                        <a href="{{ path('media_index') }}">Média</a>
                     </h5>
                 </div>
                 <div class="col-md-2 mb-3">
                     <h5 class="text-uppercase font-weight-bold">
-                        <a href="#!">La salle</a>
+                        <a href="{{ path('gym') }}">La salle</a>
                     </h5>
                 </div>
                 <div class="col-md-2 mb-3">
@@ -60,7 +60,7 @@
         </div>
 
         <div class="footer-copyright text-center text-light">Développé avec <img src="{{ asset('build/images/coeur.png') }}" alt="coeur"> par les Wilders
-            <a href="#"> DamienGouveia.com</a>
+            <a href="{{ path('home') }}"> DamienGouveia.com</a>
         </div>
     </footer>
 {% endblock %}

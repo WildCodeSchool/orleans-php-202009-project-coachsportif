@@ -22,14 +22,14 @@
                                 Les services
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <li><a class="dropdown-item" href="#">Activité adaptée</a></li>
+                                <li><a class="dropdown-item" href="{{ path('activity_index') }}">Activité adaptée</a></li>
                                 <li><a class="dropdown-item" href="{{ path('fitness') }}">Remise en forme</a></li>
                                 <li><a class="dropdown-item" href="{{ path('walking_index') }}">Marche nordique</a></li>
-                                <li><a class="dropdown-item" href="#">Santé en entreprise</a></li>
+                                <li><a class="dropdown-item" href="{{ path('company_index') }}">Santé en entreprise</a></li>
                             </ul>
                         </li>
                         <li class="nav-item mx-3">
-                            <a class="nav-link text-light" href="#">La salle d’entrainement</a>
+                            <a class="nav-link text-light" href="{{ path('gym') }}">La salle d’entrainement</a>
                         </li>
                         <li class="nav-item mx-3">
                             <a class="nav-link text-light" href="{{ path('who') }}">Qui suis-je ?</a>
@@ -47,6 +47,11 @@
                         <li class="nav-item mx-3">
                             <a class="nav-link text-light" href="{{ path('profile_user', {email: app.user}) }}">Compte</a>
                         {% endif %}
+                        </li>
+                        {% if  is_granted("ROLE_COACH") %}
+                        <li class="nav-item mx-3">
+                            <a class="nav-link text-light" href="{{ path('admin_index', {email: app.user}) }}">Administration</a>
+                            {% endif %}
                         </li>
                         <li class="nav-item mx-3">
                             {% if app.user %}
