@@ -101,6 +101,9 @@ class ActivityController extends AbstractController
 
     /**
      * @Route("/{id}", name="activity_delete", methods={"DELETE"})
+     * @param Request $request
+     * @param Activity $activity
+     * @return Response
      */
     public function delete(Request $request, Activity $activity): Response
     {
@@ -108,8 +111,9 @@ class ActivityController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($activity);
             $entityManager->flush();
+            $this->addFlash('success', 'Le Texte de la partie activité adaptée a bien été supprimé');
         }
 
-        return $this->redirectToRoute('activity_index');
+        return $this->redirectToRoute('activity_admin');
     }
 }
