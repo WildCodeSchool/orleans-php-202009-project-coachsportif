@@ -3,34 +3,32 @@
 {% block title %} Liste des tarifs {% endblock %}
 
 {% block body %}
-    <h1 class="text-center my-4">Liste des tarifs</h1>
-
-    <div class="container">
-        <a class="btn btn-success mb-2" href="{{ path('tarif_new') }}">Ajouter un nouveau tarif</a>
-
-        <table class="table text-dark text-center">
-            <thead class="thead-light">
-            <tr>
-                <th>Service</th>
-                <th>Prix</th>
-                <th>Actions</th>
-            </tr>
-            </thead>
-            <tbody>
-                {% for tariff in tariffs %}
+    <h1 class="text-center mt-4">Liste des tarifs</h1>
+        <div class="container">
+            <a class="btn btn-success mb-2" href="{{ path('tarif_new') }}">Ajouter un nouveau tarif</a>
+            <table class="table text-dark text-center">
+                <thead class="thead-light">
                     <tr>
-                        <td> {{ tariff.description }}</td>
-                        <td>{{ tariff.price }}</td>
-                        <td><div class="row justify-content-center">
-                                <a class="btn btn-primary mx-2 mb-sm-2 mb-2" href="{{ path('tarif_edit', { id: tariff.id}) }}">Modifier</a>
-                                {{ include('admin/tarif/_delete_form.html.twig') }}
-                            </div>
-                        </td>
+                        <th>Service</th>
+                        <th>Prix</th>
+                        <th>Actions</th>
                     </tr>
-            {% endfor %}
-            </tbody>
-        </table>
-    </div>
+                </thead>
+                <tbody>
+                    {% for tariff in tariffs %}
+                        <tr>
+                            <td> {{ tariff.description }}</td>
+                            <td>{{ tariff.price }}</td>
+                            <td>
+                                <a class="btn btn-primary mx-2 mb-sm-2 mb-2"
+                                   href="{{ path('tarif_edit', { id: tariff.id}) }}">Modifier</a>
+                                {{ include('admin/tarif/_delete_form.html.twig') }}
+                            </td>
+                        </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
     <div class="text-center">
         <a class="btn btn-secondary btn mt-2" href="{{ path('admin_index') }}">Retour</a>
     </div>

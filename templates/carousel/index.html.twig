@@ -2,10 +2,11 @@
 {% block title %}Administration|Carousel{% endblock %}
 
 {% block body %}
-    <div class="container">
-        <h1 class="mt-4">Administration du Carrousel</h1>
-            <table class="table text-dark text-center">
-                <thead class="thead-light">
+    <h1 class="text-center mt-4">Administration du Carrousel</h1>
+        <div class="container">
+            <a class="btn btn-success btn mb-2" href="{{ path('carousel_new') }}">Ajouter une nouvelle image</a>
+            <table class="table text-dark">
+                <thead class="thead-light text-center">
                     <tr>
                         <th>Nom de l'image</th>
                         <th>Localisation de la page</th>
@@ -18,25 +19,20 @@
                             <td>{{ carousel.path }}</td>
                             <td>{{ carousel.page }}</td>
                             <td>
-                                <a class="btn btn-primary btn"
-                                   href="{{ path('carousel_show', {'id': carousel.id}) }}">Voir</a>
-                                <a class="btn btn-primary btn"
+                                <a class="col btn btn-primary mb-sm-2 mb-2 btn"
                                    href="{{ path('carousel_edit', {'id': carousel.id}) }}">Modifier</a>
                                 {{ include('carousel/_delete_form.html.twig') }}
                             </td>
                         </tr>
                     {% else %}
                         <tr>
-                            <td colspan="4">Il n'y a pas de donnée</td>
+                            <td class="text-danger" colspan="8">Aucun résultat trouvé</td>
                         </tr>
                     {% endfor %}
                 </tbody>
             </table>
-    </div>
+        </div>
     <div class="text-center">
-        <a class="btn btn-secondary btn mb-5" href="{{ path('carousel_new') }}">Ajouter une nouvelle image</a>
-    </div>
-    <div class="text-center">
-        <a class="btn btn-secondary btn" href="{{ path('admin_index') }}">Retour</a>
+        <a class="btn btn-secondary btn mb-4" href="{{ path('admin_index') }}">Retour</a>
     </div>
 {% endblock %}

@@ -1,7 +1,8 @@
-{{ form_start(form) }}
-{{ form_widget(form) }}
-<div class="col mt-3 submit">
-    <button class="btn btn-secondary">{{ button_label|default('Sauvegarder') }}</button>
-    <a class="btn btn-primary"  href="{{ path('tarif_index') }}">Retour</a>
+<div class="container">
+    {{ form_start(form) }}
+    {{ form_widget(form) }}
+    <div class="text-center">
+        <button class="btn btn-primary btn m-3">{{ button_label|default('Sauvegarder') }}</button>
+    </div>
+    {{ form_end(form) }}
 </div>
-{{ form_end(form) }}
