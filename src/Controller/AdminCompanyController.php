@@ -11,7 +11,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("/admin/company")
+ * @Route("/admin/entreprise")
  */
 class AdminCompanyController extends AbstractController
 {
@@ -77,7 +77,7 @@ class AdminCompanyController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
-
+            $this->addFlash('success', 'Le texte a bien été modifié');
             return $this->redirectToRoute('company_admin');
         }
 
