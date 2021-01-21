@@ -1,11 +1,14 @@
-{% extends 'base.html.twig' %}
-
-{% block title %}New Company{% endblock %}
+{% extends 'layout_admin.html.twig' %}
+    {% block stylesheets %}
+        {{ encore_entry_link_tags('indexAdmin') }}
+    {% endblock %}
+{% block title %}Nouveau|Texte|Entreprise{% endblock %}
 
 {% block body %}
-    <h1>Create new Company</h1>
+    <h1 class="title text-center mt-4">Ajouter un texte partie sport en entreprise</h1>
 
-    {{ include('company/_form.html.twig') }}
-
-    <a href="{{ path('company_index') }}">back to list</a>
+    {{ include('admin/company/_form.html.twig') }}
+    <div class="text-center mt-4">
+        <a class="btn btn-secondary" href="{{ path('company_admin') }}">Retour</a>
+    </div>
 {% endblock %}
