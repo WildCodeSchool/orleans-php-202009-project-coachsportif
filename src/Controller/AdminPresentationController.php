@@ -77,6 +77,7 @@ class AdminPresentationController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
+            $this->addFlash('success', 'La présentation a bien été modifiée');
 
             return $this->redirectToRoute('presentation_admin');
         }
