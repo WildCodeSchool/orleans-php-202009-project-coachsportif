@@ -37,7 +37,7 @@ class AdminGymController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($gym);
             $entityManager->flush();
-
+            $this->addFlash('success', "le texte de la Salle d\'entrainement a bien été ajouté");
             return $this->redirectToRoute('gym');
         }
 
@@ -72,8 +72,8 @@ class AdminGymController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
-
-            return $this->redirectToRoute('gym_index');
+            $this->addFlash('success', "Le texte de la Salle d\'entrainement a bien été modifié");
+            return $this->redirectToRoute('gym_admin');
         }
 
         return $this->render('admin/gym/edit.html.twig', [
@@ -94,7 +94,7 @@ class AdminGymController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($gym);
             $entityManager->flush();
-            $this->addFlash('success', 'Le Texte partie Salle d\'entrainement à bien été supprimé');
+            $this->addFlash('success', "Le Texte de la Salle d'entrainement a bien été supprimé");
         }
 
         return $this->redirectToRoute('gym');

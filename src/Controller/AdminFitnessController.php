@@ -17,7 +17,7 @@ use Symfony\Component\Routing\Annotation\Route;
 /**
  * Class AdminFitnessController
  * @package App\Controller
- * @Route("/fitness/admin")
+ * @Route("/admin/fitness")
  */
 class AdminFitnessController extends AbstractController
 {
@@ -36,7 +36,7 @@ class AdminFitnessController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($fitness);
             $entityManager->flush();
-
+            $this->addFlash('success', 'le texte de Remise en forme a bien été ajouté');
             return $this->redirectToRoute('fitness_admin');
         }
 
@@ -71,7 +71,7 @@ class AdminFitnessController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
-            $this->addFlash('success', 'Le texte de Remise en forme à bien été modifié');
+            $this->addFlash('success', 'Le texte de Remise en forme a bien été modifié');
             return $this->redirectToRoute('fitness_admin');
         }
 
@@ -93,7 +93,7 @@ class AdminFitnessController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($fitness);
             $entityManager->flush();
-            $this->addFlash('success', 'Le Texte partie Remise en forme à bien été supprimé');
+            $this->addFlash('success', 'Le texte de Remise en forme a bien été supprimé');
         }
 
         return $this->redirectToRoute('fitness_admin');
