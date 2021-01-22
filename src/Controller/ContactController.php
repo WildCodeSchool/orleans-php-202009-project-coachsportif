@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\ContactHome;
 use App\Form\ContactHomeType;
+use App\Repository\ContactRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -21,10 +22,11 @@ class ContactController extends AbstractController
      * @Route("/", name="show")
      * @param Request $request
      * @param MailerInterface $mailer
+     * @param ContactRepository $contactRepository
      * @return Response
      * @throws TransportExceptionInterface
      */
-    public function index(Request $request, MailerInterface $mailer): Response
+    public function index(Request $request, MailerInterface $mailer, ContactRepository $contactRepository): Response
     {
         $contact = new ContactHome();
         $form = $this->createForm(ContactHomeType::class, $contact);
@@ -40,6 +42,7 @@ class ContactController extends AbstractController
         }
         return $this->render('contact/contact.html.twig', [
             "form" => $form->createView(),
+            "contacts" => $contactRepository->findAll(),
         ]);
     }
     /**
