@@ -1,8 +1,7 @@
 {% extends 'layout.html.twig' %}
 {% block body %}
-    <div class="fitnessContent">
-
-        <h1 class="text-center">Remise en forme</h1>
+    <section>
+        <h1 class="text-center">Santé en entreprise</h1>
         <div class="container-fluid">
             {% for description in descriptions %}
                 <div class="row justify-content-center">
@@ -19,7 +18,7 @@
         <div class="d-flex justify-content-center">
             <a class="fitnessButton btn btn-primary btn" href="{{ path('contact_show') }}">S'inscrire</a>
         </div>
-    </div>
+    </section>
     <section id="carousel-opinion" class="carouselFitness carousel slide pb-0" data-ride="carousel">
         <h2 class="text-center p-5">Les avis</h2>
         <div class="carousel-inner">

@@ -1,11 +1,13 @@
-{% extends 'base.html.twig' %}
-
-{% block title %}New Presentation{% endblock %}
+{% extends 'layout_admin.html.twig' %}
+    {% block stylesheets %}
+        {{ encore_entry_link_tags('indexAdmin') }}
+    {% endblock %}
+{% block title %}Nouvelle|Présentation{% endblock %}
 
 {% block body %}
-    <h1>Create new Presentation</h1>
-
-    {{ include('presentation/_form.html.twig') }}
-
-    <a href="{{ path('presentation_index') }}">back to list</a>
+    <h1 class="title text-center mt-4">Ajouter une nouvelle présentation</h1>
+    {{ include('admin/presentation/_form.html.twig') }}
+        <div class="text-center mt-4">
+            <a class="btn btn-secondary" href="{{ path('presentation_admin') }}">Retour</a>
+        </div>
 {% endblock %}

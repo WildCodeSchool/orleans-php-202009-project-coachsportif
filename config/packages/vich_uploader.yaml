@@ -10,3 +10,6 @@ vich_uploader:
         home_file:
             uri_prefix: /images/home
             upload_destination: '%upload_directory_home%'
+        presentation_file:
+            uri_prefix: /images/presentation
+            upload_destination: '%upload_directory_path%'
