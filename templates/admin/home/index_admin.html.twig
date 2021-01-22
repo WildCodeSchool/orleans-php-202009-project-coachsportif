@@ -21,13 +21,13 @@
                             <td>{{ presentation.text }}</td>
                             <td>{{ presentation.picture }}</td>
                             <td>
-                                <a class="btn btn-primary btn"
+                                <a class="col btn btn-primary btn"
                                    href="{{ path('home_edit', {'id': presentation.id}) }}">Modifier</a>
                             </td>
                         </tr>
                     {% else %}
                         <tr>
-                            <td colspan="3">Il n'y a aucun résultat</td>
+                            <td class="text-danger" colspan="8">Aucun résultat trouvé</td>
                         </tr>
                     {% endfor %}
                 </tbody>
