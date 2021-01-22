@@ -42,8 +42,8 @@ class AdminPresentationController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($presentation);
             $entityManager->flush();
-
-            return $this->redirectToRoute('presentation_index');
+            $this->addFlash('success', 'La présentation a bien été ajoutée');
+            return $this->redirectToRoute('presentation_admin');
         }
 
         return $this->render('admin/presentation/new.html.twig', [
