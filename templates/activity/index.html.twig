@@ -5,9 +5,9 @@
 
         <h1 class="text-center">Activité adaptée</h1>
         <div class="container-fluid">
-            {% for description in descriptions %}
+            {% for activitie in activities %}
                 <div class="row justify-content-center">
-                    <p class="fitnessParagraph text-center col-8 py-2">{{ description.description }}</p>
+                    <p class="fitnessParagraph text-center col-8 py-2">{{ activitie.description }}</p>
                 </div>
             {% endfor %}
         </div>
