@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use App\Repository\ContactRepository;
+use Symfony\Component\Validator\Constraints as Assert;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -15,27 +16,31 @@ class Contact
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
      */
-    private $id;
+    private ?int $id;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\Length(max="255")
      */
-    private $phone;
+    private ?string $phone;
 
     /**
      * @ORM\Column(type="string", length=255)
+     *  @Assert\Length(max="255")
      */
-    private $email;
+    private ?string $email;
 
     /**
      * @ORM\Column(type="string", length=255)
+     *  @Assert\Length(max="255")
      */
-    private $adress;
+    private ?string $adress;
 
     /**
      * @ORM\Column(type="string", length=255)
+     *  @Assert\Length(max="255")
      */
-    private $codeAndCity;
+    private ?string $codeAndCity;
 
     public function getId(): ?int
     {
