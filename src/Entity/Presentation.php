@@ -13,6 +13,7 @@ use DateTime;
 
 /**
  * @ORM\Entity(repositoryClass=PresentationRepository::class)
+ * @Vich\Uploadable
  */
 class Presentation
 {
@@ -31,7 +32,7 @@ class Presentation
     /**
      * @ORM\Column(type="text")
      */
-    private ?string $path;
+    private ?string $path = '';
 
     /**
      * @ORM\Column(type="datetime")
@@ -93,7 +94,7 @@ class Presentation
         return $this->path;
     }
 
-    public function setPath(string $path): self
+    public function setPath(?string $path): self
     {
         $this->path = $path;
 

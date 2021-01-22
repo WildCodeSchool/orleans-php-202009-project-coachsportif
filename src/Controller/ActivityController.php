@@ -68,16 +68,21 @@ class ActivityController extends AbstractController
 
     /**
      * @Route("/{id}", name="activity_show", methods={"GET"})
+     * @param Activity $activity
+     * @return Response
      */
     public function show(Activity $activity): Response
     {
-        return $this->render('activity/show.html.twig', [
+        return $this->render('admin/activity/show.html.twig', [
             'activity' => $activity,
         ]);
     }
 
     /**
      * @Route("/{id}/edit", name="activity_edit", methods={"GET","POST"})
+     * @param Request $request
+     * @param Activity $activity
+     * @return Response
      */
     public function edit(Request $request, Activity $activity): Response
     {
@@ -90,7 +95,7 @@ class ActivityController extends AbstractController
             return $this->redirectToRoute('activity_index');
         }
 
-        return $this->render('activity/edit.html.twig', [
+        return $this->render('admin/activity/edit.html.twig', [
             'activity' => $activity,
             'form' => $form->createView(),
         ]);
@@ -98,6 +103,9 @@ class ActivityController extends AbstractController
 
     /**
      * @Route("/{id}", name="activity_delete", methods={"DELETE"})
+     * @param Request $request
+     * @param Activity $activity
+     * @return Response
      */
     public function delete(Request $request, Activity $activity): Response
     {
@@ -105,8 +113,22 @@ class ActivityController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($activity);
             $entityManager->flush();
+            $this->addFlash('success', 'Le Texte de la partie activité adaptée a bien été supprimé');
         }
 
-        return $this->redirectToRoute('activity_index');
+        return $this->redirectToRoute('activity_admin');
+    }
+
+    /**
+     * @Route("/", name="activity_admin", methods={"GET"})
+     * @param ActivityRepository $activityRepository
+     * @return Response
+     */
+    public function indexAdmin(ActivityRepository $activityRepository): Response
+    {
+        $descriptions = $activityRepository->findAll();
+        return $this->render('admin/activity/indexAdmin.html.twig', [
+            'descriptions' => $descriptions,
+        ]);
     }
 }
