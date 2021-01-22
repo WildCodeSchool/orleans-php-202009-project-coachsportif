@@ -22,7 +22,7 @@ class AdminPresentationController extends AbstractController
      */
     public function index(PresentationRepository $presentRepository): Response
     {
-        return $this->render('presentation/index.html.twig', [
+        return $this->render('admin/presentation/index.html.twig', [
             'presentations' => $presentRepository->findAll(),
         ]);
     }
@@ -77,11 +77,11 @@ class AdminPresentationController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
-
-            return $this->redirectToRoute('presentation_index');
+            $this->addFlash('success', 'La présentation a bien été modifiée');
+            return $this->redirectToRoute('presentation_admin');
         }
 
-        return $this->render('presentation/edit.html.twig', [
+        return $this->render('admin/presentation/edit.html.twig', [
             'presentation' => $presentation,
             'form' => $form->createView(),
         ]);

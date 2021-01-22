@@ -1,13 +1,15 @@
-{% extends 'base.html.twig' %}
-
-{% block title %}Edit Presentation{% endblock %}
+{% extends 'layout_admin.html.twig' %}
+    {% block stylesheets %}
+        {{ encore_entry_link_tags('indexAdmin') }}
+    {% endblock %}
+{% block title %}Modifier|Qui suis-je{% endblock %}
 
 {% block body %}
-    <h1>Edit Presentation</h1>
-
-    {{ include('presentation/_form.html.twig', {'button_label': 'Update'}) }}
-
-    <a href="{{ path('presentation_index') }}">back to list</a>
-
-    {{ include('presentation/_delete_form.html.twig') }}
+    <div class="container">
+        <h1 class="title text-center mt-4">Administration de Qui suis-je ?</h1>
+            {{ include('admin/presentation/_form.html.twig', {'button_label': 'Enregistrer'}) }}
+        <div class="text-center">
+            <a class="btn btn-secondary btn m-3" href="{{ path('presentation_admin') }}">Retour</a>
+        </div>
+    </div>
 {% endblock %}
