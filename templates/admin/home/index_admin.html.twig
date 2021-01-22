@@ -10,16 +10,19 @@
             <table class="table text-dark text-center">
                 <thead class="thead-light">
                     <tr>
-                        <th>Texte de Présentation</th>
                         <th>Nom de l'image</th>
+                        <th>Texte de Présentation</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
                     {% for presentation in presentations %}
                         <tr>
+                            <td>
+                                <img class="idImage" src="{{ asset('uploads/path/' ~ presentation.picture) }}"
+                                     alt="{{ presentation.picture }}" title="{{ presentation.picture }}">
+                            </td>
                             <td>{{ presentation.text }}</td>
-                            <td>{{ presentation.picture }}</td>
                             <td>
                                 <a class="col btn btn-primary btn"
                                    href="{{ path('home_edit', {'id': presentation.id}) }}">Modifier</a>

@@ -1,4 +1,7 @@
 {% extends 'layout_admin.html.twig' %}
+{% block stylesheets %}
+    {{ encore_entry_link_tags('indexAdmin') }}
+{% endblock %}
 {% block title %}Administration|Carousel{% endblock %}
 
 {% block body %}
@@ -16,7 +19,10 @@
                 <tbody>
                     {% for carousel in carousels %}
                         <tr>
-                            <td>{{ carousel.path }}</td>
+                            <td>
+                                <img class="idImage" src="{{ asset('uploads/path/' ~ carousel.path) }}"
+                                     alt="{{ carousel.path }}" title="{{ carousel.path }}">
+                            </td>
                             <td>{{ carousel.page }}</td>
                             <td>
                                 <a class="col btn btn-primary mb-sm-2 mb-2 btn"
