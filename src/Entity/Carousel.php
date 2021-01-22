@@ -13,7 +13,7 @@ use DateTime;
 
 /**
  * @ORM\Entity(repositoryClass=CarouselRepository::class)
- * * @Vich\Uploadable
+ * @Vich\Uploadable
  */
 class Carousel
 {
@@ -46,7 +46,7 @@ class Carousel
      *     maxSize="1000000",
      *     mimeTypes = {"image/png", "image/jpeg", "image/jpg", "image/gif",})
      */
-    private ?File $pathFile;
+    private ?File $pathFile = null;
 
     public function setPathFile(?File $image = null): Carousel
     {

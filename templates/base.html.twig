@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="icon" type="image/png" href="{{ asset('build/images/favicon.jpg') }}" />
+    <link rel="stylesheet" href="https://bootswatch.com/4/darkly/bootstrap.min.css"/>
     <title>{% block title %}Welcome!{% endblock %}</title>
     {% block stylesheets %}
         {{ encore_entry_link_tags('app') }}
@@ -12,7 +13,20 @@
 {% block header %}{% endblock %}
 {% block carousel %}{% endblock %}
 <body>
+<header>
+    {% block flash %}
+        {% for category, messages in app.flashes %}
+        {% for message in messages %}
+            <div class="alert alert-{{ category }}">
+                {{ message }}
+            </div>
+        {% endfor %}
+        {% endfor %}
+
+    {% endblock %}
+</header>
 {% block body %}{% endblock %}
+{% block map %}{% endblock %}
 </body>
 {% block footer %}{% endblock %}
 {% block javascripts %}

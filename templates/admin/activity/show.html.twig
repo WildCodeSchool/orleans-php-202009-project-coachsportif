@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+    {% block stylesheets %}
+        {{ encore_entry_link_tags('indexAdmin') }}
+    {% endblock %}
+{% block title %}Activité adaptée affichage du texte{% endblock %}
+
+{% block body %}
+    <h1 class="title text-center mt-4">Affichage du Texte activité adaptée</h1>
+    <div class="container text-center">
+        <table class="table">
+            <tbody>
+            <tr>
+                <th>Texte activité adaptée</th>
+                <td>{{ activity.descritpion }}</td>
+            </tr>
+        </tbody>
+    </table>
+        <a class="btn btn-secondary btn m-3 href="{{ path('activity_edit', {'id': activity.id}) }}">Modifier</a>
+        <div class="row justify-content-center">
+            <a class="btn btn-secondary btn m-3 href="{{ path('activityAdmin') }}">Retour</a>
+            {{ include('admin/activity/_delete_form.html.twig') }}
+        </div>
+{% endblock %}

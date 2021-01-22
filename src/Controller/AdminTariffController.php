@@ -23,7 +23,7 @@ class AdminTariffController extends AbstractController
     public function index(TariffRepository $tariffRepository): Response
     {
         return $this->render('admin/tarif/index.html.twig', [
-            'tarifs' => $tariffRepository->findAll()]);
+            'tariffs' => $tariffRepository->findAll()]);
     }
 
     /**
@@ -47,5 +47,45 @@ class AdminTariffController extends AbstractController
             return $this->redirectToRoute('tarif_index');
         }
         return $this->render('admin/tarif/new.html.twig', ["form" => $form->createView()]);
+    }
+
+    /**
+     * @Route("/{id}", name="delete", methods={"DELETE"})
+     * @param Request $request
+     * @param Tariff $tariff
+     * @return Response
+     */
+    public function delete(Request $request, Tariff $tariff): Response
+    {
+        if ($this->isCsrfTokenValid('delete' . $tariff->getId(), $request->request->get('_token'))) {
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->remove($tariff);
+            $entityManager->flush();
+            $this->addFlash('danger', 'Le tarif à bien été supprimé');
+        }
+        return $this->redirectToRoute('tarif_index');
+    }
+    /**
+    * @Route("/{id}", name="edit")
+     * @param Request $request
+     * @param Tariff $tariff
+     * @return Response
+     */
+    public function edit(Request $request, tariff $tariff): Response
+    {
+        $form = $this->createForm(TariffType::class, $tariff);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $this->getDoctrine()->getManager()->flush();
+            $this->addFlash('success', 'Le tarif à bien été modifié');
+
+
+            return $this->redirectToRoute('tarif_index');
+        }
+        return $this->render('admin/tarif/edit.html.twig', [
+            'tariff' => $tariff,
+            'form' => $form->createView(),
+        ]);
     }
 }

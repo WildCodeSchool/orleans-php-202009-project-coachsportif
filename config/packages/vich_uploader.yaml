@@ -2,8 +2,11 @@ vich_uploader:
     db_driver: orm
     mappings:
         path_file:
-             uri_prefix: /images/path
-             upload_destination: '%upload_directory_path%'
+            uri_prefix: /images/path
+            upload_destination: '%upload_directory_path%'
         walking_file:
             uri_prefix: /images/walking
             upload_destination: '%upload_directory_walking%'
+        home_file:
+            uri_prefix: /images/home
+            upload_destination: '%upload_directory_home%'
