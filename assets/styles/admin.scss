@@ -30,3 +30,11 @@
 label {
     color: $dark;
 }
+
+.idImage {
+    width: 300px;
+}
+
+.custom-file-input ~ .custom-file-label:lang(fr)::after {
+    content: "Parcourir...";
+}
