@@ -103,6 +103,6 @@ class AdminPresentationController extends AbstractController
             $this->addFlash('danger', 'La présentation a bien été supprimée');
         }
 
-        return $this->redirectToRoute('presentation_index');
+        return $this->redirectToRoute('presentation_admin');
     }
 }
