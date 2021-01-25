@@ -3,15 +3,13 @@
         {{ encore_entry_link_tags('indexAdmin') }}
     {% endblock %}
 {% block title %}Index Activité adaptée {% endblock %}
-{% block body %}
-    <h1>Activity index</h1>
 
-    <table class="table">
-        <h1 class="title text-center mt-4">Index activité adaptée</h1>
-        <div class="container">
-            <a class="btn btn-success btn mb-2" href="{{ path('activity_new') }}">Ajouter un texte</a>
-            <table class="table text-dark">
-                <thead class="thead-light text-center">
+{% block body %}
+    <h1 class="title text-center mt-4">Index activité adaptée</h1>
+    <div class="container">
+        <a class="btn btn-success btn mb-2" href="{{ path('activity_new') }}">Ajouter un texte</a>
+        <table class="table text-dark">
+            <thead class="thead-light text-center">
                 <tr>
                     <th>Texte partie activité adaptée</th>
                     <th>actions</th>
