@@ -16,15 +16,15 @@ class ContactHomeType extends AbstractType
     {
         $builder
             ->add('subject', TextType::class, [
-                'label' => 'Sujet:',
+                'label' => 'Sujet',
                 'attr' => ['placeholder' => 'Sujet de votre demande'],
             ])
             ->add('firstname', TextType::class, [
-                'label' => 'Prénom:',
+                'label' => 'Prénom',
                 'attr' => ['placeholder' => 'Jean'],
             ])
             ->add('lastname', TextType::class, [
-                'label' => 'Nom:',
+                'label' => 'Nom',
                 'attr' => ['placeholder' => 'Delmar'],
             ])
             ->add('email', EmailType::class, [
