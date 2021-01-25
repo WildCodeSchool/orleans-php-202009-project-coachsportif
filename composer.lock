@@ -7040,10 +7040,6 @@
                 "MIT"
             ],
             "description": "Simple, stylish Email Verification for Symfony",
-            "support": {
-                "issues": "https://github.com/SymfonyCasts/verify-email-bundle/issues",
-                "source": "https://github.com/SymfonyCasts/verify-email-bundle/tree/v1.1.1"
-            },
             "time": "2020-12-18T14:57:31+00:00"
         },
         {
@@ -7284,10 +7280,6 @@
                 "file uploads",
                 "upload"
             ],
-            "support": {
-                "issues": "https://github.com/dustin10/VichUploaderBundle/issues",
-                "source": "https://github.com/dustin10/VichUploaderBundle/tree/1.16.0"
-            },
             "time": "2020-12-04T10:49:15+00:00"
         },
         {
