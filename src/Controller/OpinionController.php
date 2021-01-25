@@ -11,19 +11,19 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("/opinion")
+ * @Route("/admin/opinion")
  */
 class OpinionController extends AbstractController
 {
 
     /**
-     * @Route("/admin", name="opinion_index")
+     * @Route("/", name="opinion_index")
      * @param OpinionRepository $opinionRepository
      * @return Response
      */
     public function index(OpinionRepository $opinionRepository): Response
     {
-        return $this->render('opinion/index.html.twig', [
+        return $this->render('admin/opinion/index.html.twig', [
             'opinions' => $opinionRepository->findAll()]);
     }
     /**
@@ -45,7 +45,7 @@ class OpinionController extends AbstractController
             return $this->redirectToRoute('opinion_index');
         }
 
-        return $this->render('opinion/new.html.twig', [
+        return $this->render('admin/opinion/new.html.twig', [
             'opinion' => $opinion,
             'form' => $form->createView(),
         ]);
@@ -58,7 +58,7 @@ class OpinionController extends AbstractController
      */
     public function show(Opinion $opinion): Response
     {
-        return $this->render('opinion/show.html.twig', [
+        return $this->render('admin/opinion/show.html.twig', [
             'opinion' => $opinion,
         ]);
     }
@@ -80,7 +80,7 @@ class OpinionController extends AbstractController
             return $this->redirectToRoute('opinion_index');
         }
 
-        return $this->render('opinion/edit.html.twig', [
+        return $this->render('admin/opinion/edit.html.twig', [
             'opinion' => $opinion,
             'form' => $form->createView(),
         ]);
