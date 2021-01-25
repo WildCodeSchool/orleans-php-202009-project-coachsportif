@@ -83,6 +83,9 @@ class RegulationController extends AbstractController
 
     /**
      * @Route("/{id}", name="regulation_delete", methods={"DELETE"})
+     * @param Request $request
+     * @param Regulation $regulation
+     * @return Response
      */
     public function delete(Request $request, Regulation $regulation): Response
     {
@@ -90,8 +93,9 @@ class RegulationController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($regulation);
             $entityManager->flush();
+            $this->addFlash('success', 'Le Texte a bien été supprimé');
         }
 
-        return $this->redirectToRoute('regulation_index');
+        return $this->redirectToRoute('regulation_admin');
     }
 }
