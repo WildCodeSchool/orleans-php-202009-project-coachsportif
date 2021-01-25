@@ -102,4 +102,17 @@ class RegulationController extends AbstractController
 
         return $this->redirectToRoute('regulation_admin');
     }
+
+    /**
+     * @Route("/", name="activity_admin", methods={"GET"})
+     * @param RegulationRepository $regulationRepository
+     * @return Response
+     */
+    public function indexAdmin(RegulationRepository $regulationRepository): Response
+    {
+        $descriptions = $regulationRepository->findAll();
+        return $this->render('admin/regulation/indexAdmin.html.twig', [
+            'descriptions' => $descriptions,
+        ]);
+    }
 }
