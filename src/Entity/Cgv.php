@@ -2,13 +2,13 @@
 
 namespace App\Entity;
 
-use App\Repository\CGVRepository;
+use App\Repository\CgvRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass=CGVRepository::class)
+ * @ORM\Entity(repositoryClass=CgvRepository::class)
  */
-class CGV
+class Cgv
 {
     /**
      * @ORM\Id
@@ -20,21 +20,21 @@ class CGV
     /**
      * @ORM\Column(type="text")
      */
-    private ?string $textCvg;
+    private ?string $textCgv;
 
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getDocument(): ?string
+    public function getTextCgv(): ?string
     {
-        return $this->textCvg;
+        return $this->textCgv;
     }
 
-    public function setDocument(string $textCvg): self
+    public function setTextCgv(string $textCgv): self
     {
-        $this->textCvg = $textCvg;
+        $this->textCgv = $textCgv;
 
         return $this;
     }
