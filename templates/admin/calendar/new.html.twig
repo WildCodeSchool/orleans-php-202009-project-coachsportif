@@ -1,0 +1,14 @@
+{% extends 'layout_admin.html.twig' %}
+
+{% block stylesheets %}
+    {{ encore_entry_link_tags('indexAdmin') }}
+{% endblock %}
+{% block title %}Nouvelle séance{% endblock %}
+
+{% block body %}
+    <h1 class="title text-center mt-4">Nouvelle Séance</h1>
+    {{ include('admin/calendar/_form.html.twig') }}
+<div class="text-center mt-4">
+<a class="btn btn-secondary" href="{{ path('calendar_list') }}">Retour</a>
+</div>
+{% endblock %}
