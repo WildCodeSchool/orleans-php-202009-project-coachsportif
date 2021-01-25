@@ -100,6 +100,7 @@ class AdminCgvController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($cgv);
             $entityManager->flush();
+            $this->addFlash('danger', 'Les conditions générales de vente ont bien été supprimé');
         }
 
         return $this->redirectToRoute('cgv_admin');
