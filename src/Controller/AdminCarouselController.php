@@ -11,9 +11,9 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("/carousel")
+ * @Route("/admin/carousel")
  */
-class CarouselController extends AbstractController
+class AdminCarouselController extends AbstractController
 {
     /**
      * @Route("/", name="carousel_index", methods={"GET"})
@@ -22,7 +22,7 @@ class CarouselController extends AbstractController
      */
     public function index(CarouselRepository $carouselRepository): Response
     {
-        return $this->render('carousel/index.html.twig', [
+        return $this->render('admin/carousel/index.html.twig', [
             'carousels' => $carouselRepository->findAll(),
         ]);
     }
@@ -46,7 +46,7 @@ class CarouselController extends AbstractController
             return $this->redirectToRoute('carousel_index');
         }
 
-        return $this->render('carousel/new.html.twig', [
+        return $this->render('admin/carousel/new.html.twig', [
             'carousel' => $carousel,
             'form' => $form->createView(),
         ]);
@@ -59,7 +59,7 @@ class CarouselController extends AbstractController
      */
     public function show(Carousel $carousel): Response
     {
-        return $this->render('carousel/show.html.twig', [
+        return $this->render('admin/carousel/show.html.twig', [
             'carousel' => $carousel,
         ]);
     }
@@ -81,7 +81,7 @@ class CarouselController extends AbstractController
             return $this->redirectToRoute('carousel_index');
         }
 
-        return $this->render('carousel/edit.html.twig', [
+        return $this->render('admin/carousel/edit.html.twig', [
             'carousel' => $carousel,
             'form' => $form->createView(),
         ]);
