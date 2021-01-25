@@ -49,6 +49,11 @@ class Walking
      */
     private string $description;
 
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private ?string $pdf;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -100,6 +105,18 @@ class Walking
     public function setUpdatedAt(?DateTimeInterface $updatedAt): self
     {
         $this->updatedAt = $updatedAt;
+
+        return $this;
+    }
+
+    public function getPdf(): ?string
+    {
+        return $this->pdf;
+    }
+
+    public function setPdf(?string $pdf): self
+    {
+        $this->pdf = $pdf;
 
         return $this;
     }
