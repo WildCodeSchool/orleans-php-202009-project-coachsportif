@@ -17,6 +17,8 @@ class RegulationController extends AbstractController
 {
     /**
      * @Route("/", name="regulation_index", methods={"GET"})
+     * @param RegulationRepository $regulationRepository
+     * @return Response
      */
     public function index(RegulationRepository $regulationRepository): Response
     {
