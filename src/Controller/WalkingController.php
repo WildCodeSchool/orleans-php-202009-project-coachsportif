@@ -39,4 +39,16 @@ class WalkingController extends AbstractController
             'opinions' => $opinions,
         ]);
     }
+
+    /**
+     * @Route("/calendar", name="walking_calendar")
+     * @param WalkingRepository $walkingRepository
+     * @return Response
+     */
+    public function calendar(WalkingRepository $walkingRepository): Response
+    {
+        return $this->render('walking/calendar.html.twig', [
+            'pdf' => $walkingRepository->findOneBy([]),
+        ]);
+    }
 }
