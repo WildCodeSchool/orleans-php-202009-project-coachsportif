@@ -26,7 +26,8 @@ class Contact
 
     /**
      * @ORM\Column(type="string", length=255)
-     *  @Assert\Length(max="255")
+     * @Assert\Length(max="255")
+     * @Assert\Email
      */
     private ?string $email;
 
@@ -38,7 +39,7 @@ class Contact
 
     /**
      * @ORM\Column(type="string", length=255)
-     *  @Assert\Length(max="255")
+     * @Assert\Length(max="255")
      */
     private ?string $codeAndCity;
 
