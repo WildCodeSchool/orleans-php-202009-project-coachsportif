@@ -1,35 +1,14 @@
-{% extends 'base.html.twig' %}
-
-{% block title %}Regulation index{% endblock %}
+{% extends 'layout.html.twig' %}
 
 {% block body %}
-    <h1>Regulation index</h1>
+<div class="fitnessContent">
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Description</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
+    <h1 class="text-center">Mentions légales </h1>
+    <div class="container-fluid">
         {% for regulation in regulations %}
-            <tr>
-                <td>{{ regulation.id }}</td>
-                <td>{{ regulation.description }}</td>
-                <td>
-                    <a href="{{ path('regulation_show', {'id': regulation.id}) }}">show</a>
-                    <a href="{{ path('regulation_edit', {'id': regulation.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="3">no records found</td>
-            </tr>
+            <div class="row justify-content-center">
+                <p class="fitnessParagraph text-center col-8 py-2">{{ regulation.description }}</p>
+            </div>
         {% endfor %}
-        </tbody>
-    </table>
-
-    <a href="{{ path('regulation_new') }}">Create new</a>
+    </div>
 {% endblock %}
