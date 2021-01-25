@@ -16,6 +16,29 @@ import '../styles/footer.scss';
 import '../styles/adminWalking.scss';
 import '../styles/contact.scss';
 import '../styles/homeCo.scss';
+import '../styles/adminOpinion.scss';
+import '../styles/admin.scss';
+import '../styles/tariff.scss';
+import '../styles/profile.scss';
+import { Calendar } from '@fullcalendar/core';
+import dayGridPlugin from '@fullcalendar/daygrid';
+
+document.addEventListener('DOMContentLoaded', () => {
+    const calendarEl = document.getElementById('calendar');
+
+    const calendar = new Calendar(calendarEl, {
+        plugins: [dayGridPlugin],
+        initialView: 'dayGridWeek',
+        locale: 'fr',
+        timeZone: 'Europe/Paris',
+        headerToolbar: {
+            start: 'prev next today',
+            center: 'title',
+            end: 'dayGridWeek dayGridMonth',
+        },
+    });
+    calendar.render();
+});
 
 // Need jQuery? Install it with "yarn add jquery", then uncomment to import it.
 // import $ from 'jquery';
@@ -30,4 +53,11 @@ require('bootstrap');
 
 $(document).ready(() => {
     $('[data-toggle="popover"]').popover();
+});
+// eslint-disable-next-line func-names
+$('input[type=file]').change(function () {
+    const fieldVal = $(this).val();
+    if (fieldVal !== undefined || fieldVal !== '') {
+        $(this).next('.custom-file-label').text(fieldVal);
+    }
 });

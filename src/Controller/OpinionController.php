@@ -17,6 +17,16 @@ class OpinionController extends AbstractController
 {
 
     /**
+     * @Route("/admin", name="opinion_index")
+     * @param OpinionRepository $opinionRepository
+     * @return Response
+     */
+    public function index(OpinionRepository $opinionRepository): Response
+    {
+        return $this->render('opinion/index.html.twig', [
+            'opinions' => $opinionRepository->findAll()]);
+    }
+    /**
      * @Route("/new", name="opinion_new", methods={"GET","POST"})
      * @param Request $request
      * @return Response
@@ -31,8 +41,8 @@ class OpinionController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($opinion);
             $entityManager->flush();
-
-            return $this->redirectToRoute('who');
+            $this->addFlash('success', 'Le nouveau commentaire a bien été créé');
+            return $this->redirectToRoute('opinion_index');
         }
 
         return $this->render('opinion/new.html.twig', [
@@ -43,6 +53,8 @@ class OpinionController extends AbstractController
 
     /**
      * @Route("/{id}", name="opinion_show", methods={"GET"})
+     * @param Opinion $opinion
+     * @return Response
      */
     public function show(Opinion $opinion): Response
     {
@@ -64,8 +76,8 @@ class OpinionController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
-
-            return $this->redirectToRoute('who');
+            $this->addFlash('success', 'Le commentaire a bien été modifié');
+            return $this->redirectToRoute('opinion_index');
         }
 
         return $this->render('opinion/edit.html.twig', [
@@ -86,8 +98,9 @@ class OpinionController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($opinion);
             $entityManager->flush();
+            $this->addFlash('danger', 'Le commentaire a bien été supprimé');
         }
 
-        return $this->redirectToRoute('who');
+        return $this->redirectToRoute('opinion_index');
     }
 }
