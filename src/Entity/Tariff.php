@@ -34,7 +34,7 @@ class Tariff
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private ?string $title;
+    private string $title;
 
     public function getId(): ?int
     {
