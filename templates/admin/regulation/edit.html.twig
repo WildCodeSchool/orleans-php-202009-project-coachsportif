@@ -1,13 +1,16 @@
-{% extends 'base.html.twig' %}
+{% extends 'layout_admin.html.twig' %}
+    {% block stylesheets %}
+        {{ encore_entry_link_tags('indexAdmin') }}
+    {% endblock %}
 
-{% block title %}Edit Regulation{% endblock %}
+{% block title %}Modification du texte{% endblock %}
 
 {% block body %}
-    <h1>Edit Regulation</h1>
-
-    {{ include('regulation/_form.html.twig', {'button_label': 'Update'}) }}
-
-    <a href="{{ path('regulation_index') }}">back to list</a>
-
-    {{ include('regulation/_delete_form.html.twig') }}
+     <div class="container">
+        <h1 class="title text-center mt-4">Modification du texte</h1>
+            {{ include('admin/regulation/_form.html.twig', {'button_label': 'Enregistrer'}) }}
+        <div class="text-center">
+            <a class="btn btn-secondary btn m-3" href="{{ path('regulation_index') }}">Retour</a>
+        </div>
+     </div>
 {% endblock %}

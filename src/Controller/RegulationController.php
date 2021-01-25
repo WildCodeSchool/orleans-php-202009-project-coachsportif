@@ -63,6 +63,9 @@ class RegulationController extends AbstractController
 
     /**
      * @Route("/{id}/edit", name="regulation_edit", methods={"GET","POST"})
+     * @param Request $request
+     * @param Regulation $regulation
+     * @return Response
      */
     public function edit(Request $request, Regulation $regulation): Response
     {
@@ -71,11 +74,12 @@ class RegulationController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
+            $this->addFlash('success', 'Le texte a bien été modifié');
 
             return $this->redirectToRoute('regulation_index');
         }
 
-        return $this->render('regulation/edit.html.twig', [
+        return $this->render('admin/regulation/edit.html.twig', [
             'regulation' => $regulation,
             'form' => $form->createView(),
         ]);
