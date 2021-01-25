@@ -18,9 +18,9 @@ class CGV
     private ?int $id;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="text")
      */
-    private ?string $document;
+    private ?string $textCvg;
 
     public function getId(): ?int
     {
@@ -29,12 +29,12 @@ class CGV
 
     public function getDocument(): ?string
     {
-        return $this->document;
+        return $this->textCvg;
     }
 
-    public function setDocument(string $document): self
+    public function setDocument(string $textCvg): self
     {
-        $this->document = $document;
+        $this->textCvg = $textCvg;
 
         return $this;
     }
