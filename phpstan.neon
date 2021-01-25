@@ -12,3 +12,5 @@ parameters:
     excludes_analyse:
         - src/DataFixtures
         - src/Security
+        - src/DataFixtures
+        - src/Controller/ResetPasswordController.php
