@@ -23,7 +23,7 @@ class AdminCgvController extends AbstractController
     public function index(CGVRepository $cgvRepository): Response
     {
         return $this->render('admin/cgv/index.html.twig', [
-            'cgv' => $cgvRepository->findAll(),
+            'cgvs' => $cgvRepository->findAll(),
         ]);
     }
 
@@ -53,19 +53,7 @@ class AdminCgvController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="cgv", methods={"GET"})
-     * @param CGV $cgv
-     * @return Response
-     */
-    public function show(CGV $cgv): Response
-    {
-        return $this->render('admin/cgv/show.html.twig', [
-            'cgv' => $cgv,
-        ]);
-    }
-
-    /**
-     * @Route("/{id}/edit", name="cgv", methods={"GET","POST"})
+     * @Route("/{id}/edit", name="cgv_edit", methods={"GET","POST"})
      * @param Request $request
      * @param CGV $cgv
      * @return Response

@@ -1,4 +1,4 @@
-<form method="post" action="{{ path('cgv_delete', {'id': cgvid}) }}"
+<form method="post" action="{{ path('cgv_delete', {'id': cgv.id}) }}"
       onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer les conditions générales de ventes ?');">
     <input type="hidden" name="_method" value="DELETE">
     <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ cgv.id) }}">
