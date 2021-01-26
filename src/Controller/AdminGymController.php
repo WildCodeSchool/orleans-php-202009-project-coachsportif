@@ -94,7 +94,7 @@ class AdminGymController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($gym);
             $entityManager->flush();
-            $this->addFlash('success', "Le Texte de la Salle d'entrainement a bien été supprimé");
+            $this->addFlash('danger', "Le Texte de la Salle d'entrainement a bien été supprimé");
         }
 
         return $this->redirectToRoute('gym');

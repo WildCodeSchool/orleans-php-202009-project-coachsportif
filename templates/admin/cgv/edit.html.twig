@@ -1,0 +1,15 @@
+{% extends 'layout_admin.html.twig' %}
+    {% block stylesheets %}
+        {{ encore_entry_link_tags('indexAdmin') }}
+    {% endblock %}
+{% block title %}Modification|CGV{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h1 class="title text-center mt-4">Modification des CGV</h1>
+            {{ include('admin/cgv/_form.html.twig', {'button_label': 'Enregistrer'}) }}
+        <div class="text-center">
+            <a class="btn btn-secondary btn m-3" href="{{ path('cgv_admin') }}">Retour</a>
+        </div>
+    </div>
+{% endblock %}

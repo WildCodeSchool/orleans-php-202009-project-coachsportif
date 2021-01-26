@@ -15,7 +15,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("/activity")
+ * @Route("/activite")
  */
 class ActivityController extends AbstractController
 {

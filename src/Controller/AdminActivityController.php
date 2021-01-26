@@ -17,13 +17,12 @@ use Symfony\Component\Routing\Annotation\Route;
 /**
  * Class AdminActivityController
  * @package App\Controller
- * @Route("/admin/activity")
+ * @Route("/admin/activite")
  */
 class AdminActivityController extends AbstractController
 {
-
     /**
-     * @Route("/activite-adaptee/new", name="activity_new", methods={"GET","POST"})
+     * @Route("/new", name="activity_new", methods={"GET","POST"})
      * @param Request $request
      * @return Response
      */
@@ -38,8 +37,7 @@ class AdminActivityController extends AbstractController
             $entityManager->persist($activity);
             $entityManager->flush();
             $this->addFlash('success', 'Le texte a bien été ajouté');
-
-            return $this->redirectToRoute('activityAdmin');
+            return $this->redirectToRoute('activity_admin');
         }
 
         return $this->render('admin/activity/new.html.twig', [
@@ -74,8 +72,9 @@ class AdminActivityController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
+            $this->addFlash('success', 'Le texte de Activité Adaptée a bien été modifié');
 
-            return $this->redirectToRoute('activity_index');
+            return $this->redirectToRoute('activity_admin');
         }
 
         return $this->render('admin/activity/edit.html.twig', [
@@ -96,7 +95,7 @@ class AdminActivityController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($activity);
             $entityManager->flush();
-            $this->addFlash('success', 'Le Texte de la partie activité adaptée a bien été supprimé');
+            $this->addFlash('danger', 'Le Texte de la partie activité adaptée a bien été supprimé');
         }
 
         return $this->redirectToRoute('activity_admin');
@@ -109,9 +108,9 @@ class AdminActivityController extends AbstractController
      */
     public function indexAdmin(ActivityRepository $activityRepository): Response
     {
-        $descriptions = $activityRepository->findAll();
+        $activities = $activityRepository->findAll();
         return $this->render('admin/activity/indexAdmin.html.twig', [
-            'descriptions' => $descriptions,
+            'activities' => $activities,
         ]);
     }
 }

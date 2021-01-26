@@ -3,24 +3,20 @@
 {% block title %}Regulation{% endblock %}
 
 {% block body %}
-    <h1>Regulation</h1>
-
-    <table class="table">
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ regulation.id }}</td>
-            </tr>
+    <h1 class="title text-center mt-4">Affichage du Texte RGPD</h1>
+    <div class="container text-center">
+        <table class="table">
+            <tbody>
             <tr>
                 <th>Description</th>
                 <td>{{ regulation.description }}</td>
             </tr>
-        </tbody>
-    </table>
-
-    <a href="{{ path('regulation_index') }}">back to list</a>
-
-    <a href="{{ path('regulation_edit', {'id': regulation.id}) }}">edit</a>
-
-    {{ include('regulation/_delete_form.html.twig') }}
+            </tbody>
+        </table>
+        <a class="btn btn-secondary btn m-3 href="{{ path('regulation_edit', {'id': regulation.id}) }}">Modifier</a>
+        <div class="row justify-content-center">
+            <a class="btn btn-secondary btn m-3 href="{{ path('regulation_index') }}">Retour</a>
+            {{ include('regulation/_delete_form.html.twig') }}
+        </div>
+    </div>
 {% endblock %}
