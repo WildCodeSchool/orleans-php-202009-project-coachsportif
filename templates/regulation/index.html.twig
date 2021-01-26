@@ -1,14 +1,14 @@
-{% extends 'layout.html.twig' %}
+{% extends 'base.html.twig' %}
+{% block header %}{% include 'include/_navbar.html.twig' %}{% endblock %}
 
 {% block body %}
-<div class="fitnessContent">
-
     <h1 class="text-center">Mentions légales </h1>
     <div class="container-fluid">
         {% for regulation in regulations %}
             <div class="row justify-content-center">
-                <p class="fitnessParagraph text-center col-8 py-2">{{ regulation.description }}</p>
+                <pre><p class="fitnessParagraph text-center col-8 py-2">{{ regulation.description }}</p></pre>
             </div>
         {% endfor %}
     </div>
 {% endblock %}
+    {% block footer %}{% include 'include/_footer.html.twig' %}{% endblock %}
