@@ -53,18 +53,6 @@ class AdminCgvController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="cgv", methods={"GET"})
-     * @param CGV $cgv
-     * @return Response
-     */
-    public function show(CGV $cgv): Response
-    {
-        return $this->render('admin/cgv/show.html.twig', [
-            'cgv' => $cgv,
-        ]);
-    }
-
-    /**
      * @Route("/{id}/edit", name="cgv", methods={"GET","POST"})
      * @param Request $request
      * @param CGV $cgv
