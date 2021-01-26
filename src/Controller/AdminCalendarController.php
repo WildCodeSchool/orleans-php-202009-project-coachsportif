@@ -11,7 +11,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("/admin/calendar", name="calendar_")
+ * @Route("/admin/calendrier", name="calendar_")
  */
 class AdminCalendarController extends AbstractController
 {

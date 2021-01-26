@@ -3,13 +3,13 @@
 {% block title %}Réinitialiser votre mot de passe{% endblock %}
 
 {% block body %}
-<div class="container">
-    <h1 class="mb-3 font-weight-normal text-center ">Réinitialiser votre mot de passe</h1>
+<div class="container col-12 col-md-4">
+    <h1 class="h2 mb-3 font-weight-normal text-center ">Réinitialiser votre mot de passe</h1>
     {% form_theme resetForm 'bootstrap_4_layout.html.twig' %}
     {{ form_start(resetForm) }}
     {{ form_row(resetForm.plainPassword) }}
     <div class="text-center">
-        <button class="btn btn-secondary btn" type="submit">Réinitialiser</button>
+        <button class="btn btn-primary btn" type="submit">Réinitialiser</button>
     </div>
     {{ form_end(resetForm) }}
 </div>
