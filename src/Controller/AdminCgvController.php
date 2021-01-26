@@ -23,7 +23,7 @@ class AdminCgvController extends AbstractController
     public function index(CgvRepository $cgvRepository): Response
     {
         return $this->render('admin/cgv/index.html.twig', [
-            'cgv' => $cgvRepository->findAll(),
+            'cgvs' => $cgvRepository->findAll(),
         ]);
     }
 
@@ -53,7 +53,7 @@ class AdminCgvController extends AbstractController
     }
 
     /**
-     * @Route("/{id}/edit", name="cgv", methods={"GET","POST"})
+     * @Route("/{id}/edit", name="cgv_edit", methods={"GET","POST"})
      * @param Request $request
      * @param CGV $cgv
      * @return Response
@@ -88,6 +88,7 @@ class AdminCgvController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($cgv);
             $entityManager->flush();
+            $this->addFlash('danger', 'Les conditions générales de vente ont bien été supprimé');
         }
 
         return $this->redirectToRoute('cgv_admin');

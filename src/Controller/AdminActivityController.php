@@ -72,6 +72,7 @@ class AdminActivityController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
+            $this->addFlash('success', 'Le texte de Activité Adaptée a bien été modifié');
 
             return $this->redirectToRoute('activity_admin');
         }
@@ -94,7 +95,7 @@ class AdminActivityController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($activity);
             $entityManager->flush();
-            $this->addFlash('success', 'Le Texte de la partie activité adaptée a bien été supprimé');
+            $this->addFlash('danger', 'Le Texte de la partie activité adaptée a bien été supprimé');
         }
 
         return $this->redirectToRoute('activity_admin');
