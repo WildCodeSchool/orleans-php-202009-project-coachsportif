@@ -6,7 +6,7 @@ use App\Entity\CGV;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 
-class CvgFixtures extends Fixture
+class CgvFixtures extends Fixture
 {
     public function load(ObjectManager $manager)
     {

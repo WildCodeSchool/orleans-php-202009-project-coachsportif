@@ -26,7 +26,7 @@ class Walking
     private int $id;
 
     /**
-     * @ORM\Column(type="text")
+     * @ORM\Column(type="text", nullable=true)
      */
     private ?string $picture = '';
 
@@ -45,9 +45,9 @@ class Walking
     private ?DateTimeInterface $updatedAt;
 
     /**
-     * @ORM\Column(type="text")
+     * @ORM\Column(type="text", nullable=true)
      */
-    private string $description;
+    private ?string $description;
 
     /**
      * @ORM\Column(type="text", nullable=true)
@@ -85,7 +85,7 @@ class Walking
         return $this->description;
     }
 
-    public function setDescription(string $description): self
+    public function setDescription(?string $description): self
     {
         $this->description = $description;
 

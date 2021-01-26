@@ -15,6 +15,7 @@ class WalkingType extends AbstractType
     {
         $builder
             ->add('description', TextareaType::class, [
+                'required' => false,
                 'label' => 'Description :'
             ])
             ->add('pictureFile', VichFileType::class, [
