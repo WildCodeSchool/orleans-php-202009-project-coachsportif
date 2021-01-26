@@ -12,15 +12,15 @@
 {% for calendar in calendars %}
     {% if calendar.user is empty %}
     <div class="card bg-dark text-warning">
-   <p> {{ calendar.start|format_datetime('full', 'full', locale='fr') }}</p>
+   <p> {{ calendar.start|format_datetime('full', 'full', locale='en') }}</p>
         <p>{{ calendar.description ?? ''}}</p>
-        <p>{{ calendar.start|format_datetime('full', 'full', locale='fr') }} à {{ calendar.end|date('H:i') }}</p>
+        <p>{{ calendar.start|format_datetime('full', 'full', locale='en') }} à {{ calendar.end|date('H:i') }}</p>
         <a href="{{ path('calendar_complet_user', { 'id' : calendar.id }) }}">À réserver</a>
     </div>
         {% if app.user.id == calendar.user %}
             <h2 class="text-center my-4"> Mes séances réservées</h2>
             <div class="card bg-light text-dark">
-                <p> {{ calendar.start|format_datetime('full', 'full', locale='fr') }}</p>
+                <p> {{ calendar.start|format_datetime('full', 'full', locale='en') }}</p>
                 <p>{{ calendar.description ?? ''}}</p>
                 <p>{{ calendar.start|date('H:i') }} à {{ calendar.end|date('H:i') }}</p>
                 <a href="{{ path('calendar_remove_user', { 'id' : calendar.id }) }}">Annuler</a>
