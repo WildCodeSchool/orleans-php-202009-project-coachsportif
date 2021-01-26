@@ -42,6 +42,8 @@ class AdminCalendarController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($calendar);
             $entityManager->flush();
+            $this->addFlash('success', 'La nouvelle séance à bien été crée');
+
 
             return $this->redirectToRoute('calendar_index');
         }
@@ -77,6 +79,8 @@ class AdminCalendarController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
+            $this->addFlash('success', 'La séance à bien été modifiée');
+
 
             return $this->redirectToRoute('calendar_list');
         }
@@ -99,6 +103,7 @@ class AdminCalendarController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($calendar);
             $entityManager->flush();
+            $this->addFlash('danger', 'La séance à bien été supprimée');
         }
 
         return $this->redirectToRoute('calendar_list');
