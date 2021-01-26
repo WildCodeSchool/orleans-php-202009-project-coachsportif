@@ -109,6 +109,4 @@ class ProfileController extends AbstractController
 
         return $this->redirectToRoute('profile_user');
     }
-
-
 }
