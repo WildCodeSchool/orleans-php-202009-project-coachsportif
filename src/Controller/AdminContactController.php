@@ -88,6 +88,7 @@ class AdminContactController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($contact);
             $entityManager->flush();
+            $this->addFlash('danger', 'Les données ont bien été supprimée');
         }
 
         return $this->redirectToRoute('contact_admin');
