@@ -53,7 +53,7 @@ class AdminCalendarController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="calendar_show", methods={"GET"})
+     * @Route("/{id}", name="show", methods={"GET"})
      * @param Calendar $calendar
      * @return Response
      */
@@ -65,7 +65,7 @@ class AdminCalendarController extends AbstractController
     }
 
     /**
-     * @Route("/{id}/edit", name="calendar_edit", methods={"GET","POST"})
+     * @Route("/{id}/edit", name="edit", methods={"GET","POST"})
      * @param Request $request
      * @param Calendar $calendar
      * @return Response
@@ -78,7 +78,7 @@ class AdminCalendarController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('calendar_index');
+            return $this->redirectToRoute('calendar_list');
         }
 
         return $this->render('admin/calendar/edit.html.twig', [
@@ -88,7 +88,7 @@ class AdminCalendarController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="calendar_delete", methods={"DELETE"})
+     * @Route("/{id}", name="delete", methods={"DELETE"})
      * @param Request $request
      * @param Calendar $calendar
      * @return Response
@@ -101,6 +101,6 @@ class AdminCalendarController extends AbstractController
             $entityManager->flush();
         }
 
-        return $this->redirectToRoute('calendar_index');
+        return $this->redirectToRoute('calendar_list');
     }
 }
