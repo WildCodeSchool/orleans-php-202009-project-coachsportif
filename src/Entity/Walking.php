@@ -54,6 +54,15 @@ class Walking
      */
     private ?string $pdf;
 
+    /**
+     * @Vich\UploadableField(mapping="walking_pdf", fileNameProperty="pdf")
+     * @var File|null
+     * @Assert\File(
+     *     maxSize="3000000",
+     *     mimeTypes = {"application/pdf",})
+     */
+    private ?File $pdfFile = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -119,5 +128,19 @@ class Walking
         $this->pdf = $pdf;
 
         return $this;
+    }
+
+    public function setPdfFile(?File $pdf = null): Walking
+    {
+        $this->pdfFile = $pdf;
+        if ($pdf) {
+            $this->updatedAt = new DateTime('now');
+        }
+        return $this;
+    }
+
+    public function getPdfFile(): ?File
+    {
+        return $this->pdfFile;
     }
 }
