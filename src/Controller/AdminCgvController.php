@@ -77,7 +77,7 @@ class AdminCgvController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
-            $this->addFlash('success', 'Les conditions générales de vente ont bien été modifié');
+            $this->addFlash('success', 'Les conditions générales de vente ont bien été modifiées');
 
             return $this->redirectToRoute('cgv_admin');
         }
