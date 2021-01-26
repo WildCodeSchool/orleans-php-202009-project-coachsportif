@@ -5,10 +5,12 @@ namespace App\Controller;
 use App\Entity\Calendar;
 use App\Form\CalendarType;
 use App\Repository\CalendarRepository;
+use App\Repository\UserRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use App\Entity\User;
 
 /**
  * @Route("/admin/calendar", name="calendar_")
@@ -43,7 +45,7 @@ class AdminCalendarController extends AbstractController
             $entityManager->persist($calendar);
             $entityManager->flush();
 
-            return $this->redirectToRoute('calendar_index');
+            return $this->redirectToRoute('calendar_list');
         }
 
         return $this->render('admin/calendar/new.html.twig', [
@@ -53,19 +55,23 @@ class AdminCalendarController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="calendar_show", methods={"GET"})
+     * @Route("/{id}", name="show", methods={"GET"})
      * @param Calendar $calendar
+     * @param User $user
      * @return Response
      */
-    public function show(Calendar $calendar): Response
+    public function show(Calendar $calendar, User $user): Response
     {
+//        if ($calendar->getUser() === $user->getId()) {
+//            $calendar->setUser($user->getLastname() . ' ' . $user->getFirstname());
+//        }
         return $this->render('admin/calendar/show.html.twig', [
             'calendar' => $calendar,
         ]);
     }
 
     /**
-     * @Route("/{id}/edit", name="calendar_edit", methods={"GET","POST"})
+     * @Route("/{id}/edit", name="edit", methods={"GET","POST"})
      * @param Request $request
      * @param Calendar $calendar
      * @return Response
@@ -78,7 +84,7 @@ class AdminCalendarController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('calendar_index');
+            return $this->redirectToRoute('calendar_list');
         }
 
         return $this->render('admin/calendar/edit.html.twig', [
@@ -88,7 +94,7 @@ class AdminCalendarController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="calendar_delete", methods={"DELETE"})
+     * @Route("/{id}", name="delete", methods={"DELETE"})
      * @param Request $request
      * @param Calendar $calendar
      * @return Response
@@ -101,6 +107,6 @@ class AdminCalendarController extends AbstractController
             $entityManager->flush();
         }
 
-        return $this->redirectToRoute('calendar_index');
+        return $this->redirectToRoute('calendar_list');
     }
 }

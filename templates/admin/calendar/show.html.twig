@@ -28,19 +28,15 @@
                 <td>{{ calendar.description }}</td>
             </tr>
             <tr>
-                <th>BackgroundColor</th>
-                <td>{{ calendar.backgroundColor }}</td>
-            </tr>
-            <tr>
-                <th>TextColor</th>
-                <td>{{ calendar.textColor }}</td>
+                <th>Inscrit</th>
+                <td>{{ calendar.user }}</td>
             </tr>
         </tbody>
     </table>
 
-    <a href="{{ path('calendar_index') }}">back to list</a>
+    <a href="{{ path('calendar_list') }}">back to list</a>
 
     <a href="{{ path('calendar_edit', {'id': calendar.id}) }}">edit</a>
 
-    {{ include('calendar/_delete_form.html.twig') }}
+    {{ include('admin/calendar/_delete_form.html.twig') }}
 {% endblock %}

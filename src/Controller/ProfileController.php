@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\User;
 use App\Entity\UserCard;
 use App\Form\UserType;
+use App\Repository\CalendarRepository;
 use App\Repository\UserCardRepository;
 use App\Repository\UserRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -22,11 +23,12 @@ class ProfileController extends AbstractController
 {
     /**
      * @Route("/", name="user", methods={"GET"})
+     * @param CalendarRepository $calendar
      * @return Response
      */
-    public function index(): Response
+    public function index(CalendarRepository $calendar): Response
     {
-        return $this->render('profile/index.html.twig');
+        return $this->render('profile/index.html.twig', ['calendars' => $calendar->findAll()]);
     }
 
     /**

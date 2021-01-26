@@ -8,7 +8,16 @@
 
 
 {% block body %}
-    <h1>Calendrier</h1>
-    <div class="container" id="calendar"></div>
+    <h1 class="text-center my-4">Séances disponibles</h1>
+{% for calendar in calendars %}
+    {% if calendar.user is empty %}
+    <div class="card bg-dark text-warning">
+   <p> {{ calendar.start|dateFr }}</p>
+        <p>{{ calendar.description ?? ''}}</p>
+        <p>{{ calendar.start|date('H:i') }} à {{ calendar.end|date('H:i') }}</p>
+    </div>
+    {% endif %}
+    {% endfor %}
+
     {% include 'profile/show.html.twig' %}
 {% endblock %}
