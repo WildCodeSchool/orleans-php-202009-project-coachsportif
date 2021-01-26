@@ -2,19 +2,12 @@
 
 namespace App\Controller;
 
-use App\Entity\Home;
 use App\Entity\Walking;
-use App\Form\HomeType;
 use App\Form\WalkingType;
-use App\Repository\HomeRepository;
 use App\Repository\WalkingRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use App\Entity\ContactHome;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\Mailer\Exception\TransportExceptionInterface;
-use Symfony\Component\Mailer\MailerInterface;
-use Symfony\Component\Mime\Email;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
