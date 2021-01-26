@@ -31,6 +31,13 @@ class Tariff
      */
     private float $price;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     * @Assert\Length(max="255")
+     * @Assert\NotBlank
+     */
+    private string $title;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -56,6 +63,18 @@ class Tariff
     public function setPrice(float $price): self
     {
         $this->price = $price;
+
+        return $this;
+    }
+
+    public function getTitle(): ?string
+    {
+        return $this->title;
+    }
+
+    public function setTitle(string $title): self
+    {
+        $this->title = $title;
 
         return $this;
     }

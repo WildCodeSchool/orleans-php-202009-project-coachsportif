@@ -12,6 +12,7 @@
                         <tr class="text-center">
                             <th>Images</th>
                             <th>Texte marche nordique</th>
+                            <th>Calendrier PDF</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
@@ -20,6 +21,7 @@
                     <tr>
                         <td><img class="idImage" src="{{ asset('uploads/walking/' ~ walking.picture) }}" alt="{{ walking.picture }}"></td>
                         <td>{{ walking.description }}</td>
+                        <td>{{ walking.pdf }}</td>
                         <td>
                             <a class="col btn btn-primary mb-2" href="{{ path('walking_edit', { id: walking.id }) }}">Modifier</a>
                             {{ include('admin/walking/_delete_form.html.twig') }}
