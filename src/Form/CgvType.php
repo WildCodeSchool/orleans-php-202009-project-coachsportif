@@ -2,12 +2,12 @@
 
 namespace App\Form;
 
-use App\Entity\CGV;
+use App\Entity\Cgv;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class CGVType extends AbstractType
+class CgvType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
