@@ -109,9 +109,9 @@ class AdminActivityController extends AbstractController
      */
     public function indexAdmin(ActivityRepository $activityRepository): Response
     {
-        $descriptions = $activityRepository->findAll();
+        $activities = $activityRepository->findAll();
         return $this->render('admin/activity/indexAdmin.html.twig', [
-            'descriptions' => $descriptions,
+            'activities' => $activities,
         ]);
     }
 }
