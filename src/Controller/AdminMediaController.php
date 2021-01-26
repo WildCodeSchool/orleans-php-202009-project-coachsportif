@@ -11,7 +11,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("/admin/média")
+ * @Route("/admin/media")
  */
 class AdminMediaController extends AbstractController
 {
