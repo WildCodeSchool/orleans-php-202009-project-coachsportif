@@ -42,7 +42,7 @@ class AdminCalendarController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($calendar);
             $entityManager->flush();
-            $this->addFlash('success', 'La nouvelle séance à bien été crée');
+            $this->addFlash('success', 'La nouvelle séance à bien été créée');
 
 
             return $this->redirectToRoute('calendar_index');
