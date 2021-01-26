@@ -8,7 +8,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("/media")
+ * @Route("/média")
  */
 class MediaController extends AbstractController
 {

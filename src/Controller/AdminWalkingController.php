@@ -18,7 +18,7 @@ use Symfony\Component\Mime\Email;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("/admin/walking")
+ * @Route("/admin/marche")
  */
 class AdminWalkingController extends AbstractController
 {
