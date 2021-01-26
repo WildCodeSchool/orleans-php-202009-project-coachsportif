@@ -19,7 +19,7 @@ class CgvType extends AbstractType
     public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setDefaults([
-            'data_class' => CGV::class,
+            'data_class' => Cgv::class,
         ]);
     }
 }
