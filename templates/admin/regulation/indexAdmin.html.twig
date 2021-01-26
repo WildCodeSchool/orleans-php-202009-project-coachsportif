@@ -1,0 +1,38 @@
+{% extends 'layout_admin.html.twig' %}
+    {% block stylesheets %}
+        {{ encore_entry_link_tags('indexAdmin') }}
+    {% endblock %}
+
+{% block title %}Index RGPD {% endblock %}
+
+{% block body %}
+<h1 class="title text-center mt-4">Index RGPD</h1>
+<div class="container">
+    <a class="btn btn-success btn mb-2" href="{{ path('regulation_new') }}">Ajouter un texte</a>
+    <table class="table text-dark">
+        <thead class="thead-light text-center">
+        <tr>
+            <th>Description</th>
+            <th>actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for regulation in regulations %}
+            <tr>
+                <td>{{ regulation.description }}</td>
+                <td>
+                    <a href="{{ path('regulation_edit', {'id': regulation.id}) }}">Modifier</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td class="text-danger" colspan="8">Aucun résultat trouvé</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <div class="text-center">
+        <a class="btn btn-secondary btn mb-4" href="{{ path('admin_index') }}">Retour</a>
+    </div>
+</div>
+    {% endblock %}
