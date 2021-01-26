@@ -65,7 +65,7 @@ class AdminContactController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
-            $this->addFlash('success', 'Les données ont bien été modifié');
+            $this->addFlash('success', 'Les données ont bien été modifiées');
 
             return $this->redirectToRoute('contact_admin');
         }
