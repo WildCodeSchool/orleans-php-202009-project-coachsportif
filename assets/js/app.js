@@ -20,25 +20,6 @@ import '../styles/adminOpinion.scss';
 import '../styles/admin.scss';
 import '../styles/tariff.scss';
 import '../styles/profile.scss';
-import { Calendar } from '@fullcalendar/core';
-import dayGridPlugin from '@fullcalendar/daygrid';
-
-document.addEventListener('DOMContentLoaded', () => {
-    const calendarEl = document.getElementById('calendar');
-
-    const calendar = new Calendar(calendarEl, {
-        plugins: [dayGridPlugin],
-        initialView: 'dayGridWeek',
-        locale: 'fr',
-        timeZone: 'Europe/Paris',
-        headerToolbar: {
-            start: 'prev next today',
-            center: 'title',
-            end: 'dayGridWeek dayGridMonth',
-        },
-    });
-    calendar.render();
-});
 
 // Need jQuery? Install it with "yarn add jquery", then uncomment to import it.
 // import $ from 'jquery';
