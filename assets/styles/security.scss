@@ -1,0 +1,13 @@
+@import "app.scss";
+
+.forgotPassword {
+    position: relative;
+    bottom: -200px;
+}
+
+@media screen and (max-width: 450px) {
+    .forgotPassword {
+        position: relative;
+        bottom: -100px;
+  }
+}

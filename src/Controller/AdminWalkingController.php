@@ -18,7 +18,7 @@ use Symfony\Component\Mime\Email;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("/admin/walking")
+ * @Route("/admin/marche")
  */
 class AdminWalkingController extends AbstractController
 {
@@ -109,5 +109,28 @@ class AdminWalkingController extends AbstractController
         }
 
         return $this->redirectToRoute('walking_admin');
+    }
+
+    /**
+     * @Route("/{id}/edit/pdf", name="walking_edit_pdf", methods={"GET","POST"})
+     * @param Request $request
+     * @param Walking $walking
+     * @return Response
+     */
+    public function editPdf(Request $request, Walking $walking): Response
+    {
+        $form = $this->createForm(WalkingType::class, $walking);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $this->getDoctrine()->getManager()->flush();
+
+            return $this->redirectToRoute('walking_admin');
+        }
+
+        return $this->render('admin/walking/editPdf.html.twig', [
+            'walking' => $walking,
+            'form' => $form->createView(),
+        ]);
     }
 }

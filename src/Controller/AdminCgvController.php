@@ -2,9 +2,9 @@
 
 namespace App\Controller;
 
-use App\Entity\CGV;
-use App\Form\CGVType;
-use App\Repository\CGVRepository;
+use App\Entity\Cgv;
+use App\Form\CgvType;
+use App\Repository\CgvRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -17,10 +17,10 @@ class AdminCgvController extends AbstractController
 {
     /**
      * @Route("/", name="cgv_admin", methods={"GET"})
-     * @param CGVRepository $cgvRepository
+     * @param CgvRepository $cgvRepository
      * @return Response
      */
-    public function index(CGVRepository $cgvRepository): Response
+    public function index(CgvRepository $cgvRepository): Response
     {
         return $this->render('admin/cgv/index.html.twig', [
             'cgvs' => $cgvRepository->findAll(),
@@ -65,7 +65,7 @@ class AdminCgvController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
-            $this->addFlash('success', 'Les conditions générales de vente ont bien été modifié');
+            $this->addFlash('success', 'Les conditions générales de vente ont bien été modifiées');
 
             return $this->redirectToRoute('cgv_admin');
         }

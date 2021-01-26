@@ -15,7 +15,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("/walking")
+ * @Route("/marche")
  */
 class WalkingController extends AbstractController
 {
@@ -37,6 +37,18 @@ class WalkingController extends AbstractController
             'walkings' => $walkingRepository->findAll(),
             'pictures' => $pictures,
             'opinions' => $opinions,
+        ]);
+    }
+
+    /**
+     * @Route("/calendar", name="walking_calendar")
+     * @param WalkingRepository $walkingRepository
+     * @return Response
+     */
+    public function calendar(WalkingRepository $walkingRepository): Response
+    {
+        return $this->render('walking/calendar.html.twig', [
+            'pdf' => $walkingRepository->findOneBy([]),
         ]);
     }
 }

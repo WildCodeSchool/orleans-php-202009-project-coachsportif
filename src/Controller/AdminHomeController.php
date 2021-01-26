@@ -15,7 +15,7 @@ use Symfony\Component\Mime\Email;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("/admin/home")
+ * @Route("/admin/accueil")
  */
 class AdminHomeController extends AbstractController
 {

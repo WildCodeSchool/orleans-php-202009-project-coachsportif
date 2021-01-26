@@ -1,1 +1,13 @@
-<iframe src="{{ asset('uploads/files/'~cgv.document) }}" style="height: 100vh; width: 100vw"></iframe>
+{% extends 'layout.html.twig' %}
+{% block carousel %}{% endblock %}
+{% block title %} CGV {% endblock %}
+{% block body %}
+    <h1 class="text-center mt-4">Conditions générales de vente</h1>
+    <div class="container text-center mb-4">
+        <img class="m-2" src="{{ asset('build/images/logoCouleur.jpg') }}" alt="Logo Damien Gouveia"
+             title="Logo Damien Gouveia">
+        <p>
+            {{ cgv.textCgv }}
+        </p>
+    </div>
+{% endblock %}
