@@ -26,7 +26,7 @@ class Walking
     private int $id;
 
     /**
-     * @ORM\Column(type="text")
+     * @ORM\Column(type="text", nullable=true)
      */
     private ?string $picture = '';
 
@@ -45,14 +45,23 @@ class Walking
     private ?DateTimeInterface $updatedAt;
 
     /**
-     * @ORM\Column(type="text")
+     * @ORM\Column(type="text", nullable=true)
      */
-    private string $description;
+    private ?string $description;
 
     /**
      * @ORM\Column(type="text", nullable=true)
      */
     private ?string $pdf;
+
+    /**
+     * @Vich\UploadableField(mapping="walking_pdf", fileNameProperty="pdf")
+     * @var File|null
+     * @Assert\File(
+     *     maxSize="3000000",
+     *     mimeTypes = {"application/pdf",})
+     */
+    private ?File $pdfFile = null;
 
     public function getId(): ?int
     {
@@ -76,7 +85,7 @@ class Walking
         return $this->description;
     }
 
-    public function setDescription(string $description): self
+    public function setDescription(?string $description): self
     {
         $this->description = $description;
 
@@ -119,5 +128,19 @@ class Walking
         $this->pdf = $pdf;
 
         return $this;
+    }
+
+    public function setPdfFile(?File $pdf = null): Walking
+    {
+        $this->pdfFile = $pdf;
+        if ($pdf) {
+            $this->updatedAt = new DateTime('now');
+        }
+        return $this;
+    }
+
+    public function getPdfFile(): ?File
+    {
+        return $this->pdfFile;
     }
 }

@@ -4,7 +4,6 @@
 {% block body %}
     <div class="container">
         <h1 class="text-center mt-4">Ajout d'une nouvelle image</h1>
-        {% form_theme form 'bootstrap_4_layout.html.twig' %}
         {{ include('admin/carousel/_form.html.twig') }}
             <div class="text-center">
                 <a class="btn btn-secondary btn" href="{{ path('carousel_index') }}">Retour</a>

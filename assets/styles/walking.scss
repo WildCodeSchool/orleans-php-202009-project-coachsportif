@@ -6,6 +6,10 @@
     margin: $spacing-4 $spacing-3 $spacing-5;
 }
 
+.walkingParagraph:empty {
+    display: none;
+}
+
 .walkingSubmitParagraph {
     padding: 0;
     color: $text-color;
@@ -16,7 +20,9 @@
     margin-bottom: $spacing-4;
 }
 
-.walkingFitness {
-    background-color: $background-opinion;
-    min-height: 350px;
+.walkingPicture {
+    position: absolute;
+    object-fit: cover;
+    border-radius: $border-radius;
+    box-shadow: $box-shadow;
 }
