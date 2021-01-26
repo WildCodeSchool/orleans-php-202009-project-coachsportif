@@ -10,9 +10,9 @@
                     {% for tariff in tariffs %}
                         <div class="card m-4">
                             <div class="card-body">
-                                <h2 class="h3 card-title">{{ tariff.description }}</h2>
+                                <h2 class="h3 card-title">{{ tariff.title }}</h2>
                                 <p class="card-text">
-                                    Pour plus d'informations sur les tarifs n'hésiter pas à m'envoyer un email.
+                                    {{ tariff.description }}
                                 </p>
                             </div>
                                 <ul class="list-group list-group-flush">

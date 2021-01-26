@@ -16,7 +16,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Twig\Extra\Intl\IntlExtension;
 
 /**
- * @Route("/profile", name="profile_")
+ * @Route("/compte", name="profile_")
  * Class ProfileController
  * @package App\Controller
  */
