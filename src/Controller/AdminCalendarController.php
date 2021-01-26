@@ -54,42 +54,7 @@ class AdminCalendarController extends AbstractController
         ]);
     }
 
-    /**
-     * @Route("/{id}/completUser", name="complet_user", methods={"GET","POST"})
-     * @param Calendar $calendar
-     * @param User $user
-     * @return Response
-     */
-    public function completUser(Calendar $calendar, User $user): Response
-    {
-        /** @var User $user */
-        $user = $this->getUser();
-        $calendar->setUser($user->getId());
-        $entityManager =  $this->getDoctrine()->getManager();
-
-        $entityManager->persist($calendar);
-        $this->getDoctrine()->getManager()->flush();
-
-        return $this->redirectToRoute('profile_user');
-    }
-
-    /**
-     * @Route("/{id}/removeUser", name="remove_user", methods={"GET","POST"})
-     * @param Calendar $calendar
-     * @return Response
-     */
-    public function removeUser(Calendar $calendar): Response
-    {
-        $calendar->setUser(null);
-        $entityManager =  $this->getDoctrine()->getManager();
-
-        $entityManager->persist($calendar);
-        $this->getDoctrine()->getManager()->flush();
-
-        return $this->redirectToRoute('profile_user');
-    }
-
-    /**
+     /**
      * @Route("/{id}", name="show", methods={"GET"})
      * @param Calendar $calendar
      * @param User $user

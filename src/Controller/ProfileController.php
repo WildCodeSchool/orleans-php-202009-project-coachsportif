@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Calendar;
 use App\Entity\User;
 use App\Entity\UserCard;
 use App\Form\UserType;
@@ -13,7 +14,6 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Response;
 use Sensio\Bundle\FrameworkExtraBundle\Request\ParamConverter;
 use Symfony\Component\HttpFoundation\Request;
-use Twig\Extra\Intl\IntlExtension;
 
 /**
  * @Route("/profile", name="profile_")
@@ -76,4 +76,39 @@ class ProfileController extends AbstractController
 
         return $this->redirectToRoute('profile_user');
     }
+    /**
+     * @Route("/{id}/completUser", name="complet_user", methods={"GET","POST"})
+     * @param Calendar $calendar
+     * @return Response
+     */
+    public function completUser(Calendar $calendar): Response
+    {
+        /** @var User $user */
+        $user = $this->getUser();
+        $calendar->setUser($user->getId());
+        $entityManager =  $this->getDoctrine()->getManager();
+
+        $entityManager->persist($calendar);
+        $this->getDoctrine()->getManager()->flush();
+
+        return $this->redirectToRoute('profile_user');
+    }
+
+    /**
+     * @Route("/{id}/removeUser", name="remove_user", methods={"GET","POST"})
+     * @param Calendar $calendar
+     * @return Response
+     */
+    public function removeUser(Calendar $calendar): Response
+    {
+        $calendar->setUser(null);
+        $entityManager =  $this->getDoctrine()->getManager();
+
+        $entityManager->persist($calendar);
+        $this->getDoctrine()->getManager()->flush();
+
+        return $this->redirectToRoute('profile_user');
+    }
+
+
 }

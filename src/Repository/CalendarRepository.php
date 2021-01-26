@@ -5,8 +5,6 @@ namespace App\Repository;
 use App\Entity\Calendar;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
-use Twig\Error\LoaderError;
-use Twig\Source;
 
 /**
  * @method Calendar|null find($id, $lockMode = null, $lockVersion = null)
@@ -14,7 +12,7 @@ use Twig\Source;
  * @method Calendar[]    findAll()
  * @method Calendar[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class CalendarRepository extends ServiceEntityRepository // implements \Twig\Loader\LoaderInterface
+class CalendarRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
@@ -49,23 +47,4 @@ class CalendarRepository extends ServiceEntityRepository // implements \Twig\Loa
         ;
     }
     */
-//    public function getSourceContext(string $name): Source
-//    {
-//        // TODO: Implement getSourceContext() method.
-//    }
-//
-//    public function getCacheKey(string $name): string
-//    {
-//        // TODO: Implement getCacheKey() method.
-//    }
-//
-//    public function isFresh(string $name, int $time): bool
-//    {
-//        // TODO: Implement isFresh() method.
-//    }
-//
-//    public function exists(string $name)
-//    {
-//        // TODO: Implement exists() method.
-//    }
 }
