@@ -33,6 +33,7 @@ class Tariff
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank
      */
     private string $title;
 

@@ -17,7 +17,7 @@ class TariffFixtures extends Fixture
     {
         foreach (self::TARIFS as $seance => $price) {
             $tarif = new Tariff();
-            $tarif->setDescription("Pour plus d'informations sur les tarifs n'hésiter pas à m'envoyer un email.");
+            $tarif->setDescription("Pour plus d'informations sur les tarifs n'hésitez pas à m'envoyer un email.");
             $tarif->setPrice($price);
             $tarif->setTitle($seance);
             $manager->persist($tarif);
