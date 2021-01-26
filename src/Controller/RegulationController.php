@@ -106,7 +106,7 @@ class RegulationController extends AbstractController
     }
 
     /**
-     * @Route("/", name="activity_admin", methods={"GET"})
+     * @Route("/", name="regulation_admin", methods={"GET"})
      * @param RegulationRepository $regulationRepository
      * @return Response
      */

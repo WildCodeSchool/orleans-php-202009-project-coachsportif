@@ -7,9 +7,9 @@
 
 {% block body %}
     <h1 class="title text-center mt-4">Ajouter un texte</h1>
-    {{ include('activity/_form.html.twig') }}
+    {{ include('admin/activity/_form.html.twig') }}
     <div class="text-center mt-4">
-        <a class="btn btn-primary" href="{{ path('activity_index') }}">Retour</a>
+        <a class="btn btn-primary" href="{{ path('activity_admin') }}">Retour</a>
     </div>
 
 {% endblock %}
