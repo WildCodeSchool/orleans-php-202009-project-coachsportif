@@ -28,12 +28,14 @@ class Calendar
     /**
      * @ORM\Column(type="datetime")
      * @Assert\NotBlank
+     * @Assert\Type("DateTime")
      */
     private DateTimeInterface $start;
 
     /**
      * @ORM\Column(type="datetime")
      * @Assert\NotBlank
+     * @Assert\Type("DateTime")
      */
     private DateTimeInterface $end;
 

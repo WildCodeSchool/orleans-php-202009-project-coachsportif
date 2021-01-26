@@ -13,6 +13,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Response;
 use Sensio\Bundle\FrameworkExtraBundle\Request\ParamConverter;
 use Symfony\Component\HttpFoundation\Request;
+use Twig\Extra\Intl\IntlExtension;
 
 /**
  * @Route("/profile", name="profile_")
