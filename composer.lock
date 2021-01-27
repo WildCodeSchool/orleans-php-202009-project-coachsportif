@@ -4181,12 +4181,11 @@
             ],
             "description": "Symfony Mailer Component",
             "homepage": "https://symfony.com",
-<<<<<<< HEAD
+
             "support": {
                 "source": "https://github.com/symfony/mailer/tree/v5.1.10"
             },
-=======
->>>>>>> 9b7ab43084e7cef47fed82f00bbba8113958c83a
+
             "funding": [
                 {
                     "url": "https://symfony.com/sponsor",

@@ -39,8 +39,10 @@
         <div class="container-fluid">
             <div class="row justify-content-around">
                 <div class="col-lg-4 col-sm-2 d-flex align-self-center justify-content-center">
-                    <img class="portrait text-center mt-4" src="{{ asset('uploads/home/DamienG.jpg') }}" alt="Auto portrait"
+                    {% for picture in home %}
+                    <img class="portrait text-center mt-4" src="{{ asset('uploads/home/' ~ picture.picture) }}" alt="Auto portrait"
                          title="Damien Gouveia">
+                    {% endfor %}
                 </div>
                 <div class=" justify-content-center justify-content-center
                         col-lg-8 col-sm-6 d-flex align-items-center lead flex-column">
