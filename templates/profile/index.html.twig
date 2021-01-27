@@ -1,9 +1,13 @@
 {% extends 'layout.html.twig' %}
+
 {% block steelsheets %}
     {{ encore_entry_link_tags('profile') }}
 {% endblock %}
+
 {% block carousel %}{% endblock %}
+
 {% block body %}
+
     <h1 class="text-center mt-4">Séances</h1>
     <div class="container-fluid">
         <div class="row justify-content-around">
@@ -20,8 +24,7 @@
                                 <li class="list-group-item text-center">{{ calendar.description ?? ''}}</li>
                             </ul>
                         <div class="card-body text-center mt-2">
-                            <a class="btn btn-success btn"
-                               href="{{ path('profile_complet_user', { 'id' : calendar.id }) }}">Réserver</a>
+                            <a class="btn btn-success btn"  href="{{ path('profile_complet_user', { 'id' : calendar.id }) }}">Réserver</a>
                         </div>
                     </div>
                 {% endif %}

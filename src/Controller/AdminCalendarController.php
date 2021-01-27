@@ -20,12 +20,14 @@ class AdminCalendarController extends AbstractController
     /**
      * @Route("/", name="list", methods={"GET"})
      * @param CalendarRepository $calendarRepository
+     * @param UserRepository $users
      * @return Response
      */
-    public function index(CalendarRepository $calendarRepository): Response
+    public function index(CalendarRepository $calendarRepository, UserRepository $users): Response
     {
         return $this->render('admin/calendar/index.html.twig', [
             'calendars' => $calendarRepository->findAll(),
+            'users' => $users->findAll(),
         ]);
     }
 
@@ -59,13 +61,15 @@ class AdminCalendarController extends AbstractController
     /**
      * @Route("/{id}", name="show", methods={"GET"})
      * @param Calendar $calendar
-     * @param User $user
+     * @param UserRepository $users
      * @return Response
      */
-    public function show(Calendar $calendar, User $user): Response
+    public function show(Calendar $calendar, UserRepository $users): Response
     {
+
         return $this->render('admin/calendar/show.html.twig', [
             'calendar' => $calendar,
+            'users' => $users->findAll(),
         ]);
     }
 
