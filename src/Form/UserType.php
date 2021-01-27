@@ -15,55 +15,72 @@ class UserType extends AbstractType
     {
         $builder
             ->add('lastname', TextType::class, [
-            'label' => 'Nom :',
-                ])
+            'label' => 'Nom',
+                'required' => false,
+            ])
             ->add('firstname', TextType::class, [
-                'label' => 'Prénom :',
-                ])
+                'label' => 'Prénom',
+                'required' => false,
+            ])
             ->add('age', IntegerType::class, [
-                'label' => 'Age :',
+                'label' => 'Age',
+                'required' => false,
             ])
             ->add('size', IntegerType::class, [
-                'label' => 'Taille :',
+                'label' => 'Taille',
+                'required' => false,
             ])
             ->add('imc', IntegerType::class, [
-                'label' => 'IMC :'
+                'label' => 'IMC',
+                'required' => false,
             ])
             ->add('weight', IntegerType::class, [
-                'label' => 'Poids :',
+                'label' => 'Poids',
+                'required' => false,
             ])
             ->add('fatMass', IntegerType::class, [
-                'label' => 'Masse graisseuse :',
+                'label' => 'Masse graisseuse',
+                'required' => false,
             ])
             ->add('bodyWater', IntegerType::class, [
-                'label' => 'Masse hydrique :'
+                'label' => 'Masse hydrique',
+                'required' => false,
             ])
             ->add('muscleMass', IntegerType::class, [
-                'label' => 'Masse musculaire :',
+                'label' => 'Masse musculaire',
+                'required' => false,
             ])
             ->add('armCircumference', IntegerType::class, [
-                'label' => 'Tour de bras :',
+                'label' => 'Tour de bras',
+                'required' => false,
             ])
             ->add('waistSize', IntegerType::class, [
-                'label' => 'Tour de taille :'
+                'label' => 'Tour de taille',
+                'required' => false,
             ])
             ->add('thighCircumference', IntegerType::class, [
-                'label' => 'Tour de cuisse :'
+                'label' => 'Tour de cuisse',
+                'required' => false,
             ])
             ->add('ruffierDickstonTest', IntegerType::class, [
-                'label' => 'Test Ruffier Dickston :'
+                'label' => 'Test Ruffier Dickston',
+                'required' => false,
             ])
             ->add('three', IntegerType::class, [
-                'label' => 'Equilibre :'
+                'label' => 'Equilibre',
+                'required' => false,
             ])
             ->add('pathology', TextType::class, [
-                'label' => 'Pathologie :'
+                'label' => 'Pathologie',
+                'required' => false,
             ])
             ->add('treatment', TextType::class, [
-                'label' => 'Traitement :'
+                'label' => 'Traitement',
+                'required' => false,
             ])
             ->add('prescription', TextType::class, [
-                'label' => 'Prescription médicale :'
+                'label' => 'Prescription médicale',
+                'required' => false,
             ])
         ;
     }

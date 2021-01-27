@@ -14,9 +14,8 @@ class CgvType extends AbstractType
     {
         $builder
             ->add('textCgv', TextareaType::class, [
-                'label' => 'Nouveau Texte :'
+                'label' => 'Nouveau Texte'
             ])
-        ;
         ;
     }
 
