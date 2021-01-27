@@ -22,12 +22,12 @@ class User implements UserInterface
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
      */
-    private ?int $id;
+    private int $id;
 
     /**
      * @ORM\Column(type="string", length=180, unique=true)
      */
-    private ?string $email;
+    private string $email;
 
     /**
      * @ORM\Column(type="json")
@@ -147,7 +147,7 @@ class User implements UserInterface
      */
     private ?bool $isVerified = false;
 
-    public function getId(): ?int
+    public function getId(): int
     {
         return $this->id;
     }

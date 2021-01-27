@@ -3,10 +3,8 @@
 namespace App\Controller;
 
 use App\Entity\ContactHome;
-use App\Entity\Home;
 use App\Form\CarouselType;
 use App\Repository\CarouselRepository;
-use App\Form\HomeType;
 use App\Form\ContactHomeType;
 use App\Repository\HomeRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
