@@ -12,9 +12,9 @@ class PresentationFixture extends Fixture
     {
         $presentation = new Presentation();
         $presentation->setDescription("Après avoir travaillé pendant plusieurs années dans la préparation 
-        physique, mais aussi dans le monde de l’entrainement auprès de sportifs professionnels. J'ai eu envie de 
+        physique, mais aussi dans le monde de l’entrainement auprès de sportifs professionnels, j'ai eu envie de 
         donner un véritable sens, un accomplissement à ma vie professionnelle :
-        Accompagner les personnes dans leur prise en charge de la santé. Participer à améliorer leur qualité de vie
+        accompagner les personnes dans leur prise en charge de la santé, participer à améliorer leur qualité de vie.
         Je mets alors à contribution, mon expérience, mes savoirs et compétences acquis
         dans le domaine de l’entrainement au profit de personnes sédentaires, peu sportives ou atteintes de pathologies.
         Ma complémentarité avec les professionnels de santé
