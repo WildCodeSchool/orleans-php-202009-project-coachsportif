@@ -15,6 +15,7 @@ class WalkingType extends AbstractType
     {
         $builder
             ->add('description', TextareaType::class, [
+                'required' => false,
                 'label' => 'Description :'
             ])
             ->add('pictureFile', VichFileType::class, [
@@ -22,6 +23,12 @@ class WalkingType extends AbstractType
                 'allow_delete' => true, // not mandatory, default is true
                 'download_uri' => true, // not mandatory, default is true
                 'label' => 'Image à télécharger :'
+            ])
+            ->add('pdfFile', VichFileType::class, [
+                'required' => false,
+                'allow_delete' => true,
+                'download_uri' => true,
+                'label' => 'PDF :'
             ])
         ;
     }

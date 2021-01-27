@@ -15,7 +15,7 @@ use Symfony\Component\Mime\Email;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("/admin/home")
+ * @Route("/admin/accueil")
  */
 class AdminHomeController extends AbstractController
 {
@@ -78,7 +78,7 @@ class AdminHomeController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($home);
             $entityManager->flush();
-            $this->addFlash('success', 'La présentation a bien été supprimée');
+            $this->addFlash('danger', 'La présentation a bien été supprimée');
         }
 
         return $this->redirectToRoute('index_Admin');

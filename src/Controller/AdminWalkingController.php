@@ -18,7 +18,7 @@ use Symfony\Component\Mime\Email;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("/admin/walking")
+ * @Route("/admin/marche")
  */
 class AdminWalkingController extends AbstractController
 {
@@ -49,6 +49,7 @@ class AdminWalkingController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($walking);
             $entityManager->flush();
+            $this->addFlash('success', 'La nouvelle rubrique à bien été créée');
 
             return $this->redirectToRoute('walking_admin');
         }
@@ -84,6 +85,7 @@ class AdminWalkingController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
+            $this->addFlash('success', 'La rubrique à bien été modifiée');
 
             return $this->redirectToRoute('walking_admin');
         }
@@ -106,6 +108,7 @@ class AdminWalkingController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($walking);
             $entityManager->flush();
+            $this->addFlash('danger', 'La rubrique à bien été supprimée');
         }
 
         return $this->redirectToRoute('walking_admin');

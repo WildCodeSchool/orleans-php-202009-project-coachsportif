@@ -11,7 +11,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("/admin/calendar", name="calendar_")
+ * @Route("/admin/calendrier", name="calendar_")
  */
 class AdminCalendarController extends AbstractController
 {
@@ -42,6 +42,8 @@ class AdminCalendarController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($calendar);
             $entityManager->flush();
+            $this->addFlash('success', 'La nouvelle séance à bien été créée');
+
 
             return $this->redirectToRoute('calendar_index');
         }
@@ -53,7 +55,7 @@ class AdminCalendarController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="calendar_show", methods={"GET"})
+     * @Route("/{id}", name="show", methods={"GET"})
      * @param Calendar $calendar
      * @return Response
      */
@@ -65,7 +67,7 @@ class AdminCalendarController extends AbstractController
     }
 
     /**
-     * @Route("/{id}/edit", name="calendar_edit", methods={"GET","POST"})
+     * @Route("/{id}/edit", name="edit", methods={"GET","POST"})
      * @param Request $request
      * @param Calendar $calendar
      * @return Response
@@ -77,8 +79,10 @@ class AdminCalendarController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
+            $this->addFlash('success', 'La séance à bien été modifiée');
 
-            return $this->redirectToRoute('calendar_index');
+
+            return $this->redirectToRoute('calendar_list');
         }
 
         return $this->render('admin/calendar/edit.html.twig', [
@@ -88,7 +92,7 @@ class AdminCalendarController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="calendar_delete", methods={"DELETE"})
+     * @Route("/{id}", name="delete", methods={"DELETE"})
      * @param Request $request
      * @param Calendar $calendar
      * @return Response
@@ -99,8 +103,9 @@ class AdminCalendarController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($calendar);
             $entityManager->flush();
+            $this->addFlash('danger', 'La séance à bien été supprimée');
         }
 
-        return $this->redirectToRoute('calendar_index');
+        return $this->redirectToRoute('calendar_list');
     }
 }

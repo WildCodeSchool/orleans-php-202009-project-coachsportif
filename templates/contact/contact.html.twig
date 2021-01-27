@@ -1,6 +1,5 @@
 {% extends 'layout.html.twig' %}
 {% block carousel %}{% endblock %}
-{% form_theme form 'bootstrap_4_layout.html.twig' %}
 
 {% block stylesheets %}
     {{ encore_entry_link_tags('contact') }}
@@ -22,23 +21,26 @@
     } %}
     <div class="container main text-center">
         <h1>Me contacter</h1>
+        {% for contact in contacts %}
         <div class="information row p-4 justify-content-center">
             <div class="col-lg-4 col-md-6 col-sm-6 pb-1">
                 <img src="{{ asset('build/images/phone.png') }}" alt="phone">
                 <h4>Téléphone</h4>
-                <p>06 15 26 37 67 </p>
+                <p>{{ contact.phone }}</p>
             </div>
             <div class="col-lg-4 col-md-4 col-sm-4 pb-1">
                 <img src="{{ asset('build/images/home.png') }}" alt="home">
                 <h4>Adresse</h4>
-                <p>4 allee des Lilas</p>
-                <p>45650 Saint-Jean-le-Blanc</p>
+                <p>{{ contact.adress }}</p>
+                <p>{{ contact.codeAndCity }}</p>
+
             </div>
             <div class="col-lg-4 col-md-6 col-sm-6 p-1">
                 <img src="{{ asset('build/images/email.png') }}" alt="mail">
                 <h4>Mail</h4>
-                <p>damien_gouveia@hotmail.fr</p>
+                <p>{{ contact.email }}</p>
             </div>
+            {% endfor %}
             <div class="col-lg-4 col-md-6 col-sm-6 pb-1">
                 <a href="https://www.facebook.com/pages/category/Sports---Fitness-Instruction/Damien-Gouveia-Coaching-108097141024441/"
                    target="_blank"><img class="link" src="{{ asset('build/images/facebook.png') }}" alt="facebook"></a>
@@ -96,7 +98,7 @@
                     {{ form_widget(form.message) }}
                 </div>
                 <div class="my-2">
-                    <button class="btn btn-primary text-info my-2">{{ ('Envoyer') }}</button>
+                    <button class="btn btn-primary my-2">{{ ('Envoyer') }}</button>
                     {{ form_end(form) }}
                 </div>
             </div>

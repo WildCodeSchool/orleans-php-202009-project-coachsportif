@@ -34,7 +34,6 @@ class Calendar
 
     /**
      * @ORM\Column(type="datetime")
-     * @Assert\DateTime()
      * @Assert\NotBlank
      */
     private DateTimeInterface $end;
@@ -45,20 +44,6 @@ class Calendar
      */
     private string $description;
 
-    /**
-     * @ORM\Column(type="string", length=7)
-     * @Assert\NotBlank
-     * @Assert\Length (max="7")
-
-     */
-    private string $backgroundColor;
-
-    /**
-     * @ORM\Column(type="string", length=7)
-     * @Assert\NotBlank
-     * @Assert\Length (max="7")
-     */
-    private string $textColor;
 
     public function getId(): ?int
     {
@@ -109,30 +94,6 @@ class Calendar
     public function setDescription(string $description): self
     {
         $this->description = $description;
-
-        return $this;
-    }
-
-    public function getBackgroundColor(): string
-    {
-        return $this->backgroundColor;
-    }
-
-    public function setBackgroundColor(string $backgroundColor): self
-    {
-        $this->backgroundColor = $backgroundColor;
-
-        return $this;
-    }
-
-    public function getTextColor(): string
-    {
-        return $this->textColor;
-    }
-
-    public function setTextColor(string $textColor): self
-    {
-        $this->textColor = $textColor;
 
         return $this;
     }
