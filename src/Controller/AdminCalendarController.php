@@ -59,13 +59,15 @@ class AdminCalendarController extends AbstractController
     /**
      * @Route("/{id}", name="show", methods={"GET"})
      * @param Calendar $calendar
-     * @param User $user
+     * @param UserRepository $users
      * @return Response
      */
-    public function show(Calendar $calendar, User $user): Response
+    public function show(Calendar $calendar, UserRepository $users): Response
     {
+
         return $this->render('admin/calendar/show.html.twig', [
             'calendar' => $calendar,
+            'users' => $users->findAll(),
         ]);
     }
 

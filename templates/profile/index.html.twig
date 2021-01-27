@@ -11,13 +11,29 @@
     <h1 class="text-center my-4">Séances</h1>
 {% for calendar in calendars %}
     {% if calendar.user is empty %}
-        <div class="card bg-dark text-warning">
-            <h2 class="text-center my-4">Disponibles</h2>
-            <p> {{ calendar.start|date('d-m-y') }}</p>
-        <p>{{ calendar.description ?? ''}}</p>
-        <p>{{ calendar.start|date('H:i') }} à {{ calendar.end|date('H:i') }}</p>
-        <a href="{{ path('profile_complet_user', { 'id' : calendar.id }) }}">À réserver</a>
-    </div>
+        <div class="card m-4">
+            <div class="card-body bg-light text-center">
+                <h2 class="h4 card-title text-success">Disponibles</h2>
+                <p class="card-text h3">
+                    {{ calendar.start|format_datetime('full', 'none' , locale='fr')  }}</p>
+                <p class="h4 mt-2">{{ calendar.start|date('H:i') }} à {{ calendar.end|date('H:i') }}</p>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item text-center">{{ calendar.description ?? ''}}</li>
+            </ul>
+            <div class="card-body text-center mt-2">
+                {% if is_granted(['ROLE_MEMBER']) %}
+                <a class="btn btn-success btn"
+                   href="{{ path('profile_complet_user', { 'id' : calendar.id }) }}">À réserver</a>
+                    {% else %}
+                        {% for user in users %}
+                            {% if calendar.user == user.id %}
+                                <p>Personne qui à réservé  {{ user.firstname }} {{ user.lastname }}</p>
+                            {% endif %}
+                        {% endfor %}
+                {% endif %}
+            </div>
+        </div>
     {% endif %}
 {% endfor %}
     {% for calendar in calendars %}
