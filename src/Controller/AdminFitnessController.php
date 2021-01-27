@@ -2,10 +2,6 @@
 
 namespace App\Controller;
 
-use App\Form\CarouselType;
-use App\Form\OpinionType;
-use App\Repository\OpinionRepository;
-use App\Repository\CarouselRepository;
 use App\Entity\Fitness;
 use App\Form\FitnessType;
 use App\Repository\FitnessRepository;

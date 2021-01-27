@@ -27,14 +27,15 @@ class Calendar
 
     /**
      * @ORM\Column(type="datetime")
-     * @Assert\DateTime()
      * @Assert\NotBlank
+     * @Assert\Type("DateTime")
      */
     private DateTimeInterface $start;
 
     /**
      * @ORM\Column(type="datetime")
      * @Assert\NotBlank
+     * @Assert\Type("DateTime")
      */
     private DateTimeInterface $end;
 
@@ -43,6 +44,11 @@ class Calendar
      * @Assert\NotBlank
      */
     private string $description;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private ?int $user;
 
 
     public function getId(): ?int
@@ -95,6 +101,17 @@ class Calendar
     {
         $this->description = $description;
 
+        return $this;
+    }
+
+    public function getUser(): ?int
+    {
+        return $this->user;
+    }
+
+    public function setUser(?int $user): self
+    {
+        $this->user = $user;
         return $this;
     }
 }
