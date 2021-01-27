@@ -24,11 +24,15 @@ class ProfileController extends AbstractController
     /**
      * @Route("/", name="user", methods={"GET"})
      * @param CalendarRepository $calendar
+     * @param UserRepository $users
      * @return Response
      */
-    public function index(CalendarRepository $calendar): Response
+    public function index(CalendarRepository $calendar, UserRepository $users): Response
     {
-        return $this->render('profile/index.html.twig', ['calendars' => $calendar->findAll()]);
+        return $this->render('profile/index.html.twig', [
+            'calendars' => $calendar->findAll(),
+            'users' => $users->findAll(),
+            ]);
     }
 
     /**
