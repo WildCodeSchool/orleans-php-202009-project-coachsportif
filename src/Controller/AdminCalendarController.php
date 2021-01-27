@@ -5,10 +5,12 @@ namespace App\Controller;
 use App\Entity\Calendar;
 use App\Form\CalendarType;
 use App\Repository\CalendarRepository;
+use App\Repository\UserRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use App\Entity\User;
 
 /**
  * @Route("/admin/calendrier", name="calendar_")
@@ -45,7 +47,7 @@ class AdminCalendarController extends AbstractController
             $this->addFlash('success', 'La nouvelle séance à bien été créée');
 
 
-            return $this->redirectToRoute('calendar_index');
+            return $this->redirectToRoute('calendar_list');
         }
 
         return $this->render('admin/calendar/new.html.twig', [
@@ -57,9 +59,10 @@ class AdminCalendarController extends AbstractController
     /**
      * @Route("/{id}", name="show", methods={"GET"})
      * @param Calendar $calendar
+     * @param User $user
      * @return Response
      */
-    public function show(Calendar $calendar): Response
+    public function show(Calendar $calendar, User $user): Response
     {
         return $this->render('admin/calendar/show.html.twig', [
             'calendar' => $calendar,
@@ -80,8 +83,6 @@ class AdminCalendarController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
             $this->addFlash('success', 'La séance à bien été modifiée');
-
-
             return $this->redirectToRoute('calendar_list');
         }
 

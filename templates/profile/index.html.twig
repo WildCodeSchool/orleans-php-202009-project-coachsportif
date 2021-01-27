@@ -8,7 +8,29 @@
 
 
 {% block body %}
-    <h1>Calendrier</h1>
-    <div class="container" id="calendar"></div>
+    <h1 class="text-center my-4">Séances</h1>
+{% for calendar in calendars %}
+    {% if calendar.user is empty %}
+        <div class="card bg-dark text-warning">
+            <h2 class="text-center my-4">Disponibles</h2>
+            <p> {{ calendar.start|date('d-m-y') }}</p>
+        <p>{{ calendar.description ?? ''}}</p>
+        <p>{{ calendar.start|date('H:i') }} à {{ calendar.end|date('H:i') }}</p>
+        <a href="{{ path('profile_complet_user', { 'id' : calendar.id }) }}">À réserver</a>
+    </div>
+    {% endif %}
+{% endfor %}
+    {% for calendar in calendars %}
+        {% if app.user.id == calendar.user %}
+            <div class="card bg-light text-dark">
+                <h2 class="text-center my-4">Réservée</h2>
+                <p> {{ calendar.start|date('d-m-y') }}</p>
+                <p>{{ calendar.description ?? ''}}</p>
+                <p>{{ calendar.start|date('H:i') }} à {{ calendar.end|date('H:i') }}</p>
+                <a href="{{ path('profile_remove_user', { 'id' : calendar.id }) }}">Annuler</a>
+            </div>
+    {% endif %}
+    {% endfor %}
+
     {% include 'profile/show.html.twig' %}
 {% endblock %}
