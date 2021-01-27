@@ -6,36 +6,39 @@
 
 {% block body %}
     <h1 class="title text-center mt-4">Contact index</h1>
-        <div class="container">
-            <table class="table text-dark">
-                <thead class="thead-light text-center">
-                        <tr>
-                            <th>Téléphone</th>
-                            <th>Email</th>
-                            <th>Adresse</th>
-                            <th>Code postal et ville</th>
-                            <th>Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                    {% for contact in contacts %}
-                        <tr>
-                            <td>{{ contact.phone }}</td>
-                            <td>{{ contact.email }}</td>
-                            <td>{{ contact.adress }}</td>
-                            <td>{{ contact.codeAndCity }}</td>
-                            <td>
-                                <a class="col btn btn-primary mb-sm-2 mb-2 btn"
-                                   href="{{ path('contact_edit', {'id': contact.id}) }}">Modifier</a>
-                                {{ include('admin/contact/_delete_form.html.twig') }}
-                            </td>
-                        </tr>
-                    {% else %}
-                        <tr>
-                            <td class="text-danger" colspan="8">Aucun résultat trouvé</td>
-                        </tr>
-                    {% endfor %}
-                    </tbody>
-                </table>
-        </div>
+    <div class="container">
+        <table class="table text-dark">
+            <thead class="thead-light text-center">
+            <tr>
+                <th>Téléphone</th>
+                <th>Email</th>
+                <th>Adresse</th>
+                <th>Code postal et ville</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for contact in contacts %}
+                <tr>
+                    <td>{{ contact.phone }}</td>
+                    <td>{{ contact.email }}</td>
+                    <td>{{ contact.adress }}</td>
+                    <td>{{ contact.codeAndCity }}</td>
+                    <td>
+                        <a class="col btn btn-primary mb-sm-2 mb-2 btn"
+                           href="{{ path('contact_edit', {'id': contact.id}) }}">Modifier</a>
+                        {{ include('admin/contact/_delete_form.html.twig') }}
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td class="text-danger" colspan="8">Aucun résultat trouvé</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <div class="text-center">
+        <a class="btn btn-secondary btn mb-4" href="{{ path('admin_index') }}">Retour</a>
+    </div>
 {% endblock %}
