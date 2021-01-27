@@ -14,12 +14,14 @@ class HomeType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('text')
+            ->add('text', TextareaType::class, [
+                'label' => 'Nouveau Texte'
+            ])
             ->add('pictureFile', VichFileType::class, [
                 'required' => false,
                 'allow_delete' => true, // not mandatory, default is true
                 'download_uri' => true, // not mandatory, default is true
-                'label' => 'Image à télécharger :'
+                'label' => 'Image à télécharger'
             ])
         ;
     }

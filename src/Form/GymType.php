@@ -14,7 +14,7 @@ class GymType extends AbstractType
     {
         $builder
             ->add('gymText', TextareaType::class, [
-                'label' => 'Nouveau Texte :'
+                'label' => 'Nouveau Texte'
             ])
         ;
     }

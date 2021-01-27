@@ -15,7 +15,7 @@ class TariffType extends AbstractType
     {
         $builder
             ->add('description', TextType::class, ['label' => 'Service'])
-            ->add('price', MoneyType::class, ['label' => 'prix'])
+            ->add('price', MoneyType::class, ['label' => 'Prix'])
         ;
     }
     public function configureOptions(OptionsResolver $resolver): void
