@@ -52,7 +52,7 @@ class Walking
     /**
      * @ORM\Column(type="text", nullable=true)
      */
-    private ?string $pdf;
+    private ?string $pdf = null;
 
     /**
      * @Vich\UploadableField(mapping="walking_pdf", fileNameProperty="pdf")
