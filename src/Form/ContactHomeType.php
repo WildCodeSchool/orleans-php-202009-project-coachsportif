@@ -30,7 +30,9 @@ class ContactHomeType extends AbstractType
             ->add('email', EmailType::class, [
                 'attr' => ['placeholder' => 'jeandelmar@gmail.com'],
             ])
-            ->add('message', TextareaType::class);
+            ->add('message', TextareaType::class, [
+                'label' => "Message",
+            ]);
     }
 
     public function configureOptions(OptionsResolver $resolver): void
