@@ -14,7 +14,7 @@ class FitnessType extends AbstractType
     {
         $builder
             ->add('fitness_Text', TextareaType::class, [
-                'label' => 'Nouveau Texte :'
+                'label' => 'Nouveau Texte'
             ])
         ;
     }
