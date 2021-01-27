@@ -1,15 +1,16 @@
 {% extends 'layout_admin.html.twig' %}
 
-{% block title %} Liste des tarifs {% endblock %}
+{% block title %}Administration|Tarifs{% endblock %}
 
 {% block body %}
-    <h1 class="text-center mt-4">Liste des tarifs</h1>
+    <h1 class="text-center mt-4">Administration des tarifs</h1>
         <div class="container">
             <a class="btn btn-success mb-2" href="{{ path('tarif_new') }}">Ajouter un nouveau tarif</a>
             <table class="table text-dark text-center">
                 <thead class="thead-light">
                     <tr>
                         <th>Service</th>
+                        <th>Description</th>
                         <th>Prix</th>
                         <th>Actions</th>
                     </tr>
@@ -17,7 +18,8 @@
                 <tbody>
                     {% for tariff in tariffs %}
                         <tr>
-                            <td> {{ tariff.description }}</td>
+                            <td>{{ tariff.title }}</td>
+                            <td>{{ tariff.description }}</td>
                             <td>{{ tariff.price }}</td>
                             <td>
                                 <a class="btn btn-primary mx-2 mb-sm-2 mb-2"

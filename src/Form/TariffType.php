@@ -14,7 +14,8 @@ class TariffType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('description', TextType::class, ['label' => 'Service'])
+            ->add('title', TextType::class, ['label' => 'Service'])
+            ->add('description', TextType::class, ['label' => 'Description'])
             ->add('price', MoneyType::class, ['label' => 'Prix'])
         ;
     }
