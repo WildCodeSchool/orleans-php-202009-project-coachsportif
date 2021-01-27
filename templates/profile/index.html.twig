@@ -24,8 +24,7 @@
                                 <li class="list-group-item text-center">{{ calendar.description ?? ''}}</li>
                             </ul>
                         <div class="card-body text-center mt-2">
-                            <a class="btn btn-success btn"
-                               href="{{ path('profile_complet_user', { 'id' : calendar.id }) }}">Réserver</a>
+                            <a class="btn btn-success btn"  href="{{ path('profile_complet_user', { 'id' : calendar.id }) }}">Réserver</a>
                         </div>
                     </div>
                 {% endif %}
@@ -53,6 +52,5 @@
             {% endfor %}
         </div>
     </div>
->>>>>>> 0d5806419edb8897941611b5e5a883cc55fc6921
     {% include 'profile/show.html.twig' %}
 {% endblock %}

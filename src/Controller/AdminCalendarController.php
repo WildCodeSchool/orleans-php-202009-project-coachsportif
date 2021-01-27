@@ -20,12 +20,14 @@ class AdminCalendarController extends AbstractController
     /**
      * @Route("/", name="list", methods={"GET"})
      * @param CalendarRepository $calendarRepository
+     * @param UserRepository $users
      * @return Response
      */
-    public function index(CalendarRepository $calendarRepository): Response
+    public function index(CalendarRepository $calendarRepository, UserRepository $users): Response
     {
         return $this->render('admin/calendar/index.html.twig', [
             'calendars' => $calendarRepository->findAll(),
+            'users' => $users->findAll(),
         ]);
     }
 
