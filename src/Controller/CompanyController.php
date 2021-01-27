@@ -2,7 +2,6 @@
 
 namespace App\Controller;
 
-use App\Entity\Company;
 use App\Form\CarouselType;
 use App\Form\OpinionType;
 use App\Repository\CarouselRepository;
@@ -11,7 +10,6 @@ use App\Repository\OpinionRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Component\HttpFoundation\Request;
 
 /**
  * @Route("/entreprise")

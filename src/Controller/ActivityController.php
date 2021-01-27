@@ -2,8 +2,6 @@
 
 namespace App\Controller;
 
-use App\Entity\Activity;
-use App\Form\ActivityType;
 use App\Form\CarouselType;
 use App\Form\OpinionType;
 use App\Repository\ActivityRepository;
