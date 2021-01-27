@@ -2,11 +2,8 @@
 
 namespace App\Controller;
 
-use App\Entity\Regulation;
-use App\Form\RegulationType;
 use App\Repository\RegulationRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 

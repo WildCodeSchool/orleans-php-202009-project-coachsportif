@@ -4,7 +4,6 @@ namespace App\Controller;
 
 use App\Entity\Calendar;
 use App\Entity\User;
-use App\Entity\UserCard;
 use App\Form\UserType;
 use App\Repository\CalendarRepository;
 use App\Repository\UserCardRepository;

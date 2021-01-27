@@ -2,19 +2,12 @@
 
 namespace App\Controller;
 
-use App\Entity\Home;
 use App\Entity\Walking;
-use App\Form\HomeType;
 use App\Form\WalkingType;
-use App\Repository\HomeRepository;
 use App\Repository\WalkingRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use App\Entity\ContactHome;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\Mailer\Exception\TransportExceptionInterface;
-use Symfony\Component\Mailer\MailerInterface;
-use Symfony\Component\Mime\Email;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
@@ -112,29 +105,5 @@ class AdminWalkingController extends AbstractController
         }
 
         return $this->redirectToRoute('walking_admin');
-    }
-
-    /**
-     * @Route("/{id}/edit/pdf", name="walking_edit_pdf", methods={"GET","POST"})
-     * @param Request $request
-     * @param Walking $walking
-     * @return Response
-     */
-    public function editPdf(Request $request, Walking $walking): Response
-    {
-        $form = $this->createForm(WalkingType::class, $walking);
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
-            $this->getDoctrine()->getManager()->flush();
-            $this->addFlash('success', "Le PDF à bien été pris en compte");
-
-            return $this->redirectToRoute('walking_admin');
-        }
-
-        return $this->render('admin/walking/editPdf.html.twig', [
-            'walking' => $walking,
-            'form' => $form->createView(),
-        ]);
     }
 }

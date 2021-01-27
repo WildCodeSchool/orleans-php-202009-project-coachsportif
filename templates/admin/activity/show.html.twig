@@ -13,11 +13,12 @@
                 <th>Texte activité adaptée</th>
                 <td>{{ activity.descritpion }}</td>
             </tr>
-        </tbody>
-    </table>
-        <a class="btn btn-secondary btn m-3 href="{{ path('activity_edit', {'id': activity.id}) }}">Modifier</a>
+            </tbody>
+        </table>
+        <a class="btn btn-secondary btn m-3" href="{{ path('activity_edit', {'id': activity.id}) }}">Modifier</a>
         <div class="row justify-content-center">
-            <a class="btn btn-secondary btn m-3 href="{{ path('activity_admin') }}">Retour</a>
+            <a class="btn btn-secondary btn m-3" href="{{ path('activity_admin') }}">Retour</a>
             {{ include('admin/activity/_delete_form.html.twig') }}
         </div>
+    </div>
 {% endblock %}
