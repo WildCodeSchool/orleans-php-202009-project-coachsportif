@@ -4,47 +4,63 @@
 
 {% block navBar %}
 
-        <nav class="navbar navbar-expand-lg navbar-dark bg-info fixed-top">
+        <nav class="navbar navbar-expand-lg bg-info fixed-top">
             <div class="container-fluid ">
-                <a class="navbar-brand img d-none d-lg-block " href="{{ path('home') }}"><img class="logo mr-2"
+                <a class="navbar-brand img d-none d-lg-block text-light" href="{{ path('home') }}"><img class="logo mr-2"
                                                                              src="{{ asset('build/images/LOGO-Blanc.png') }}"
-                                                                             alt="Logo"/>Damien Gouveia</a>
+                                                                             alt="Logo"/>Damien Gouveia Coach Sportif</a>
 
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
                         aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse justify-content-end " id="navbarNavDropdown">
+                <div class="collapse navbar-collapse justify-content-end text-light" id="navbarNavDropdown">
                     <ul class="navbar-nav">
                         <li class="nav-item dropdown mx-3">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                            <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdownMenuLink" role="button"
                                data-toggle="dropdown" aria-expanded="false">
                                 Les services
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <li><a class="dropdown-item" href="#">Activité adaptée</a></li>
+                                <li><a class="dropdown-item" href="{{ path('activity_index') }}">Activité adaptée</a></li>
                                 <li><a class="dropdown-item" href="{{ path('fitness') }}">Remise en forme</a></li>
                                 <li><a class="dropdown-item" href="{{ path('walking_index') }}">Marche nordique</a></li>
-                                <li><a class="dropdown-item" href="#">Santé en entreprise</a></li>
+                                <li><a class="dropdown-item" href="{{ path('company_index') }}">Santé en entreprise</a></li>
                             </ul>
                         </li>
                         <li class="nav-item mx-3">
-                            <a class="nav-link" href="#">La salle d’entrainement</a>
+                            <a class="nav-link text-light" href="{{ path('gym') }}">La salle d’entrainement</a>
                         </li>
                         <li class="nav-item mx-3">
-                            <a class="nav-link" href="{{ path('who') }}">Qui suis-je ?</a>
+                            <a class="nav-link text-light" href="{{ path('who') }}">Qui suis-je ?</a>
                         </li>
                         <li class="nav-item mx-3">
-                            <a class="nav-link" href="#">Tarifs</a>
+                            <a class="nav-link text-light" href="{{ path('tarifs_index') }}">Tarifs</a>
                         </li>
                         <li class="nav-item mx-3">
-                            <a class="nav-link" href="#">Média</a>
+                            <a class="nav-link text-light" href="{{ path('media_index') }}">Média</a>
                         </li>
                         <li class="nav-item mx-3">
-                            <a class="nav-link" href="{{ path('contact_show') }}">Page contact</a>
+                            <a class="nav-link text-light" href="{{ path('contact_show') }}">Contact</a>
+                        </li>
+                        {% if app.user %}
+                        <li class="nav-item mx-3">
+                            <a class="nav-link text-light" href="{{ path('profile_user', {email: app.user}) }}">
+                                Mon compte</a>
+                        {% endif %}
+                        </li>
+                        {% if  is_granted("ROLE_COACH") %}
+                        <li class="nav-item mx-3">
+                            <a class="nav-link text-light" href="{{ path('admin_index', {email: app.user}) }}">
+                                Administration</a>
+                            {% endif %}
                         </li>
                         <li class="nav-item mx-3">
-                            <a class="nav-link" href="#">Compte</a>
+                            {% if app.user %}
+                                <a class="nav-link text-light" href="{{ path('app_logout') }}"> Se déconnecter</a>
+                            {% else %}
+                                <a class="nav-link text-light" href="{{ path('app_login') }}"> Se connecter</a>
+                            {% endif %}
                         </li>
                      </ul>
               </div>

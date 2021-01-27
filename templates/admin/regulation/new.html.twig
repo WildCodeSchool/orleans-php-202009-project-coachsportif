@@ -1,0 +1,15 @@
+{% extends 'layout_admin.html.twig' %}
+    {% block stylesheets %}
+        {{ encore_entry_link_tags('indexAdmin') }}
+    {% endblock %}
+
+{% block title %}Ajouter un texte partie RGPD{% endblock %}
+
+{% block body %}
+    <h1 class="title text-center mt-4">Ajouter un texte</h1>
+
+    {{ include('admin/regulation/_form.html.twig') }}
+    <div class="text-center mt-4">
+        <a class="btn btn-secondary" href="{{ path('regulation_admin') }}">Retour</a>
+    </div>
+{% endblock %}

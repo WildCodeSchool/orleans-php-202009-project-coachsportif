@@ -1,0 +1,5 @@
+<form method="post" action="{{ path('calendar_delete', {'id': calendar.id}) }}" onsubmit="return confirm('Voulez-vous supprimer cette séance ?');">
+    <input type="hidden" name="_method" value="DELETE">
+    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ calendar.id) }}">
+    <button class="btn btn-danger mb-sm-2 mb-2 btn">Supprimer</button>
+</form>

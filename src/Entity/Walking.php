@@ -10,6 +10,7 @@ use Vich\UploaderBundle\Mapping\Annotation as Vich;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use DateTime;
+use DateTimeInterface;
 
 /**
  * @ORM\Entity(repositoryClass=WalkingRepository::class)
@@ -25,9 +26,9 @@ class Walking
     private int $id;
 
     /**
-     * @ORM\Column(type="text")
+     * @ORM\Column(type="text", nullable=true)
      */
-    private string $picture = '';
+    private ?string $picture = '';
 
     /**
      * @Vich\UploadableField(mapping="walking_file", fileNameProperty="picture")
@@ -36,17 +37,31 @@ class Walking
      *     maxSize="1000000",
      *     mimeTypes = {"image/png", "image/jpeg", "image/jpg", "image/gif",})
      */
-    private ?File $pictureFile;
+    private ?File $pictureFile = null;
 
     /**
      * @ORM\Column(type="datetime")
      */
-    private ?\DateTimeInterface $updatedAt;
+    private ?DateTimeInterface $updatedAt;
 
     /**
-     * @ORM\Column(type="text")
+     * @ORM\Column(type="text", nullable=true)
      */
-    private string $description;
+    private ?string $description;
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private ?string $pdf;
+
+    /**
+     * @Vich\UploadableField(mapping="walking_pdf", fileNameProperty="pdf")
+     * @var File|null
+     * @Assert\File(
+     *     maxSize="3000000",
+     *     mimeTypes = {"application/pdf",})
+     */
+    private ?File $pdfFile = null;
 
     public function getId(): ?int
     {
@@ -58,7 +73,7 @@ class Walking
         return $this->picture;
     }
 
-    public function setPicture(string $picture): self
+    public function setPicture(?string $picture): self
     {
         $this->picture = $picture;
 
@@ -70,7 +85,7 @@ class Walking
         return $this->description;
     }
 
-    public function setDescription(string $description): self
+    public function setDescription(?string $description): self
     {
         $this->description = $description;
 
@@ -91,15 +106,41 @@ class Walking
         return $this->pictureFile;
     }
 
-    public function getUpdatedAt(): ?\DateTimeInterface
+    public function getUpdatedAt(): ?DateTimeInterface
     {
         return $this->updatedAt;
     }
 
-    public function setUpdatedAt(?\DateTimeInterface $updatedAt): self
+    public function setUpdatedAt(?DateTimeInterface $updatedAt): self
     {
         $this->updatedAt = $updatedAt;
 
         return $this;
+    }
+
+    public function getPdf(): ?string
+    {
+        return $this->pdf;
+    }
+
+    public function setPdf(?string $pdf): self
+    {
+        $this->pdf = $pdf;
+
+        return $this;
+    }
+
+    public function setPdfFile(?File $pdf = null): Walking
+    {
+        $this->pdfFile = $pdf;
+        if ($pdf) {
+            $this->updatedAt = new DateTime('now');
+        }
+        return $this;
+    }
+
+    public function getPdfFile(): ?File
+    {
+        return $this->pdfFile;
     }
 }

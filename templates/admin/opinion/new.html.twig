@@ -1,0 +1,17 @@
+{% extends 'layout_admin.html.twig' %}
+    {% block stylesheets %}
+        {{ encore_entry_link_tags('indexAdmin') }}
+    {% endblock %}
+
+{% block title %}Ajout d'un nouvel avis{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h1 class="title text-center mt-4">Ajout d'un nouvel avis</h1>
+        {{ include('admin/opinion/_form.html.twig') }}
+        <div class="text-center mt-4">
+            <a class="btn btn-secondary btn" href="{{ path('opinion_index') }}">Retour</a>
+        </div>
+    </div>
+{% endblock %}
+

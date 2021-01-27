@@ -1,55 +1,28 @@
 @import "app.scss";
 
-.nordic-walking {
-    text-align: center;
-    background-image: url("../images/nordic_walking.jpg");
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-
-    & h1 {
-        padding: $spacing-5 $spacing $spacing-4;
-        color: $light;
-    }
-
-    & .row {
-        padding-top: $spacing-4;
-        align-items: center;
-    }
-
-    & .row:nth-child(2n) {
-        flex-direction: row-reverse;
-    }
-
-    & img {
-        display: block;
-        width: 100%;
-        border-radius: $border-radius;
-        box-shadow: $box-shadow;
-
-    }
-
-    & p {
-        font-size: $text-font-size;
-        padding: $spacing-2 $spacing-3;
-        color: $light;
-        border-radius: $border-radius;
-        text-align: left;
-    }
+.walkingParagraph {
+    color: $text-color;
+    font-size: $text-font-size*1.25;
+    margin: $spacing-4 $spacing-3 $spacing-5;
 }
 
-.walkingOverlay {
-    background-color: rgba(0, 0, 0, 0.5);
+.walkingParagraph:empty {
+    display: none;
 }
 
-.walk-submit {
-    padding: $spacing-5 0;
-
-    & p {
-        text-align: center;
-  }
+.walkingSubmitParagraph {
+    padding: 0;
+    color: $text-color;
+    font-size: $text-font-size*1.25;
 }
 
-.imageCarousel{
+.walkingButton {
+    margin-bottom: $spacing-4;
+}
+
+.walkingPicture {
+    position: absolute;
     object-fit: cover;
+    border-radius: $border-radius;
+    box-shadow: $box-shadow;
 }

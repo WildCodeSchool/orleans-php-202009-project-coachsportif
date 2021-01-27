@@ -1,7 +1,18 @@
 vich_uploader:
     db_driver: orm
-
     mappings:
+        path_file:
+            uri_prefix: /images/path
+            upload_destination: '%upload_directory_path%'
         walking_file:
             uri_prefix: /images/walking
-            upload_destination: '%upload_directory%'
+            upload_destination: '%upload_directory_walking%'
+        walking_pdf:
+            uri_prefix: /pdf/file
+            upload_destination: '%upload_directory_file%'
+        home_file:
+            uri_prefix: /images/home
+            upload_destination: '%upload_directory_home%'
+        presentation_file:
+            uri_prefix: /images/presentation
+            upload_destination: '%upload_directory_path%'

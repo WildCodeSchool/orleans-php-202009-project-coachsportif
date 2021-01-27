@@ -10,8 +10,11 @@ class CarouselFixtures extends Fixture
 {
     private const PICTURE = [
         "placeholder.png" => "home",
-        "placeholder2.jpg" => "fitness",
-        "placeholder3.jpg" => "walking",
+        "placefitness.png" => "fitness",
+        "fondSectionSport.jpg" => "walking",
+        "nordic_walking_place_holder_1.jpg" => "adapted-activity",
+        "nordic_walking_place_holder_2.jpg" => "company",
+        "placeWalking.png" => "training",
     ];
 
 

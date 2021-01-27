@@ -1,0 +1,43 @@
+{% extends 'layout_admin.html.twig' %}
+    {% block stylesheets %}
+        {{ encore_entry_link_tags('indexAdmin') }}
+    {% endblock %}
+{% block title %}Presentation index{% endblock %}
+
+{% block body %}
+    <h1 class="title text-center mt-4">Presentation index</h1>
+    <div class="container">
+         <a class="btn btn-success btn mb-2" href="{{ path('presentation_new') }}">Ajouter une présentation</a>
+            <table class="table text-dark">
+                <thead class="thead-light text-center">
+                    <tr>
+                        <th>Image</th>
+                        <th>Description</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for presentation in presentations %}
+                        <tr>
+                            <td> <img class="idImage" src="{{ asset('uploads/presentation/' ~  presentation.path) }}"
+                                      alt="{{ presentation.path }}" title="{{ presentation.path}}"></td>
+                            <td>{{ presentation.description }}</td>
+                            <td>
+                                <a class="col btn btn-primary mb-sm-2 mb-2 btn"
+                                   href="{{ path('presentation_edit', {'id': presentation.id}) }}">Modifier</a>
+                                {{ include('admin/presentation/_delete_form.html.twig') }}
+                            </td>
+                        </tr>
+                    {% else %}
+                        <tr>
+                            <td class="text-danger" colspan="8">Aucun résultat trouvé</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        <div class="text-center">
+            <a class="btn btn-secondary btn mb-4" href="{{ path('admin_index') }}">Retour</a>
+        </div>
+    </div>
+
+{% endblock %}

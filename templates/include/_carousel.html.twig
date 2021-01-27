@@ -1,4 +1,4 @@
-<section id="carousel-images" class="carousel slide" data-ride="carousel">
+<section id="carousel-images" class="carousel slide pb-0" data-ride="carousel">
     <ol class="carousel-indicators">
         <li data-target="#carousel-images" data-slide-to="0" class="active"></li>
         <li data-target="#carousel-images" data-slide-to="1"></li>
@@ -12,7 +12,7 @@
                 <div class="carousel-caption">
                     <h1 class="title-light">Damien Gouveia Coach Sportif</h1>
                 </div>
-                <img class="imageCarousel vh-100 w-100" src="{{ asset('build/images/'~image.path) }}"
+                <img class="imageCarousel vh-100 w-100" src="{{ asset('uploads/path/'~image.path) }}"
                      alt="{{ image.path }}">
             </div>
         {% endfor %}

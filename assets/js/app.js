@@ -16,6 +16,10 @@ import '../styles/footer.scss';
 import '../styles/adminWalking.scss';
 import '../styles/contact.scss';
 import '../styles/homeCo.scss';
+import '../styles/adminOpinion.scss';
+import '../styles/admin.scss';
+import '../styles/tariff.scss';
+import '../styles/profile.scss';
 
 // Need jQuery? Install it with "yarn add jquery", then uncomment to import it.
 // import $ from 'jquery';
@@ -30,4 +34,11 @@ require('bootstrap');
 
 $(document).ready(() => {
     $('[data-toggle="popover"]').popover();
+});
+// eslint-disable-next-line func-names
+$('input[type=file]').change(function () {
+    const fieldVal = $(this).val();
+    if (fieldVal !== undefined || fieldVal !== '') {
+        $(this).next('.custom-file-label').text(fieldVal);
+    }
 });

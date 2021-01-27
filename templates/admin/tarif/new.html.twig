@@ -1,0 +1,13 @@
+{% extends 'layout_admin.html.twig' %}
+    {% block stylesheets %}
+        {{ encore_entry_link_tags('indexAdmin') }}
+    {% endblock %}
+{% block title %}Nouveau tarif{% endblock %}
+
+{% block body %}
+    <h1 class="title text-center mt-4">Nouveau tarif</h1>
+    {{ include('admin/tarif/_form.html.twig') }}
+        <div class="text-center mt-4">
+            <a class="btn btn-secondary" href="{{ path('tarif_index') }}">Retour</a>
+        </div>
+{% endblock %}
