@@ -2,15 +2,12 @@
 
 namespace App\Controller;
 
-use App\Entity\Walking;
 use App\Form\CarouselType;
 use App\Form\OpinionType;
 use App\Repository\CarouselRepository;
-use App\Form\WalkingType;
 use App\Repository\OpinionRepository;
 use App\Repository\WalkingRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 

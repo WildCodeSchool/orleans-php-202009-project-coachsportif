@@ -2,9 +2,10 @@
 
 namespace App\Controller;
 
+use App\Entity\Calendar;
 use App\Entity\User;
-use App\Entity\UserCard;
 use App\Form\UserType;
+use App\Repository\CalendarRepository;
 use App\Repository\UserCardRepository;
 use App\Repository\UserRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -22,11 +23,16 @@ class ProfileController extends AbstractController
 {
     /**
      * @Route("/", name="user", methods={"GET"})
+     * @param CalendarRepository $calendar
+     * @param UserRepository $users
      * @return Response
      */
-    public function index(): Response
+    public function index(CalendarRepository $calendar, UserRepository $users): Response
     {
-        return $this->render('profile/index.html.twig');
+        return $this->render('profile/index.html.twig', [
+            'calendars' => $calendar->findAll(),
+            'users' => $users->findAll(),
+            ]);
     }
 
     /**
@@ -70,6 +76,39 @@ class ProfileController extends AbstractController
             $entityManager->remove($user);
             $entityManager->flush();
         }
+
+        return $this->redirectToRoute('profile_user');
+    }
+    /**
+     * @Route("/{id}/completUser", name="complet_user", methods={"GET","POST"})
+     * @param Calendar $calendar
+     * @return Response
+     */
+    public function completUser(Calendar $calendar): Response
+    {
+        /** @var User $user */
+        $user = $this->getUser();
+        $calendar->setUser($user->getId());
+        $entityManager =  $this->getDoctrine()->getManager();
+
+        $entityManager->persist($calendar);
+        $this->getDoctrine()->getManager()->flush();
+
+        return $this->redirectToRoute('profile_user');
+    }
+
+    /**
+     * @Route("/{id}/removeUser", name="remove_user", methods={"GET","POST"})
+     * @param Calendar $calendar
+     * @return Response
+     */
+    public function removeUser(Calendar $calendar): Response
+    {
+        $calendar->setUser(null);
+        $entityManager =  $this->getDoctrine()->getManager();
+
+        $entityManager->persist($calendar);
+        $this->getDoctrine()->getManager()->flush();
 
         return $this->redirectToRoute('profile_user');
     }

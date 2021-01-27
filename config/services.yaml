@@ -8,6 +8,7 @@ parameters:
     upload_directory_path: '%kernel.project_dir%/public/uploads/path/'
     upload_directory_home: '%kernel.project_dir%/public/uploads/home/'
     upload_directory_file: '%kernel.project_dir%/public/uploads/file/'
+    upload_directory_presentation: '%kernel.project_dir%/public/uploads/presentation/'
 
     mailer_from: '%env(resolve:MAILER_FROM_ADDRESS)%'
     mailer_to: '%env(resolve:MAILER_TO_ADDRESS)%'

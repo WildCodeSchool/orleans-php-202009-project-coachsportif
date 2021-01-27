@@ -5,10 +5,12 @@ namespace App\Controller;
 use App\Entity\Calendar;
 use App\Form\CalendarType;
 use App\Repository\CalendarRepository;
+use App\Repository\UserRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use App\Entity\User;
 
 /**
  * @Route("/admin/calendrier", name="calendar_")
@@ -18,12 +20,14 @@ class AdminCalendarController extends AbstractController
     /**
      * @Route("/", name="list", methods={"GET"})
      * @param CalendarRepository $calendarRepository
+     * @param UserRepository $users
      * @return Response
      */
-    public function index(CalendarRepository $calendarRepository): Response
+    public function index(CalendarRepository $calendarRepository, UserRepository $users): Response
     {
         return $this->render('admin/calendar/index.html.twig', [
             'calendars' => $calendarRepository->findAll(),
+            'users' => $users->findAll(),
         ]);
     }
 
@@ -45,7 +49,7 @@ class AdminCalendarController extends AbstractController
             $this->addFlash('success', 'La nouvelle séance à bien été créée');
 
 
-            return $this->redirectToRoute('calendar_index');
+            return $this->redirectToRoute('calendar_list');
         }
 
         return $this->render('admin/calendar/new.html.twig', [
@@ -57,12 +61,15 @@ class AdminCalendarController extends AbstractController
     /**
      * @Route("/{id}", name="show", methods={"GET"})
      * @param Calendar $calendar
+     * @param UserRepository $users
      * @return Response
      */
-    public function show(Calendar $calendar): Response
+    public function show(Calendar $calendar, UserRepository $users): Response
     {
+
         return $this->render('admin/calendar/show.html.twig', [
             'calendar' => $calendar,
+            'users' => $users->findAll(),
         ]);
     }
 
@@ -80,8 +87,6 @@ class AdminCalendarController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
             $this->addFlash('success', 'La séance à bien été modifiée');
-
-
             return $this->redirectToRoute('calendar_list');
         }
 

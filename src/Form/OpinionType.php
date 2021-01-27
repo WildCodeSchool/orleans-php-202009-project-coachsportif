@@ -14,7 +14,7 @@ class OpinionType extends AbstractType
     public const FITNESS_PAGE = 'fitness';
     public const ADAPTED_PAGE = 'adapted-activity';
     public const WALKING_PAGE = 'walking';
-    public const COMPAGNY_PAGE = 'company';
+    public const COMPANY_PAGE = 'company';
     public const TRAINING_PAGE = 'training';
     public const WHO_PAGE = 'who';
 
@@ -29,7 +29,7 @@ class OpinionType extends AbstractType
                     'Qui suis-je ?' => self::WHO_PAGE,
                     'Remise en forme' => self::FITNESS_PAGE,
                     'La salle d\'entrainement' => self::TRAINING_PAGE,
-                    'Santé en entreprise' => self::COMPAGNY_PAGE,
+                    'Santé en entreprise' => self::COMPANY_PAGE,
                     'Sport adapté' => self::ADAPTED_PAGE,
                 ]]);
     }

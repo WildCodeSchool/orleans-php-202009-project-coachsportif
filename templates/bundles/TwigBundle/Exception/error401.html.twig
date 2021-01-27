@@ -1,0 +1,17 @@
+{% extends 'layout.html.twig' %}
+
+{% block carousel %}{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h1 class="mt-5">Oups!!! Erreur 401...</h1>
+        <h2 class="h3 text-center">Vous n'avez pas les autorisations pour accéder à cette salle</h2>
+        <div class="text-center mt-5">
+            <img src="{{ asset('build/images/logoCouleur.jpg') }}" alt="Logo Damien Gouveia">
+        </div>
+        <p class="text-center mt-5">Cette page n'est pas accessible</p>
+        <div class="text-center my-5">
+            <a class="btn btn-secondary" href="{{ path('home') }}">Retour à la page d'accueil</a>
+        </div>
+    </div>
+{% endblock %}
