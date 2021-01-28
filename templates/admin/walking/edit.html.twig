@@ -1,11 +1,11 @@
-{% extends 'base.html.twig' %}
-{% block stylesheets %}
-    {{ encore_entry_link_tags('adminWalking') }}
-{% endblock %}
+{% extends 'layout_admin.html.twig' %}
+    {% block stylesheets %}
+        {{ encore_entry_link_tags('indexAdmin') }}
+    {% endblock %}
 {% block title %}Modification{% endblock %}
 
 {% block body %}
-    <h1>Modification</h1>
+    <h1 class="title text-center mt-4">Modification</h1>
     {{ include('admin/walking/_form.html.twig', {'button_label': 'Sauvegarder'}) }}
         <div class="text-center mt-2">
             <a class="btn btn-secondary btn" href="{{ path('walking_admin') }}">Retour</a>

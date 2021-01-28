@@ -11,11 +11,6 @@ section {
     padding-top: $spacing-4;
 }
 
-h2 {
-    display: flex;
-    justify-content: center;
-}
-
 .portrait {
     border-radius: $border-radius;
     filter: brightness(60%);

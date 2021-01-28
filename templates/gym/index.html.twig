@@ -1,29 +1,18 @@
 {% extends 'layout.html.twig' %}
-    {% block stylesheets %}
-        {{ encore_entry_link_tags('gym') }}
-    {% endblock %}
-{% block body %}
-    <div class="gymContent">
 
-        <h1 class="text-center">Salle d'entraînement</h1>
-        <div class="container-fluid">
+{% block body %}
+    <h1 class="text-center">Salle d'entrainement</h1>
+        <div class="container-fluid text-center">
             {% for gymtext in gymtexts %}
                 <div class="row justify-content-center">
-                    <p class="gymParagraph text-center col-8 py-2">{{ gymtext.GymText }}</p>
+                    <p class="paragraph text-center col-8 py-2">{{ gymtext.GymText }}</p>
                 </div>
             {% endfor %}
+                <p>Si vous-êtes intéressé, il vous suffit de remplir un formulaire en ligne, simple et rapide !</p>
+                <a class="btn btn-primary btn mb-5" href="{{ path('contact_show') }}">Envoyer un e-mail</a>
         </div>
-        <div class="container d-flex justify-content-center">
-            <div class="fitnessSubmitParagraph row">
-                <p>Si vous êtes intéressé, il vous suffit de remplir un formulaire en ligne, simple et rapide
-                    !</p>
-            </div>
-        </div>
-        <div class="d-flex justify-content-center">
-            <a class="fitnessButton btn btn-primary btn mb-4" href="{{ path('contact_show') }}">Envoyer un e-mail</a>
-        </div>
-    </div>
-    <section id="carousel-opinion" class="carouselFitness carousel slide pb-0" data-ride="carousel">
+
+    <section id="carousel-opinion" class="carouselOpinion carousel slide pb-0" data-ride="carousel">
         <h2 class="text-center p-5">Les avis</h2>
         <div class="carousel-inner">
             {% for opinion in opinions %}
