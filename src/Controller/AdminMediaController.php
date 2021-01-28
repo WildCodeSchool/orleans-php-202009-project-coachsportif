@@ -26,7 +26,7 @@ class AdminMediaController extends AbstractController
     }
 
     /**
-     * @Route("/new", name="media_new", methods={"GET","POST"})
+     * @Route("/nouveau", name="media_new", methods={"GET","POST"})
      */
     public function new(Request $request): Response
     {
@@ -59,7 +59,7 @@ class AdminMediaController extends AbstractController
     }
 
     /**
-     * @Route("/{id}/edit", name="media_edit", methods={"GET","POST"})
+     * @Route("/{id}/modifier", name="media_edit", methods={"GET","POST"})
      */
     public function edit(Request $request, Media $medium): Response
     {

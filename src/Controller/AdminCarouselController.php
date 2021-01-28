@@ -28,7 +28,7 @@ class AdminCarouselController extends AbstractController
     }
 
     /**
-     * @Route("/new", name="carousel_new", methods={"GET","POST"})
+     * @Route("/nouveau", name="carousel_new", methods={"GET","POST"})
      * @param Request $request
      * @return Response
      */
@@ -65,7 +65,7 @@ class AdminCarouselController extends AbstractController
     }
 
     /**
-     * @Route("/{id}/edit", name="carousel_edit", methods={"GET","POST"})
+     * @Route("/{id}/modifier", name="carousel_edit", methods={"GET","POST"})
      * @param Request $request
      * @param Carousel $carousel
      * @return Response

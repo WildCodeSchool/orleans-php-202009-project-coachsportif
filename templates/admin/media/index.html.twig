@@ -5,7 +5,7 @@
 {% block title %}Vidéo|index{% endblock %}
 
 {% block body %}
-    <h1 class="title text-center mt-4">Vidéo</h1>
+    <h1 class="title text-center mt-4">Administration vidéo</h1>
     <div class="container">
         <a class="btn btn-success btn mb-2" href="{{ path('media_new') }}">Ajouter une vidéo</a>
         <table class="table text-dark text-center">
@@ -19,7 +19,9 @@
             <tbody>
             {% for medium in media %}
                 <tr>
-                    <td>{{ medium.idYoutube }}</td>
+                    <td>
+                        <iframe width="300px" height="200px" src="https://www.youtube.com/embed/{{ medium.idYoutube }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write;encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </td>
                     <td>{{ medium.title }}</td>
                     <td>
                         <a class="btn btn-primary mb-sm-2 mb-2 btn"

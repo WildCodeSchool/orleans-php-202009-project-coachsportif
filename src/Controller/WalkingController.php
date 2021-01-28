@@ -38,7 +38,7 @@ class WalkingController extends AbstractController
     }
 
     /**
-     * @Route("/calendar", name="walking_calendar")
+     * @Route("/calendrier", name="walking_calendar")
      * @param WalkingRepository $walkingRepository
      * @return Response
      */

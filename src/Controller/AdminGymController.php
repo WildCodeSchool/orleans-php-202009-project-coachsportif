@@ -18,7 +18,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class AdminGymController extends AbstractController
 {
     /**
-     * @Route("/new", name="gym_new", methods={"GET","POST"})
+     * @Route("/nouveau", name="gym_new", methods={"GET","POST"})
      * @param Request $request
      * @return Response
      */
@@ -55,7 +55,7 @@ class AdminGymController extends AbstractController
     }
 
     /**
-     * @Route("/{id}/edit", name="gym_edit", methods={"GET","POST"})
+     * @Route("/{id}/modifier", name="gym_edit", methods={"GET","POST"})
      * @param Request $request
      * @param Gym $gym
      * @return Response
@@ -92,7 +92,7 @@ class AdminGymController extends AbstractController
             $this->addFlash('danger', "Le Texte de la Salle d'entrainement a bien été supprimé");
         }
 
-        return $this->redirectToRoute('gym');
+        return $this->redirectToRoute('gym_admin');
     }
 
     /**

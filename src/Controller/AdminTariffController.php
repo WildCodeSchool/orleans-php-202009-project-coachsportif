@@ -27,7 +27,7 @@ class AdminTariffController extends AbstractController
     }
 
     /**
-     * @Route("/new", name="new")
+     * @Route("/nouveau", name="new")
      * @param Request $request
      * @return Response
      */
@@ -66,11 +66,11 @@ class AdminTariffController extends AbstractController
         return $this->redirectToRoute('tarif_index');
     }
     /**
-    * @Route("/{id}", name="edit")
-     * @param Request $request
-     * @param Tariff $tariff
-     * @return Response
-     */
+    * @Route("/{id}/modifier", name="edit", methods={"GET","POST"})
+    * @param Request $request
+    * @param Tariff $tariff
+    * @return Response
+    */
     public function edit(Request $request, tariff $tariff): Response
     {
         $form = $this->createForm(TariffType::class, $tariff);

@@ -28,7 +28,7 @@ class CustomerController extends AbstractController
     }
 
     /**
-     * @Route("/new", name="user_new", methods={"GET","POST"})
+     * @Route("/nouveau", name="user_new", methods={"GET","POST"})
      * @param Request $request
      * @return Response
      */
@@ -65,7 +65,7 @@ class CustomerController extends AbstractController
     }
 
     /**
-     * @Route("/{id}/edit", name="user_edit", methods={"GET","POST"})
+     * @Route("/{id}/modifier", name="user_edit", methods={"GET","POST"})
      * @param Request $request
      * @param User $user
      * @return Response

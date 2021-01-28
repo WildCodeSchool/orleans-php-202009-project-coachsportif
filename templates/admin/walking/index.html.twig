@@ -2,8 +2,9 @@
 {% block stylesheets %}
     {{ encore_entry_link_tags('indexAdmin') }}
 {% endblock %}
+{% block title %}Administration|Marche{% endblock %}
+
 {% block body %}
-    <section class="admin-walking">
         <h1 class="title text-center mt-4">Marche nordique</h1>
             <div class="container">
                 <a class="btn btn-success btn mb-2" href="{{ path('walking_new') }}">Nouvelle rubrique</a>
