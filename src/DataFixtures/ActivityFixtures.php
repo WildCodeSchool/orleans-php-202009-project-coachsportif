@@ -17,8 +17,8 @@ class ActivityFixtures extends Fixture
             Un travail en duo, objectif bien-être et plaisir de prendre soin de son corps. 
             Des exercices graduels pour progresser en fonction de vos besoins et de vos attentes : 
             cardio, renforcement musculaire, souplesse, coordination, équilibre, avec ou sans matériel. 
-            Une à 3 fois par semaine, pendant 1h ,nous pouvons travailler chez vous, dans ma salle privée, en vision, 
-            en plein air... En cette période de pandémie, ma salle reste accessible aux personnes ayant une 
+            Une à trois fois par semaine, pendant une heure, nous pouvons travailler chez vous, dans ma salle privée,
+             en visio, en plein air... En cette période de pandémie, ma salle reste accessible aux personnes ayant une 
             prescription médicale pour la pratique de l'activité physique. On commence ?");
         $manager->persist($activity);
         $manager->flush();
