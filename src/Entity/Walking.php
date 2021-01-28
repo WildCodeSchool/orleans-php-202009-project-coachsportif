@@ -40,7 +40,7 @@ class Walking
     private ?File $pictureFile = null;
 
     /**
-     * @ORM\Column(type="datetime")
+     * @ORM\Column(type="datetime", nullable=true)
      */
     private ?DateTimeInterface $updatedAt;
 

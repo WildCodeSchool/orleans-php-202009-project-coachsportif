@@ -38,7 +38,6 @@ Encore
     .addEntry('fitness', './assets/styles/fitness.scss')
     .addEntry('home', './assets/styles/home.scss')
     .addEntry('walking', './assets/styles/walking.scss')
-    .addEntry('barNav', './assets/styles/barNav.scss')
     .addEntry('footer', './assets/styles/footer.scss')
     .addEntry('adminWalking', './assets/styles/adminWalking.scss')
     .addEntry('contact', './assets/styles/contact.scss')
@@ -50,7 +49,6 @@ Encore
     .addEntry('gym', './assets/styles/gym.scss')
     .addEntry('profile', './assets/styles/profile.scss')
     .addEntry('security', './assets/styles/security.scss')
-
 
     // When enabled, Webpack "splits" your files into smaller pieces for greater optimization.
     .splitEntryChunks()
