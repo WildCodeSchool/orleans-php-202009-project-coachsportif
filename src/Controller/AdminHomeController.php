@@ -41,7 +41,7 @@ class AdminHomeController extends AbstractController
     }
 
     /**
-     * @Route("/{id}/edit", name="home_edit", methods={"GET","POST"})
+     * @Route("/{id}/modifier", name="home_edit", methods={"GET","POST"})
      * @param Request $request
      * @param Home $home
      * @return Response

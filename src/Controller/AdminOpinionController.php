@@ -27,7 +27,7 @@ class AdminOpinionController extends AbstractController
             'opinions' => $opinionRepository->findAll()]);
     }
     /**
-     * @Route("/new", name="opinion_new", methods={"GET","POST"})
+     * @Route("/nouveau", name="opinion_new", methods={"GET","POST"})
      * @param Request $request
      * @return Response
      */
@@ -64,7 +64,7 @@ class AdminOpinionController extends AbstractController
     }
 
     /**
-     * @Route("/{id}/edit", name="opinion_edit", methods={"GET","POST"})
+     * @Route("/{id}/modifier", name="opinion_edit", methods={"GET","POST"})
      * @param Request $request
      * @param Opinion $opinion
      * @return Response

@@ -1,9 +1,5 @@
 @import 'app.scss';
 
-.main h1 {
-    margin-top: $spacing-3;
-}
-
 .information {
     border: solid $dark;
     border-radius: $border-radius;
@@ -32,8 +28,3 @@
 .link:hover {
     box-shadow: $box-shadow;
 }
-
-.title {
-    margin-top: $spacing-2;
-}
-

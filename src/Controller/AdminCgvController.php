@@ -28,7 +28,7 @@ class AdminCgvController extends AbstractController
     }
 
     /**
-     * @Route("/new", name="cgv_new", methods={"GET","POST"})
+     * @Route("/nouveau", name="cgv_new", methods={"GET","POST"})
      * @param Request $request
      * @return Response
      */
@@ -53,7 +53,7 @@ class AdminCgvController extends AbstractController
     }
 
     /**
-     * @Route("/{id}/edit", name="cgv_edit", methods={"GET","POST"})
+     * @Route("/{id}/modifier", name="cgv_edit", methods={"GET","POST"})
      * @param Request $request
      * @param CGV $cgv
      * @return Response

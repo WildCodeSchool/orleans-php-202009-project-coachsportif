@@ -2,25 +2,28 @@
 {% block carousel %}{% endblock %}
 {% block title %}Réinitialiser votre mot de passe{% endblock %}
 
-{% block body %}
-<div class="container col-12 col-md-4">
-    {% for flashError in app.flashes('reset_password_error') %}
-        <div class="alert alert-danger" role="alert">{{ flashError }}</div>
-    {% endfor %}
-    <h1 class="h2 mb-3 font-weight-normal text-center ">Réinitialiser votre mot de passe</h1>
-    {% form_theme requestForm 'bootstrap_4_layout.html.twig' %}
-    {{ form_start(requestForm) }}
-    {{ form_row(requestForm.email) }}
-        <div>
-            <small>
-                Entrez votre adresse E-mail et nous vous enverrons un lien pour Réinitialiser votre mot de passe
-            </small>
-        </div>
+{% block header %}{% include 'include/_navbar.html.twig' %}{% endblock %}
 
-    <div class="text-center mt-3">
-        <button class="btn btn-primary btn" type="submit">Réinitialiser</button>
+{% block body %}
+    <div class="container col-12 col-md-4">
+        {% for flashError in app.flashes('reset_password_error') %}
+            <div class="alert alert-danger" role="alert">{{ flashError }}</div>
+        {% endfor %}
+        <h1 class="h2 mb-3 font-weight-normal text-center mt-5">Réinitialiser votre mot de passe</h1>
+        {% form_theme requestForm 'bootstrap_4_layout.html.twig' %}
+        {{ form_start(requestForm) }}
+        {{ form_row(requestForm.email) }}
+        <div>
+            <p>Entrez votre adresse E-mail et nous vous enverrons un lien pour Réinitialiser votre mot de passe</p>
+        </div>
+        <div class="text-center mt-5">
+            <button class="btn btn-secondary btn" type="submit">Réinitialiser</button>
+        </div>
+        <div class="row justify-content-center mt-3 mb-5">
+            <a class="btn btn-primary" href="{{ path('app_login') }}">Retour à la page de connexion</a>
+        </div>
+        {{ form_end(requestForm) }}
     </div>
-    {{ form_end(requestForm) }}
-</div>
 {% endblock %}
 
+{% block footer %}{% include 'include/_footer.html.twig' %}{% endblock %}

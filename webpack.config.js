@@ -35,22 +35,13 @@ Encore
      * and one CSS file (e.g. app.css) if your JavaScript imports CSS.
      */
     .addEntry('app', './assets/js/app.js')
-    .addEntry('fitness', './assets/styles/fitness.scss')
     .addEntry('home', './assets/styles/home.scss')
-    .addEntry('walking', './assets/styles/walking.scss')
     .addEntry('barNav', './assets/styles/barNav.scss')
     .addEntry('footer', './assets/styles/footer.scss')
-    .addEntry('adminWalking', './assets/styles/adminWalking.scss')
     .addEntry('contact', './assets/styles/contact.scss')
-    .addEntry('who', './assets/styles/whoIAm.scss')
     .addEntry('homeCo', './assets/styles/homeCo.scss')
-    .addEntry('adminOpinion', './assets/styles/adminOpinion.scss')
     .addEntry('indexAdmin', './assets/styles/admin.scss')
-    .addEntry('tariff', './assets/styles/tariff.scss')
-    .addEntry('gym', './assets/styles/gym.scss')
-    .addEntry('profile', './assets/styles/profile.scss')
     .addEntry('security', './assets/styles/security.scss')
-
 
     // When enabled, Webpack "splits" your files into smaller pieces for greater optimization.
     .splitEntryChunks()

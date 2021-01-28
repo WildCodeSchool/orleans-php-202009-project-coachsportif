@@ -1,27 +1,18 @@
 {% extends 'layout.html.twig' %}
 
 {% block body %}
-    <div class="fitnessContent">
-
-        <h1 class="text-center">Activité adaptée</h1>
-        <div class="container-fluid">
+    <h1 class="text-center">Activité adaptée</h1>
+        <div class="container-fluid text-center">
             {% for activitie in activities %}
                 <div class="row justify-content-center">
-                    <p class="fitnessParagraph text-center col-8 py-2">{{ activitie.description }}</p>
+                    <p class="paragraph text-center col-8 py-2">{{ activitie.description }}</p>
                 </div>
             {% endfor %}
+                <p>Si vous-êtes intéressé, il vous suffit de remplir un formulaire en ligne, simple et rapide !</p>
+                <a class="btn btn-primary btn mb-5" href="{{ path('contact_show') }}">Envoyer un e-mail</a>
         </div>
-        <div class="container d-flex justify-content-center">
-            <div class="fitnessSubmitParagraph row">
-                <p>Si vous-êtes intéressé, il vous suffit de remplir un formulaire en ligne, simple et rapide
-                    !</p>
-            </div>
-        </div>
-        <div class="d-flex justify-content-center">
-            <a class="fitnessButton btn btn-primary btn" href="{{ path('contact_show') }}">Envoyer un e-mail</a>
-        </div>
-    </div>
-    <section id="carousel-opinion" class="carouselFitness carousel slide pb-0" data-ride="carousel">
+
+    <section id="carousel-opinion" class="carouselOpinion carousel slide pb-0" data-ride="carousel">
         <h2 class="text-center p-5">Les avis</h2>
         <div class="carousel-inner">
             {% for opinion in opinions %}

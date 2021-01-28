@@ -18,7 +18,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class AdminActivityController extends AbstractController
 {
     /**
-     * @Route("/new", name="activity_new", methods={"GET","POST"})
+     * @Route("/nouveau", name="activity_new", methods={"GET","POST"})
      * @param Request $request
      * @return Response
      */
@@ -56,7 +56,7 @@ class AdminActivityController extends AbstractController
     }
 
     /**
-     * @Route("/{id}/edit", name="activity_edit", methods={"GET","POST"})
+     * @Route("/{id}/modifier", name="activity_edit", methods={"GET","POST"})
      * @param Request $request
      * @param Activity $activity
      * @return Response

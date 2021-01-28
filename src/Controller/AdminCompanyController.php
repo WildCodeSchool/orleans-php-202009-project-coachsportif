@@ -28,7 +28,7 @@ class AdminCompanyController extends AbstractController
     }
 
     /**
-     * @Route("/new", name="company_new", methods={"GET","POST"})
+     * @Route("/nouveau", name="company_new", methods={"GET","POST"})
      * @param Request $request
      * @return Response
      */
@@ -65,7 +65,7 @@ class AdminCompanyController extends AbstractController
     }
 
     /**
-     * @Route("/{id}/edit", name="company_edit", methods={"GET","POST"})
+     * @Route("/{id}/modifier", name="company_edit", methods={"GET","POST"})
      * @param Request $request
      * @param Company $company
      * @return Response
