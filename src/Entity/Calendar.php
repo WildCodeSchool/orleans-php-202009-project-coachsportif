@@ -41,7 +41,7 @@ class Calendar
      * @Assert\Type("DateTime")
      * @Assert\Expression(
      *     "this.getStart() < this.getEnd()",
-     *     message="La date fin ne doit pas être antérieure à la date du début")
+     *     message="La date de fin ne doit pas être antérieure à la date du début")
      */
     private DateTimeInterface $end;
 
