@@ -35,7 +35,7 @@ class Home
     private ?string $picture = '';
 
     /**
-     * @ORM\Column(type="datetime")
+     * @ORM\Column(type="datetime", nullable=true)
      */
     private ?\DateTimeInterface $updatedAt;
 

@@ -92,7 +92,7 @@ class AdminGymController extends AbstractController
             $this->addFlash('danger', "Le Texte de la Salle d'entrainement a bien été supprimé");
         }
 
-        return $this->redirectToRoute('gym');
+        return $this->redirectToRoute('gym_admin');
     }
 
     /**
