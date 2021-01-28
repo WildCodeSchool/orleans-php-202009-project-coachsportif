@@ -23,6 +23,7 @@ class WalkingFixtures extends Fixture
         la marche nordique tonifie vos muscles et entretient votre souplesse comme votre équilibre et la 
         coordination entre vos bras et vos jambes. La marche nordique est un excellent moyen de prévenir 
         certaines maladies et de rester en bonne santé. On commence ?");
+        $walking->setPdf($faker->text);
         $manager->persist($walking);
         $manager->flush();
     }
