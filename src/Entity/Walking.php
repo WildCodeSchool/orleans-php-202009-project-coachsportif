@@ -40,7 +40,7 @@ class Walking
     private ?File $pictureFile = null;
 
     /**
-     * @ORM\Column(type="datetime")
+     * @ORM\Column(type="datetime", nullable=true)
      */
     private ?DateTimeInterface $updatedAt;
 
@@ -52,7 +52,7 @@ class Walking
     /**
      * @ORM\Column(type="text", nullable=true)
      */
-    private ?string $pdf;
+    private ?string $pdf = null;
 
     /**
      * @Vich\UploadableField(mapping="walking_pdf", fileNameProperty="pdf")

@@ -1,7 +1,3 @@
-{% block stylesheets %}
-    {{ encore_entry_link_tags('barNav') }}
-{% endblock %}
-
 {% block navBar %}
     <nav class="navbar navbar-expand-xl  navbar-dark bg-info fixed-top">
         <div class="container-fluid ">
@@ -43,13 +39,13 @@
                     </li>
                     {% if app.user %}
                     <li class="nav-item mx-3">
-                        <a class="nav-link text-light" href="{{ path('profile_user', {email: app.user}) }}">
+                        <a class="nav-link text-light" href="{{ path('profile_user') }}">
                             Mon compte</a>
                         {% endif %}
                     </li>
                     {% if  is_granted("ROLE_COACH") %}
                     <li class="nav-item mx-3">
-                        <a class="nav-link text-light" href="{{ path('admin_index', {email: app.user}) }}">
+                        <a class="nav-link text-light" href="{{ path('admin_index') }}">
                             Administration</a>
                         {% endif %}
                     </li>

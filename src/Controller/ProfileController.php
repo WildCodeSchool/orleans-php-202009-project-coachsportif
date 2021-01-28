@@ -36,7 +36,7 @@ class ProfileController extends AbstractController
     }
 
     /**
-     * @Route("/{id}/edit", name="user_edit", methods={"GET","POST"})
+     * @Route("/{id}/modifier", name="user_edit", methods={"GET","POST"})
      * @param Request $request
      * @param User $user
      * @return Response
@@ -80,7 +80,7 @@ class ProfileController extends AbstractController
         return $this->redirectToRoute('profile_user');
     }
     /**
-     * @Route("/{id}/completUser", name="complet_user", methods={"GET","POST"})
+     * @Route("/{id}/reserve", name="complet_user", methods={"GET","POST"})
      * @param Calendar $calendar
      * @return Response
      */
@@ -98,7 +98,7 @@ class ProfileController extends AbstractController
     }
 
     /**
-     * @Route("/{id}/removeUser", name="remove_user", methods={"GET","POST"})
+     * @Route("/{id}/disponible", name="remove_user", methods={"GET","POST"})
      * @param Calendar $calendar
      * @return Response
      */

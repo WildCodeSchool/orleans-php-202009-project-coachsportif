@@ -28,7 +28,7 @@ class AdminContactController extends AbstractController
     }
 
     /**
-     * @Route("/{id}/edit", name="contact_edit", methods={"GET","POST"})
+     * @Route("/{id}/modifier", name="contact_edit", methods={"GET","POST"})
      * @param Request $request
      * @param Contact $contact
      * @return Response

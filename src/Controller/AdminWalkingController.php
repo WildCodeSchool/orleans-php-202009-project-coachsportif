@@ -28,7 +28,7 @@ class AdminWalkingController extends AbstractController
     }
 
     /**
-     * @Route("/new", name="walking_new", methods={"GET","POST"})
+     * @Route("/nouveau", name="walking_new", methods={"GET","POST"})
      * @param Request $request
      * @return Response
      */
@@ -66,7 +66,7 @@ class AdminWalkingController extends AbstractController
     }
 
     /**
-     * @Route("/{id}/edit", name="walking_edit", methods={"GET","POST"})
+     * @Route("/{id}/modifier", name="walking_edit", methods={"GET","POST"})
      * @param Request $request
      * @param Walking $walking
      * @return Response
