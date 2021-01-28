@@ -1,48 +1,76 @@
 {% block body %}
-    <h1 class="text-center h2">Renseignement personnel</h1>
-    <div class="container-fluid">
-        <table class="table text-dark text-center table-responsive-xl">
-            <thead class="thead-light">
-                <tr>
-                    <th>Prénom</th>
-                    <th>Nom</th>
-                    <th>Age</th>
-                    <th>Taille</th>
-                    <th>Poids</th>
-                    <th>IMC</th>
-                    <th>Masse graisseuse</th>
-                    <th>Masse hydrique</th>
-                    <th>Masse musculaire</th>
-                    <th>Tour de bras</th>
-                    <th>Tour de taille</th>
-                    <th>Tour de taille</th>
-                    <th>Tour de cuisse</th>
-                    <th>Test Ruffier Dickson</th>
-                    <th>Pathologie</th>
-                    <th>Traitement</th>
-                    <th>Recommandation médicale</th>
-                </tr>
-            </thead>
+    <h1 class="h2 text-center mt-5">Profil</h1>
+    <div class="container">
+        <table class="table">
             <tbody>
-                <tr>
-                    <td>{{ app.user.firstname }}</td>
-                    <td>{{ app.user.lastname }}</td>
-                    <td>{{ app.user.age }}</td>
-                    <td>{{ app.user.size }}</td>
-                    <td>{{ app.user.weight }}</td>
-                    <td>{{ app.user.imc }}</td>
-                    <td>{{ app.user.fatMass }}</td>
-                    <td>{{ app.user.bodyWater }}</td>
-                    <td>{{ app.user.muscleMass }}</td>
-                    <td>{{ app.user.armCircumference }}</td>
-                    <td>{{ app.user.waistSize }}</td>
-                    <td>{{ app.user.thighCircumference }}</td>
-                    <td>{{ app.user.ruffierDickstonTest }}</td>
-                    <td>{{ app.user.three }}</td>
-                    <td>{{ app.user.pathology }}</td>
-                    <td>{{ app.user.treatment }}</td>
-                    <td>{{ app.user.prescription }}</td>
-                </tr>
+            <tr>
+                <th>Prénom</th>
+                <td>{{ app.user.firstname }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ app.user.lastname }}</td>
+            </tr>
+            <tr>
+                <th>Age</th>
+                <td>{{ app.user.age }}</td>
+            </tr>
+            <tr>
+                <th>Taille</th>
+                <td>{{ app.user.size }}</td>
+            </tr>
+            <tr>
+                <th>Poids</th>
+                <td>{{ app.user.weight }}</td>
+            </tr>
+            <tr>
+                <th>IMC</th>
+                <td>{{ app.user.imc }}</td>
+            </tr>
+            <tr>
+                <th>Masse graisseuse</th>
+                <td>{{ app.user.fatMass }}</td>
+            </tr>
+            <tr>
+                <th>Masse hydrique</th>
+                <td>{{ app.user.bodyWater }}</td>
+            </tr>
+            <tr>
+                <th>Masse musculaire</th>
+                <td>{{ app.user.muscleMass }}</td>
+            </tr>
+            <tr>
+                <th>Tour de bras</th>
+                <td>{{ app.user.armCircumference }}</td>
+            </tr>
+            <tr>
+                <th>Tour de taille</th>
+                <td>{{ app.user.waistSize }}</td>
+            </tr>
+            <tr>
+                <th>Tour de cuisse</th>
+                <td>{{ app.user.thighCircumference }}</td>
+            </tr>
+            <tr>
+                <th>Test Ruffier Dickson</th>
+                <td>{{ app.user.ruffierDickstonTest }}</td>
+            </tr>
+            <tr>
+                <th>Equilibre</th>
+                <td>{{ app.user.three }}</td>
+            </tr>
+            <tr>
+                <th>Pathologie</th>
+                <td>{{ app.user.pathology }}</td>
+            </tr>
+            <tr>
+                <th>Traitement</th>
+                <td>{{ app.user.treatment }}</td>
+            </tr>
+            <tr>
+                <th>Recommandation médicale</th>
+                <td>{{ app.user.prescription }}</td>
+            </tr>
             </tbody>
         </table>
         <div class="row justify-content-center mb-3">
