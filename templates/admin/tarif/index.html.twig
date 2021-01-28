@@ -1,9 +1,11 @@
 {% extends 'layout_admin.html.twig' %}
-
+    {% block stylesheets %}
+        {{ encore_entry_link_tags('indexAdmin') }}
+    {% endblock %}
 {% block title %} Liste des tarifs {% endblock %}
 
 {% block body %}
-    <h1 class="text-center mt-4">Liste des tarifs</h1>
+    <h1 class="title text-center mt-4">Liste des tarifs</h1>
         <div class="container">
             <a class="btn btn-success mb-2" href="{{ path('tarif_new') }}">Ajouter un nouveau tarif</a>
             <table class="table text-dark text-center">

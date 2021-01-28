@@ -1,10 +1,10 @@
 {% extends 'layout_admin.html.twig' %}
 {% block stylesheets %}
-    {{ encore_entry_link_tags('adminWalking') }}
+    {{ encore_entry_link_tags('indexAdmin') }}
 {% endblock %}
 {% block body %}
     <section class="admin-walking">
-        <h1 class="adminTitle text-center">Marche nordique</h1>
+        <h1 class="title text-center mt-4">Marche nordique</h1>
             <div class="container">
                 <a class="btn btn-success btn mb-2" href="{{ path('walking_new') }}">Nouvelle rubrique</a>
                 <table class="table text-dark text-center">

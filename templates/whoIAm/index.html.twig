@@ -1,35 +1,30 @@
 {% extends 'layout.html.twig' %}
-    {% block stylesheets %}
-        {{ encore_entry_link_tags('who') }}
-    {% endblock %}
 {% block carousel %}{% endblock %}
 {% block title %}Qui suis-je ?{% endblock %}
 
 {% block body %}
-    <section class="mb-4">
-        <h1 class="who-title text-center text-dark mt-5">Damien Gouveia : Coach sportif Orléans</h1>
-            <div class="container-fluid">
-                <div class="row justify-content-around">
-                    {% for presentation in presentations %}
-                    <div class="col-lg-4 col-sm-2 d-flex align-self-center justify-content-center">
-                        <img class="portrait mt-4"
-                             src="{{ asset('uploads/presentation/' ~  presentation.path) }}"
-                             alt="{{ presentation.path }}"
-                             title="Damien Gouveia">
-                    </div>
-                    <div class=" justify-content-center justify-content-center
-                            col-lg-8 col-sm-6 d-flex align-items-center lead flex-column">
-                        <div>
-                            <h2>Ma philosophie de travail : </h2>
-                                <p>{{ presentation.description }}</p>
-                        </div>
-                    </div>
-                    {% endfor %}
+    <h1 class="text-center text-dark mt-5">Damien Gouveia : Coach sportif Orléans</h1>
+        <div class="container-fluid">
+            <div class="row justify-content-around">
+                {% for presentation in presentations %}
+                <div class="col-lg-4 col-sm-2 d-flex align-self-center justify-content-center">
+                    <img class="portrait mt-4"
+                         src="{{ asset('uploads/presentation/' ~  presentation.path) }}"
+                         alt="{{ presentation.path }}"
+                         title="Damien Gouveia">
                 </div>
+                <div class=" justify-content-center justify-content-center
+                        col-lg-8 col-sm-6 d-flex align-items-center lead flex-column">
+                    <div>
+                        <h2>Ma philosophie de travail : </h2>
+                        <p>{{ presentation.description }}</p>
+                    </div>
+                </div>
+                {% endfor %}
             </div>
-    </section>
+        </div>
 
-    <section id="carousel-opinion" class="carousel slide pb-0" data-ride="carousel">
+    <section id="carousel-opinion" class="carouselOpinion carousel slide pb-0" data-ride="carousel">
         <h2 class="text-center p-5">Témoignages</h2>
         <div class="carousel-inner">
             {% for opinion in opinions %}

@@ -1,36 +1,31 @@
 {% extends 'layout.html.twig' %}
 
 {% block body %}
-    <section class="nordic-walking">
-        <h1>La marche nordique</h1>
+    <h1 class="text-center">La marche nordique</h1>
         <div class="container-fluid">
             {% for walk in walkings %}
                 <div class="row justify-content-center">
-                    <p class="walkingParagraph text-center col-8 py-2">{{ walk.description }}</p>
+                    <p class="paragraph text-center col-8 py-2">{{ walk.description }}</p>
                 </div>
             {% endfor %}
         </div>
-        <div class="bg-dark container-fluid py-5">
-            {% for walk in walkings %}
-                <div class="row justify-content-around">
-                    <img class="col-6 walkingPicture my-4 p-0" src="{{ asset('/uploads/walking/' ~ walk.picture) }}" alt="Images marche nordique">
-                </div>
-            {% endfor %}
-            <div class="text-center pt-4">
-                <a class="calendarButton btn btn-primary" href="{{ path('walking_calendar') }}" target="_blank">Planning</a>
-            </div>
-        </div>
-        <div class="container d-flex justify-content-center pt-5">
-            <div class="walkingSubmitParagraph row">
-                <p>Si vous-êtes intéressé, il vous suffit de remplir un formulaire en ligne, simple et rapide !</p>
-            </div>
-        </div>
-        <div class="text-center">
-            <a class="walkingButton btn btn-primary btn" href="{{ path('contact_show') }}">Envoyer un e-mail</a>
-        </div>
-    </section>
 
-    <section id="carousel-opinion" class="carouselFitness carousel slide pb-0" data-ride="carousel">
+        <div class="bg-dark container-fluid text-center py-5">
+            <div class="row justify-content-center">
+                {% for walk in walkings %}
+                    <img class=" walkingPicture col-6 m-4 p-0" src="{{ asset('/uploads/walking/' ~ walk.picture) }}"
+                     alt="Images marche nordique">
+                {% endfor %}
+            </div>
+            <a class="btn btn-light mt-5" href="{{ path('walking_calendar') }}" target="_blank">Planning</a>
+        </div>
+
+        <div class="container text-center py-5">
+            <p>Si vous-êtes intéressé, il vous suffit de remplir un formulaire en ligne, simple et rapide !</p>
+            <a class="btn btn-primary btn" href="{{ path('contact_show') }}">Envoyer un e-mail</a>
+        </div>
+
+    <section id="carousel-opinion" class="carouselOpinion carousel slide pb-0" data-ride="carousel">
         <h2 class="text-center p-5">Les avis</h2>
         <div class="carousel-inner">
             {% for opinion in opinions %}
