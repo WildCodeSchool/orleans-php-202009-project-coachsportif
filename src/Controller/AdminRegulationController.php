@@ -20,7 +20,7 @@ class AdminRegulationController extends AbstractController
 {
 
     /**
-     * @Route("/new", name="regulation_new", methods={"GET","POST"})
+     * @Route("/nouveau", name="regulation_new", methods={"GET","POST"})
      * @param Request $request
      * @return Response
      */
@@ -58,7 +58,7 @@ class AdminRegulationController extends AbstractController
     }
 
     /**
-     * @Route("/{id}/edit", name="regulation_edit", methods={"GET","POST"})
+     * @Route("/{id}/modifier", name="regulation_edit", methods={"GET","POST"})
      * @param Request $request
      * @param Regulation $regulation
      * @return Response

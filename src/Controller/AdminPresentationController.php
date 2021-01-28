@@ -28,7 +28,7 @@ class AdminPresentationController extends AbstractController
     }
 
     /**
-     * @Route("/new", name="presentation_new", methods={"GET","POST"})
+     * @Route("/nouveau", name="presentation_new", methods={"GET","POST"})
      * @param Request $request
      * @return Response
      */
@@ -65,7 +65,7 @@ class AdminPresentationController extends AbstractController
     }
 
     /**
-     * @Route("/{id}/edit", name="presentation_edit", methods={"GET","POST"})
+     * @Route("/{id}/modifier", name="presentation_edit", methods={"GET","POST"})
      * @param Request $request
      * @param Presentation $presentation
      * @return Response

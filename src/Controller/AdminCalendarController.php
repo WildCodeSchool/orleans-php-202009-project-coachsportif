@@ -32,7 +32,7 @@ class AdminCalendarController extends AbstractController
     }
 
     /**
-     * @Route("/new", name="new", methods={"GET","POST"})
+     * @Route("/nouveau", name="new", methods={"GET","POST"})
      * @param Request $request
      * @return Response
      */
@@ -74,7 +74,7 @@ class AdminCalendarController extends AbstractController
     }
 
     /**
-     * @Route("/{id}/edit", name="edit", methods={"GET","POST"})
+     * @Route("/{id}/modifier", name="edit", methods={"GET","POST"})
      * @param Request $request
      * @param Calendar $calendar
      * @return Response
