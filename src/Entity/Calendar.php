@@ -29,6 +29,9 @@ class Calendar
      * @ORM\Column(type="datetime")
      * @Assert\NotBlank
      * @Assert\Type("DateTime")
+     * @Assert\GreaterThan(
+     *     "today",
+     *     message="La date ne doit pas être antérieure à la date actuelle")
      */
     private DateTimeInterface $start;
 
@@ -36,6 +39,9 @@ class Calendar
      * @ORM\Column(type="datetime")
      * @Assert\NotBlank
      * @Assert\Type("DateTime")
+     * @Assert\Expression(
+     *     "this.getStart() < this.getEnd()",
+     *     message="La date fin ne doit pas être antérieure à la date début")
      */
     private DateTimeInterface $end;
 
