@@ -13,7 +13,7 @@
                 <thead class="thead-light">
                     <tr>
                         <th>Auteur</th>
-                        <th>Commentaire</th>
+                        <th>Page</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
@@ -21,7 +21,7 @@
                 {% for opinion in opinions %}
                     <tr>
                         <td>{{ opinion.author }}</td>
-                        <td>{{ opinion.comment }}</td>
+                        <td>{{ opinion.page }}</td>
                         <td>
                             <a class="col btn btn-primary mb-sm-2 mb-2 btn" href="{{ path('opinion_edit', {'id': opinion.id}) }}">Modifier</a>
                             {{ include('admin/opinion/_delete_form.html.twig') }}
