@@ -8,9 +8,9 @@ Symfony
 
 Prérequis:
 
-Php v^7.2
+Php v^7.4
 Yarn v^1.22
-Composer v^1.10
+Composer v^2
 
 Installation
 1 : Cloner le repository : 	        
