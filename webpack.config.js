@@ -36,7 +36,6 @@ Encore
      */
     .addEntry('app', './assets/js/app.js')
     .addEntry('home', './assets/styles/home.scss')
-    .addEntry('footer', './assets/styles/footer.scss')
     .addEntry('contact', './assets/styles/contact.scss')
     .addEntry('homeCo', './assets/styles/homeCo.scss')
     .addEntry('indexAdmin', './assets/styles/admin.scss')
