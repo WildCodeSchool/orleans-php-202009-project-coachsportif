@@ -8,7 +8,7 @@
           crossorigin=""/>
 {% endblock %}
 
-{% block title %} Contacts {% endblock %}
+{% block title %} Contacts et horaires {% endblock %}
 {% block body %}
     {% set week = {
         0: {'day':'Mon', 'jour':'Lundi', 'horaire':'8h00-21h00'},
@@ -20,7 +20,7 @@
         6: {'day':'Sun', 'jour':'Dimanche', 'horaire':'Fermé'},
     } %}
     <div class="container main text-center">
-        <h1 class="title text-center mt-5">Me contacter</h1>
+        <h1 class="title text-center mt-5">Contact et horaires </h1>
         {% for contact in contacts %}
         <div class="information row p-4 justify-content-center">
             <div class="col-lg-4 col-md-6 col-sm-6 pb-1">
