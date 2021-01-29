@@ -6,7 +6,7 @@
     <div class="container-fluid">
         {% for regulation in regulations %}
             <div class="row justify-content-center">
-                <pre><p class="fitnessParagraph text-center col-8 py-2">{{ regulation.description }}</p></pre>
+                <pre><p class="fitnessParagraph text-center col-8 py-2">{{ regulation.description|nl2br}}</p></pre>
             </div>
         {% endfor %}
     </div>

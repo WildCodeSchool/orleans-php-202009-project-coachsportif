@@ -37,7 +37,7 @@
                             <p class="h4 mt-2">{{ calendar.start|date('H:i') }} à {{ calendar.end|date('H:i') }}</p>
                         </div>
                         <ul class="list-group list-group-flush">
-                            <li class="list-group-item text-center">{{ calendar.description ?? ''}}</li>
+                            <li class="list-group-item text-center">{{ calendar.description ?? '' |nl2br}}</li>
                         </ul>
                         <div class="card-body text-center mt-2">
                             <a class="btn btn-danger btn"
