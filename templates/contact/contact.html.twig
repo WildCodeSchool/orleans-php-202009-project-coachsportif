@@ -21,35 +21,49 @@
     } %}
     <div class="container main text-center">
         <h1 class="title text-center mt-5">Contact et horaires </h1>
-        {% for contact in contacts %}
-        <div class="information row p-4 justify-content-center">
-            <div class="col-lg-4 col-md-6 col-sm-6 pb-1">
-                <img src="{{ asset('build/images/phone.png') }}" alt="phone">
-                <h4>Téléphone</h4>
-                <p>{{ contact.phone }}</p>
-            </div>
-            <div class="col-lg-4 col-md-4 col-sm-4 pb-1">
-                <img src="{{ asset('build/images/home.png') }}" alt="home">
-                <h4>Adresse</h4>
-                <p>{{ contact.adress }}</p>
-                <p>{{ contact.codeAndCity }}</p>
-
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-6 p-1">
-                <img src="{{ asset('build/images/email.png') }}" alt="mail">
-                <h4>Mail</h4>
-                <p>{{ contact.email }}</p>
-            </div>
+        <div class="container-fluid my-5">
+            <div class="row text-center justify-content-center mb-4">
+                {% for contact in contacts %}
+                <div class="card m-4">
+                    <div class="card-body h-100 w-15">
+                        <img src="{{ asset('build/images/phone.png') }}" alt="phone">
+                        <h2 class="h3 card-title">Téléphone</h2>
+                        <p class="card-text ">{{ contact.phone }}</p>
+                    </div>
+                </div>
+                <div class="card m-4">
+                    <div class="card-body h-100 w-15">
+                        <img src="{{ asset('build/images/home.png') }}" alt="home">
+                        <h2 class="h3 card-title">Adresse</h2>
+                        <p class="card-text ">{{ contact.adress }}</p>
+                        <p class="card-text ">{{ contact.codeAndCity }}</p>
+                    </div>
+                </div>
+                <div class="card m-4 ">
+                    <div class="card-body h-100 w-15">
+                        <img src="{{ asset('build/images/email.png') }}" alt="mail">
+                        <h2 class="h3 card-title">Mail</h2>
+                        <p class="card-text ">{{ contact.email }}</p>
+                    </div>
+                </div>
             {% endfor %}
-            <div class="col-lg-4 col-md-6 col-sm-6 pb-1">
-                <a href="https://www.facebook.com/pages/category/Sports---Fitness-Instruction/Damien-Gouveia-Coaching-108097141024441/"
-                   target="_blank"><img class="link" src="{{ asset('build/images/facebook.png') }}" alt="facebook"></a>
-                <h4>Facebook</h4>
             </div>
-            <div class="col-lg-4 col-md-4 col-sm-4 pb-1">
-                <a href="https://www.youtube.com/channel/UCjRmgQuYUU4Ktl0SihlFs3w" target="_blank">
-                    <img class="link" src="{{ asset('build/images/youtube.png') }}" alt="youtube"></a>
-                <h4>Youtube</h4>
+            <div class="row text-center justify-content-center mb-4">
+                <div class="card m-4">
+                    <div class="card-body h-100 w-15">
+                        <a href="https://www.facebook.com/pages/category/Sports---Fitness-Instruction/Damien-Gouveia-Coaching-108097141024441/"
+                           target="_blank">
+                            <img class="link" src="{{ asset('build/images/facebook.png') }}" alt="facebook"></a>
+                        <h2 class="h3 card-title">Facebook</h2>
+                    </div>
+                </div>
+                <div class="card m-4">
+                    <div class="card-body h-100 w-15">
+                        <a href="https://www.youtube.com/channel/UCjRmgQuYUU4Ktl0SihlFs3w" target="_blank">
+                            <img class="link" src="{{ asset('build/images/youtube.png') }}" alt="youtube"></a>
+                        <h2 class="h3 card-title">Youtube</h2>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="row justify-content-around my-5">
