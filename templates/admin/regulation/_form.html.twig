@@ -1,6 +1,6 @@
 <div class="container">
     {{ form_start(form) }}
-    {{ form_widget(form) }}
+    {{ form_widget(form.description,{ 'attr': {'rows': '10'} }) }}
     <div class="text-center">
         <button class="btn btn-primary btn m-3">{{ button_label|default('Sauvegarder') }}</button>
     </div>
