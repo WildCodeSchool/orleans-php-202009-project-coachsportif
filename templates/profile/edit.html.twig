@@ -1,9 +1,10 @@
-{% extends 'base.html.twig' %}
+{% extends 'layout.html.twig' %}
+{% block carousel %}{% endblock %}
 
 {% block title %}Modification{% endblock %}
 
 {% block body %}
-    <h1>Modification de votre fiche</h1>
+    <h1 class="text-center mt-5">Modification de votre fiche</h1>
     <section class="container">
         {{ include('profile/_form.html.twig', {'button_label': 'Sauvegarder'}) }}
 

@@ -45,21 +45,23 @@
                         <li class="nav-item mx-3">
                             <a class="nav-link text-light" href="{{ path('profile_user') }}">
                                 Mon compte</a>
-                            {% endif %}
                         </li>
+                    {% endif %}
                     {% if  is_granted("ROLE_COACH") %}
                         <li class="nav-item mx-3">
                             <a class="nav-link text-light" href="{{ path('admin_index') }}">
                                 Administration</a>
-                            {% endif %}
                         </li>
+                    {% endif %}
+                    {% if app.user %}
                         <li class="nav-item mx-3">
-                            {% if app.user %}
-                                <a class="nav-link text-light" href="{{ path('app_logout') }}"> Se déconnecter</a>
-                            {% else %}
-                                <a class="nav-link text-light" href="{{ path('app_login') }}"> Se connecter</a>
-                            {% endif %}
+                            <a class="nav-link text-light" href="{{ path('app_logout') }}"> Se déconnecter</a>
                         </li>
+                    {% else %}
+                        <li class="nav-item mx-3">
+                            <a class="nav-link text-light" href="{{ path('app_login') }}"> Se connecter</a>
+                        </li>
+                    {% endif %}
                 </ul>
             </div>
         </div>
