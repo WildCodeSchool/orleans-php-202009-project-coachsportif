@@ -1,9 +1,5 @@
 {% extends 'layout.html.twig' %}
 
-{% block steelsheets %}
-    {{ encore_entry_link_tags('profile') }}
-{% endblock %}
-
 {% block carousel %}{% endblock %}
 
 {% block body %}
@@ -15,7 +11,7 @@
                 {% if calendar.user is empty %}
                     <div class="card m-4">
                         <div class="card-body bg-light text-center">
-                            <h2 class="h4 card-title text-success">Disponibles</h2>
+                            <h2 class="h4 card-title text-success">Disponible</h2>
                             <p class="card-text h3">
                                 {{ calendar.start|format_datetime('full', 'none' , locale='fr')  }}</p>
                             <p class="h4 mt-2">{{ calendar.start|date('H:i') }} à {{ calendar.end|date('H:i') }}</p>
@@ -24,7 +20,7 @@
                                 <li class="list-group-item text-center">{{ calendar.description ?? ''}}</li>
                             </ul>
                         <div class="card-body text-center mt-2">
-                            <a class="btn btn-success btn"  href="{{ path('profile_complet_user', { 'id' : calendar.id }) }}">Réserver</a>
+                            <a class="btn btn-success btn"  href="{{ path('profile_complet_user', { 'id' : calendar.id }) }}">Réservée</a>
                         </div>
                     </div>
                 {% endif %}
@@ -41,7 +37,7 @@
                             <p class="h4 mt-2">{{ calendar.start|date('H:i') }} à {{ calendar.end|date('H:i') }}</p>
                         </div>
                         <ul class="list-group list-group-flush">
-                            <li class="list-group-item text-center">{{ calendar.description ?? ''}}</li>
+                            <li class="list-group-item text-center">{{ calendar.description ?? '' |nl2br}}</li>
                         </ul>
                         <div class="card-body text-center mt-2">
                             <a class="btn btn-danger btn"

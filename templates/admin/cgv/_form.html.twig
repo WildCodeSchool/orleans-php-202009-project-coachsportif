@@ -1,7 +1,6 @@
 <div class="container">
-    {% form_theme form 'bootstrap_4_layout.html.twig' %}
     {{ form_start(form) }}
-    {{ form_widget(form) }}
+    {{ form_widget(form.textCgv,{ 'attr': {'rows': '10'} }) }}
         <div class="text-center">
             <button class="btn btn-primary btn m-3">{{ button_label|default('Sauvegarder') }}</button>
         </div>

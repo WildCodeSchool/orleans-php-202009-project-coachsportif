@@ -8,10 +8,10 @@
 // any CSS you import will output into a single css file (app.css in this case)
 import '../styles/app.scss';
 import '../styles/home.scss';
-import '../styles/footer.scss';
 import '../styles/contact.scss';
 import '../styles/homeCo.scss';
 import '../styles/admin.scss';
+import bsCustomFileInput from 'bs-custom-file-input';
 
 // Need jQuery? Install it with "yarn add jquery", then uncomment to import it.
 // import $ from 'jquery';
@@ -26,11 +26,5 @@ require('bootstrap');
 
 $(document).ready(() => {
     $('[data-toggle="popover"]').popover();
-});
-// eslint-disable-next-line func-names
-$('input[type=file]').change(function () {
-    const fieldVal = $(this).val();
-    if (fieldVal !== undefined || fieldVal !== '') {
-        $(this).next('.custom-file-label').text(fieldVal);
-    }
+    bsCustomFileInput.init();
 });

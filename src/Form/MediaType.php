@@ -14,7 +14,8 @@ class MediaType extends AbstractType
     {
         $builder
             ->add('idYoutube', TextareaType::class, [
-                'label' => 'Adresse YouTube'
+                'label' => 'Adresse YouTube (Insérer la chaine de 10 caractère qui ce trouve
+                à la fin du lien https://www.youtube.com/embed/)'
             ])
             ->add('title', TextareaType::class, [
                 'label' => 'Description'

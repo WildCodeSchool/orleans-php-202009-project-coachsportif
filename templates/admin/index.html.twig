@@ -6,11 +6,10 @@
 {% endblock %}
 {% block body %}
 <section>
-    <h1 class="title text-center mt-4">Administration</h1>
+    <h1 class="title text-center mt-5">Administration</h1>
 
-    <div class="container-fluid p-4 text-center">
+    <div class="container-fluid pb-4 text-center">
         <div class="row justify-content-around">
-
             <div class="card my-2 d-flex align-items-center">
                 <img class="icon card-img-top pt-3" src="{{ asset('build/images/calendar.png') }}" alt="Logo administrateur">
                 <div class="card-body">
@@ -59,96 +58,94 @@
                 </div>
             </div>
         </div>
+    </div>
 
-        <div class="container-fluid text-center">
-            <div class="row justify-content-around">
+    <h2 class="text-center">Administration des photos et des textes</h2>
 
-                <div class="card my-2 d-flex align-items-center">
-                    <img class="icon card-img-top pt-3" src="{{ asset('build/images/logoAccueil.png') }}" alt="Logo administrateur">
-                    <div class="card-body">
-                        <h2 class="titreH2">Présentation accueil</h2>
-                        <a href="{{ path('index_Admin') }}" class="btn btn-primary">Administrer</a>
-                    </div>
+    <div class="container-fluid p-4 text-center">
+        <div class="row justify-content-around">
+            <div class="card my-2 d-flex align-items-center">
+                <img class="icon card-img-top pt-3" src="{{ asset('build/images/logoAccueil.png') }}" alt="Logo administrateur">
+                <div class="card-body">
+                    <h2 class="titreH2">Présentation accueil</h2>
+                    <a href="{{ path('index_Admin') }}" class="btn btn-primary">Administrer</a>
                 </div>
+            </div>
 
-                <div class="card my-2 d-flex align-items-center">
-                    <img class="icon card-img-top pt-3" src="{{ asset('build/images/presentation.png') }}" alt="Logo administrateur">
-                    <div class="card-body">
-                        <h2 class="titreH2">Qui suis-je ?</h2>
-                        <a href="{{ path('presentation_admin') }}" class="btn btn-primary">Administrer</a>
-                    </div>
+            <div class="card my-2 d-flex align-items-center">
+                <img class="icon card-img-top pt-3" src="{{ asset('build/images/presentation.png') }}" alt="Logo administrateur">
+                <div class="card-body">
+                    <h2 class="titreH2">Qui suis-je ?</h2>
+                    <a href="{{ path('presentation_admin') }}" class="btn btn-primary">Administrer</a>
                 </div>
+            </div>
 
-                <div class="card my-2 d-flex align-items-center">
-                    <img class="icon card-img-top pt-3" src="{{ asset('build/images/sportAdapter.png') }}" alt="Logo administrateur">
-                    <div class="card-body">
-                        <h2 class="titreH2">Activité adaptée</h2>
-                        <a href="{{ path('activity_admin') }}" class="btn btn-primary">Administrer</a>
-                    </div>
+            <div class="card my-2 d-flex align-items-center">
+                <img class="icon card-img-top pt-3" src="{{ asset('build/images/sportAdapter.png') }}" alt="Logo administrateur">
+                <div class="card-body">
+                    <h2 class="titreH2">Activité adaptée</h2>
+                    <a href="{{ path('activity_admin') }}" class="btn btn-primary">Administrer</a>
                 </div>
+            </div>
 
-                <div class="card my-2 d-flex align-items-center">
-                    <img class="icon card-img-top pt-3" src="{{ asset('build/images/logoFitness.png') }}" alt="Logo administrateur">
-                    <div class="card-body">
-                        <h2 class="titreH2">Remise en Forme</h2>
-                        <a href="{{ path('fitness_admin') }}" class="btn btn-primary">Administrer</a>
-                    </div>
+            <div class="card my-2 d-flex align-items-center">
+                <img class="icon card-img-top pt-3" src="{{ asset('build/images/logoFitness.png') }}" alt="Logo administrateur">
+                <div class="card-body">
+                    <h2 class="titreH2">Remise en Forme</h2>
+                    <a href="{{ path('fitness_admin') }}" class="btn btn-primary">Administrer</a>
                 </div>
+            </div>
 
-                <div class="card my-2 d-flex align-items-center">
-                    <img class="icon card-img-top pt-3" src="{{ asset('build/images/marcheNordique.png') }}" alt="Logo administrateur">
-                    <div class="card-body">
-                        <h2 class="titreH2">Marche nordique</h2>
-                        <a href="{{ path('walking_admin') }}" class="btn btn-primary">Administrer</a>
-                    </div>
+            <div class="card my-2 d-flex align-items-center">
+                <img class="icon card-img-top pt-3" src="{{ asset('build/images/marcheNordique.png') }}" alt="Logo administrateur">
+                <div class="card-body">
+                    <h2 class="titreH2">Marche nordique</h2>
+                    <a href="{{ path('walking_admin') }}" class="btn btn-primary">Administrer</a>
                 </div>
+            </div>
 
-                <div class="card my-2 d-flex align-items-center">
-                    <img class="icon card-img-top pt-3" src="{{ asset('build/images/sportTravail.png') }}" alt="Logo administrateur">
-                    <div class="card-body">
-                        <h2 class="titreH2">Santé en entreprise</h2>
-                        <a href="{{ path('company_admin') }}" class="btn btn-primary">Administrer</a>
-                    </div>
+            <div class="card my-2 d-flex align-items-center">
+                <img class="icon card-img-top pt-3" src="{{ asset('build/images/sportTravail.png') }}" alt="Logo administrateur">
+                <div class="card-body">
+                    <h2 class="titreH2">Santé en entreprise</h2>
+                    <a href="{{ path('company_admin') }}" class="btn btn-primary">Administrer</a>
                 </div>
-
             </div>
         </div>
+    </div>
 
-        <div class="container-fluid p-4 text-center">
-            <div class="row justify-content-around">
-
-                <div class="card my-2 d-flex align-items-center">
-                    <img class="icon card-img-top pt-3" src="{{ asset('build/images/contact.png') }}" alt="Logo administrateur">
-                    <div class="card-body">
-                        <h2 class="titreH2">Contact</h2>
-                        <a href="{{ path("contact_admin") }}" class="btn btn-primary">Administrer</a>
-                    </div>
+    <div class="container-fluid text-center mb-5">
+        <div class="row justify-content-center">
+            <div class="card my-2 mx-5 d-flex align-items-center">
+                <img class="icon card-img-top pt-3" src="{{ asset('build/images/contact.png') }}" alt="Logo administrateur">
+                <div class="card-body">
+                    <h2 class="titreH2">Contact</h2>
+                    <a href="{{ path("contact_admin") }}" class="btn btn-primary">Administrer</a>
                 </div>
+            </div>
 
-                <div class="card my-2 d-flex align-items-center">
-                    <img class="icon card-img-top pt-3" src="{{ asset('build/images/cvg.png') }}" alt="Logo administrateur">
-                    <div class="card-body">
-                        <h2 class="titreH2">CGV</h2>
-                        <a href="{{ path("cgv_admin") }}" class="btn btn-primary">Administrer</a>
-                    </div>
+            <div class="card my-2 mx-5 d-flex align-items-center">
+                <img class="icon card-img-top pt-3" src="{{ asset('build/images/salleSport.png') }}" alt="Logo administrateur">
+                <div class="card-body">
+                    <h2 class="titreH2">La salle</h2>
+                    <a href="{{ path("gym_admin") }}" class="btn btn-primary">Administrer</a>
                 </div>
+            </div>
 
-                <div class="card my-2 d-flex align-items-center">
-                    <img class="icon card-img-top pt-3" src="{{ asset('build/images/salleSport.png') }}" alt="Logo administrateur">
-                    <div class="card-body">
-                        <h2 class="titreH2">La salle</h2>
-                        <a href="{{ path("gym_admin") }}" class="btn btn-primary">Administrer</a>
-                    </div>
+            <div class="card mt-2  mx-5 d-flex align-items-center">
+                <img class="icon card-img-top pt-3" src="{{ asset('build/images/cvg.png') }}" alt="Logo administrateur">
+                <div class="card-body">
+                    <h2 class="titreH2">CGV</h2>
+                    <a href="{{ path("cgv_admin") }}" class="btn btn-primary">Administrer</a>
                 </div>
+            </div>
 
-                <div class="card my-2 d-flex align-items-center">
-                    <img class="icon card-img-top pt-3" src="{{ asset('build/images/mentionsLegales.png') }}" alt="Logo administrateur">
-                    <div class="card-body">
-                        <h2 class="titreH2">Mentions légales</h2>
-                        <a href="{{ path("regulation_admin") }}" class="btn btn-primary">Administrer</a>
-                    </div>
+            <div class="card my-2 mx-5 d-flex align-items-center">
+                <img class="icon card-img-top pt-3" src="{{ asset('build/images/mentionsLegales.png') }}" alt="Logo administrateur">
+                <div class="card-body">
+                    <h2 class="titreH2">Mentions légales</h2>
+                    <a href="{{ path("regulation_admin") }}" class="btn btn-primary">Administrer</a>
                 </div>
-
             </div>
         </div>
     </div>

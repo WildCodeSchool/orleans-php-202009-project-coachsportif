@@ -2,14 +2,16 @@
 
 {% block body %}
     <h1 class="text-center">Salle d'entrainement</h1>
-        <div class="container-fluid text-center">
+        <div class="container-fluid">
             {% for gymtext in gymtexts %}
                 <div class="row justify-content-center">
-                    <p class="paragraph text-center col-8 py-2">{{ gymtext.GymText }}</p>
+                    <p class="paragraph col-8 py-2">{{ gymtext.GymText|nl2br }}</p>
                 </div>
             {% endfor %}
+            <div class="text-center">
                 <p>Si vous-êtes intéressé, il vous suffit de remplir un formulaire en ligne, simple et rapide !</p>
                 <a class="btn btn-primary btn mb-5" href="{{ path('contact_show') }}">Envoyer un e-mail</a>
+            </div>
         </div>
 
     <section id="carousel-opinion" class="carouselOpinion carousel slide pb-0" data-ride="carousel">
