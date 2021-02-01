@@ -10,7 +10,7 @@ use Doctrine\Migrations\AbstractMigration;
 /**
  * Auto-generated Migration: Please modify to your needs!
  */
-final class Version20210201104729 extends AbstractMigration
+final class Version20210201150112 extends AbstractMigration
 {
     public function getDescription() : string
     {
@@ -20,7 +20,7 @@ final class Version20210201104729 extends AbstractMigration
     public function up(Schema $schema) : void
     {
         // this up() migration is auto-generated, please modify it to your needs
-        $this->addSql('ALTER TABLE calendar ADD user_id INT DEFAULT NULL');
+        $this->addSql('ALTER TABLE calendar CHANGE user user_id INT DEFAULT NULL');
         $this->addSql('ALTER TABLE calendar ADD CONSTRAINT FK_6EA9A146A76ED395 FOREIGN KEY (user_id) REFERENCES user (id)');
         $this->addSql('CREATE INDEX IDX_6EA9A146A76ED395 ON calendar (user_id)');
     }
@@ -30,6 +30,6 @@ final class Version20210201104729 extends AbstractMigration
         // this down() migration is auto-generated, please modify it to your needs
         $this->addSql('ALTER TABLE calendar DROP FOREIGN KEY FK_6EA9A146A76ED395');
         $this->addSql('DROP INDEX IDX_6EA9A146A76ED395 ON calendar');
-        $this->addSql('ALTER TABLE calendar DROP user_id');
+        $this->addSql('ALTER TABLE calendar CHANGE user_id user INT DEFAULT NULL');
     }
 }

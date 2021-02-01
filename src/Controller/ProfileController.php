@@ -6,15 +6,11 @@ use App\Entity\Calendar;
 use App\Entity\User;
 use App\Form\UserType;
 use App\Repository\CalendarRepository;
-use App\Repository\UserCardRepository;
 use App\Repository\UserRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\Mime\Exception\AddressEncoderException;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Response;
-use Sensio\Bundle\FrameworkExtraBundle\Request\ParamConverter;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\Security\Core\Exception\AccessDeniedException;
 
 /**
  * @Route("/compte")
