@@ -11,12 +11,12 @@ use Vich\UploaderBundle\Form\Type\VichFileType;
 
 class CarouselType extends AbstractType
 {
-    public const FITNESS_PAGE = 'fitness';
-    public const ADAPTED_PAGE = 'adapted-activity';
-    public const WALKING_PAGE = 'walking';
-    public const COMPANY_PAGE = 'company';
-    public const TRAINING_PAGE = 'training';
-    public const HOME_PAGE = 'home';
+    public const FITNESS_PAGE = 'Fitness';
+    public const ADAPTED_PAGE = 'Activité-adapté';
+    public const WALKING_PAGE = 'Marche-nordique';
+    public const COMPANY_PAGE = 'Entreprise';
+    public const TRAINING_PAGE = 'Salle-de-sport';
+    public const HOME_PAGE = 'Accueil';
 
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
