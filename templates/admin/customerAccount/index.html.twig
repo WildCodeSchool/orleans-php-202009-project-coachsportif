@@ -3,10 +3,10 @@
 {% block title %}Comptes clients{% endblock %}
 
 {% block body %}
-    <h1 class="mt-4">Administration comptes clients</h1>
+    <h1 class="mt-4 text-center">Administration comptes clients</h1>
     <section class="container">
-        <table class="table">
-            <thead>
+        <table class="table text-dark">
+            <thead class="thead-light text-center">
             <tr>
                 <th scope="col">#</th>
                 <th scope="col">Nom</th>
@@ -24,7 +24,10 @@
                     <td>{{ customer.firstname }}</td>
                     <td>{{ customer.age }}</td>
                     <td>{{ customer.email }}</td>
-                    <td><a class="btn btn-primary" href="{{ path('profile_user', {id: customer.id}) }}">Afficher</a></td>
+                    <td class="text-center">
+                        <a class="btn btn-primary" href="{{ path('profile_user', {id: customer.id}) }}">Afficher</a>
+                        <a class="btn btn-primary" href="{{ path('profile_edit', {id: customer.id}) }}">Modifier</a>
+                    </td>
                 </tr>
             {% else %}
                 <tr>

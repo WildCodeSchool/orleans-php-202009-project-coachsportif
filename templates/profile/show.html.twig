@@ -74,7 +74,7 @@
             </tbody>
         </table>
         <div class="row justify-content-center mb-3">
-            <a class="btn btn-primary" href="{{ path('profile_user_edit', { id: app.user.id }) }}">Modifier</a>
+            <a class="btn btn-primary" href="{{ path('profile_edit', {id: app.user.id}) }}">Modifier</a>
         </div>
         {% if is_granted("ROLE_COACH") %}
             <div class="row justify-content-center mb-3">
