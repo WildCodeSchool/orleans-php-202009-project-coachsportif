@@ -2,16 +2,16 @@
 {% block carousel %}{% endblock %}
 {% block title %}Média{% endblock %}
 {% block body %}
-    <h1 class="title text-center text-dark">Média</h1>
+    <h1 class="title text-center text-dark mt-5">Média</h1>
         <div class="container">
-            <div class="row justify-content-around">
+            <div class="row justify-content-between">
                 {% for media in medias %}
-                    <div class="embed-responsive embed-responsive-16by9 col-6 m-3">
+                    <div class="embed-responsive embed-responsive-16by9 col-5 m-3">
                         <iframe width="560" height="315" src="https://www.youtube.com/embed/{{ media.idYoutube }}"
                                 frameborder="0" allow="accelerometer; autoplay; clipboard-write;
                                 encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
-                    <div class="col6 align-self-center">
+                    <div class="col-5 align-self-center">
                         <p class="paragraph">{{ media.title|nl2br }}</p>
                     </div>
                 {% endfor %}

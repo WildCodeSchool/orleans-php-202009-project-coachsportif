@@ -28,13 +28,7 @@
                     <td>{{ calendar.start ? calendar.start|format_datetime('full', 'short' , locale='fr') : '' }}</td>
                     <td>{{ calendar.end ? calendar.end|date('H:i') : '' }}</td>
                     <td>{{ calendar.description }}</td>
-                    <td>
-                        {% for user in users %}
-                            {% if user.id == calendar.user %}
-                                {{ user.firstname }} {{ user.lastname }}
-                            {% endif %}
-                        {% endfor %}
-                    </td>
+                    <td> {{ calendar.user.firstname ?? '' }} {{ calendar.user.lastname ?? '' }}</td>
                     <td>
                         <a class="btn btn-primary mx-2 mb-sm-2 mb-2"
                            href="{{ path('calendar_edit', {'id': calendar.id}) }}">Modifier</a>
