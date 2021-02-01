@@ -6,23 +6,21 @@ use App\Entity\Calendar;
 use App\Entity\User;
 use App\Form\UserType;
 use App\Repository\CalendarRepository;
-use App\Repository\UserCardRepository;
 use App\Repository\UserRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Response;
-use Sensio\Bundle\FrameworkExtraBundle\Request\ParamConverter;
 use Symfony\Component\HttpFoundation\Request;
 
 /**
- * @Route("/compte", name="profile_")
+ * @Route("/compte")
  * Class ProfileController
  * @package App\Controller
  */
 class ProfileController extends AbstractController
 {
     /**
-     * @Route("/", name="user", methods={"GET"})
+     * @Route("/", name="profile_user", methods={"GET"})
      * @param CalendarRepository $calendar
      * @param UserRepository $users
      * @return Response
@@ -36,30 +34,37 @@ class ProfileController extends AbstractController
     }
 
     /**
-     * @Route("/{id}/modifier", name="user_edit", methods={"GET","POST"})
+     * @Route("/{id}/modifier", name="profile_edit", methods={"GET","POST"})
      * @param Request $request
      * @param User $user
      * @return Response
      */
     public function edit(Request $request, User $user): Response
     {
-        $form = $this->createForm(UserType::class, $user);
-        $form->handleRequest($request);
+        /** @var User $connectedUser */
+        $connectedUser = $this->getUser();
 
-        if ($form->isSubmitted() && $form->isValid()) {
-            $this->getDoctrine()->getManager()->flush();
+        if ($connectedUser === $user || in_array('ROLE_COACH', $connectedUser->getRoles())) {
+            $form = $this->createForm(UserType::class, $user);
+            $form->handleRequest($request);
 
-            return $this->redirectToRoute('profile_user');
+            if ($form->isSubmitted() && $form->isValid()) {
+                $this->getDoctrine()->getManager()->flush();
+
+                return $this->redirectToRoute('profile_user');
+            }
+
+            return $this->render('profile/edit.html.twig', [
+                'user' => $user,
+                'form' => $form->createView(),
+            ]);
+        } else {
+            return $this->render('bundles/TwigBundle/Exception/error403.html.twig');
         }
-
-        return $this->render('profile/edit.html.twig', [
-            'user' => $user,
-            'form' => $form->createView(),
-        ]);
     }
 
     /**
-     * @Route("/{id}", name="user_delete", methods={"DELETE"})
+     * @Route("/admin/{id}", name="profile_delete", methods={"DELETE"})
      * @param Request $request
      * @param User $user
      * @return Response
@@ -80,7 +85,7 @@ class ProfileController extends AbstractController
         return $this->redirectToRoute('profile_user');
     }
     /**
-     * @Route("/{id}/reserve", name="complet_user", methods={"GET","POST"})
+     * @Route("/{id}/reserve", name="profile_complet_user", methods={"GET","POST"})
      * @param Calendar $calendar
      * @return Response
      */
@@ -98,7 +103,7 @@ class ProfileController extends AbstractController
     }
 
     /**
-     * @Route("/{id}/disponible", name="remove_user", methods={"GET","POST"})
+     * @Route("/{id}/disponible", name="profile_remove_user", methods={"GET","POST"})
      * @param Calendar $calendar
      * @return Response
      */

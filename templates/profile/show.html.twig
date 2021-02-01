@@ -1,5 +1,4 @@
 {% block body %}
-    {% block title %}Affichage compte{% endblock %}
     <h1 class="h2 text-center mt-5">Profil</h1>
     <div class="container">
         <table class="table">
@@ -75,7 +74,7 @@
             </tbody>
         </table>
         <div class="row justify-content-center mb-3">
-            <a class="btn btn-primary" href="{{ path('profile_user_edit', { id: app.user.id }) }}">Modifier</a>
+            <a class="btn btn-primary" href="{{ path('profile_edit', {id: app.user.id}) }}">Modifier</a>
         </div>
         {% if is_granted("ROLE_COACH") %}
             <div class="row justify-content-center mb-3">
