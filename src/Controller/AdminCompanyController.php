@@ -3,8 +3,12 @@
 namespace App\Controller;
 
 use App\Entity\Company;
+use App\Form\CarouselType;
 use App\Form\CompanyType;
+use App\Form\OpinionType;
+use App\Repository\CarouselRepository;
 use App\Repository\CompanyRepository;
+use App\Repository\OpinionRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -18,12 +22,21 @@ class AdminCompanyController extends AbstractController
     /**
      * @Route("/", name="company_admin", methods={"GET"})
      * @param CompanyRepository $companyRepository
+     * @param OpinionRepository $opinionRepository
+     * @param CarouselRepository $carouselRepository
      * @return Response
      */
-    public function index(CompanyRepository $companyRepository): Response
-    {
+    public function index(
+        CompanyRepository $companyRepository,
+        OpinionRepository $opinionRepository,
+        CarouselRepository $carouselRepository
+    ): Response {
+        $pictures = $carouselRepository->findBy(['page' => CarouselType::COMPANY_PAGE]);
+        $opinions = $opinionRepository->findBy(['page' => OpinionType::COMPANY_PAGE]);
         return $this->render('admin/company/index.html.twig', [
             'companies' => $companyRepository->findAll(),
+            'pictures' => $pictures,
+            'opinions' => $opinions,
         ]);
     }
 

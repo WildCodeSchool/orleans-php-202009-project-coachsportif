@@ -14,7 +14,7 @@ class CarouselType extends AbstractType
     public const FITNESS_PAGE = 'fitness';
     public const ADAPTED_PAGE = 'adapted-activity';
     public const WALKING_PAGE = 'walking';
-    private const COMPANY_PAGE = 'company';
+    public const COMPANY_PAGE = 'company';
     public const TRAINING_PAGE = 'training';
     public const HOME_PAGE = 'home';
 
