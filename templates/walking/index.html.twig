@@ -1,6 +1,7 @@
 {% extends 'layout.html.twig' %}
 
 {% block body %}
+    {% block title %}Marche nordique{% endblock %}
     <h1 class="text-center">La marche nordique</h1>
         <div class="container-fluid">
             {% for walk in walkings %}
