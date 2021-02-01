@@ -52,10 +52,9 @@ class Calendar
     private string $description;
 
     /**
-     * @ORM\Column(type="integer", nullable=true)
+     * @ORM\ManyToOne(targetEntity=User::class)
      */
-    private ?int $user;
-
+    private ?User $user;
 
     public function getId(): ?int
     {
@@ -110,14 +109,15 @@ class Calendar
         return $this;
     }
 
-    public function getUser(): ?int
+    public function getUser(): ?User
     {
         return $this->user;
     }
 
-    public function setUser(?int $user): self
+    public function setUser(?User $user): self
     {
         $this->user = $user;
+
         return $this;
     }
 }
