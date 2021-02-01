@@ -28,7 +28,7 @@
         </div>
         <div class="row justify-content-around">
             {% for calendar in calendars %}
-                {% if app.user.id == calendar.user %}
+                {% if app.user == calendar.user %}
                     <div class="card m-4">
                         <div class="card-body bg-dark text-light text-center">
                             <h2 class="h4 card-title text-danger">Réserver</h2>
