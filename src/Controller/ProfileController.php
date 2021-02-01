@@ -97,7 +97,7 @@ class ProfileController extends AbstractController
     {
         /** @var User $user */
         $user = $this->getUser();
-        $calendar->setUser($user->getId());
+        $calendar->setUser($user);
         $entityManager =  $this->getDoctrine()->getManager();
 
         $entityManager->persist($calendar);
