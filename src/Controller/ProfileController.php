@@ -9,10 +9,12 @@ use App\Repository\CalendarRepository;
 use App\Repository\UserCardRepository;
 use App\Repository\UserRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\Mime\Exception\AddressEncoderException;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Response;
 use Sensio\Bundle\FrameworkExtraBundle\Request\ParamConverter;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Security\Core\Exception\AccessDeniedException;
 
 /**
  * @Route("/compte", name="profile_")
@@ -43,19 +45,26 @@ class ProfileController extends AbstractController
      */
     public function edit(Request $request, User $user): Response
     {
-        $form = $this->createForm(UserType::class, $user);
-        $form->handleRequest($request);
+        /** @var User $connectedUser */
+        $connectedUser = $this->getUser();
 
-        if ($form->isSubmitted() && $form->isValid()) {
-            $this->getDoctrine()->getManager()->flush();
+        if ($connectedUser === $user || in_array('ROLE_COACH', $connectedUser->getRoles())) {
+            $form = $this->createForm(UserType::class, $user);
+            $form->handleRequest($request);
 
-            return $this->redirectToRoute('profile_user');
+            if ($form->isSubmitted() && $form->isValid()) {
+                $this->getDoctrine()->getManager()->flush();
+
+                return $this->redirectToRoute('profile_user');
+            }
+
+            return $this->render('profile/edit.html.twig', [
+                'user' => $user,
+                'form' => $form->createView(),
+            ]);
+        } else {
+            return $this->render('bundles/TwigBundle/Exception/error403.html.twig');
         }
-
-        return $this->render('profile/edit.html.twig', [
-            'user' => $user,
-            'form' => $form->createView(),
-        ]);
     }
 
     /**
