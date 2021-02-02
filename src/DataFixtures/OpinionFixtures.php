@@ -10,12 +10,12 @@ use Faker;
 class OpinionFixtures extends Fixture
 {
     private const OPINION = [
-        "who",
+        "Qui-suis-je",
         "fitness",
-        "walking",
-        "adapted-activity",
-        "company",
-        "training",
+        "Marche-nordique",
+        "Activité-adapté",
+        "Entreprise",
+        "Salle-de-sport",
     ];
     public function load(ObjectManager $manager)
     {
