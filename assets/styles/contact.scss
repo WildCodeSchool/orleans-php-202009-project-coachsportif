@@ -28,3 +28,15 @@
 .link:hover {
     box-shadow: $box-shadow;
 }
+
+.box-part{
+    border-radius: $border-radius;
+    border: solid $dark;
+    padding:$spacing-4 0;
+    height: 300px;
+    width: 100%;
+}
+
+.text {
+    font-size: $h5-font-size;
+}
