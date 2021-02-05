@@ -16,7 +16,7 @@
                         col-lg-8 col-sm-6 d-flex align-items-center lead flex-column">
                     <div>
                         <h2>Ma philosophie de travail</h2>
-                        <p>{{ presentation.description|nl2br }}</p>
+                        <div>{{ presentation.description| raw }}</div>
                     </div>
                 </div>
                 {% endfor %}

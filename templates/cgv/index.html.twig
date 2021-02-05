@@ -6,8 +6,8 @@
     <div class="container text-center mb-4">
         <img class="m-2" src="{{ asset('build/images/logoCouleur.jpg') }}" alt="Logo Damien Gouveia"
              title="Logo Damien Gouveia">
-        <pre>
-            {{ cgv.textCgv }}
-        </pre>
+        <div>
+            {{ cgv.textCgv| raw }}
+        </div>
     </div>
 {% endblock %}
