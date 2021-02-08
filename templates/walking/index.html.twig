@@ -5,7 +5,7 @@
         <div class="container-fluid">
             {% for walk in walkings %}
                 <div class="row justify-content-center">
-                    <p class="paragraph col-8 py-2">{{ walk.description|nl2br }}</p>
+                    <div class="paragraph col-8 py-2">{{ walk.description| raw }}</div>
                 </div>
             {% endfor %}
         </div>

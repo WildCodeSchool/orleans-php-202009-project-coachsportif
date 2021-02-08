@@ -18,7 +18,7 @@
             <tbody>
             {% for gymtext in gymtexts %}
                 <tr>
-                    <td>{{ gymtext.GymText }}</td>
+                    <td>{{ gymtext.GymText| raw }}</td>
                     <td>
                         <a class="col btn btn-primary mb-sm-2 mb-2 btn"
                            href="{{ path('gym_edit', {'id': gymtext.id}) }}">

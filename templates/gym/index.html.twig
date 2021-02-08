@@ -5,7 +5,7 @@
         <div class="container-fluid">
             {% for gymtext in gymtexts %}
                 <div class="row justify-content-center">
-                    <p class="paragraph col-8 py-2">{{ gymtext.GymText|nl2br }}</p>
+                    <div class="paragraph col-8 py-2">{{ gymtext.GymText| raw }}</div>
                 </div>
             {% endfor %}
             <div class="text-center">
