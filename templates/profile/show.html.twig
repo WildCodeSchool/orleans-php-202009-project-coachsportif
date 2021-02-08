@@ -3,74 +3,108 @@
     <div class="container">
         <table class="table">
             <tbody>
+            {% if app.user.firstname is not empty %}
             <tr>
                 <th>Prénom</th>
                 <td>{{ app.user.firstname }}</td>
             </tr>
+            {% endif %}
+            {% if app.user.lastname is not empty %}
             <tr>
                 <th>Nom</th>
                 <td>{{ app.user.lastname }}</td>
             </tr>
+            {% endif %}
+            {% if app.user.age is not empty %}
             <tr>
                 <th>Age</th>
                 <td>{{ app.user.age }}</td>
             </tr>
+            {% endif %}
+            {% if app.user.size is not empty %}
             <tr>
                 <th>Taille</th>
                 <td>{{ app.user.size }}</td>
             </tr>
+            {% endif %}
+            {% if app.user.weight is not empty %}
             <tr>
                 <th>Poids</th>
                 <td>{{ app.user.weight }}</td>
             </tr>
+            {% endif %}
+            {% if app.user.imc is not empty %}
             <tr>
                 <th>IMC</th>
                 <td>{{ app.user.imc }}</td>
             </tr>
+            {% endif %}
+            {% if app.user.fatMass is not empty %}
             <tr>
                 <th>Masse graisseuse</th>
                 <td>{{ app.user.fatMass }}</td>
             </tr>
+            {% endif %}
+            {% if app.user.bodyWater is not empty %}
             <tr>
                 <th>Masse hydrique</th>
                 <td>{{ app.user.bodyWater }}</td>
             </tr>
+            {% endif %}
+            {% if app.user.muscleMass is not empty %}
             <tr>
                 <th>Masse musculaire</th>
                 <td>{{ app.user.muscleMass }}</td>
             </tr>
+            {% endif %}
+            {% if app.user.armCircumference is not empty %}
             <tr>
                 <th>Tour de bras</th>
                 <td>{{ app.user.armCircumference }}</td>
             </tr>
+            {% endif %}
+            {% if app.user.waistSize is not empty %}
             <tr>
                 <th>Tour de taille</th>
                 <td>{{ app.user.waistSize }}</td>
             </tr>
+            {% endif %}
+            {% if app.user.thighCircumference is not empty %}
             <tr>
                 <th>Tour de cuisse</th>
                 <td>{{ app.user.thighCircumference }}</td>
             </tr>
+            {% endif %}
+            {% if app.user.ruffierDickstonTest is not empty %}
             <tr>
                 <th>Test Ruffier Dickson</th>
                 <td>{{ app.user.ruffierDickstonTest }}</td>
             </tr>
+            {% endif %}
+            {% if app.user.three is not empty %}
             <tr>
                 <th>Equilibre</th>
                 <td>{{ app.user.three }}</td>
             </tr>
+            {% endif %}
+            {% if app.user.pathology is not empty %}
             <tr>
                 <th>Pathologie</th>
                 <td>{{ app.user.pathology }}</td>
             </tr>
+            {% endif %}
+            {% if app.user.treatment is not empty %}
             <tr>
                 <th>Traitement</th>
                 <td>{{ app.user.treatment }}</td>
             </tr>
+            {% endif %}
+            {% if app.user.prescription is not empty %}
             <tr>
                 <th>Recommandation médicale</th>
                 <td>{{ app.user.prescription }}</td>
             </tr>
+            {% endif %}
             </tbody>
         </table>
         <div class="row justify-content-center mb-3">

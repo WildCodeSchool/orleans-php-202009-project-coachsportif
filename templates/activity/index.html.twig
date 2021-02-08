@@ -5,7 +5,7 @@
         <div class="container-fluid">
             {% for activitie in activities %}
                 <div class="row justify-content-center">
-                    <p class="paragraph col-8 py-2">{{ activitie.description|nl2br }}</p>
+                    <div class="paragraph col-8 py-2">{{ activitie.description| raw }}</div>
                 </div>
             {% endfor %}
             <div class="text-center">

@@ -19,7 +19,7 @@
         <tbody>
         {% for regulation in regulations %}
             <tr>
-                <td>{{ regulation.description }}</td>
+                <td>{{ regulation.description| raw }}</td>
                 <td>
                     <a class="col btn btn-primary mb-sm-2 mb-2 btn"
                        href="{{ path('regulation_edit', {'id': regulation.id}) }}">Modifier</a>

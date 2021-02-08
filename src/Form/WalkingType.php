@@ -3,6 +3,7 @@
 namespace App\Form;
 
 use App\Entity\Walking;
+use FOS\CKEditorBundle\Form\Type\CKEditorType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -14,9 +15,12 @@ class WalkingType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('description', TextareaType::class, [
+            ->add('description', CKEditorType::class, [
+                'label' => 'Description',
                 'required' => false,
-                'label' => 'Description'
+                'attr' => [
+                    'placeholder' => 'Votre texte',
+                ],
             ])
             ->add('pictureFile', VichFileType::class, [
                 'required' => false,

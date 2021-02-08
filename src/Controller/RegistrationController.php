@@ -39,6 +39,8 @@ class RegistrationController extends AbstractController
         GuardAuthenticatorHandler $guardHandler,
         LoginFormAuthenticator $authenticator
     ): ?Response {
+        /** @var string $from */
+        $from = $this->getParameter('mailer_from');
         $user = new User();
         $form = $this->createForm(RegistrationFormType::class, $user);
         $form->handleRequest($request);
@@ -62,7 +64,7 @@ class RegistrationController extends AbstractController
                 'app_verify_email',
                 $user,
                 (new TemplatedEmail())
-                    ->from(new Address($this->getParameter('mailer_from')))
+                    ->from($from)
                     ->to((string)$user->getEmail())
                     ->subject('Veuillez confirmer votre E-mail')
                     ->htmlTemplate('registration/confirmation_email.html.twig')
