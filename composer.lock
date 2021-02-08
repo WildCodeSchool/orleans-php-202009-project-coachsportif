@@ -4,9 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-
     "content-hash": "ba0818942c13e7eb69fac64dac4a26e3",
-  
     "packages": [
         {
             "name": "composer/package-versions-deprecated",
@@ -4181,11 +4179,6 @@
             ],
             "description": "Symfony Mailer Component",
             "homepage": "https://symfony.com",
-
-            "support": {
-                "source": "https://github.com/symfony/mailer/tree/v5.1.10"
-            },
-
             "funding": [
                 {
                     "url": "https://symfony.com/sponsor",
@@ -7047,10 +7040,6 @@
                 "MIT"
             ],
             "description": "Simple, stylish Email Verification for Symfony",
-            "support": {
-                "issues": "https://github.com/SymfonyCasts/verify-email-bundle/issues",
-                "source": "https://github.com/SymfonyCasts/verify-email-bundle/tree/v1.1.1"
-            },
             "time": "2020-12-18T14:57:31+00:00"
         },
         {
@@ -7176,9 +7165,6 @@
                 "intl",
                 "twig"
             ],
-            "support": {
-                "source": "https://github.com/twigphp/intl-extra/tree/v3.2.1"
-            },
             "funding": [
                 {
                     "url": "https://github.com/fabpot",
@@ -7360,10 +7346,6 @@
                 "file uploads",
                 "upload"
             ],
-            "support": {
-                "issues": "https://github.com/dustin10/VichUploaderBundle/issues",
-                "source": "https://github.com/dustin10/VichUploaderBundle/tree/1.16.0"
-            },
             "time": "2020-12-04T10:49:15+00:00"
         },
         {
@@ -9586,5 +9568,5 @@
         "ext-iconv": "*"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.0.0"
+    "plugin-api-version": "1.1.0"
 }
