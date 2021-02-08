@@ -37,12 +37,16 @@ class HomeController extends AbstractController
         CarouselRepository $carouselRepository
     ): Response {
         $contact = new ContactHome();
+        /** @var string $from */
+        $from = $this->getParameter('mailer_from');
+        /** @var string $mailTo */
+        $mailTo = $this->getParameter('mailer_from');
         $form = $this->createForm(ContactHomeType::class, $contact);
         $form->handleRequest($request);
         if (($form->isSubmitted() && $form->isValid())) {
             $email = (new Email())
-                ->from($this->getParameter('mailer_from'))
-                ->to($this->getParameter('mailer_to'))
+                ->from($from)
+                ->to($mailTo)
                 ->subject('Sujet:' . $contact->getSubject())
                 ->html($this->renderView('home/contactHomeEmail.html.twig', ['contact' => $contact]));
             $mailer->send($email);
