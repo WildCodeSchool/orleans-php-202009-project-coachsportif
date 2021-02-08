@@ -32,7 +32,7 @@ class ContactController extends AbstractController
         /** @var string $from */
         $from = $this->getParameter('mailer_from');
         /** @var string $mailTo */
-        $mailTo = $this->getParameter('mailer_from');
+        $mailTo = $this->getParameter('mailer_to');
         $form = $this->createForm(ContactHomeType::class, $contact);
         $form->handleRequest($request);
         if (($form->isSubmitted() && $form->isValid())) {
