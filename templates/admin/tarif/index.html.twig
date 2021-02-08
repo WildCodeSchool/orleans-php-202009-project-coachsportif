@@ -25,7 +25,7 @@
                             <td>{{ tariff.description }}</td>
                             <td>{{ tariff.price }}</td>
                             <td>
-                                <a class="btn btn-primary mx-2 mb-sm-2 mb-2"
+                                <a class="col-12 col-sm-10 col-lg-5 btn btn-primary mb-sm-2 mb-2"
                                    href="{{ path('tarif_edit', { id: tariff.id}) }}">Modifier</a>
                                 {{ include('admin/tarif/_delete_form.html.twig') }}
                             </td>

@@ -48,6 +48,11 @@ section {
 .linkCategory {
     transition: 0.3s;
     border: 2px solid $light;
+    height: 600px;
+}
+
+.textCard {
+    font-size: 6rem;
 }
 
 .linkCategory:hover {

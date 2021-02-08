@@ -21,7 +21,7 @@
                 {% for walking in walkings %}
                     <tr>
                         <td><img class="idImage" src="{{ asset('uploads/walking/' ~ walking.picture) }}" alt="{{ walking.picture }}"></td>
-                        <td>{{ walking.description }}</td>
+                        <td>{{ walking.description| raw }}</td>
                         <td>{{ walking.pdf }}</td>
                         <td>
                             <a class="col btn btn-primary mb-2" href="{{ path('walking_edit', { id: walking.id }) }}">Modifier</a>

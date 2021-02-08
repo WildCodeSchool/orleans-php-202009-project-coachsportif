@@ -8,7 +8,7 @@
     <h1 class="text-center my-4">Liste des séances</h1>
     <div class="container">
         <a class="btn btn-success mb-2" href="{{ path('calendar_new') }}">Ajouter une nouvelle séance</a>
-        <table class="table text-dark text-center">
+        <table class="table table-responsive-lg text-dark text-center">
             <thead class="thead-light">
                 <tr>
                     <th>N°</th>
@@ -30,7 +30,7 @@
                     <td>{{ calendar.description }}</td>
                     <td> {{ calendar.user.firstname ?? '' }} {{ calendar.user.lastname ?? '' }}</td>
                     <td>
-                        <a class="btn btn-primary mx-2 mb-sm-2 mb-2"
+                        <a class="col btn btn-primary mb-sm-2 mb-2 mb-2"
                            href="{{ path('calendar_edit', {'id': calendar.id}) }}">Modifier</a>
                         {{ include('admin/calendar/_delete_form.html.twig') }}
                     </td>
@@ -46,8 +46,4 @@
         <div class="text-center">
             <a class="btn btn-secondary btn mt-2" href="{{ path('admin_index') }}">Retour</a>
         </div>
-
-
-
-
 {% endblock %}

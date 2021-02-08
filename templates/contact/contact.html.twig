@@ -19,47 +19,64 @@
     } %}
     <div class="container main text-center">
         <h1 class="title text-center mt-5">Contact et horaires </h1>
-        <div class="container-fluid my-5">
-            <div class="row text-center justify-content-center mb-4">
-                {% for contact in contacts %}
-                <div class="card m-4">
-                    <div class="card-body h-100 w-15">
-                        <img src="{{ asset('build/images/phone.png') }}" alt="phone">
-                        <h2 class="h3 card-title">Téléphone</h2>
-                        <p class="card-text ">{{ contact.phone }}</p>
+        <div class="box">
+            <div class="container-fluid my-5">
+                <div class="row text-center justify-content-center mb-4">
+                    {% for contact in contacts %}
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                        <div class="box-part text-center">
+                            <img src="{{ asset('build/images/phone.png') }}" alt="phone">
+                            <div class="title">
+                                <h2 class="h3 card-title">Téléphone</h2>
+                            </div>
+                            <div class="text">
+                                <p class="card-text">{{ contact.phone }}</p>
+                            </div>
+                       </div>
                     </div>
-                </div>
-                <div class="card m-4">
-                    <div class="card-body h-100 w-15">
-                        <img src="{{ asset('build/images/home.png') }}" alt="home">
-                        <h2 class="h3 card-title">Adresse</h2>
-                        <p class="card-text ">{{ contact.adress }}</p>
-                        <p class="card-text ">{{ contact.codeAndCity }}</p>
-                    </div>
-                </div>
-                <div class="card m-4 ">
-                    <div class="card-body h-100 w-15">
-                        <img src="{{ asset('build/images/email.png') }}" alt="mail">
-                        <h2 class="h3 card-title">Mail</h2>
-                        <p class="card-text ">{{ contact.email }}</p>
-                    </div>
-                </div>
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                            <div class="box-part text-center">
+                                <img src="{{ asset('build/images/home.png') }}" alt="home">
+                                <div class="title">
+                                    <h2 class="h3 card-title">Adresse</h2>
+                                </div>
+                                <div class="text">
+                                    <p class="card-text ">{{ contact.adress }} </br> {{ contact.codeAndCity }}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                            <div class="box-part text-center">
+                                <img src="{{ asset('build/images/email.png') }}" alt="mail">
+                                <div class="title">
+                                    <h2 class="h3 card-title">Mail</h2>
+                                </div>
+                                <div class="text">
+                                    <p class="card-text ">{{ contact.email }}</p>
+                                </div>
+                            </div>
+                        </div>
             {% endfor %}
-            </div>
-            <div class="row text-center justify-content-center mb-4">
-                <div class="card m-4">
-                    <div class="card-body h-100 w-15">
-                        <a href="https://www.facebook.com/pages/category/Sports---Fitness-Instruction/Damien-Gouveia-Coaching-108097141024441/"
-                           target="_blank">
-                            <img class="link" src="{{ asset('build/images/facebook.png') }}" alt="facebook"></a>
-                        <h2 class="h3 card-title">Facebook</h2>
-                    </div>
                 </div>
-                <div class="card m-4">
-                    <div class="card-body h-100 w-15">
-                        <a href="https://www.youtube.com/channel/UCjRmgQuYUU4Ktl0SihlFs3w" target="_blank">
-                            <img class="link" src="{{ asset('build/images/youtube.png') }}" alt="youtube"></a>
-                        <h2 class="h3 card-title">Youtube</h2>
+                <div class="row text-center justify-content-center mb-4">
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                        <div class="box-part text-center">
+                            <a href="https://www.facebook.com/pages/category/Sports---Fitness-Instruction/Damien-Gouveia-Coaching-108097141024441/"
+                               target="_blank">
+                                <img class="link" src="{{ asset('build/images/facebook.png') }}" alt="facebook"></a>
+                            <div class="title">
+                                <h2 class="h3 card-title">Facebook</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                        <div class="box-part text-center">
+                            <a href="https://www.youtube.com/channel/UCjRmgQuYUU4Ktl0SihlFs3w" target="_blank">
+                                <img class="link" src="{{ asset('build/images/youtube.png') }}" alt="youtube"></a>
+                            <div class="title">
+                                <h2 class="h3 card-title">Youtube</h2>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -23,7 +23,7 @@
                         <td>{{ opinion.author }}</td>
                         <td>{{ opinion.page }}</td>
                         <td>
-                            <a class="col btn btn-primary mb-sm-2 mb-2 btn" href="{{ path('opinion_edit', {'id': opinion.id}) }}">Modifier</a>
+                            <a class="col-12 col-sm-10 btn btn-primary mb-sm-2 mb-2 btn" href="{{ path('opinion_edit', {'id': opinion.id}) }}">Modifier</a>
                             {{ include('admin/opinion/_delete_form.html.twig') }}
                         </td>
                     </tr>

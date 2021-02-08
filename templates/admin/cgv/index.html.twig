@@ -8,7 +8,7 @@
     <h1 class="title text-center mt-4">Administration conditions générales de vente</h1>
         <div class="container">
             <a class="btn btn-success btn mb-2" href="{{ path('cgv_new') }}">Ajouter un document</a>
-            <table class="table text-dark">
+            <table class="table table-responsive-lg text-dark">
                 <thead class="thead-light text-center">
                     <tr>
                         <th>Document</th>
@@ -18,7 +18,7 @@
                 <tbody>
                 {% for cgv in cgvs %}
                     <tr>
-                        <td>{{ cgv.textCgv }}</td>
+                        <td>{{ cgv.textCgv| raw }}</td>
                         <td>
                             <a class="col btn btn-primary mb-sm-2 mb-2 btn"
                                href="{{ path('cgv_edit', {'id': cgv.id}) }}">Modifier</a>

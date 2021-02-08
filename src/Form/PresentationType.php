@@ -3,6 +3,7 @@
 namespace App\Form;
 
 use App\Entity\Presentation;
+use FOS\CKEditorBundle\Form\Type\CKEditorType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -15,8 +16,11 @@ class PresentationType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('description', TextareaType::class, [
-                'label' => 'Description'
+            ->add('description', CKEditorType::class, [
+                'label' => 'Description',
+                'attr' => [
+                    'placeholder' => 'Votre texte',
+                ],
             ])
             ->add('pathFile', VichFileType::class, [
                 'required' => false,

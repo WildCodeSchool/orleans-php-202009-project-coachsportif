@@ -39,6 +39,8 @@ class RegistrationController extends AbstractController
         GuardAuthenticatorHandler $guardHandler,
         LoginFormAuthenticator $authenticator
     ): ?Response {
+        /** @var string $from */
+        $from = $this->getParameter('mailer_from');
         $user = new User();
         $form = $this->createForm(RegistrationFormType::class, $user);
         $form->handleRequest($request);
@@ -62,9 +64,9 @@ class RegistrationController extends AbstractController
                 'app_verify_email',
                 $user,
                 (new TemplatedEmail())
-                    ->from(new Address($this->getParameter('mailer_from')))
+                    ->from($from)
                     ->to((string)$user->getEmail())
-                    ->subject('Veuillez confirmer votre email')
+                    ->subject('Veuillez confirmer votre E-mail')
                     ->htmlTemplate('registration/confirmation_email.html.twig')
             );
             // do anything else you need here, like send an email
@@ -103,7 +105,7 @@ class RegistrationController extends AbstractController
         }
 
         // @TODO Change the redirect on success and handle or remove the flash message in your templates
-        $this->addFlash('success', 'Votre adresse e-mail a été vérifiée.');
+        $this->addFlash('success', 'Votre adresse E-mail a été vérifié.');
 
         return $this->redirectToRoute('app_register');
     }
