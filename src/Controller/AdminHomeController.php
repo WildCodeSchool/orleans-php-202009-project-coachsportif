@@ -43,7 +43,7 @@ class AdminHomeController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($home);
             $entityManager->flush();
-            $this->addFlash('success', 'La presentation a bien été ajoutée');
+            $this->addFlash('success', 'La présentation a bien été ajoutée');
             return $this->redirectToRoute('index_Admin');
         }
 
