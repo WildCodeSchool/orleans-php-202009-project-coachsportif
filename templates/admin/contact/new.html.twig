@@ -1,14 +1,12 @@
 {% extends 'layout_admin.html.twig' %}
-    {% block stylesheets %}
-        {{ encore_entry_link_tags('indexAdmin') }}
-    {% endblock %}
-
-{% block title %}Ajouter un Texte partie Salle d'entrainement{% endblock %}
+{% block title %}Ajouter|Contact{% endblock %}
 
 {% block body %}
-    <h1 class="title text-center mt-4">Ajouter un texte</h1>
+<div class="container">
+    <h1 class="title text-center mt-4">Ajouter des informations</h1>
     {{ include('admin/contact/_form.html.twig') }}
     <div class="text-center mt-4">
         <a class="btn btn-secondary" href="{{ path('contact_admin') }}">Retour</a>
     </div>
+</div>
 {% endblock %}
