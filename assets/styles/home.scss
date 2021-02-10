@@ -111,3 +111,15 @@ label {
 .custom-file-input ~ .custom-file-label:lang(fr)::after {
     content: "Parcourir...";
 }
+
+@media screen and (max-width: 1150px) {
+    .textCard {
+        font-size: 2rem;
+    }
+
+    .linkCategory {
+        transition: 0.3s;
+        border: 2px solid $light;
+        height: 300px;
+    }
+}
