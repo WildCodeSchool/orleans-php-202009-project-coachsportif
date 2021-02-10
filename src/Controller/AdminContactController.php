@@ -42,7 +42,7 @@ class AdminContactController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($contact);
             $entityManager->flush();
-            $this->addFlash('success', 'Les informations ont bien été ajoutée');
+            $this->addFlash('success', 'Les informations ont bien été ajoutées');
             return $this->redirectToRoute('contact_admin');
         }
 
