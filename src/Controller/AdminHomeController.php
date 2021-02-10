@@ -29,6 +29,31 @@ class AdminHomeController extends AbstractController
     }
 
     /**
+     * @Route("/nouveau", name="home_new", methods={"GET","POST"})
+     * @param Request $request
+     * @return Response
+     */
+    public function new(Request $request): Response
+    {
+        $home = new Home();
+        $form = $this->createForm(HomeType::class, $home);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($home);
+            $entityManager->flush();
+            $this->addFlash('success', 'l\'image à bien été ajoutée');
+            return $this->redirectToRoute('index_Admin');
+        }
+
+        return $this->render('admin/home/new.html.twig', [
+            'home' => $home,
+            'form' => $form->createView(),
+        ]);
+    }
+
+    /**
      * @Route("/{id}", name="home_show", methods={"GET"})
      * @param Home $home
      * @return Response

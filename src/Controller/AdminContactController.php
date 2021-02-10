@@ -28,6 +28,31 @@ class AdminContactController extends AbstractController
     }
 
     /**
+     * @Route("/nouveau", name="contact_new", methods={"GET","POST"})
+     * @param Request $request
+     * @return Response
+     */
+    public function new(Request $request): Response
+    {
+        $contact = new Contact();
+        $form = $this->createForm(ContactType::class, $contact);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($contact);
+            $entityManager->flush();
+            $this->addFlash('success', 'Les informations ont bien été ajoutée');
+            return $this->redirectToRoute('contact_admin');
+        }
+
+        return $this->render('admin/contact/new.html.twig', [
+            'contact' => $contact,
+            'form' => $form->createView(),
+        ]);
+    }
+
+    /**
      * @Route("/{id}/modifier", name="contact_edit", methods={"GET","POST"})
      * @param Request $request
      * @param Contact $contact
