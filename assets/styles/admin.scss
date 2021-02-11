@@ -38,3 +38,9 @@ label {
 .custom-file-input ~ .custom-file-label:lang(fr)::after {
     content: "Parcourir...";
 }
+
+@media screen and (max-width: 1150px) {
+    .title {
+        font-size: 3rem;
+    }
+}
