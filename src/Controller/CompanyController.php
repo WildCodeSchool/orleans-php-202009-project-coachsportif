@@ -28,8 +28,8 @@ class CompanyController extends AbstractController
         OpinionRepository $opinionRepository,
         CarouselRepository $carouselRepository
     ): Response {
-        $pictures = $carouselRepository->findBy(['page' => CarouselType::FITNESS_PAGE]);
-        $opinions = $opinionRepository->findBy(['page' => OpinionType::FITNESS_PAGE]);
+        $pictures = $carouselRepository->findBy(['page' => CarouselType::COMPANY_PAGE]);
+        $opinions = $opinionRepository->findBy(['page' => OpinionType::COMPANY_PAGE]);
         $descriptions = $companyRepository->findAll();
         return $this->render('company/index.html.twig', [
             'descriptions' => $descriptions,
